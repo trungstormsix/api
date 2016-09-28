@@ -208,7 +208,8 @@ return [
          /**
          * entrust
          */
-        'Entrust'   => Zizaco\Entrust\EntrustServiceProvider::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
 
     ],
 

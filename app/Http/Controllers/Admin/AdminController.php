@@ -34,7 +34,7 @@ class AdminController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-         return view('admin/home');
+        return view('admin/home');
     }
 
     /**
@@ -44,7 +44,7 @@ class AdminController extends Controller {
         $cat = null;
         if ($id) {
             $cat = Ycat::find($id);
-        }else{
+        } else {
             
         }
         return view('admin/videos/cat', ['cat' => $cat]);
@@ -75,8 +75,8 @@ class AdminController extends Controller {
      */
     public function getPlaylists($catId) {
         $cat = Ycat::find($catId);
-        Session::set("cat_id",$catId);
-        return view('admin/videos/home', ['playlists' => $cat->playlists,'cat' => $cat]);
+        Session::set("cat_id", $catId);
+        return view('admin/videos/home', ['playlists' => $cat->playlists, 'cat' => $cat]);
     }
 
     /**
@@ -95,7 +95,7 @@ class AdminController extends Controller {
     public function getPlaylist($id = 0) {
         $playlist = null;
         if ($id) {
-            $playlist = Playlist::find($id);            
+            $playlist = Playlist::find($id);
         }
         $cats = Ycat::all();
         return view('admin/videos/editPlaylist', ['playlist' => $playlist, 'cats' => $cats]);
@@ -105,7 +105,7 @@ class AdminController extends Controller {
      * save playlist
      */
     public function postPlaylist(Request $req) {
-         
+
         $yid = trim($req->get('yid'));
         $plid = $req->get("id");
         $message = null;
@@ -136,16 +136,15 @@ class AdminController extends Controller {
         if (!$playlist) {
             $playlist = new Playlist();
             $playlist->yid = $plId;
-            
         }
         $playlist->cat_id = $req->cat_id;
         $playlist->title = trim($title);
-        
-            if($req->status){
-                $playlist->status = 1;
-            }else{
-                $playlist->status = 0;
-            }
+
+        if ($req->status) {
+            $playlist->status = 1;
+        } else {
+            $playlist->status = 0;
+        }
         $playlist->save();
         $this->_getVideos($html, $playlist);
         return $playlist->id;
@@ -174,9 +173,9 @@ class AdminController extends Controller {
                 $video = new Video();
             $video->yid = $yid;
             $video->title = trim($video_html->find("a.pl-video-title-link", 0)->innertext);
-            try{
-            $video->time = $video_html->find(".timestamp span", 0)->plaintext;
-            }  catch (Exception  $error){
+            try {
+                $video->time = $video_html->find(".timestamp span", 0)->plaintext;
+            } catch (Exception $error) {
                 continue;
             }
             $video->thumb_url = "http://i1.ytimg.com/vi/" . $yid . "/hqdefault.jpg";
@@ -208,16 +207,15 @@ class AdminController extends Controller {
      * save playlist
      */
     public function postProfile(Request $req) {
-        $user = Auth::user();
+        $cuser = Auth::user();
+         $user = User::find($cuser->id);
         if (\Illuminate\Support\Facades\Hash::check($req->password, $user->password)) {
             Session::flash('success', 'Profile saved successfully!');
             $user->password = bcrypt($req->new_password);
-            
-//            $user->save();
+            $user->save();
         } else {
-             Session::flash('error', 'Incorrect password!');
+            Session::flash('error', 'Incorrect password!');
         }
-
         return Redirect::to('/admin/profile');
     }
 
