@@ -26,7 +26,22 @@
             </div>
         </div>
     </div>
+    @if (Session::has('success'))
+    <br>
+    <div class="alert alert-success alert-dismissable animated fadeInDown">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        {{ Session::get('success') }}
+    </div>
+    
+    @elseif (Session::has('error'))
+    <br>
+    <div class="alert alert-danger  alert-dismissable animated fadeInDown">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        {{ Session::get('error') }}
+    </div>
 
+    @endif
+    
     {{ csrf_field() }}
     <input type="hidden" name="id" value="{{empty($playlist) ? old('id') : $playlist->id}}" />
     <div class="row">
@@ -55,8 +70,23 @@
                             <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox" name="status" {{(old('status') || $playlist->status) ? 'checked' : '' }} >
                         </div>
                     </div>
-                    @endif
+                    <div class="hr-line-dashed"></div>
 
+                    @endif
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            Cat
+                        </label>
+                        <div class="col-sm-10">
+                            <select class="form-control m-b" name="cat_id">'
+                                @foreach($cats as $cat)
+                                <option {{($playlist && $playlist->cat_id == $cat->id) ? "selected" : (Session::get('cat_id')  == $cat->id ? "selected" :"")}} value='{{$cat->id}}'>
+                                    {{$cat->title}}
+                                </option>
+                                @endforeach
+                            </select>               
+                        </div>
+                    </div>
 
                 </div>
             </div>

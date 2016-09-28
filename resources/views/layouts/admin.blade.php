@@ -23,7 +23,7 @@
         <link href="{!! asset('assets/font-awesome/css/font-awesome.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <link href="{!! asset('assets/css/style.css') !!}" media="all" rel="stylesheet" type="text/css" />
 
-    <link href="{!! asset('assets/css/plugins/switchery/switchery.css')!!}" rel="stylesheet">
+        <link href="{!! asset('assets/css/plugins/switchery/switchery.css')!!}" rel="stylesheet">
 
 
     </head>
@@ -48,6 +48,9 @@
                                 </span> <span class="text-muted text-xs block">{{Auth::user()->username}} <b class="caret"></b></span> </span> 
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li>
+                                <a href="{{ url('/admin/profile') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Profile</span> </a>
+                            </li>
                             <li><a href="{{ url('/logout') }}">Logout</a></li>
                         </ul>
 
@@ -60,16 +63,14 @@
                 <li class="active">
                     <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Home</span></a>
                 </li>
-                <li>
-                    <a href="{{ url('/profile') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Profile</span> </a>
-                </li>
+
                 <li class="active">
                     <a href="index.html"><i class="fa fa-youtube"></i> <span class="nav-label">Videos</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                         @foreach (\App\library\Menus::getCats() as $cat)
+                        @foreach (\App\library\Menus::getCats() as $cat)
                         <li class="active"><a href="{{ url('/admin/playlists/'.$cat->id)}}">{{$cat->title}}</a></li>
-                         @endforeach
-                         <li><a href="{{ url('/admin/ycat/add')}}">Create Cat <span class="label label-primary pull-right">NEW</span></a></li>
+                        @endforeach
+                        <li><a href="{{ url('/admin/ycat/add')}}">Create Cat <span class="label label-primary pull-right">NEW</span></a></li>
                     </ul>
                 </li>
                 <li>
@@ -206,15 +207,15 @@
 
 
                     <li>
-                       <a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i>  Logout</a>
-                             
-                     </li>
+                        <a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i>  Logout</a>
+
+                    </li>
                 </ul>
 
             </nav>
         </div>
-       
-       
+
+
         @yield('content')
 
         <div class="footer">
@@ -243,6 +244,6 @@
 
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 @yield('content_js')
-   
+
 </body>
 </html>

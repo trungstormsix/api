@@ -15,6 +15,7 @@ use App\Models\Playlist;
 use App\Models\Video;
 use App\Models\Ycat;
 use File;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller {
 
@@ -74,7 +75,7 @@ class AdminController extends Controller {
      */
     public function getPlaylists($catId) {
         $cat = Ycat::find($catId);
-//        $playlists = Playlist::where('cat_id', $catId)->get();
+        Session::set("cat_id",$catId);
         return view('admin/videos/home', ['playlists' => $cat->playlists,'cat' => $cat]);
     }
 
@@ -94,9 +95,10 @@ class AdminController extends Controller {
     public function getPlaylist($id = 0) {
         $playlist = null;
         if ($id) {
-            $playlist = Playlist::find($id);
+            $playlist = Playlist::find($id);            
         }
-        return view('admin/videos/editPlaylist', ['playlist' => $playlist]);
+        $cats = Ycat::all();
+        return view('admin/videos/editPlaylist', ['playlist' => $playlist, 'cats' => $cats]);
     }
 
     /**
@@ -105,21 +107,21 @@ class AdminController extends Controller {
     public function postPlaylist(Request $req) {
          
         $yid = trim($req->get('yid'));
+        $plid = $req->get("id");
         $message = null;
         if (!$yid) {
             $message = "Please type a playlist id";
         } else {
-            $this->_getPlaylist($req, $yid);
+            $plid = $this->_getPlaylist($req, $yid);
         }
         Input::flash();
         $url = '/admin/playlist/add';
-        if ($req->get("id")) {
-            $url = '/admin/playlist/edit/' . $req->get("id");
+        if ($plid) {
+            $url = '/admin/playlist/edit/' . $plid;
         }
         return Redirect::to($url)
-                        ->with('error', 'Username/Password Wrong')
-                        ->withInput()
-                        ->withMessage($message);
+                        ->with('error', $message)
+                        ->withInput();
     }
 
     /**
@@ -136,7 +138,7 @@ class AdminController extends Controller {
             $playlist->yid = $plId;
             
         }
-
+        $playlist->cat_id = $req->cat_id;
         $playlist->title = trim($title);
         
             if($req->status){
@@ -146,6 +148,7 @@ class AdminController extends Controller {
             }
         $playlist->save();
         $this->_getVideos($html, $playlist);
+        return $playlist->id;
     }
 
     /**
@@ -207,11 +210,12 @@ class AdminController extends Controller {
     public function postProfile(Request $req) {
         $user = Auth::user();
         if (\Illuminate\Support\Facades\Hash::check($req->password, $user->password)) {
-            \Illuminate\Support\Facades\Session::flash('success', 'Profile saved successfully!');
+            Session::flash('success', 'Profile saved successfully!');
             $user->password = bcrypt($req->new_password);
-            $user->save();
+            
+//            $user->save();
         } else {
-            \Illuminate\Support\Facades\Session::flash('error', 'Incorrect password!');
+             Session::flash('error', 'Incorrect password!');
         }
 
         return Redirect::to('/admin/profile');

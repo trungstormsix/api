@@ -35,13 +35,13 @@ class ApiController extends Controller {
      * get all playlists
      */
     public function getPlaylists($catid) {
-        $playlists = Playlist::where('cat_id', $catid)->get()->sortByDesc("updated_at");
+        $playlists = Playlist::where('cat_id', $catid)->orderBy('updated_at', 'desc')->get();
         return $playlists;
     }
 
     public function getVideos($id){
         $playlist = Playlist::find($id);
         $playlist->videos = $playlist->videos;
-        return $playlist;
+        return $playlist->videos ;
     }
 }
