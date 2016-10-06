@@ -26,6 +26,7 @@ class AdminController extends Controller {
      */
     public function __construct() {
         $this->middleware('auth');
+        
     }
 
     /**
@@ -92,7 +93,7 @@ class AdminController extends Controller {
     /**
      * get Playlist
      */
-    public function getPlaylist($id = 0) {
+    public function getPlaylist($id = 0) {       
         $playlist = null;
         if ($id) {
             $playlist = Playlist::find($id);
@@ -131,21 +132,25 @@ class AdminController extends Controller {
     private function _getPlaylist($req, $plId = "PLPSfPyOOcp3R9ZPLNjZkWxRy-BWCfNMrn") {
         $f = new \App\library\myFunctions();
         $html = $f->file_get_html("https://www.youtube.com/playlist?list=" . $plId);
-        $title = $html->find("#pl-header h1.pl-header-title", 0)->plaintext;
+        $title = $req->get('title') ? $req->title : $html->find("#pl-header h1.pl-header-title", 0)->plaintext;
+        $thumb_url = $req->get('thumb_url');
         $playlist = Playlist::where('yid', $plId)->first();
         if (!$playlist) {
             $playlist = new Playlist();
             $playlist->yid = $plId;
         }
+         
         $playlist->cat_id = $req->cat_id;
         $playlist->title = trim($title);
-
+        $playlist->thumb_url = $thumb_url ? $thumb_url : "";
+ 
         if ($req->status) {
             $playlist->status = 1;
         } else {
             $playlist->status = 0;
         }
         $playlist->save();
+       
         $this->_getVideos($html, $playlist);
         return $playlist->id;
     }
@@ -173,8 +178,17 @@ class AdminController extends Controller {
                 $video = new Video();
             $video->yid = $yid;
             $video->title = trim($video_html->find("a.pl-video-title-link", 0)->innertext);
+            echo $video->title.'<br>';
+            if($video->title == '[Video đã xóa]'){
+                continue;
+            }
             try {
-                $video->time = $video_html->find(".timestamp span", 0)->plaintext;
+                $video_time = $video_html->find(".timestamp span", 0);
+                 if($video_time){
+                   $video->time = $video_time->plaintext;
+                }else{
+                    continue;
+                }
             } catch (Exception $error) {
                 continue;
             }

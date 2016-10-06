@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- header -->
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/playlist/add') }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/promote/app') }}">
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
@@ -13,7 +13,7 @@
                 </li>
 
                 <li class="active">
-                    <strong>Edit Playlist</strong>
+                    <strong>Edit App</strong>
                 </li>
             </ol>
         </div>
@@ -43,26 +43,27 @@
     @endif
     
     {{ csrf_field() }}
-    <input type="hidden" name="id" value="{{empty($playlist) ? old('id') : $playlist->id}}" />
+    <input type="hidden" name="id" value="{{empty($app) ? old('id') : $app->id}}" />
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox float-e-margins">                
                 <div class="ibox-content">
-                    <div class="form-group"><label class="col-sm-2 control-label">Playlist ID</label>
-                        <div class="col-sm-10"><input class="form-control" type="text" name='yid' value="{{empty($playlist) ? old('yid') : $playlist->yid}}"></div>
-                    </div>
-                    <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Playlist Title</label>
-                        <div class="col-sm-10"><input class="form-control" placeholder="Default" type="text" name='title' value="{{empty($playlist) ? old('title') : $playlist->title}}"></div>
-                    </div>
-                    <div class="hr-line-dashed"></div>
-                    @if($playlist)
-                    <div class="form-group">
+                    
+                    @if($app)
+                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
-                            <img alt="{{$playlist->title}}" style="max-width: 130px  " class="img-circle circle-border" src="{{$playlist->thumb_url}}">
+                            Title
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" name='thumb_url' value="{{old('thumb_url') ? old('thumb_url') : $playlist->thumb_url }}">
+                            <input class="form-control" type="text" name='title' value="{{old('title') ? old('title') : $app->title }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            <img alt="{{$app->title}}" style="max-width: 130px  " class="img-circle circle-border" src="http://ocodereducation.com{{$app->image}}">
+                        </label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name='image' value="{{old('image') ? old('image') : $app->image }}">
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
@@ -71,21 +72,33 @@
                             Status
                         </label>
                         <div class="col-sm-10">
-                            <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox" name="status" {{(old('status') || $playlist->status) ? 'checked' : '' }} >
+                            <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox" name="status" {{(old('status') || $app->status) ? 'checked' : '' }} >
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
 
                     @endif
-                    <div class="form-group">
+                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
                             Cat
                         </label>
                         <div class="col-sm-10">
-                            <select class="form-control m-b" name="cat_id">'
-                                @foreach($cats as $cat)
-                                <option {{($playlist && $playlist->cat_id == $cat->id) ? "selected" : (Session::get('cat_id')  == $cat->id ? "selected" :"")}} value='{{$cat->id}}'>
-                                    {{$cat->title}}
+                            <div class="input-daterange input-group" id="datepicker">
+                                <input type="text" class="input-sm form-control" name="publish_up" value="{{$app ? date("Y-m-d",strtotime($app->publish_up)) : ''}}">
+                                <span class="input-group-addon">to</span>
+                                <input type="text" class="input-sm form-control" name="publish_down" value="{{$app ? date("Y-m-d",strtotime($app->publish_down)) : ''}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            Publish
+                        </label>
+                        <div class="col-sm-10">
+                            <select class="form-control m-b" name="group_id">'
+                                @foreach($groups as $group)
+                                <option {{($app && $app->group_id == $group->id) ? "selected" : (Session::get('group_id')  == $group->id ? "selected" :"")}} value='{{$group->id}}'>
+                                    {{$group->title}}
                                 </option>
                                 @endforeach
                             </select>               
@@ -103,6 +116,13 @@
 <script>
     var elem = document.querySelector('.js-switch');
     var switchery = new Switchery(elem, {color: '#1AB394'});
+    
+    $('.input-daterange').datepicker({
+       keyboardNavigation: false,
+       forceParse: false,
+       autoclose: true,
+       format: "yyyy-mm-dd"
 
-</script>
+    });
+ </script>
 @endsection
