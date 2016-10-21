@@ -48,6 +48,19 @@ Route::get('admin/idioms/export', 'Admin\IdiomController@export');
 
 Route::get('admin/idioms/{cat_id}', 'Admin\IdiomController@idioms');
 Route::get('admin/idioms/idiom/{id}', 'Admin\IdiomController@getIdiom');
+//get user manager
+Route::get('admin/users', 'Admin\PermissionsController@index');
+Route::get('admin/user/permissions', 'Admin\PermissionsController@index');
+Route::get('admin/user/permission/edit/{id}', 'Admin\PermissionsController@edit');
+Route::get('admin/user/permission/delete/{id}', 'Admin\PermissionsController@delete');
+Route::get('admin/user/permission/create', 'Admin\PermissionsController@create');
+Route::patch('admin/user/permission/update/{id}', 'Admin\PermissionsController@update');
+Route::post('admin/user/permission/save', 'Admin\PermissionsController@store');
+
+
+
+
+
 //crawl Truyen
 Route::get('admin/truyen/crawl', 'Crawl\TruyenController@index');
 
@@ -68,10 +81,17 @@ $menu = Menu::make('MyNavBar', function($menu) {
     $menu->add('Promote', 'admin/promote')->attr(array('pre_icon'=>'puzzle-piece'))->active('admin/promote/*');
     
     $menu->add('Get Test', 'admin/english-test/get-idiom-test')->attr(array('pre_icon'=>'check'));
+    //idioms
     $menu->add('Idioms', 'idioms')->attr(array('pre_icon'=>'info'))->active('admin/idioms/*');
     $menu->idioms->add('Cat', 'admin/idioms')->attr(array('pre_icon'=>'info'))->active('admin/playlist/*');
     $menu->idioms->add('Get Idiom Ex', 'admin/idioms/get-idiom-example')->attr(array('pre_icon'=>'check'));
     $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon'=>'folder'));
+    //users
+    $menu->add('Users Manager', 'users')->attr(array('pre_icon'=>'user'));
+//    $menu->users->add('User', 'admin/user')->attr(array('pre_icon'=>'user'));
+    $menu->usersManager->add('Permissions', 'admin/user/permissions')->attr(array('pre_icon'=>'user'))->active('admin/user/permission/*');
+//    $menu->usersManager->add('Permissions', 'admin/user/permissions')->attr(array('pre_icon'=>'admin/user/permission/*'));
+
     
     $menu->add('Graphs', 'graphs')->attr(array('pre_icon'=>'bar-chart-o'));
     $menu->graphs->add('Flot Charts', 'flotcharts');
@@ -82,6 +102,8 @@ $menu = Menu::make('MyNavBar', function($menu) {
     $menu->graphs->add('c3 charts', 'c3charts');
     $menu->graphs->add('Peity Charts', 'peitycharts');
     $menu->graphs->add('Sparkline Charts', 'sparklinecharts');
+
+ 
 });
 
 /**

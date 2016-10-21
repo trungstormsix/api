@@ -4,7 +4,7 @@
 
 <div id="create_permission" >
 	<div class="ibox-content">
-		{!! Form::open(['url' => 'permissions']) !!}
+		{!! Form::open(['url' => 'admin/user/permission/save']) !!}
 
 		{!! Form::label('name','Name:') !!}
 		{!! Form::text('name') !!} <br />

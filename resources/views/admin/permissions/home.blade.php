@@ -4,7 +4,7 @@
 
 <div id="home_permissionss" >
 	<div class="ibox-content">
-		<a href="{{ url('/permissions/create')}}" type="button" class="btn btn-primary btn-lg">Add new Permission</a>
+		<a href="{{ url('admin/user/permission/create')}}" type="button" class="btn btn-primary btn-lg">Add new Permission</a>
 	    <table class="table">
 	        <thead>
 	        <tr>
@@ -27,8 +27,8 @@
 					<td > {{$permissions->created_at}} </td>
 					<td > {{$permissions->updated_at}} </td>
 					<td>
-						<a href="{{ url('/permissions/' . $permissions->id . '/edit') }}" class="btn btn-info">Update</a>
-						<a href="{{ url('permissions/delete/' . $permissions->id) }}" class="btn btn-danger">Delete</a>
+						<a href="{{ url('admin/user/permission/edit/' . $permissions->id) }}" class="btn btn-info">Update</a>
+						<a href="{{ url('admin/user/permission/delete/' . $permissions->id) }}" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 			@endforeach

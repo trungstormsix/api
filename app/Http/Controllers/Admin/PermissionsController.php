@@ -44,7 +44,7 @@ class PermissionsController extends Controller
         $permissions->display_name = $post_data['display_name'];
         $permissions->description = $post_data['description'];
         $permissions->save();
-        return redirect('permissions');
+        return redirect('admin/user/permissions');
     }
 
     /**
@@ -79,9 +79,11 @@ class PermissionsController extends Controller
      */
     public function update(Request $request, $id)
     {
+       
         $permissions = Permissions::findOrFail($id); 
+        if(!$permissions) return redirect('admin/user/permissions');
         $permissions->update($request->all()); 
-        return redirect('permissions');
+        return redirect('admin/user/permission/edit/'.$id);
     }
 
     /**
