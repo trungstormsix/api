@@ -29,9 +29,5 @@ class HomeController extends Controller
             return view('home');
         }
         return view('welcome');
-    }
-    
-    public function show(){
-        echo 1;
-     }   
+    } 
 }

@@ -159,7 +159,8 @@ return [
          * entrust
          */
         Zizaco\Entrust\EntrustServiceProvider::class,
-
+        
+        'Lavary\Menu\ServiceProvider',
     ],
 
     /*
@@ -208,8 +209,9 @@ return [
          /**
          * entrust
          */
-        'Entrust'   => Zizaco\Entrust\EntrustServiceProvider::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
+        'Menu'       => 'Lavary\Menu\Facade',
     ],
 
 ];

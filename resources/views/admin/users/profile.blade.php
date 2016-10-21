@@ -51,13 +51,7 @@
                                 <label class="col-sm-2 control-label"> E-Mail Address</label>
 
                                 <div class="col-sm-10">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                    @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                    @endif
+                                    {{$user->email}}
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
