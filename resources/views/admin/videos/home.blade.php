@@ -51,7 +51,11 @@
                                 <div class="col-xs-2">
                                     <a  href="https://www.youtube.com/playlist?list={{ $playlist->yid }}" class="btn btn-danger btn-sm" target="_blank"><i class="fa fa-youtube"></i> Youtube </a>
                                 </div>
-                                <div class="col-xs-2">
+                                 <div class="col-xs-1">
+                                                    <span class="switchery" {!! ($playlist->status == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($playlist->status == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
+                                </div>
+                                
+                                <div class="col-xs-1">
                                     <a href="{{ url('/admin/playlist/edit/'.$playlist->id) }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
                                 </div>
                                  

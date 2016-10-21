@@ -45,7 +45,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        echo ($e->getMessage());
+         echo ($e->getMessage());
         
         return parent::render($request, $e);
     }

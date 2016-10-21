@@ -130,7 +130,7 @@ class AdminController extends Controller {
      * @param type $plId
      */
     private function _getPlaylist($req, $plId = "PLPSfPyOOcp3R9ZPLNjZkWxRy-BWCfNMrn") {
-        $f = new \App\library\myFunctions();
+        $f = new \App\library\DomParser();
         $html = $f->file_get_html("https://www.youtube.com/playlist?list=" . $plId);
         $title = $req->get('title') ? $req->title : $html->find("#pl-header h1.pl-header-title", 0)->plaintext;
         $thumb_url = $req->get('thumb_url');

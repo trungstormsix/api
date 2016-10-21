@@ -9,7 +9,7 @@
             <span class="fa arrow"></span>
         </a>
         <ul class="nav nav-second-level collapse">
-            @include('layouts\menu\custom-menu-items', array('items' => $item->children(), 'level' => 2))
+            @include('layouts.menu.custom-menu-items', array('items' => $item->children(), 'level' => 2))
         </ul> 
     @else
         <a href="{!! $item->url() !!}">

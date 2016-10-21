@@ -65,7 +65,19 @@ return [
             'strict' => false,
             'engine' => null,
         ],
-
+ # Our secondary database connection
+        'mysql2' => array(
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'port' => env('DB_PORT', '3306'),
+            
+            'database'  => 'android',            
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ),
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),

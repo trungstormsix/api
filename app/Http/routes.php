@@ -17,14 +17,6 @@
 //
 Route::auth();
 
-Route::get('/', 'HomeController@index');
-
-Route::get('profile', [
-    'middleware' => 'auth',
-    'uses' => 'HomeController@show'
-]);
-
-
 /**
  * admin
  */
@@ -47,7 +39,22 @@ Route::post('admin/profile', 'Admin\AdminController@postProfile');
 Route::get('admin/promote', 'Admin\PromoteController@index');
 Route::get('admin/promote/app/{id}', 'Admin\PromoteController@getApp');
 Route::post('admin/promote/app', 'Admin\PromoteController@postApp');
+/******* idioms ************/
+Route::get('admin/english-test/get-idiom-test', 'Crawl\EnglishTestController@index');
+Route::get('admin/idioms', 'Admin\IdiomController@index');
+Route::get('admin/idioms/search', 'Admin\IdiomController@search');
+Route::get('admin/idioms/get-idiom-example', 'Crawl\IdiomController@getExample');
+Route::get('admin/idioms/export', 'Admin\IdiomController@export');
 
+Route::get('admin/idioms/{cat_id}', 'Admin\IdiomController@idioms');
+Route::get('admin/idioms/idiom/{id}', 'Admin\IdiomController@getIdiom');
+//crawl Truyen
+Route::get('admin/truyen/crawl', 'Crawl\TruyenController@index');
+
+
+/**
+ * create menu
+ */
 $menu = Menu::make('MyNavBar', function($menu) {
     $menu->add('Home', 'admin')->attr(array('pre_icon'=>'user'));
     $menu->add('Profile', 'admin/profile')->attr(array('pre_icon'=>'envelope'));
@@ -60,7 +67,12 @@ $menu = Menu::make('MyNavBar', function($menu) {
     /** promote **/
     $menu->add('Promote', 'admin/promote')->attr(array('pre_icon'=>'puzzle-piece'))->active('admin/promote/*');
     
-    $menu->add('Layouts', 'Layouts')->attr(array('pre_icon'=>'flask'));
+    $menu->add('Get Test', 'admin/english-test/get-idiom-test')->attr(array('pre_icon'=>'check'));
+    $menu->add('Idioms', 'idioms')->attr(array('pre_icon'=>'info'))->active('admin/idioms/*');
+    $menu->idioms->add('Cat', 'admin/idioms')->attr(array('pre_icon'=>'info'))->active('admin/playlist/*');
+    $menu->idioms->add('Get Idiom Ex', 'admin/idioms/get-idiom-example')->attr(array('pre_icon'=>'check'));
+    $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon'=>'folder'));
+    
     $menu->add('Graphs', 'graphs')->attr(array('pre_icon'=>'bar-chart-o'));
     $menu->graphs->add('Flot Charts', 'flotcharts');
     $menu->graphs->add('Morris.js Charts', 'morrischarts');
@@ -81,3 +93,11 @@ Route::get("api/playlists",'Api\ApiController@getPlaylists');
 Route::get("api/playlists/{catid}",'Api\ApiController@getPlaylists');
 Route::get("api/videos/{id}",'Api\ApiController@getVideos');
 
+
+/**
+ * Front end
+ */
+Route::get('/', 'HomeController@index');
+Route::get('/grammar', 'Front\GrammarTestController@index');
+Route::get('/grammar/test/{id}', 'Front\GrammarTestController@tests');
+Route::post('/grammar/test/{id}', 'Front\GrammarTestController@postTests');

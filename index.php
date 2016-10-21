@@ -1,4 +1,5 @@
 <?php
+set_time_limit(16000);
 
 /**
  * Laravel - A PHP Framework For Web Artisans
