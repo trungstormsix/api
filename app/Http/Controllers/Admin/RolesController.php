@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Roles;
+use App\Models\Role;
 
 class RolesController extends Controller
 {
@@ -17,7 +17,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        return view('admin.role.home');
+        $roles = Role::all();
+        return view('admin.role.home',['roles' => $roles]);
     }
 
     /**
@@ -39,7 +40,7 @@ class RolesController extends Controller
     public function store(Request $request)
     {
         $post_data = $request->all();
-        $roles = new Roles;
+        $roles = new Role();
         $roles->name = $post_data['name'];
         $roles->display_name = $post_data['display_name'];
         $roles->description = $post_data['description'];
@@ -66,7 +67,7 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        $roles = Roles::findOrFail($id);
+        $roles = Role::findOrFail($id);
         return view('admin.role.edit',compact('roles'));
     }
 
@@ -79,7 +80,7 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $roles = Roles::findOrFail($id); 
+        $roles = Role::findOrFail($id); 
         if(!$roles) return redirect('admin/user/roles');
         $roles->update($request->all()); 
         return redirect('admin/user/role/edit/'.$id);
@@ -98,14 +99,10 @@ class RolesController extends Controller
 
     public function delete($id)
     {
-        $role = Roles::find($id);
+        $role = Role::find($id);
         $role->delete();
         return redirect('roles');
     }
 
-    public static function getRoles() 
-    {
-        $roles = Roles::all();
-        return $roles;
-    }
+     
 }

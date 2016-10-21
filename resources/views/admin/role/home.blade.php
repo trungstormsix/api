@@ -18,17 +18,17 @@
 	        </tr>
 	        </thead>
 	        <tbody>
-	        @foreach (\App\Http\Controllers\Admin\RolesController::getRoles() as $roles)
+	        @foreach ($roles as $role)
 				<tr>				
-					<td > {{$roles->id}} </td>
-					<td > {{$roles->name}} </td>
-					<td > {{$roles->display_name}} </td>
-					<td > {{$roles->description}} </td>
-					<td > {{$roles->created_at}} </td>
-					<td > {{$roles->updated_at}} </td>
+					<td > {{$role->id}} </td>
+					<td > {{$role->name}} </td>
+					<td > {{$role->display_name}} </td>
+					<td > {{$role->description}} </td>
+					<td > {{$role->created_at}} </td>
+					<td > {{$role->updated_at}} </td>
 					<td>
-						<a href="{{ url('admin/user/role/edit/'. $roles->id) }}" class="btn btn-info">Update</a>
-						<a href="{{ url('admin/user/role/delete/' . $roles->id) }}" class="btn btn-danger">Delete</a>
+						<a href="{{ url('admin/user/role/edit/'. $role->id) }}" class="btn btn-info">Update</a>
+						<a href="{{ url('admin/user/role/delete/' . $role->id) }}" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 			@endforeach

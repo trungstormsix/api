@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Roles extends Model
+class Role extends Model
 {
     protected $fillable =  ['name', 'display_name', 'description', 'created_at', 'updated_at'];
 
-    var $table = 'roles';
     /**
      * The videos that belong to the playlist.
      */
