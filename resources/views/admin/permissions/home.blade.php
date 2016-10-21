@@ -18,17 +18,17 @@
 	        </tr>
 	        </thead>
 	        <tbody>
-	        @foreach (\App\Http\Controllers\Admin\PermissionsController::getPermissions() as $permissions)
+	        @foreach ($permissions as $permission)
 				<tr>				
-					<td > {{$permissions->id}} </td>
-					<td > {{$permissions->name}} </td>
-					<td > {{$permissions->display_name}} </td>
-					<td > {{$permissions->description}} </td>
-					<td > {{$permissions->created_at}} </td>
-					<td > {{$permissions->updated_at}} </td>
+					<td > {{$permission->id}} </td>
+					<td > {{$permission->name}} </td>
+					<td > {{$permission->display_name}} </td>
+					<td > {{$permission->description}} </td>
+					<td > {{$permission->created_at}} </td>
+					<td > {{$permission->updated_at}} </td>
 					<td>
-						<a href="{{ url('admin/user/permission/edit/' . $permissions->id) }}" class="btn btn-info">Update</a>
-						<a href="{{ url('admin/user/permission/delete/' . $permissions->id) }}" class="btn btn-danger">Delete</a>
+						<a href="{{ url('admin/user/permission/edit/' . $permission->id) }}" class="btn btn-info">Update</a>
+						<a href="{{ url('admin/user/permission/delete/' . $permission->id) }}" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 			@endforeach
