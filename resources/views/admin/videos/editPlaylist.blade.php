@@ -49,11 +49,11 @@
             <div class="ibox float-e-margins">                
                 <div class="ibox-content">
                     <div class="form-group"><label class="col-sm-2 control-label">Playlist ID</label>
-                        <div class="col-sm-10"><input class="form-control" type="text" name='yid' value="{{empty($playlist) ? old('yid') : $playlist->yid}}"></div>
+                        <div class="col-sm-10"><input class="form-control"  placeholder="Playlist Id" type="text" name='yid' value="{{empty($playlist) ? old('yid') : $playlist->yid}}"></div>
                     </div>
                     <div class="hr-line-dashed"></div>
                     <div class="form-group"><label class="col-sm-2 control-label">Playlist Title</label>
-                        <div class="col-sm-10"><input class="form-control" placeholder="Default" type="text" name='title' value="{{empty($playlist) ? old('title') : $playlist->title}}"></div>
+                        <div class="col-sm-10"><input class="form-control" placeholder="Title" type="text" name='title' value="{{empty($playlist) ? old('title') : $playlist->title}}"></div>
                     </div>
                     <div class="hr-line-dashed"></div>
                     @if($playlist)

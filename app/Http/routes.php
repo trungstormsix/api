@@ -88,7 +88,7 @@ $menu = Menu::make('MyNavBar', function($menu) {
     $menu->add('Get Test', 'admin/english-test/get-idiom-test')->attr(array('pre_icon'=>'check'));
     //idioms
     $menu->add('Idioms', 'idioms')->attr(array('pre_icon'=>'info'))->active('admin/idioms/*');
-    $menu->idioms->add('Cat', 'admin/idioms')->attr(array('pre_icon'=>'info'))->active('admin/playlist/*');
+    $menu->idioms->add('Cat', 'admin/idioms')->attr(array('pre_icon'=>'info'))->active('admin/idioms/*');
     $menu->idioms->add('Get Idiom Ex', 'admin/idioms/get-idiom-example')->attr(array('pre_icon'=>'check'));
     $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon'=>'folder'));
     //users
