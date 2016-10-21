@@ -4,7 +4,7 @@
 
 <div id="edit_permission" >
 	<div class="ibox-content">
-		{!! Form::model($permissions,[ 'method' => 'PATCH', 'action' => ['Admin\PermissionsController@update', $permissions->id] ]) !!}
+		{!! Form::model($permissions,[ 'method' => 'PATCH', 'action' => ['Admin\PermissionController@update', $permissions->id] ]) !!}
 
 		{!! Form::label('name','Name:') !!}
 		{!! Form::text('name') !!} <br />

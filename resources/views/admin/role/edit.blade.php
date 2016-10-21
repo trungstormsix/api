@@ -4,7 +4,7 @@
 
 <div id="edit_roles" >
 	<div class="ibox-content">
-		{!! Form::model($roles,[ 'method' => 'PATCH', 'action' => ['Admin\RolesController@update', $roles->id] ]) !!}
+		{!! Form::model($roles,[ 'method' => 'PATCH', 'action' => ['Admin\RoleController@update', $roles->id] ]) !!}
 
 		{!! Form::label('name','Name:') !!}
 		{!! Form::text('name') !!} <br />
