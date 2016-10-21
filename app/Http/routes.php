@@ -57,12 +57,12 @@ Route::get('admin/user/permission/create', 'Admin\PermissionController@create');
 Route::patch('admin/user/permission/update/{id}', 'Admin\PermissionController@update');
 Route::post('admin/user/permission/save', 'Admin\PermissionController@store');
 
-Route::get('admin/user/roles', 'Admin\RolesController@index');
-Route::get('admin/user/role/edit/{id}', 'Admin\RolesController@edit');
-Route::get('admin/user/role/delete/{id}', 'Admin\RolesController@delete');
-Route::get('admin/user/role/create', 'Admin\RolesController@create');
-Route::patch('admin/user/role/update/{id}', 'Admin\RolesController@update');
-Route::post('admin/user/role/save', 'Admin\RolesController@store'); 
+Route::get('admin/user/roles', 'Admin\RoleController@index');
+Route::get('admin/user/role/edit/{id}', 'Admin\RoleController@edit');
+Route::get('admin/user/role/delete/{id}', 'Admin\RoleController@delete');
+Route::get('admin/user/role/create', 'Admin\RoleController@create');
+Route::patch('admin/user/role/update/{id}', 'Admin\RoleController@update');
+Route::post('admin/user/role/save', 'Admin\RoleController@store'); 
 
 
 
