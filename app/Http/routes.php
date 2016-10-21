@@ -31,10 +31,6 @@ Route::get('admin/playlist/add', 'Admin\AdminController@getPlaylist');
 Route::get('admin/playlist/edit/{id}', 'Admin\AdminController@getPlaylist');
 Route::post('admin/playlist/add', 'Admin\AdminController@postPlaylist');
 
-/************* user *****************/
-Route::get('admin/profile', 'Admin\AdminController@getProfile');
-Route::post('admin/profile', 'Admin\AdminController@postProfile');
-
 /******* promote ************/
 Route::get('admin/promote', 'Admin\PromoteController@index');
 Route::get('admin/promote/app/{id}', 'Admin\PromoteController@getApp');
@@ -48,8 +44,11 @@ Route::get('admin/idioms/export', 'Admin\IdiomController@export');
 
 Route::get('admin/idioms/{cat_id}', 'Admin\IdiomController@idioms');
 Route::get('admin/idioms/idiom/{id}', 'Admin\IdiomController@getIdiom');
-//get user manager
-Route::get('admin/users', 'Admin\PermissionController@index');
+/************* user *****************/
+Route::get('admin/users', 'Admin\UserController@index');
+Route::get('admin/users/edit/{id}', 'Admin\UserController@edit');
+Route::post('admin/user/save', 'Admin\UserController@update'); 
+
 Route::get('admin/user/permissions', 'Admin\PermissionController@index');
 Route::get('admin/user/permission/edit/{id}', 'Admin\PermissionController@edit');
 Route::get('admin/user/permission/delete/{id}', 'Admin\PermissionController@delete');
@@ -63,8 +62,9 @@ Route::get('admin/user/role/delete/{id}', 'Admin\RoleController@delete');
 Route::get('admin/user/role/create', 'Admin\RoleController@create');
 Route::patch('admin/user/role/update/{id}', 'Admin\RoleController@update');
 Route::post('admin/user/role/save', 'Admin\RoleController@store'); 
-
-
+//profile
+Route::get('admin/user/profile', 'Admin\UserController@getProfile');
+Route::post('admin/user/profile', 'Admin\UserController@postProfile');
 
 
 //crawl Truyen
@@ -93,10 +93,10 @@ $menu = Menu::make('MyNavBar', function($menu) {
     $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon'=>'folder'));
     //users
     $menu->add('Users Manager', 'users')->attr(array('pre_icon'=>'user'));
-//    $menu->users->add('User', 'admin/user')->attr(array('pre_icon'=>'user'));
+    $menu->usersManager->add('Users', 'admin/users')->attr(array('pre_icon'=>'user'))->active('admin/users/*');
     $menu->usersManager->add('Permissions', 'admin/user/permissions')->attr(array('pre_icon'=>'user'))->active('admin/user/permission/*');
     $menu->usersManager->add('Roles', 'admin/user/roles')->attr(array('pre_icon'=>'users'))->active('admin/user/role/*');
-    $menu->usersManager->add('Profile', 'admin/profile')->attr(array('pre_icon'=>'envelope'));
+    $menu->usersManager->add('Profile', 'admin/user/profile')->attr(array('pre_icon'=>'envelope'));
 
     
     $menu->add('Graphs', 'graphs')->attr(array('pre_icon'=>'bar-chart-o'));

@@ -17,18 +17,9 @@ use App\Models\Ycat;
 use File;
 use Illuminate\Support\Facades\Session;
 
-class AdminController extends Controller {
+class AdminController extends AdminBaseController {
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        $this->middleware('auth');
-        
-    }
-
+     
     /**
      * Show the application dashboard.
      *
@@ -208,29 +199,6 @@ class AdminController extends Controller {
         $playlist->save();
     }
 
-    /**
-     * get edit profile
-     * @return type
-     */
-    public function getProfile() {
-        $user = Auth::user();
-        return view('admin/users/profile', ['user' => $user]);
-    }
-
-    /**
-     * save playlist
-     */
-    public function postProfile(Request $req) {
-        $cuser = Auth::user();
-         $user = User::find($cuser->id);
-        if (\Illuminate\Support\Facades\Hash::check($req->password, $user->password)) {
-            Session::flash('success', 'Profile saved successfully!');
-            $user->password = bcrypt($req->new_password);
-            $user->save();
-        } else {
-            Session::flash('error', 'Incorrect password!');
-        }
-        return Redirect::to('/admin/profile');
-    }
+    
 
 }
