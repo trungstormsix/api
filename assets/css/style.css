@@ -8227,3 +8227,9 @@ body.md-skin {
     margin: 0;
   }
 }
+
+/*-------------------------- Style for roles page -----------------------*/
+
+.ibox-content a.btn-primary {
+  margin: 30px 0 40px 0;
+}
