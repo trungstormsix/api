@@ -57,6 +57,12 @@ Route::get('admin/user/permission/create', 'Admin\PermissionsController@create')
 Route::patch('admin/user/permission/update/{id}', 'Admin\PermissionsController@update');
 Route::post('admin/user/permission/save', 'Admin\PermissionsController@store');
 
+Route::get('admin/user/roles', 'Admin\RolesController@index');
+Route::get('admin/user/role/edit/{id}', 'Admin\RolesController@edit');
+Route::get('admin/user/role/delete/{id}', 'Admin\RolesController@delete');
+Route::get('admin/user/role/create', 'Admin\RolesController@create');
+Route::patch('admin/user/role/update/{id}', 'Admin\RolesController@update');
+Route::post('admin/user/role/save', 'Admin\RolesController@store'); 
 
 
 
@@ -90,7 +96,7 @@ $menu = Menu::make('MyNavBar', function($menu) {
     $menu->add('Users Manager', 'users')->attr(array('pre_icon'=>'user'));
 //    $menu->users->add('User', 'admin/user')->attr(array('pre_icon'=>'user'));
     $menu->usersManager->add('Permissions', 'admin/user/permissions')->attr(array('pre_icon'=>'user'))->active('admin/user/permission/*');
-//    $menu->usersManager->add('Permissions', 'admin/user/permissions')->attr(array('pre_icon'=>'admin/user/permission/*'));
+    $menu->usersManager->add('Roles', 'admin/user/roles')->attr(array('pre_icon'=>'users'))->active('admin/user/role/*');
 
     
     $menu->add('Graphs', 'graphs')->attr(array('pre_icon'=>'bar-chart-o'));

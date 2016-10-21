@@ -44,7 +44,7 @@ class RolesController extends Controller
         $roles->display_name = $post_data['display_name'];
         $roles->description = $post_data['description'];
         $roles->save();
-        return redirect('roles');
+        return redirect('admin/user/role/edit/'.$roles->id);
     }
 
     /**
@@ -80,8 +80,9 @@ class RolesController extends Controller
     public function update(Request $request, $id)
     {
         $roles = Roles::findOrFail($id); 
+        if(!$roles) return redirect('admin/user/roles');
         $roles->update($request->all()); 
-        return redirect('roles');
+        return redirect('admin/user/role/edit/'.$id);
     }
 
     /**

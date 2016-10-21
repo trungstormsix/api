@@ -4,7 +4,7 @@
 
 <div id="home_roles" >
 	<div class="ibox-content">
-		<a href="{{ url('/roles/create')}}" type="button" class="btn btn-primary btn-lg">Add new Roles</a>
+		<a href="{{ url('admin/user/role/create')}}" type="button" class="btn btn-primary btn-lg">Add new Roles</a>
 	    <table class="table">
 	        <thead>
 	        <tr>
@@ -27,8 +27,8 @@
 					<td > {{$roles->created_at}} </td>
 					<td > {{$roles->updated_at}} </td>
 					<td>
-						<a href="{{ url('/roles/' . $roles->id . '/edit') }}" class="btn btn-info">Update</a>
-						<a href="{{ url('roles/delete/' . $roles->id) }}" class="btn btn-danger">Delete</a>
+						<a href="{{ url('admin/user/role/edit/'. $roles->id) }}" class="btn btn-info">Update</a>
+						<a href="{{ url('admin/user/role/delete/' . $roles->id) }}" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 			@endforeach

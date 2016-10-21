@@ -4,7 +4,7 @@
 
 <div id="create_roles" >
 	<div class="ibox-content">
-		{!! Form::open(['url' => 'roles']) !!}
+		{!! Form::open(['url' => 'admin/user/role/save']) !!}
 
 		{!! Form::label('name','Name:') !!}
 		{!! Form::text('name') !!} <br />
