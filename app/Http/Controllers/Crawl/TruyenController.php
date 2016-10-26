@@ -34,20 +34,39 @@ class TruyenController extends Controller {
     var $total = 0;
 
     private function _getYourStoryClub() {
-        $theloai = $this->_getTheLoai("Funny Stories", 'en');
-        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-funny/page/';
-        $links = $this->_getTotal('http://yourstoryclub.com/story-category/short-stories-funny');
+//        $theloai = $this->_getTheLoai("Funny Stories", 'en');
+//        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-funny';
+//        $theloai = $this->_getTheLoai("Love and Romance", 'en');
+//        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-love';
+//        $theloai = $this->_getTheLoai("Social and Life", 'en');
+//        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-social-moral';
+//        $theloai = $this->_getTheLoai("Family", 'en');
+//        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-family';
+        $theloai = $this->_getTheLoai("Poetry", 'en');
+        $this->base_story_link = 'http://yourstoryclub.com/story-category/poetry-and-poem';
+//        $theloai = $this->_getTheLoai("Friendship", 'en');
+//        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-friendship';
+//        $theloai = $this->_getTheLoai("Science Fiction", 'en');
+//        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-science-fiction';     
+//        $theloai = $this->_getTheLoai("Suspense and Thriller", 'en');
+//        $this->base_story_link = 'http://yourstoryclub.com/story-category/short-stories-suspense-thriller';     
+        
+        $links = $this->_getTotal($this->base_story_link);
         
         foreach ($links as $link) {
             $this->_saveYourStory($link->title, $link->link, $theloai);
         }
-        for ($i = 2; $i < $this->total; $i++) {
+        $page = $theloai->page ? $theloai->page : 2;
+        for ($i = $page; $i < $this->total; $i++) {
             $domParser = new DomParser();
-            $html = $domParser->file_get_html('http://yourstoryclub.com/story-category/short-stories-funny/page/'.$i);
+            $html = $domParser->file_get_html($this->base_story_link.'/page/'.$i);
             $links = $this->_getStoriesLinks($html);
             foreach ($links as $link) {
                 $this->_saveYourStory($link->title, $link->link, $theloai);
             }
+            echo '<b>Get Page: '.$this->base_story_link.'/page/'.$i.' Ok.</b><br>';
+            $theloai->page = $i;
+            $theloai->save();
         }
     }
 

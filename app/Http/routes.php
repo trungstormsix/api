@@ -69,6 +69,7 @@ Route::post('admin/user/profile', 'Admin\UserController@postProfile');
 
 //crawl Truyen
 Route::get('admin/truyen/crawl', 'Crawl\TruyenController@index');
+Route::get('admin/story/sp', 'Crawl\SpanishAudioBookController@index');
 
 
 /**
