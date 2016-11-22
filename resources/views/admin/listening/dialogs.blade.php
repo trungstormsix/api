@@ -10,7 +10,7 @@
                 <a href="{{url('/')}}">Home</a>
             </li>
             <li>
-                <a href="{{url('admin/idioms')}}">Idioms</a>
+                <a href="{{url('admin/listening')}}">Idioms</a>
             </li>
             <li class="active">
                 <strong>{{!empty($cat) ? $cat->title : "Search"}}</strong>
@@ -38,40 +38,44 @@
                                 <th>N.o</th>                                
                                 <th>Id</th>                                
                                 <th>
-                                    Idiom
+                                    Title
                                 </th>
                                 <th>
-                                    Mean
+                                    Audio
                                 </th>
-                                <th>
-                                    Example
+                                <th data-sort="liked" class="sort">
+                                    Like
+                                    <span class="liked fa fa-sort"></span>
                                 </th>
-                                <th>Status</th>
+                                <th data-sort="status" class="sort">
+                                    Status
+                                    <span class="status fa fa-sort"></span>
+                                </th>
                                 <th>Updated</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @php ($i= (($idioms->currentPage() -1 ) * $idioms->perPage()) + 1)
-                            @foreach($idioms as $idiom)
+                            @php ($i= (($dialogs->currentPage() -1 ) * $dialogs->perPage()) + 1)
+                            @foreach($dialogs as $dialog)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$idiom->id}}</td>
+                                <td>{{$dialog->id}}</td>
                                 <td>
-                                    <a href="{{url('admin/idioms/idiom/'.$idiom->id)}}" target="_blank">
-                                        <b>{{$idiom->word}}</b>
+                                    <a href="{{url('admin/listening/dialog/'.$dialog->id)}}" target="_blank">
+                                        <b>{{$dialog->title}}</b>
                                     </a>
                                 </td>                                
                                 <td>
-                                    {!!$idiom->mean!!}
+                                    {!!$dialog->audio!!}
                                 </td>
                                 <td>
-                                    {{$idiom->example}}
+                                    {{$dialog->liked}}
                                 </td>
                                 <td>
-                                    <span class="switchery" {!! ($idiom->published == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($idiom->updated == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
+                                    <span class="switchery" {!! ($dialog->status == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($dialog->status == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
                                 </td>
                                 <td>
-                                    {{$idiom->updated}}
+                                    {{$dialog->updated}}
                                 </td>
                                  
                             </tr>
@@ -82,15 +86,21 @@
                         </tbody>
                     </table>
                 </div>
-                {{$idioms->links()}}
+                {{$dialogs->links()}}
             </div>
         </div>
     </div>
 </div>
+<form id="sort">
+    <input class="sort_by" name="sort_by" value="{{$sort_by}}" />
+    <input class="sort_dimen"  name="sort_dimen" value="{{$sort_dimen}}" />
+    
+</form>
+</form>
 @endsection
 
 @section('search_form')
-<form role="search" class="navbar-form-custom" action="{{url('admin/idioms/search')}}">
+<form role="search" class="navbar-form-custom" action="{{url('admin/listening/search')}}">
     <div class="form-group">
         <input type="text" placeholder="Search an idiom..." class="form-control" name="idiom" value="{{!empty($search) ? $search : ""}}" id="top-search">
     </div>

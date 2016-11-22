@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- header -->
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/idioms/add-cat') }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/listening/add-cat') }}">
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">

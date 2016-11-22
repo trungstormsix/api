@@ -16,9 +16,8 @@ use App\Models\IdiomExample;
 use File;
 use Illuminate\Support\Facades\Session;
 
-class IdiomController  extends Controller {
+class GrammarController  extends Controller {
  
-    var $url = 'http://idioms.thefreedictionary.com/';
     /**
      * Create a new controller instance.
      *
@@ -27,20 +26,7 @@ class IdiomController  extends Controller {
     public function __construct() {
         $this->middleware('auth');
     }
-    public function export(){
-        $cat = IdiomCat::find(2);      
-       
-        $out = fopen('php://output', 'w');
-        foreach($cat->idioms  as $line)
-        {
-            $outPut = [$line->id, $line->word, $line->mean, $line->example];
-            fputcsv($out, $outPut);
-        }
-        fclose($out);
-         return response(file_get_contents('php://output'))->header('Content-Type', 'application/csv')
-                ->header('Content-Disposition:', 'attachment; filename="idioms.csv"')
-                 ;
-     }
+  
     
     /**
      * list all cats
@@ -108,20 +94,5 @@ class IdiomController  extends Controller {
         }
         Input::flash();
         return Redirect::to('/admin/idioms/add-cat');
-    }
-    
-    /***
-     * ajax
-     */
-    
-    public function ajaxChangWord() {
-        $id = Input::get('id_id', '0');
-        $word = trim(Input::get('word', ''));
-        $idiom = Idiom::find($id);
-        if($idiom->word != $word){
-            $idiom->word = $word;
-            $idiom->save();
-        }
-        return response()->json($idiom);
     }
 }

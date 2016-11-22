@@ -34,7 +34,7 @@
                     <div class="row">
                         <div class="col-xs-1 date">
                             <i class="fa fa-youtube"></i>
-                            {{$playlist->countVideos()->count}} videos
+                            {{$playlist->countVideos() ? $playlist->countVideos()->count : ""}} videos
                             <br>
                             <!--<small class="text-navy">3 hour ago</small>-->
                         </div>

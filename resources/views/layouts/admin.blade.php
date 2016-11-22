@@ -213,6 +213,7 @@
         <script src="{!! asset('assets/js/plugins/switchery/switchery.js') !!}"></script>
         <script src="{!! asset('assets/js/plugins/datapicker/bootstrap-datepicker.js') !!}"></script>
         <script src="{!! asset('assets/js/plugins/daterangepicker/daterangepicker.js') !!}"></script>
+        <script src="{!! asset('assets/js/admin.js') !!}"></script>
 
         {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     @yield('content_js')

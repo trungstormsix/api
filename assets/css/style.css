@@ -8233,3 +8233,13 @@ body.md-skin {
 .ibox-content a.btn-primary {
   margin: 30px 0 40px 0;
 }
+
+.cat-link{
+    margin-right: 10px;
+}
+.note-editor{
+    border: 1px solid #e7eaec;
+}
+.sort{
+    cursor: pointer;
+}

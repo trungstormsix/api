@@ -25,7 +25,7 @@
         </div>
     </div>
 </div>
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/playlist/add') }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/idiom/add') }}">
 
     <div class="wrapper wrapper-content animated fadeIn">
         <div class="row">
@@ -48,7 +48,9 @@
                             <label class="col-sm-2 control-label">     
                                 word
                             </label>
-                            <div class="col-sm-10">{{$idiom->word}} </div>     
+                            <div class="col-sm-10">
+                                <input autocomplete="off" id="idiom_word" data-id='{{$idiom->id}}' value="{{$idiom->word}}" />
+                                {{$idiom->word}} </div>     
                         </div>
                         <div class="hr-line-dashed"></div>
 
@@ -68,9 +70,11 @@
                             </label>
                             <div class="col-sm-10">
                                 {{$idiom->example}}
+                                @if($idiom->example)
                                 @foreach ($idiom->examples() as $example)
                                     <p>{{$example->id}} : {{$example->example}}</p>
                                 @endforeach
+                                @endif
                             </div>
                         </div>        
                         <div class="hr-line-dashed"></div>
@@ -109,4 +113,21 @@
         <input type="text" placeholder="Search an idiom..." class="form-control" name="idiom" value="{{!empty($search) ? $search : ""}}" id="top-search">
     </div>
 </form>
+@endsection
+ 
+@section('content_js')
+<script>
+    var elem = document.querySelector('.js-switch');
+    var switchery = new Switchery(elem, {color: '#1AB394'});
+    var linkIdiomWord = "{{url('admin/idiom/ajax-change-word')}}";
+
+</script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<link href="{!! asset('assets/css/plugins/summernote/summernote.css')!!}" rel="stylesheet">
+<link href="{!! asset('assets/css/plugins/summernote/summernote-bs3.css')!!}" rel="stylesheet">
+<script src="{!! asset('assets/js/plugins/summernote/summernote.min.js') !!}"></script>
+
 @endsection

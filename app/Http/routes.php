@@ -40,10 +40,32 @@ Route::get('admin/english-test/get-idiom-test', 'Crawl\EnglishTestController@ind
 Route::get('admin/idioms', 'Admin\IdiomController@index');
 Route::get('admin/idioms/search', 'Admin\IdiomController@search');
 Route::get('admin/idioms/get-idiom-example', 'Crawl\IdiomController@getExample');
+Route::get('admin/idioms/get-top-50', 'Crawl\IdiomController@getTop50Idioms');
 Route::get('admin/idioms/export', 'Admin\IdiomController@export');
+//ajax
+Route::get('admin/idiom/ajax-change-word', 'Admin\IdiomController@ajaxChangWord');
+
+
+Route::get('admin/idioms/add-cat', 'Admin\IdiomController@getCat');
+Route::get('admin/idioms/edit-cat/{id}', 'Admin\IdiomController@getCat');
+Route::post('admin/idioms/add-cat', 'Admin\IdiomController@postCat');
 
 Route::get('admin/idioms/{cat_id}', 'Admin\IdiomController@idioms');
 Route::get('admin/idioms/idiom/{id}', 'Admin\IdiomController@getIdiom');
+/************* listening *****************/
+Route::get('admin/listening', 'Admin\ListeningController@index');
+Route::get('admin/listening/cat/{id}', 'Admin\ListeningController@dialogs');
+Route::get('admin/listening/dialog/{id}', 'Admin\ListeningController@getDialog');
+Route::post('admin/listening/dialog/save', 'Admin\ListeningController@postDialog');
+
+Route::get('admin/listening/remove-cat', 'Admin\ListeningController@removeCat');
+Route::get('admin/listening/add-cat', 'Admin\ListeningController@ajaxAddCat');
+Route::get('admin/listening/autocomplete-cat', 'Admin\ListeningController@ajaxGetCats');
+
+Route::get('admin/listening/ajax-remove-grammar', 'Admin\ListeningController@ajaxremoveGrammar');
+Route::get('admin/listening/ajax-add-grammar', 'Admin\ListeningController@ajaxAddGrammar');
+Route::get('admin/listening/autocomplete-grammar', 'Admin\ListeningController@ajaxGetGrammars');
+
 /************* user *****************/
 Route::get('admin/users', 'Admin\UserController@index');
 Route::get('admin/users/edit/{id}', 'Admin\UserController@edit');
@@ -92,6 +114,11 @@ $menu = Menu::make('MyNavBar', function($menu) {
     $menu->idioms->add('Cat', 'admin/idioms')->attr(array('pre_icon'=>'info'))->active('admin/idioms/*');
     $menu->idioms->add('Get Idiom Ex', 'admin/idioms/get-idiom-example')->attr(array('pre_icon'=>'check'));
     $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon'=>'folder'));
+    
+     //idioms
+    $menu->add('Listening', 'listening')->attr(array('pre_icon'=>'phone'))->active('admin/listening/*');
+    $menu->listening->add('Cat', 'admin/listening')->attr(array('pre_icon'=>'phone'))->active('admin/listening/*');
+    
     //users
     $menu->add('Users Manager', 'users')->attr(array('pre_icon'=>'user'));
     $menu->usersManager->add('Users', 'admin/users')->attr(array('pre_icon'=>'user'))->active('admin/users/*');
@@ -121,6 +148,11 @@ Route::get("api/videos",'Api\ApiController@index');
 Route::get("api/playlists",'Api\ApiController@getPlaylists');
 Route::get("api/playlists/{catid}",'Api\ApiController@getPlaylists');
 Route::get("api/videos/{id}",'Api\ApiController@getVideos');
+
+/**
+ * listening
+ */
+Route::get("api/listening/dialogs",'Api\ListeningController@index');
 
 
 /**

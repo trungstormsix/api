@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class GrammarLesson extends Model {
 
-    var $table = 'engr_types';
+    var $table = 'engr_articles';
 
      /**
      * The videos that belong to the playlist.
