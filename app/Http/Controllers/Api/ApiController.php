@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Playlist;
 use App\Models\Video;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class ApiController extends Controller {
 
@@ -34,14 +35,30 @@ class ApiController extends Controller {
     /**
      * get all playlists
      */
-    public function getPlaylists($catid) {
-        $playlists = Playlist::where('cat_id', $catid)->orderBy('updated_at', 'desc')->get();
+    public function getPlaylists($catid = 2) {
+        $ver = Input::get("ver");
+        $query = Playlist::where('cat_id', $catid)->orderBy('updated_at', 'desc');
+        if ($ver >= 21) {
+            $query->where("status", 0);
+            $playlists = $query->get();
+            foreach($playlists as $playlist){
+                $playlist->status = 1;
+            }
+            return $playlists;
+        }
+		if($catid == 31){
+			$playlists = $query->take(80)->get();
+		}else{
+			$playlists = $query->get();
+		}
+        
         return $playlists;
     }
 
-    public function getVideos($id){
+    public function getVideos($id) {
         $playlist = Playlist::find($id);
         $playlist->videos = $playlist->videos;
-        return $playlist->videos ;
+        return $playlist->videos;
     }
+
 }

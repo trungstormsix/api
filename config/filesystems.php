@@ -52,9 +52,24 @@ return [
             'root' => storage_path('../images'),
             'visibility' => 'public',
         ],
-        'audios' => [
+        'xml' => [
+            'driver' => 'local',
+            'root' => storage_path('../xml'),
+            'visibility' => 'public',
+        ],
+        'picvoc_audios' => [
             'driver' => 'local',
             'root' => storage_path('../audios'),
+            'visibility' => 'public',
+        ],
+        'listening_audios' => [
+            'driver' => 'local',
+            'root' => storage_path('../../api/audio'),
+            'visibility' => 'public',
+        ],
+        'picvoc_audios' => [
+            'driver' => 'local',
+            'root' => storage_path('../../api/audio/picvoc'),
             'visibility' => 'public',
         ],
         'public' => [

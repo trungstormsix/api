@@ -32,7 +32,7 @@
         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
         {{ Session::get('success') }}
     </div>
-    
+
     @elseif (Session::has('error'))
     <br>
     <div class="alert alert-danger  alert-dismissable animated fadeInDown">
@@ -41,16 +41,16 @@
     </div>
 
     @endif
-    
+
     {{ csrf_field() }}
     <input type="hidden" name="id" value="{{empty($app) ? old('id') : $app->id}}" />
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox float-e-margins">                
                 <div class="ibox-content">
-                    
+
                     @if($app)
-                     <div class="form-group">
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">     
                             Title
                         </label>
@@ -63,7 +63,7 @@
                             <img alt="{{$app->title}}" style="max-width: 130px  " class="img-circle circle-border" src="http://ocodereducation.com{{$app->image}}">
                         </label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" name='image' value="{{old('image') ? old('image') : $app->image }}">
+                            {!! App\library\OcoderHelper::HTMLAudio((old('image') ? old('image') : $app->image), 'image', url("public/filemanager/index.html")) !!}
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
@@ -78,7 +78,7 @@
                     <div class="hr-line-dashed"></div>
 
                     @endif
-                     <div class="form-group">
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">     
                             Cat
                         </label>
@@ -116,13 +116,13 @@
 <script>
     var elem = document.querySelector('.js-switch');
     var switchery = new Switchery(elem, {color: '#1AB394'});
-    
+
     $('.input-daterange').datepicker({
-       keyboardNavigation: false,
-       forceParse: false,
-       autoclose: true,
-       format: "yyyy-mm-dd"
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        format: "yyyy-mm-dd"
 
     });
- </script>
+</script>
 @endsection

@@ -10,7 +10,7 @@ use App\Role;
 use App\User;
 use Illuminate\Support\Facades\Session;
 
-class UserController extends Controller
+class UserController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.

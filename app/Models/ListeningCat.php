@@ -10,6 +10,6 @@ class ListeningCat extends Model {
 
  
     public function dialogs() {
-        return $this->belongsToMany('App\Models\ListeningDialog', 'enli_cat_dl','cat_id','dl_id');
+        return $this->belongsToMany('App\Models\ListeningDialog', 'enli_cat_dl','cat_id','dl_id')->withPivot('ordering');
     }  
 }

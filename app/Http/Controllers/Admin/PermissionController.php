@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Permission;
 
-class PermissionController extends Controller
+class PermissionController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.

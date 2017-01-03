@@ -62,6 +62,7 @@ class PromoteController extends Controller {
          
         if ($req->title) {
             $app->title = $req->title;
+            $app->image = $req->image;
             $app->publish_up = date("Y-m-d H:i:s",strtotime($req->publish_up));
             
             $app->publish_down = $req->publish_down;

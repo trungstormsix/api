@@ -39,22 +39,22 @@
                             <div class="dropdown profile-element">                            
                                 <!-- Authentication Links -->
                                 @if (Auth::guest())
-                                    <li><a href="{{ url('/login') }}">Login</a></li>
-                                    <li><a href="{{ url('/register') }}">Register</a></li>
+                                <li><a href="{{ url('/login') }}">Login</a></li>
+                                <li><a href="{{ url('/register') }}">Register</a></li>
                                 @else
-                                    <img alt="image" class="img-circle" src="{!! asset('images/profile_small.jpg') !!}" />
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{Auth::user()->email}}</strong>
-                                            </span></span>
-                                       <!--<span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->username }}</strong>-->
-                                        <span class="text-muted text-xs block">{{Auth::user()->username}} <b class="caret"></b></span> 
-                                    </a>
-                                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                        <li>
-                                            <a href="{{ url('/admin/profile') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Profile</span> </a>
-                                        </li>
-                                        <li><a href="{{ url('/logout') }}">Logout</a></li>
-                                    </ul>
+                                <img alt="image" class="img-circle" src="{!! asset('images/profile_small.jpg') !!}" />
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{Auth::user()->email}}</strong>
+                                        </span></span>
+                                   <!--<span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->username }}</strong>-->
+                                    <span class="text-muted text-xs block">{{Auth::user()->username}} <b class="caret"></b></span> 
+                                </a>
+                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                    <li>
+                                        <a href="{{ url('/admin/profile') }}"><i class="fa fa-envelope"></i> <span class="nav-label">Profile</span> </a>
+                                    </li>
+                                    <li><a href="{{ url('/logout') }}">Logout</a></li>
+                                </ul>
 
                                 @endif
                                 <div class="logo-element">
@@ -64,6 +64,8 @@
 
                         </li>
                         @include('layouts.menu.custom-menu', array('MyNavBar' => Menu::get('MyNavBar')))
+                        <!--@include(config('laravel-menu.views.bootstrap-items'), array('items' => $MyNavBar->roots()))-->
+
                     </ul>
                 </div>
             </nav>
@@ -185,6 +187,31 @@
                     </nav>
                 </div>
 
+                @if (Session::has('success'))
+                <br>
+                <div class="alert alert-success alert-dismissable animated fadeInDown">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    {{ Session::get('success') }}
+                </div>
+
+                @elseif (Session::has('error'))
+                <br>
+
+                <div class="alert alert-danger  alert-dismissable animated fadeInDown">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    {!! Session::get('error') !!}
+                </div>
+                @elseif (count($errors) > 0)
+                <div class="alert alert-danger  alert-dismissable animated fadeInDown">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
 
                 @yield('content')
 
@@ -193,7 +220,7 @@
                         10GB of <strong>250GB</strong> Free.
                     </div>
                     <div>
-                        <strong>Copyright</strong> Example Company &copy; 2014-2015
+                        <strong>Copyright</strong> oCoder &copy; 2014-2015
                     </div>
                 </div>
             </div>

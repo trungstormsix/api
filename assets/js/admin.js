@@ -66,14 +66,16 @@ jQuery(document).ready(function ($) {
     /*************************
      * *** add cat **********
      ***********************/
-    jQuery("#add_cat").autocomplete({
-        source: linkAutocompleteCat,
-        select: function (event, ui) {
-            event.preventDefault();
-            var dl_id = jQuery(event.target).data('id');
-            addCat(ui.item.key, dl_id, ui.item.value)
-        },
-    });
+    if (linkAutocompleteCat) {
+        jQuery("#add_cat").autocomplete({
+            source: linkAutocompleteCat,
+            select: function (event, ui) {
+                event.preventDefault();
+                var dl_id = jQuery(event.target).data('id');
+                addCat(ui.item.key, dl_id, ui.item.value)
+            },
+        });
+    }
     function addCat(cat_id, dl_id, cat_title) {
 
         if (cat_id) {
@@ -99,6 +101,7 @@ jQuery(document).ready(function ($) {
      * listening grammar
      */
     //auto complete
+    if(linkAutocompleteGrammar){
     jQuery("#add_grammar").autocomplete({
         source: linkAutocompleteGrammar,
         select: function (event, ui) {
@@ -107,6 +110,7 @@ jQuery(document).ready(function ($) {
             jQuery("#add_grammar_id").val(ui.item.key);
         },
     });
+}
     //add grammar
     jQuery("#add_grammar_button").click(function () {
         var dl_id = jQuery(this).data('id');
@@ -180,5 +184,57 @@ jQuery(document).ready(function ($) {
             alert("error");
         });
     })
-})
 
+    jQuery('.dim').click(function () {
+        jQuery('#save_voc').trigger("click");
+        jQuery('#save').trigger("click");
+    });
+});
+
+// Generate SelectImage
+
+function ResetValue(id) {
+	document.getElementById(id).value = "";
+}
+function PreviewImage(obj,id) {
+	var src = document.getElementById(id).value;
+	document.getElementById(obj).setAttribute("data-original-title", "<img src ='"+src+"'/>"); 
+	if(src == "") 
+	{
+		document.getElementById(obj).setAttribute("data-original-title", "Select image"); 
+	}
+	$("#"+obj).tooltip({
+	    animated: 'fade',
+	    placement: 'bottom',
+	    html: true
+	});
+}
+var urlobj;
+
+function BrowseServer(obj, url)
+{
+	urlobj = obj;
+	OpenServerBrowser(
+	url,
+	screen.width * 0.7,
+	screen.height * 0.7 ) ;
+}
+
+function OpenServerBrowser( url, width, height )
+{
+	var iLeft = (screen.width - width) / 2 ;
+	var iTop = (screen.height - height) / 2 ;
+	var sOptions = "toolbar=no,status=no,resizable=yes,dependent=yes" ;
+	sOptions += ",width=" + width ;
+	sOptions += ",height=" + height ;
+	sOptions += ",left=" + iLeft ;
+	sOptions += ",top=" + iTop ;
+	var oWindow = window.open( url, "BrowseWindow", sOptions ) ;
+}
+
+function SetUrl( url, width, height, alt )
+{
+	document.getElementById(urlobj).value = url ;
+	oWindow = null;
+}
+//End Generate SelectImage

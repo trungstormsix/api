@@ -23,7 +23,7 @@ class Playlist extends Model {
      * Get the post that owns the comment.
      */
     public function cat() {
-        return $this->belongsTo('App\Models\Ycat');
+        return $this->belongsTo('App\Models\Ycat', 'cat_id');
     }
 
 }

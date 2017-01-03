@@ -1,15 +1,15 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+  |--------------------------------------------------------------------------
+  | Application Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register all of the routes for an application.
+  | It's a breeze. Simply tell Laravel the URIs it should respond to
+  | and give it the controller to call when that URI is requested.
+  |
+ */
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -20,56 +20,106 @@ Route::auth();
 /**
  * admin
  */
-Route::get('admin', 'Admin\AdminController@index');
-Route::get('admin/ycat/add', 'Admin\AdminController@getYcat');
-Route::get('admin/ycat/edit/{id}', 'Admin\AdminController@getYcat');
-Route::post('admin/ycat/add', 'Admin\AdminController@postYcat');
+Route::group(['namespace' => 'Admin'], function () {
+    /**
+     * youtube
+     */
+    Route::get('admin', 'AdminController@index');
+    Route::group(['prefix' => 'admin/youtube'], function () {
+        Route::get('/cat/add', 'YoutubeController@getYcat');
+        Route::get('/cat/edit/{id}', 'YoutubeController@getYcat');
+        Route::post('/cat/add', 'YoutubeController@postYcat');
+        Route::get('/playlists/{catid}', 'YoutubeController@getPlaylists');
+        Route::get('/videos/{id}', 'YoutubeController@videos');
+        Route::get('/playlist/add', 'YoutubeController@getPlaylist');
+        Route::get('/playlist/edit/{id}', 'YoutubeController@getPlaylist');
+        Route::post('/playlist/add', 'YoutubeController@postPlaylist');
+        Route::get('/video/add', 'YoutubeController@video');
+        Route::get('/video/edit/{id}', 'YoutubeController@video');
+        Route::post('/video/save', 'YoutubeController@saveVideo');
+        //ajax
+        Route::post('/delete', 'YoutubeController@deleteVideo');
+        Route::post('/change-playlist', 'YoutubeController@changePlaylist');
+    });
 
-Route::get('admin/playlists/{catid}', 'Admin\AdminController@getPlaylists');
-Route::get('admin/videos/{id}', 'Admin\AdminController@videos');
-Route::get('admin/playlist/add', 'Admin\AdminController@getPlaylist');
-Route::get('admin/playlist/edit/{id}', 'Admin\AdminController@getPlaylist');
-Route::post('admin/playlist/add', 'Admin\AdminController@postPlaylist');
 
-/******* promote ************/
-Route::get('admin/promote', 'Admin\PromoteController@index');
-Route::get('admin/promote/app/{id}', 'Admin\PromoteController@getApp');
-Route::post('admin/promote/app', 'Admin\PromoteController@postApp');
-/******* idioms ************/
+    /*     * ***** promote *********** */
+    Route::get('admin/promote', 'PromoteController@index');
+    Route::get('admin/promote/app/{id}', 'PromoteController@getApp');
+    Route::post('admin/promote/app', 'PromoteController@postApp');
+
+    /**     * **** idioms *********** */
+    Route::get('admin/idioms', 'IdiomController@index');
+    Route::get('admin/idioms/search', 'IdiomController@search');
+    Route::get('admin/idioms/export', 'IdiomController@export');
+    Route::get('admin/idioms/add-cat', 'IdiomController@getCat');
+    Route::get('admin/idioms/edit-cat/{id}', 'IdiomController@getCat');
+    Route::post('admin/idioms/add-cat', 'IdiomController@postCat');
+    Route::get('admin/idioms/{cat_id}', 'IdiomController@idioms');
+    Route::get('admin/idioms/idiom/{id}', 'IdiomController@getIdiom');
+
+    /*     * ***************** pic voc *************************** */
+    Route::get('picvoc/add', 'PicvocController@add');
+    Route::get('picvoc/search-cat', 'PicvocController@searchCat');
+    Route::get('picvoc/delete', 'PicvocController@delete');
+    /*     * *** ielts ******* */
+    Route::group(['prefix' => 'admin/ielts', "namespace" => "IELTS"], function () {
+        Route::get('', 'IELTSController@index');
+        Route::get('vocabulary', 'IELTSController@vocabulary');
+        Route::get('edit-cat/{id}', 'IELTSController@editCat');
+        Route::get('add-cat', 'IELTSController@editCat');
+        Route::post('add-cat', 'IELTSController@postCat');
+        Route::get('cat/{id}', 'IELTSController@listAll');
+        Route::get('article/{id}', 'IELTSController@editArticle');
+        Route::post('article/save', 'IELTSController@postArticle');
+    });
+});
+
+Route::get('crawl/videos', 'Crawl\YoutubeController@index');
+/* * ***** idioms *********** */
 Route::get('admin/english-test/get-idiom-test', 'Crawl\EnglishTestController@index');
-Route::get('admin/idioms', 'Admin\IdiomController@index');
-Route::get('admin/idioms/search', 'Admin\IdiomController@search');
 Route::get('admin/idioms/get-idiom-example', 'Crawl\IdiomController@getExample');
 Route::get('admin/idioms/get-top-50', 'Crawl\IdiomController@getTop50Idioms');
-Route::get('admin/idioms/export', 'Admin\IdiomController@export');
+Route::get('admin/idioms/crawl/idiom', 'Crawl\IdiomController@getIdioms');
+Route::get('admin/idioms/crawl/english-club-phrasal-verb', 'Crawl\IdiomController@getPhrasalVerbs');
+
+/* * ***************** pic voc *************************** */
+Route::get('admin/picvoc/crawl', 'Crawl\PicvocController@getCommonWords');
+Route::get('admin/picvoc/get-oxford-words', 'Crawl\PicvocController@getOxfordMean');
+
+
+
 //ajax
 Route::get('admin/idiom/ajax-change-word', 'Admin\IdiomController@ajaxChangWord');
 
 
-Route::get('admin/idioms/add-cat', 'Admin\IdiomController@getCat');
-Route::get('admin/idioms/edit-cat/{id}', 'Admin\IdiomController@getCat');
-Route::post('admin/idioms/add-cat', 'Admin\IdiomController@postCat');
 
-Route::get('admin/idioms/{cat_id}', 'Admin\IdiomController@idioms');
-Route::get('admin/idioms/idiom/{id}', 'Admin\IdiomController@getIdiom');
-/************* listening *****************/
-Route::get('admin/listening', 'Admin\ListeningController@index');
-Route::get('admin/listening/cat/{id}', 'Admin\ListeningController@dialogs');
-Route::get('admin/listening/dialog/{id}', 'Admin\ListeningController@getDialog');
-Route::post('admin/listening/dialog/save', 'Admin\ListeningController@postDialog');
+/* * *********** listening **************** */
+Route::group(['prefix' => 'admin/listening'], function () {
 
-Route::get('admin/listening/remove-cat', 'Admin\ListeningController@removeCat');
-Route::get('admin/listening/add-cat', 'Admin\ListeningController@ajaxAddCat');
-Route::get('admin/listening/autocomplete-cat', 'Admin\ListeningController@ajaxGetCats');
+    Route::get('', 'Admin\ListeningController@index');
+    Route::get('cat/{id}', 'Admin\ListeningController@dialogs');
+    Route::get('dialog/{id}', 'Admin\ListeningController@getDialog');
+    Route::post('dialog/save', 'Admin\ListeningController@postDialog');
 
-Route::get('admin/listening/ajax-remove-grammar', 'Admin\ListeningController@ajaxremoveGrammar');
-Route::get('admin/listening/ajax-add-grammar', 'Admin\ListeningController@ajaxAddGrammar');
-Route::get('admin/listening/autocomplete-grammar', 'Admin\ListeningController@ajaxGetGrammars');
+    Route::get('remove-cat', 'Admin\ListeningController@removeCat');
+    Route::get('add-cat', 'Admin\ListeningController@ajaxAddCat');
+    Route::get('autocomplete-cat', 'Admin\ListeningController@ajaxGetCats');
 
-/************* user *****************/
+    Route::get('ajax-remove-grammar', 'Admin\ListeningController@ajaxremoveGrammar');
+    Route::get('ajax-add-grammar', 'Admin\ListeningController@ajaxAddGrammar');
+    Route::get('autocomplete-grammar', 'Admin\ListeningController@ajaxGetGrammars');
+    Route::get('ajax-ordering', 'Admin\ListeningController@ajaxUpdateOrder');
+
+    Route::get('reports', 'Admin\ListeningController@reports');
+    Route::get('report/fix', 'Admin\ListeningController@ajaxFixReport');
+});
+Route::get('crawl/listening', 'Crawl\ListeningController@index');
+
+/* * *********** user **************** */
 Route::get('admin/users', 'Admin\UserController@index');
 Route::get('admin/users/edit/{id}', 'Admin\UserController@edit');
-Route::post('admin/user/save', 'Admin\UserController@update'); 
+Route::post('admin/user/save', 'Admin\UserController@update');
 
 Route::get('admin/user/permissions', 'Admin\PermissionController@index');
 Route::get('admin/user/permission/edit/{id}', 'Admin\PermissionController@edit');
@@ -83,7 +133,7 @@ Route::get('admin/user/role/edit/{id}', 'Admin\RoleController@edit');
 Route::get('admin/user/role/delete/{id}', 'Admin\RoleController@delete');
 Route::get('admin/user/role/create', 'Admin\RoleController@create');
 Route::patch('admin/user/role/update/{id}', 'Admin\RoleController@update');
-Route::post('admin/user/role/save', 'Admin\RoleController@store'); 
+Route::post('admin/user/role/save', 'Admin\RoleController@store');
 //profile
 Route::get('admin/user/profile', 'Admin\UserController@getProfile');
 Route::post('admin/user/profile', 'Admin\UserController@postProfile');
@@ -93,68 +143,95 @@ Route::post('admin/user/profile', 'Admin\UserController@postProfile');
 Route::get('admin/truyen/crawl', 'Crawl\TruyenController@index');
 Route::get('admin/story/sp', 'Crawl\SpanishAudioBookController@index');
 
+Route::get('funny/get-images', 'Crawl\FunnyImageController@index');
+Route::get('funny/get-9gag-images', 'Crawl\FunnyImageController@get9Gag');
+
+Route::group(['namespace' => 'Crawl', 'prefix' => 'crawl'], function () {
+    Route::get('test/get-toeic', 'Test\TestController@index');
+});
 
 /**
  * create menu
  */
 $menu = Menu::make('MyNavBar', function($menu) {
-    $menu->add('Home', 'admin')->attr(array('pre_icon'=>'user'));
-    /** youtube videos **/
-    $menu->add('Video')->attr(array('pre_icon'=>'youtube'))->active('admin/playlist/*');
-    foreach (\App\library\Menus::getCats() as $cat) {
-        $menu->video->add($cat->title, 'admin/playlists/' . $cat->id);
-    }    
-    $menu->video->add('Create Cat', 'admin/ycat/add')->append('<span class="label label-primary pull-right">NEW</span>');
-    /** promote **/
-    $menu->add('Promote', 'admin/promote')->attr(array('pre_icon'=>'puzzle-piece'))->active('admin/promote/*');
-    
-    $menu->add('Get Test', 'admin/english-test/get-idiom-test')->attr(array('pre_icon'=>'check'));
-    //idioms
-    $menu->add('Idioms', 'idioms')->attr(array('pre_icon'=>'info'))->active('admin/idioms/*');
-    $menu->idioms->add('Cat', 'admin/idioms')->attr(array('pre_icon'=>'info'))->active('admin/idioms/*');
-    $menu->idioms->add('Get Idiom Ex', 'admin/idioms/get-idiom-example')->attr(array('pre_icon'=>'check'));
-    $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon'=>'folder'));
-    
-     //idioms
-    $menu->add('Listening', 'listening')->attr(array('pre_icon'=>'phone'))->active('admin/listening/*');
-    $menu->listening->add('Cat', 'admin/listening')->attr(array('pre_icon'=>'phone'))->active('admin/listening/*');
-    
-    //users
-    $menu->add('Users Manager', 'users')->attr(array('pre_icon'=>'user'));
-    $menu->usersManager->add('Users', 'admin/users')->attr(array('pre_icon'=>'user'))->active('admin/users/*');
-    $menu->usersManager->add('Permissions', 'admin/user/permissions')->attr(array('pre_icon'=>'user'))->active('admin/user/permission/*');
-    $menu->usersManager->add('Roles', 'admin/user/roles')->attr(array('pre_icon'=>'users'))->active('admin/user/role/*');
-    $menu->usersManager->add('Profile', 'admin/user/profile')->attr(array('pre_icon'=>'envelope'));
+            $menu->add('Home', 'admin')->attr(array('pre_icon' => 'user'));
+            /** youtube videos * */
+            $menu->add('Video')->attr(array('pre_icon' => 'youtube'))->active('admin/youtube/*');
+            foreach (\App\library\Menus::getCats() as $cat) {
+                $menu->video->add($cat->title, 'admin/youtube/playlists/' . $cat->id);
+            }
+            $menu->video->add('Create Cat', 'admin/youtube/cat/add')->append('<span class="label label-primary pull-right">NEW</span>')->nickname("createCat");
+            $menu->item("createCat")->divide(array('class' => 'my-divider'));
 
-    
-    $menu->add('Graphs', 'graphs')->attr(array('pre_icon'=>'bar-chart-o'));
-    $menu->graphs->add('Flot Charts', 'flotcharts');
-    $menu->graphs->add('Morris.js Charts', 'morrischarts');
-    $menu->graphs->add('Rickshaw Charts', 'rickshawcharts');
-    $menu->graphs->add('Chart.js', 'chartjs');
-    $menu->graphs->add('Chartist', 'chartist');
-    $menu->graphs->add('c3 charts', 'c3charts');
-    $menu->graphs->add('Peity Charts', 'peitycharts');
-    $menu->graphs->add('Sparkline Charts', 'sparklinecharts');
 
- 
-});
+            $menu->video->add('Crawl Daily Videos', 'crawl/videos')->append('<span class="label label-primary pull-right">crawl</span>');
+
+
+            /** promote * */
+            $menu->add('Promote', 'admin/promote')->attr(array('pre_icon' => 'puzzle-piece'))->active('admin/promote/*');
+
+            $menu->add('Get Test', 'admin/english-test/get-idiom-test')->attr(array('pre_icon' => 'check'));
+            //idioms
+            $menu->add('Idioms', 'idioms')->attr(array('pre_icon' => 'info'))->active('admin/idioms/*');
+            $menu->idioms->add('Cat', 'admin/idioms')->attr(array('pre_icon' => 'info'))->active('admin/idioms/*');
+            $menu->idioms->add('Get Idiom Ex', 'admin/idioms/get-idiom-example')->attr(array('pre_icon' => 'check'));
+            $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon' => 'folder'));
+
+            //idioms
+            $menu->add('Listening', 'listening')->attr(array('pre_icon' => 'phone'))->active('admin/listening/*');
+            $menu->listening->add('Cat', 'admin/listening')->attr(array('pre_icon' => 'phone'))->active('admin/listening/*');
+            $menu->listening->add('Reports', 'admin/listening/reports')->attr(array('pre_icon' => 'report'))->active('admin/listening/reports/*');
+
+            //users
+            $menu->add('Users Manager', 'users')->attr(array('pre_icon' => 'user'));
+            $menu->usersManager->add('Users', 'admin/users')->attr(array('pre_icon' => 'user'))->active('admin/users/*');
+            $menu->usersManager->add('Permissions', 'admin/user/permissions')->attr(array('pre_icon' => 'user'))->active('admin/user/permission/*');
+            $menu->usersManager->add('Roles', 'admin/user/roles')->attr(array('pre_icon' => 'users'))->active('admin/user/role/*');
+            $menu->usersManager->add('Profile', 'admin/user/profile')->attr(array('pre_icon' => 'envelope'));
+
+            $menu->add('Pic Voc', 'admin/picvoc/get-oxford-words')->attr(array('pre_icon' => 'user'));
+            $menu->add('Get 5 Funny Images', 'funny/get-images')->attr(array('pre_icon' => 'download'));
+
+
+
+            $menu->add('IELTS', 'admin/ielts')->attr(array('pre_icon' => 'bar-chart-o'))->active('admin/ielts/*');
+            $menu->iELTS->add('Types', 'admin/ielts')->attr(array('pre_icon' => 'user'));
+            $menu->iELTS->add('Vocabulary', 'admin/ielts/vocabulary')->attr(array('pre_icon' => 'user'));
+            foreach (App\Models\IELTS\IELTSCat::where("type", "article")->get() as $cat) {
+                $menu->iELTS->add($cat->title, 'admin/ielts/cat/' . $cat->id);
+            }
+
+        });
 
 /**
  * api
  */
-/*********** videos ***************/
-Route::get("api/videos",'Api\ApiController@index');
-Route::get("api/playlists",'Api\ApiController@getPlaylists');
-Route::get("api/playlists/{catid}",'Api\ApiController@getPlaylists');
-Route::get("api/videos/{id}",'Api\ApiController@getVideos');
+Route::group(['namespace' => 'Api', 'prefix' => 'api'], function () {
 
-/**
- * listening
- */
-Route::get("api/listening/dialogs",'Api\ListeningController@index');
+    /*     * ********* videos ************** */
+    Route::get("videos", 'ApiController@index');
+//    Route::get("playlists", 'ApiController@getPlaylists');
+    Route::get("playlists/{catid}", 'ApiController@getPlaylists');
+    Route::get("videos/{id}", 'ApiController@getVideos');
+
+    Route::post("auth/login", 'ApiLoginController@login');
+    Route::post("auth/create-user", 'ApiLoginController@createUser');
+
+    /**
+     * listening
+     */
+    Route::get("listening/dialogs", 'ListeningController@index');
 
 
+    /*     * *
+     * picvoc
+     */
+    Route::get('picvoc/cats', 'PicvocController@cats');
+});
+Route::get("playlists", 'ApiController@getPlaylists');
+Route::get("playlists/{catid}", 'ApiController@getPlaylists');
+Route::get('funny/images', 'Api\ImagesController@images');
+Route::post('funny/like', 'Api\ImagesController@like');
 /**
  * Front end
  */
@@ -162,3 +239,9 @@ Route::get('/', 'HomeController@index');
 Route::get('/grammar', 'Front\GrammarTestController@index');
 Route::get('/grammar/test/{id}', 'Front\GrammarTestController@tests');
 Route::post('/grammar/test/{id}', 'Front\GrammarTestController@postTests');
+
+//Route::get('api/users/{user}', function (App\User $user) {
+//    return $user->email;
+//});
+
+ 
