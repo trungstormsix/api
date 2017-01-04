@@ -244,4 +244,9 @@ Route::post('/grammar/test/{id}', 'Front\GrammarTestController@postTests');
 //    return $user->email;
 //});
 
- 
+Route::get('/listen', 'Front\ListeningFrontController@index');
+/*
+    Login facebook
+ */
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');

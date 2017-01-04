@@ -11,7 +11,8 @@
         "lavary/laravel-menu": "dev-master",
         "laravelcollective/html": "^5.2.0",
         "intervention/image": "^2.3",
-        "bestmomo/filemanager": "1.1.*"
+        "bestmomo/filemanager": "1.1.*",
+        "laravel/socialite": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
