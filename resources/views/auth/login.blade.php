@@ -57,6 +57,13 @@
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a class="btn btn-success" href="{{ asset('auth/facebook') }}">
+                                    <i class="fa fa-btn fa-facebook"> </i> Sign in with Facebook
+                                </a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

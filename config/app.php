@@ -163,6 +163,10 @@ return [
         'Lavary\Menu\ServiceProvider',
         //html
         Collective\Html\HtmlServiceProvider::class,
+        /**
+         * Login Facebook
+         */
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -217,6 +221,10 @@ return [
         //html
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        /**
+         * Login Facebook
+         */
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

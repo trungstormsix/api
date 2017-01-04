@@ -162,3 +162,9 @@ Route::get('/', 'HomeController@index');
 Route::get('/grammar', 'Front\GrammarTestController@index');
 Route::get('/grammar/test/{id}', 'Front\GrammarTestController@tests');
 Route::post('/grammar/test/{id}', 'Front\GrammarTestController@postTests');
+Route::get('/listen', 'Front\ListeningFrontController@index');
+/*
+    Login facebook
+ */
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
