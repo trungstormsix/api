@@ -2,14 +2,14 @@
 
 @section('content')
 <!-- header -->
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/ycat/add') }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/youtube/cat/add') }}">
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>{{empty($title) ?  'oCoder' : $title}}</h2>
             <ol class="breadcrumb">
                 <li>
-                    <a href="{{url('/')}}">Home</a>
+                    <a href="{{url('/admin')}}">Home</a>
                 </li>
 
                 <li class="active">

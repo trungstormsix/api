@@ -51,7 +51,6 @@ class ListeningController extends Controller {
         $dimen = Session::get('sort_dimen', 'desc');
         $dialogs = $cat->dialogs()->orderBy($sort_by, $dimen)->paginate(30);
 
-
         return view('admin/listening/dialogs', ['cat' => $cat, 'dialogs' => $dialogs, 'sort_by' => $sort_by, 'sort_dimen' => $dimen]);
     }
 
@@ -69,15 +68,14 @@ class ListeningController extends Controller {
 
     public function getDialog($id) {
         $dialog = ListeningDialog::find($id);
-
         return view('admin/listening/dialog', ['dialog' => $dialog]);
     }
 
     public function postDialog(Request $req) {
         echo $req->status;
-        
+
         if ($req->id) {
-            $dialog = ListeningDialog::find($req->id);       
+            $dialog = ListeningDialog::find($req->id);
             $dialog->status = $req->status ? 1 : 0;
             $dialog->dialog = $req->dialog;
             $dialog->vocabulary = $req->vocabulary;
@@ -139,7 +137,7 @@ class ListeningController extends Controller {
         $dl_id = Input::get('dl_id', '0');
         $dl = ListeningDialog::find($dl_id);
         $changed = $dl->cats()->syncWithoutDetaching($cat);
-        if($changed){
+        if ($changed) {
             $dl->touch();
         }
         return response()->json(['cat' => $cat, 'main_id' => $dl_id, 'changed' => $changed]);
@@ -158,7 +156,7 @@ class ListeningController extends Controller {
         $dl_id = Input::get('dl_id', '0');
         $dl = ListeningDialog::find($dl_id);
         $changed = $dl->grammars()->syncWithoutDetaching([$gr_id => ['ex' => Input::get('ex', null)]]);
-        if($changed){
+        if ($changed) {
             $dl->touch();
         }
         return response()->json(['gr_id' => $gr_id, 'main_id' => $dl_id, 'changed' => $changed]);
@@ -186,6 +184,40 @@ class ListeningController extends Controller {
             $return[] = ['key' => $cat->id, 'value' => $cat->title];
         }
         return response()->json($return);
+    }
+
+    public function ajaxFixReport() {
+        $report_id = Input::get('report_id', '0');
+        if ($report_id) {
+            $report = \App\Models\ListeningReport::find($report_id);
+            $report->status = 1;
+            $report->save();
+            $dialog = $report->dialog;
+            \Illuminate\Support\Facades\Mail::send('emails.listening_report', ['dialog' => $dialog, 'report' => $report], function ($m) use ($dialog, $report) {
+                $m->from('supporter@ocodereducation.com', '[English Listening]');
+                $m->replyTo("trungstormsix@gmail.com", "Admin");
+                $m->cc("trungstormsix@gmail.com", "Admin");
+                $m->to($report->email, $report->email)->subject('[English Listening] Fixed your problem!');
+            });
+        }
+        return response()->json(['report_id' => $report_id]);
+    }
+
+    public function ajaxUpdateOrder() {
+        $cat_id = Input::get('cat_id', '0');
+        $ordering = Input::get('ordering', '0');
+        $dialog_id = Input::get('dialog_id', '0');
+        $dl = ListeningDialog::find($dialog_id);
+        $changed = $dl->cats()->syncWithoutDetaching([$cat_id => ['ordering' => $ordering]]);
+        if ($changed) {
+            $dl->touch();
+        }
+        return response()->json(['cat_id' => $cat_id, 'dialog_id' => $dialog_id, 'changed' => $changed]);
+    }
+
+    public function reports() {
+        $reports = \App\Models\ListeningReport::where("status", 0)->orderBy("updated", "DESC")->paginate(30);
+        return view('admin/listening/reports', ['reports' => $reports]);
     }
 
 }

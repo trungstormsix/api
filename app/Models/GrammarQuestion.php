@@ -16,6 +16,6 @@ class GrammarQuestion extends Model {
      }
 
     public function article() {
-        return $this->belongsToMany('App\Models\GrammarArticle', 'engr_questions_articles');
+        return $this->belongsToMany('App\Models\GrammarLesson', 'engr_questions_articles','id_questions','id_articles');
     }  
 }

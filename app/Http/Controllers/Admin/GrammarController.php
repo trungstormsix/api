@@ -16,16 +16,16 @@ use App\Models\IdiomExample;
 use File;
 use Illuminate\Support\Facades\Session;
 
-class GrammarController  extends Controller {
+class GrammarController  extends AdminBaseController {
  
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct() {
-        $this->middleware('auth');
-    }
+//    public function __construct() {
+//       
+//    }
   
     
     /**

@@ -1,25 +1,32 @@
 @foreach($items as $item)
-@php ($attr = $item->attributes)
-<!--@php (var_dump($item->attributes))-->
-<li class="{!! $item->isActive ? 'active' : '' !!} {{$item->class}}">
-    @if($item->hasChildren())
-        <a href="{!! $item->url() !!}">
-            <i class="fa fa-{{$attr? $attr["pre_icon"] : 'user'}}"></i>
-            <span class="nav-label">{!! $item->title !!}</span>
-            <span class="fa arrow"></span>
-        </a>
-        <ul class="nav nav-second-level collapse">
-            @include('layouts.menu.custom-menu-items', array('items' => $item->children(), 'level' => 2))
-        </ul> 
-    @else
-        <a href="{!! $item->url() !!}">
-            @if($item->parent)
-                {!! $item->title !!}
+    @php ($attr = $item->attributes)
+        <li class="{!! $item->isActive ? 'active' : '' !!} {{$item->class}}">
+            @if($item->hasChildren())
+                <a href="{!! $item->url() !!}">
+                    <i class="fa fa-{{$attr? $attr["pre_icon"] : 'user'}}"></i>
+                    <span class="nav-label">{!! $item->title !!}</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    @include('layouts.menu.custom-menu-items', array('items' => $item->children(), 'level' => $level+1))
+                </ul> 
             @else
-                 <i class="fa fa-{{$attr? $attr["pre_icon"] : 'user'}}"></i>
-                <span class="nav-label">{!! $item->title !!}</span>
+                @if($item->link)
+                <a href="{!! $item->url() !!}">
+                    @if($item->parent)
+                    {!! $item->title !!}
+                    @else
+                    <i class="fa fa-{{$attr? $attr["pre_icon"] : 'user'}}"></i>
+                    <span class="nav-label">{!! $item->title !!}</span>
+                    @endif
+                </a>
+                @else
+                    {!! $item->title !!}
+                @endif
             @endif
-         </a>
+
+        </li>
+    @if($item->divider)
+        <hr {!! Lavary\Menu\Builder::attributes($item->divider) !!} /> 
     @endif
-</li>
 @endforeach

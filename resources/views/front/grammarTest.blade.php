@@ -4,7 +4,7 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="col-lg-12 text-center">
-                <h1>English Grammar</h1>
+                <h1>Test - {{$title}}</h1>
 
             </div>
             <div class="ibox-content">
@@ -39,7 +39,7 @@
                         @foreach($questions as $question)
                         <div class="feed-element">                             
                             <div class="media-body ">
-                                <h4>{{$i++}}. {{$question->question}}</h4>                                
+                                <h4>{{$i++}}. {{$question->question}} ({{ $question->level }}) {{ $question->id}}</h4>                                
                                 @php ($answers = json_decode($question->answers))
                                 @foreach($answers as $answer)                                
                                     @if($question->answered == $answer)

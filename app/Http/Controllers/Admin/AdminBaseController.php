@@ -13,8 +13,7 @@ class AdminBaseController extends Controller {
      */
     public function __construct() {
         $this->middleware('auth');
-        $this->middleware('role:admin|email:trung@gmail.com');
-        
+        $this->middleware('role:admin|email:trung@gmail.com');        
     }
  
 }

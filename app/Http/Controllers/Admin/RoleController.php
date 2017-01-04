@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Role;
 
-class RoleController extends Controller
+class RoleController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.

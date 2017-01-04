@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => env('MAIL_USERNAME',"trungstormsix@gmail.com"), 'name' => "oCoder Supporter"],
 
     /*
     |--------------------------------------------------------------------------

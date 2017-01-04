@@ -28,4 +28,8 @@ class ListeningDialog extends Model {
         $questions = ListeningQuestion::whereIn('id', $question_ids)->get();
         return $questions;
     }
+    
+    public function reports(){
+        return $this->hasMany('App\Models\ListeningReport', 'dl_id');
+    }
 }

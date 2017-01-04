@@ -7,11 +7,11 @@
         <h2>{{empty($title) ?  'oCoder' : $title}}</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="{{url('/')}}">Home</a>
+                <a href="{{url('/admin')}}">Home</a>
             </li>
 
             <li class="active">
-                <strong>Playlists of {{$cat->title}}</strong>
+                Playlists of <strong>{{$cat->title}}</strong>
             </li>
         </ol>
     </div>
@@ -19,8 +19,8 @@
         <br>
         <br>
         <div class="pull-right tooltip-demo">
-            <a href="{{url('/admin/playlist/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new playlist"><i class="fa fa-plus"></i> Add Playlist</a>
-            <a href="{{url('/admin/ycat/edit/'.$cat->id)}}" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Discard email"><i class="fa fa-pencil"></i> Edit Cat</a>
+            <a href="{{url('/admin/youtube/playlist/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new playlist"><i class="fa fa-plus"></i> Add Playlist</a>
+            <a href="{{url('/admin/youtube/cat/edit/'.$cat->id)}}" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Discard email"><i class="fa fa-pencil"></i> Edit Cat</a>
         </div>
     </div>
 </div>
@@ -45,20 +45,20 @@
                                     <img alt="{{$playlist->title}}" style="max-width: 120px  " class="img-circle circle-border" src="{{$playlist->thumb_url}}">
                                 </div>  
                                 <div class="col-xs-6">
-                                    <a href="{{ url('/admin/videos/'.$playlist->id) }}"><h2 class="font-bold">{{$playlist->title}}</h2></a><br>
+                                    <a href="{{ url('/admin/youtube/videos/'.$playlist->id) }}"><h2 class="font-bold">{{$playlist->title}}</h2></a><br>
                                     {{$playlist->updated_at ? $playlist->updated_at : $playlist->created_at}}
                                 </div>
                                 <div class="col-xs-2">
                                     <a  href="https://www.youtube.com/playlist?list={{ $playlist->yid }}" class="btn btn-danger btn-sm" target="_blank"><i class="fa fa-youtube"></i> Youtube </a>
                                 </div>
-                                 <div class="col-xs-1">
-                                                    <span class="switchery" {!! ($playlist->status == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($playlist->status == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
-                                </div>
-                                
                                 <div class="col-xs-1">
-                                    <a href="{{ url('/admin/playlist/edit/'.$playlist->id) }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                    <span class="switchery" {!! ($playlist->status == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($playlist->status == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
                                 </div>
-                                 
+
+                                <div class="col-xs-1">
+                                    <a href="{{ url('/admin/youtube/playlist/edit/'.$playlist->id) }}" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> Edit </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>

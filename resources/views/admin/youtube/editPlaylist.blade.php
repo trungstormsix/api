@@ -2,14 +2,14 @@
 
 @section('content')
 <!-- header -->
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/playlist/add') }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/youtube/playlist/add') }}">
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
             <h2>{{empty($title) ?  'oCoder' : $title}}</h2>
             <ol class="breadcrumb">
                 <li>
-                    <a href="{{url('/')}}">Home</a>
+                    <a href="{{url('/admin')}}">Home</a>
                 </li>
 
                 <li class="active">
@@ -22,7 +22,7 @@
             <br>
             <div class="pull-right tooltip-demo">
                 <button   class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new playlist"><i class="fa fa-plus"></i> Save</button>
-                <a href="{{url('/admin/')}}" class="btn btn-danger btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel Edit"><i class="fa fa-times"></i> Discard</a>
+                <a href="{{url('/admin/youtube/playlists/'.($playlist ? $playlist->cat_id : Session::get('cat_id')))}}" class="btn btn-danger btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel Edit"><i class="fa fa-times"></i> Discard</a>
             </div>
         </div>
     </div>

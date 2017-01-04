@@ -5,17 +5,19 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
-class User extends Authenticatable
-{
-        use EntrustUserTrait; // add this trait to your user model
-	var $table = "nusers";
+class User extends Authenticatable {
+
+    use EntrustUserTrait; // add this trait to your user model
+
+    var $table = "nusers";
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'facebook_id', 'username', 'first', 'middle','last', 'email', 'password',
+        'username', 'first', 'middle', 'last', 'email', 'password',
     ];
 
     /**
@@ -26,4 +28,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function accessMediasAll() {
+        if ($this->hasRole("admin")) {
+            return true;
+        }
+        return false;
+    }
+
 }

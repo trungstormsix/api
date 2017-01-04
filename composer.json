@@ -8,9 +8,10 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "zizaco/entrust": "5.2.x-dev",
-		"lavary/laravel-menu": "dev-master",
+        "lavary/laravel-menu": "dev-master",
         "laravelcollective/html": "^5.2.0",
-        "laravel/socialite": "^2.0"
+        "intervention/image": "^2.3",
+        "bestmomo/filemanager": "1.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

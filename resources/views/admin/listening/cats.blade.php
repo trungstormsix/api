@@ -65,7 +65,7 @@
 @section('search_form')
 <form role="search" class="navbar-form-custom" action="{{url('admin/listening/search')}}">
     <div class="form-group">
-        <input type="text" placeholder="Search an idiom..." class="form-control" name="idiom" id="top-search">
+        <input type="text" placeholder="Search a leson..." class="form-control" name="idiom" id="top-search">
     </div>
 </form>
 @endsection

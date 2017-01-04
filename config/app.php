@@ -163,10 +163,13 @@ return [
         'Lavary\Menu\ServiceProvider',
         //html
         Collective\Html\HtmlServiceProvider::class,
-        /**
-         * Login Facebook
-         */
-        Laravel\Socialite\SocialiteServiceProvider::class,
+        
+      
+
+    Intervention\Image\ImageServiceProvider::class,
+    Bestmomo\Filemanager\FilemanagerServiceProvider::class,
+
+
     ],
 
     /*
@@ -221,10 +224,11 @@ return [
         //html
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        /**
-         * Login Facebook
-         */
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        
+      
+
+    'Image' => Intervention\Image\Facades\Image::class,
+
     ],
 
 ];
