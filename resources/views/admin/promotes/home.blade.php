@@ -17,7 +17,7 @@
         <br>
         <br>
         <div class="pull-right tooltip-demo">
-            <a href="{{url('/admin/playlist/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new playlist"><i class="fa fa-plus"></i> Add Playlist</a>
+            <a href="{{url('/admin/promote/app/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new app"><i class="fa fa-plus"></i> Add App</a>
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@
                             <div class="panel-body">
 
                                 <div class="table-responsive">
-                                    <table class="table table-bordered table-striped">
+                                    <table id="promote_apps" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>N.o</th>

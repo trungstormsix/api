@@ -33,50 +33,51 @@ class PromoteController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-       
+
         $groups = PromoteGroup::all();
 
         return view('admin/promotes/home', ['groups' => $groups]);
-
     }
-    
-    public function getApp($id){
-        
-        $app = PromoteApp::find($id);
-        $app->title = $app->title;
+
+    public function getApp($id = 0) {            
+        if($id){
+            $app = PromoteApp::find($id);
+        }else{
+            $app = new PromoteApp();            
+        }
         $groups = PromoteGroup::all();
-        return view('admin/promotes/editApp', ['app' => $app,'groups' => $groups]);
-
+        return view('admin/promotes/editApp', ['app' => $app, 'groups' => $groups]);
     }
-    
+
     /**
      * save cat
      */
     public function postApp(Request $req) {
-        
+        $this->validate($req, [
+            'title' => 'required|max:255',
+            'package'=> 'required|max:255',
+        ]);
         if ($req->id) {
             $app = PromoteApp::find($req->id);
         } else {
             $app = new PromoteApp();
+            $app->package = $req->package;
+            $app->save();
         }
-         
-        if ($req->title) {
-            $app->title = $req->title;
-            $app->image = $req->image;
-            $app->publish_up = date("Y-m-d H:i:s",strtotime($req->publish_up));
-            
-            $app->publish_down = $req->publish_down;
-            $app->group_id = $req->group_id;
-            if ($req->status == 'on') {
-                $app->status = 1;
-            } else {
-                $app->status = 0;
-            }
-           
-            $app->save();            
+
+
+        $app->publish_up = date("Y-m-d H:i:s", strtotime($req->publish_up));
+        $app->publish_down = $req->publish_down;
+        $app->status = $req->status ? $req->status : 0;
+
+        $result = $app->update($req->all());
+        if (!$result) {
+            Session::flash('error', 'App fail to save!');
+            Input::flash();
+        } else {
+            Session::flash('success', 'App saved successfully!');
         }
-        Input::flash();
-       return Redirect::to('/admin/promote/app/'.$app->id);
+        return Redirect::to('/admin/promote/app/' . $app->id);
     }
- 
+
 }

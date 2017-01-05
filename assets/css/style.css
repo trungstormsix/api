@@ -38,6 +38,7 @@ h5 {
   margin-top: 5px;
   font-weight: 600;
 }
+body  a{outline: none !important;}
 .nav > li > a {
   color: #a7b1c2;
   font-weight: 600;
@@ -967,7 +968,7 @@ fieldset[disabled] .btn-white.active {
   height: 90px;
   font-size: 42px;
 }
-button.dim {
+.dim {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -980,46 +981,46 @@ button.dim {
   font-weight: 600;
   margin-bottom: 20px !important;
 }
-button.dim:active {
+.dim:active {
   top: 3px;
 }
-button.btn-primary.dim {
+.btn-primary.dim {
   box-shadow: inset 0 0 0 #16987e, 0 5px 0 0 #16987e, 0 10px 5px #999999;
 }
-button.btn-primary.dim:active {
+.btn-primary.dim:active {
   box-shadow: inset 0 0 0 #16987e, 0 2px 0 0 #16987e, 0 5px 3px #999999;
 }
-button.btn-default.dim {
+.btn-default.dim {
   box-shadow: inset 0 0 0 #b3b3b3, 0 5px 0 0 #b3b3b3, 0 10px 5px #999999;
 }
-button.btn-default.dim:active {
+.btn-default.dim:active {
   box-shadow: inset 0 0 0 #b3b3b3, 0 2px 0 0 #b3b3b3, 0 5px 3px #999999;
 }
-button.btn-warning.dim {
+.btn-warning.dim {
   box-shadow: inset 0 0 0 #f79d3c, 0 5px 0 0 #f79d3c, 0 10px 5px #999999;
 }
-button.btn-warning.dim:active {
+.btn-warning.dim:active {
   box-shadow: inset 0 0 0 #f79d3c, 0 2px 0 0 #f79d3c, 0 5px 3px #999999;
 }
-button.btn-info.dim {
+.btn-info.dim {
   box-shadow: inset 0 0 0 #1eacae, 0 5px 0 0 #1eacae, 0 10px 5px #999999;
 }
-button.btn-info.dim:active {
+.btn-info.dim:active {
   box-shadow: inset 0 0 0 #1eacae, 0 2px 0 0 #1eacae, 0 5px 3px #999999;
 }
-button.btn-success.dim {
+.btn-success.dim {
   box-shadow: inset 0 0 0 #1872ab, 0 5px 0 0 #1872ab, 0 10px 5px #999999;
 }
-button.btn-success.dim:active {
+.btn-success.dim:active {
   box-shadow: inset 0 0 0 #1872ab, 0 2px 0 0 #1872ab, 0 5px 3px #999999;
 }
-button.btn-danger.dim {
+.btn-danger.dim {
   box-shadow: inset 0 0 0 #ea394c, 0 5px 0 0 #ea394c, 0 10px 5px #999999;
 }
-button.btn-danger.dim:active {
+.btn-danger.dim:active {
   box-shadow: inset 0 0 0 #ea394c, 0 2px 0 0 #ea394c, 0 5px 3px #999999;
 }
-button.dim:before {
+.dim:before {
   font-size: 50px;
   line-height: 1em;
   font-weight: normal;
@@ -1027,7 +1028,7 @@ button.dim:before {
   display: block;
   padding-top: 10px;
 }
-button.dim:active:before {
+.dim:active:before {
   top: 7px;
   font-size: 50px;
 }
@@ -8242,4 +8243,7 @@ body.md-skin {
 }
 .sort{
     cursor: pointer;
+}
+#promote_apps img{
+    max-width: 240px;
 }

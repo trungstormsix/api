@@ -264,9 +264,5 @@ Route::post('/grammar/test/{id}', 'Front\GrammarTestController@postTests');
 //Route::get('api/users/{user}', function (App\User $user) {
 //    return $user->email;
 //});
-/*
-    Login facebook
- */
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+
  

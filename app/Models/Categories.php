@@ -6,10 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categories extends Model
 {
-    var $table = 'categories';
-
-    public function vocabularies()
-    {
-         return $this->hasMany('App\Models\Vocabularies', 'cate_id');
-    }
+	public $timestamps = false;
+    
+    protected $fillable = ['name', 'alias', 'description', 'parent_id', 'published'];
 }

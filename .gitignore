@@ -7,3 +7,7 @@ images/
 audios/
 audio/
 xml/
+/public/filemanager
+/assets/ckeditor
+assets/ckeditor
+.env

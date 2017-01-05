@@ -96,53 +96,49 @@
                             </label>
                             <div class="col-sm-10">
                                 <div class="ibox float-e-margins">
-                                    <textarea name="article" style="display: none;">
-                                    <div id="article" contenteditable="true">
-                                        @php(   $art =  old('article')    ?   old('article') :  ($article ? $article->article : ''))
-                                        {!! $art !!}
-                                    </div>
-                                    </textarea>
-                                </div>
+                                    @php(   $art =  old('article')    ?   old('article') :  ($article ? $article->article : ''))
+                                    <textarea name="article" style="display: none;">{!! $art !!}</textarea>
                             </div>
                         </div>
-                        <div class="hr-line-dashed"></div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">     
-                                Status
-                            </label>
-                            <div class="col-sm-10">
-
-                                <input class="js-switch" value="1" style="display: none;" data-switchery="true" type="checkbox" name="status" {{(old('status') || ($article && $article->status)) ? 'checked' : '' }} >
-                            </div>
-                        </div>         
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">     
-                                Pro
-                            </label>
-                            <div class="col-sm-10">
-
-                                <input class="js-switch" value="1" style="display: none;" data-switchery="true" type="checkbox" name="is_pro" {{(old('is_pro') || ($article && $article->is_pro)) ? 'checked' : '' }} >
-                            </div>
-                        </div>         
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">     
-                                updated
-                            </label>
-                            <div class="col-sm-10">
-                                {{$article ? $article->updated : ''}}
-                            </div>
-                        </div>
-                        <div class="hr-line-dashed"></div>
-
-
                     </div>
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            Status
+                        </label>
+                        <div class="col-sm-10">
+
+                            <input class="js-switch" value="1" style="display: none;" data-switchery="true" type="checkbox" name="status" {{(old('status') || ($article && $article->status)) ? 'checked' : '' }} >
+                        </div>
+                    </div>         
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            Pro
+                        </label>
+                        <div class="col-sm-10">
+
+                            <input class="js-switch" value="1" style="display: none;" data-switchery="true" type="checkbox" name="is_pro" {{(old('is_pro') || ($article && $article->is_pro)) ? 'checked' : '' }} >
+                        </div>
+                    </div>         
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            updated
+                        </label>
+                        <div class="col-sm-10">
+                            {{$article ? $article->updated : ''}}
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 </form>>
 @endsection
 
@@ -161,8 +157,8 @@
 
 var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
-elems.forEach(function(html) {
-  var switchery = new Switchery(html,{color: '#1AB394'});
+elems.forEach(function (html) {
+    var switchery = new Switchery(html, {color: '#1AB394'});
 });
 
 CKEDITOR.disableAutoInline = true;
