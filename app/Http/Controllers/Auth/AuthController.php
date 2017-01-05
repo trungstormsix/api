@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Socialite;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -82,6 +83,28 @@ class AuthController extends Controller
             // Authentication passed...
             return redirect()->intended('dashboard');
         }
+    }
+    public function register(Request $request) {
+        $validator = $this->validator($request->all());
+
+        if ($validator->fails()) {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+        $user = User::where('email', '=', $request->input('email'))->first();
+        if(!$user) {
+            $user = $this->create($request->all());
+        }
+        else {
+            $user->username = $request->input('username');
+            $user->password = bcrypt($request->input('password'));
+            $user ->update();
+        }
+        
+        auth()->login($user);
+
+        return redirect()->to('/');
     }
     /**
      * Redirect the user to the GitHub authentication page.
