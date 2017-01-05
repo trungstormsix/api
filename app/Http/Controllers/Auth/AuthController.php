@@ -113,14 +113,14 @@ class AuthController extends Controller
             if(!$user) {
                 $user = User::create([
                     'facebook_id' => $socialUser->getId(),
-                    'username' => $socialUser->getName(),
+                    'name' => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
 
                 ]);                
             }
             else {
                 $user->facebook_id = $socialUser->getId();
-                $user->username = $user->username ? $user->username : $socialUser->getName();
+                $user->name = $user->name ? $user->name : $socialUser->getName();
                 $user->update();
             }
         }
