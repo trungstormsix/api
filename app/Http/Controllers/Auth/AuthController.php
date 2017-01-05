@@ -109,12 +109,20 @@ class AuthController extends Controller
         
         $user = User::where('facebook_id', '=', $socialUser->getId())->first();
         if(!$user) {
-            $user = User::create([
-                'facebook_id' => $socialUser->getId(),
-                'username' => $socialUser->getName(),
-                'email' => $socialUser->getEmail(),
+            $user = User::where('email', '=', $socialUser->getEmail())->first();
+            if(!$user) {
+                $user = User::create([
+                    'facebook_id' => $socialUser->getId(),
+                    'username' => $socialUser->getName(),
+                    'email' => $socialUser->getEmail(),
 
-            ]);
+                ]);                
+            }
+            else {
+                $user->facebook_id = $socialUser->getId();
+                $user->username = $user->username ? $user->username : $socialUser->getName();
+                $user->update();
+            }
         }
         auth()->login($user);
 
