@@ -36,7 +36,7 @@ class TestController extends Controller {
         }
         $json = json_decode(Storage::disk('xml')->get("toeic_test.json"));
         $count = 0;
-        $base_folder = "part1";
+        $base_folder = "part4";
         $this->_createList($base_folder);
         $list_xml = simplexml_load_file("xml/$base_folder/list.xml");
         $time = 0;
@@ -85,7 +85,7 @@ class TestController extends Controller {
 
     private function _getList() {
         $domparser = new DomParser();
-        $html = $domparser->file_get_html("http://www.english-test.net/toeic/listening/");
+        $html = $domparser->file_get_html("http://www.english-test.net/toeic/listening/Talks.html");
         $lessons = $html->find("div[style='line-height:22px;'] span a");
         $arr = [];
         $tests = [];

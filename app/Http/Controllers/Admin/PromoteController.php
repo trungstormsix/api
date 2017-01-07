@@ -35,8 +35,9 @@ class PromoteController extends Controller {
     public function index() {
 
         $groups = PromoteGroup::all();
-
-        return view('admin/promotes/home', ['groups' => $groups]);
+        $published_apps = PromoteApp::where("status",1)->where("publish_up","<",date("Y-m-d H:i:s"))->where("publish_down",">",date("Y-m-d H:i:s"))->get();
+        
+        return view('admin/promotes/home', compact("groups",'published_apps'));
     }
 
     public function getApp($id = 0) {            

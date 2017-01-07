@@ -68,7 +68,7 @@
                         </label>
                         <div class="col-sm-10">
                             @php ($value = (old('thumbnail') ? old('thumbnail') : ($articles ? $articles->thumbnail : '')))
-                            {!! App\library\OcoderHelper::GenerateIcon($value, 'thumbnail', URL::asset("/filemanager/index.html"), 'thumbnail') !!}
+                            {!! App\library\OcoderHelper::GenerateIcon($value, 'thumbnail', URL::asset("/public/filemanager/index.html"), 'thumbnail') !!}
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>   

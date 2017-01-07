@@ -75,29 +75,27 @@ class ArticlesController extends Controller {
     public function update(Request $request) {
         $id = $request->get("id");
         $result = false;
+        $this->validate($request, [
+            'title' => 'required|max:255',
+        ]);
         if ($id == 0) {
-            $post_data = $request->all();
             $articles = new Articles();
-            $articles->title = $post_data['title'];
-            if (!$post_data['alias'] == '') {
-                $articles->alias = $post_data['alias'];
-            } else {
-                $articles->alias = str_slug($post_data['title'], '-');
-            }
-            $articles->thumbnail = $post_data['thumbnail'];
-            $articles->link = $post_data['link'];
-            $articles->content = $post_data['content'];
-            $articles->excerpt = $post_data['excerpt'];
-            $articles->categories_id = $post_data['categories_id'];
-            $articles->published = $request->published ? $request->published : 0;
-            $result = $articles->save();
+            $articles->title = $request->title;                     
+            $articles->save();
         } else {
             $articles = Articles::findOrFail($id);
             if ($articles) {
                 $articles->published = $request->published ? $request->published : 0;
-                $result = $articles->update($request->all());
             }
         }
+        //get alias
+        if (!$request->alias == '') {
+                $articles->alias = $request->alias;
+            } else {
+                $articles->alias = str_slug($request->title, '-');
+            }   
+        $result = $articles->update($request->all());
+
         if ($result) {
             Session::flash('success', 'Article saved successfully!');
         } else {
