@@ -36,12 +36,8 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="#page-top">Home</a></li>
-                            <li><a class="page-scroll" href="#features">Features</a></li>
-                            <li><a class="page-scroll" href="#team">Team</a></li>
-                            <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
-                            <li><a class="page-scroll" href="#pricing">Pricing</a></li>
-                            <li><a class="page-scroll" href="#contact">Contact</a></li>
+                            <li><a class="page-scroll" href="{{url('/')}}">Home</a></li>
+                            <li><a class="page-scroll" href="{{url('/listening')}}">Listening</a></li>
                             @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
@@ -171,6 +167,8 @@
         <script type="text/javascript" src="{!! asset('assets/js/inspinia.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('assets/js/plugins/pace/pace.min.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('assets/js/plugins/wow/wow.min.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('assets/js/plugins/iCheck/icheck.min.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('assets/js/front.js') !!}"></script>
 
 
         <script>
@@ -223,6 +221,17 @@
             // Activate WOW.js plugin for animation on scrol
             new WOW().init();
         </script>
+        <!-- iCheck -->
+        
+            <script>
+                $(document).ready(function () {
+                    $('.i-checks').iCheck({
+                        checkboxClass: 'icheckbox_square-green',
+                        radioClass: 'iradio_square-green',
+                    });
+                });
+            </script>
+
         @yield('content_script')
     </body>
 </html>

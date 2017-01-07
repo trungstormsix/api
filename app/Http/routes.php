@@ -260,6 +260,10 @@ Route::get('/', 'HomeController@index');
 Route::get('/grammar', 'Front\GrammarTestController@index');
 Route::get('/grammar/test/{id}', 'Front\GrammarTestController@tests');
 Route::post('/grammar/test/{id}', 'Front\GrammarTestController@postTests');
+ 
+Route::Get('listening', 'Front\ListeningFrontController@index');
+Route::Get('listening/dialogs/{id}', 'Front\ListeningFrontController@dialogs');
+Route::Get('listening/test/{id}', 'Front\ListeningFrontController@test');
 
 //Route::get('api/users/{user}', function (App\User $user) {
 //    return $user->email;
@@ -269,4 +273,3 @@ Route::post('/grammar/test/{id}', 'Front\GrammarTestController@postTests');
  */
 Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
- 

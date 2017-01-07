@@ -6,87 +6,30 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\GrammarCat;
+use App\Models\ListeningCat;
+use App\Models\ListeningDialog;
+use App\Models\ListeningQuestion;
+
 
 class ListeningFrontController extends Controller
 {
-    public function __construct() {
-        $this->middleware('auth');
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // public function __construct() {
+    //     $this->middleware('auth');
+    // }
     public function index()
     {
-        $cats = GrammarCat::orderBy('id', 'asc')->paginate(50);       
+        $cats = ListeningCat::orderBy('id', 'asc')->paginate(50);       
         return view('front.listenCats', ['cats' => $cats]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function dialogs($id) {
+        $dialogs = ListeningCat::find($id)->dialogs()->orderBy('id')->paginate(20);
+        // echo '<pre>'; var_dump($dialogs);  echo '</pre>';
+        return view('front.listenDialogs', compact('dialogs'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function test($id) {
+        $dialogs = ListeningDialog::find($id);
+        $questions = ListeningDialog::find($id)->questions();
+        // echo '<pre>'; var_dump($questions);  echo '</pre>';
+        return view('front.listenTest', compact('dialogs', 'questions'));
     }
 }

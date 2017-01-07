@@ -11,25 +11,23 @@
 	            <div class="ibox-content">
 	                <div>
 	                    <div class="feed-activity-list">
-	                        @foreach($cats as $cat)
+	                        @foreach($dialogs as $dialog)
 	                        <div class="feed-element">                             
 	                            <div class="media-body ">
 	                                <small class="pull-right text-navy">5h ago</small>
-	                                <h2>{{$cat->title}}</h2>
+	                                <h2>{{$dialog->title}}</h2>
 	                                <div class="actions">
 	                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
 	                                    <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-	                                    <a class="btn btn-xs btn-white" href="{{ url('listening/dialogs/'.$cat->id) }}"><i class="fa fa-heart"></i> Test</a>
+	                                    <a class="btn btn-xs btn-white" href="{{ url('listening/test/'.$dialog->id) }}"><i class="fa fa-heart"></i> Test</a>
 	                                </div>
 	                            </div>
 	                        </div>                                                     
 	                        @endforeach
 	                    </div>
 
-	                    <button class="btn btn-primary btn-block m-t"><i class="fa fa-arrow-down"></i> Show More</button>
-
 	                </div>
-
+					{{ $dialogs->links() }}
 	            </div>
 	        </div>
 
