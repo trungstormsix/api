@@ -9,7 +9,6 @@ before_script:
 - mysql -e 'create database jeff_events;'
 - composer self-update
 - composer install --no-interaction
-install: - ls
 # Run tests through Codeception
 script:   
 - /vendor/bin/codecept run
