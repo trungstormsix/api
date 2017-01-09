@@ -8247,3 +8247,58 @@ body.md-skin {
 #promote_apps img{
     max-width: 240px;
 }
+.clr {
+  clear: both;
+}
+.categories_listen {
+  float: right;
+  width: 250px;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.categories_listen span {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid;
+  padding: 5px 10px;
+}
+.categories_listen i {
+  position: absolute;
+  right: 5px;
+  font-size: 16px;
+  top: 6px;
+}
+.categories_listen ul {
+  position: absolute;
+  list-style: none;
+  padding: 10px 10px 10px 0;
+  width: 100%;
+  left: 0;
+  top: 29px;
+  border: 1px solid;
+  background: #fff;
+  border-top: 0;
+  display: none;
+  max-height: 200px;
+  overflow-y: scroll;
+  // overflow-x: hidden;
+}
+.categories_listen a {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 0 5px 10px;
+}
+.categories_listen a:hover {  
+  background: aqua;
+}
+.link_listen {
+  float: left;
+  font-size: 15px;
+}
+.link_listen span {
+  margin: 0 10px;
+}
+.link_listen span:last-child {
+  margin: 0;
+}

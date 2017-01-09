@@ -5,7 +5,7 @@
 	<div class="row features">
 	    <div class="col-lg-12">
 	        <div class="ibox float-e-margins">
-	            <div class="col-lg-12 text-center">
+	            <div class="text-center">
 	                <h1>Listening English</h1>
 	            </div>
 	            <div class="ibox-content">

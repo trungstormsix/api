@@ -22,14 +22,17 @@ class ListeningFrontController extends Controller
         return view('front.listenCats', ['cats' => $cats]);
     }
     public function dialogs($id) {
+        $cats = ListeningCat::all();
+        $cat = ListeningCat::find($id);
         $dialogs = ListeningCat::find($id)->dialogs()->orderBy('id')->paginate(20);
         // echo '<pre>'; var_dump($dialogs);  echo '</pre>';
-        return view('front.listenDialogs', compact('dialogs'));
+        return view('front.listenDialogs', compact('dialogs','cats','cat'));
     }
     public function test($id) {
+        $list = ListeningDialog::all();
         $dialogs = ListeningDialog::find($id);
         $questions = ListeningDialog::find($id)->questions();
-        // echo '<pre>'; var_dump($questions);  echo '</pre>';
-        return view('front.listenTest', compact('dialogs', 'questions'));
+        // echo '<pre>'; var_dump($cat);  echo '</pre>';
+        return view('front.listenTest', compact('dialogs', 'questions','list'));
     }
 }

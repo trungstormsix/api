@@ -1,12 +1,30 @@
-@extends('layouts.front')
+@extends('layouts.page-front')
 
 @section('content')
 <div class="container">
 	<div class="row features">
 	    <div class="col-lg-12">
 	        <div class="ibox float-e-margins">
-	            <div class="col-lg-12 text-center">
+	            <div class="text-center">
 	                <h1>Listening English</h1>
+	            </div>
+	            {{--<div class="link_listen">
+	            	<a href="/">Home</a>
+	            	<span>/</span>
+	            	<a href="/listening">Listening</a>
+	            	<span>/</span>
+	            	<a href="/listening/dialogs/{{$dialogs->id}}">{{$dialogs->title}}</a>
+	            	<span>/</span>
+	            	<span>{{$dialogs->title}}</span> 	--}}
+	            </div>
+	            <div class="categories_listen">
+	            	<span>{{$dialogs->title}}</span>
+	            	<i class="fa fa-chevron-down" aria-hidden="true"></i>
+	            	<ul>
+	            		@foreach ($list as $new_list)
+	            			<li><a href="{{url('/listening/test/'.$new_list->id)}}">{{$new_list->title}}</a></li>
+	            		@endforeach
+	            	</ul>
 	            </div>
 	            <div class="ibox-content">
 	                <div class="panel panel-success">
