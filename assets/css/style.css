@@ -8252,7 +8252,7 @@ body.md-skin {
 }
 .sidebar_page_front {
   border: 5px solid;
-  margin-top: 15px;
+  background: #fff;
 }
 .spf_title h3 {
   font-size: 20px;
@@ -8284,4 +8284,48 @@ body.md-skin {
 }
 .spf_content a.cl_active:hover {
   background: antiquewhite;
+}
+.list_listen_lesson {
+  background: #fff;
+  padding: 30px 20px;
+}
+.lll_content {
+  background: #F0EAF2;
+  padding: 20px 10px;
+}
+.lll_item {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.lll_item_content {
+  background: #F0EAF2;
+  padding: 5px 15px;
+}
+.lll_item_content b {
+  color: #8F3778;
+}
+.lll_item_title {
+  display: inline-block;
+  background-image: url("../img/title-fold.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  left: -10px;
+  padding: 0px 0 0px 10px;
+  position: absolute;
+  top: -15px;
+  color: #fff;
+  font-weight: bold;
+}
+.lll_item_title a {
+  display: inline-block;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 10px;
+  color: #fff;
+}
+.lll_item_title a:hover {
+  text-decoration: underline;
 }

@@ -10,26 +10,26 @@
 		</div>
 	    <div class="col-lg-8">
 	        <div class="ibox float-e-margins">
-	            <div class="ibox-content">
-	                <div>
-	                    <div class="feed-activity-list">
-	                        @foreach($dialogs as $dialog)
-	                        <div class="feed-element">                             
-	                            <div class="media-body ">
-	                                <small class="pull-right text-navy">5h ago</small>
-	                                <h2>{{$dialog->title}}</h2>
-	                                <div class="actions">
-	                                    <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-	                                    <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-	                                    <a class="btn btn-xs btn-white" href="{{ url('listening/test/'.$dialog->id) }}"><i class="fa fa-heart"></i> Test</a>
-	                                </div>
-	                            </div>
-	                        </div>                                                     
-	                        @endforeach
-	                    </div>
-	                </div>
-					{{ $dialogs->links() }}
-	            </div>
+	        	<div class="list_listen_lesson">
+	        		<div class="lll_content">
+		        		@foreach($dialogs as $dialog)
+		        			<div class="lll_item">
+		        				<span class="lll_item_title">
+		        					<a href="{{ url('listening/test/'.$dialog->id) }}">{{$dialog->title}}</a>
+		        				</span>
+		        				@php 	$dialogs_note = json_decode($dialog->note); @endphp		        				
+		        				<div class="lll_item_content">
+		        					@if ($dialogs_note)
+				        				@foreach ($dialogs_note as $note)
+				        					<p><b>{{$note}}</b></p>
+				        				@endforeach
+				        			@endif
+		        				</div>		        				
+		        			</div>
+	        			@endforeach
+	        			{{ $dialogs->links() }}
+	        		</div>
+	        	</div>
 	        </div>
 	    </div>
 	    <div class="col-lg-4">

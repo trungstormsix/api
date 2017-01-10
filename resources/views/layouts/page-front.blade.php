@@ -36,6 +36,12 @@
         .ibox-content {
             border-top: 0;
         }
+        body.landing-page {
+            background: #dadada;
+        }
+        .landing-page section p {
+            color: #000;
+        }
     </style>
 
     </head>

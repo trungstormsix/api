@@ -25,7 +25,7 @@ class ListeningFrontController extends Controller
     public function dialogs($id) {
         $cats = ListeningCat::all();
         $cat = ListeningCat::find($id);
-        $dialogs = ListeningCat::find($id)->dialogs()->orderBy('id')->paginate(10);
+        $dialogs = ListeningCat::find($id)->dialogs()->orderBy('id')->paginate(8);
         Session::set("cat_selected", $id);
         // echo '<pre>'; var_dump($dialogs);  echo '</pre>';
         return view('front.listenDialogs', compact('dialogs','cats','cat'));
