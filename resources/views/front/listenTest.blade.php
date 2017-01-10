@@ -3,29 +3,13 @@
 @section('content')
 <div class="container">
 	<div class="row features">
-	    <div class="col-lg-12">
+		<div class="col-lg-12">			
+            <div class="text-center">
+                <h1>Listening English</h1>
+            </div>	  
+		</div>
+	    <div class="col-lg-8">
 	        <div class="ibox float-e-margins">
-	            <div class="text-center">
-	                <h1>Listening English</h1>
-	            </div>
-	            {{--<div class="link_listen">
-	            	<a href="/">Home</a>
-	            	<span>/</span>
-	            	<a href="/listening">Listening</a>
-	            	<span>/</span>
-	            	<a href="/listening/dialogs/{{$dialogs->id}}">{{$dialogs->title}}</a>
-	            	<span>/</span>
-	            	<span>{{$dialogs->title}}</span> 	--}}
-	            </div>
-	            <div class="categories_listen">
-	            	<span>{{$dialogs->title}}</span>
-	            	<i class="fa fa-chevron-down" aria-hidden="true"></i>
-	            	<ul>
-	            		@foreach ($list as $new_list)
-	            			<li><a href="{{url('/listening/test/'.$new_list->id)}}">{{$new_list->title}}</a></li>
-	            		@endforeach
-	            	</ul>
-	            </div>
 	            <div class="ibox-content">
 	                <div class="panel panel-success">
 	                	<div class="panel-heading"><h2>{{$dialogs->title}}</h2></div>
@@ -58,7 +42,24 @@
 
 	            </div>
 	        </div>
-
+	    </div>
+	    <div class="col-lg-4">
+	    	<div class="sidebar_page_front">
+	    		<div class="spf_title">
+		    		<h3 class="text-center">Categories Listen</h3>
+	    		</div>
+	    		<div class="spf_content">
+	    			<ul>
+	    				@foreach ($cats as $new_cat)
+	    					@if ($new_cat->title == $cat->title)
+	            				<li><a class="cl_active">{{$new_cat->title}}</a></li>
+	            			@else
+	            				<li><a href="{{url('/listening/dialogs/'.$new_cat->id)}}">{{$new_cat->title}}</a></li>
+	            			@endif
+	            		@endforeach
+	    			</ul>
+	    		</div>
+	    	</div>
 	    </div>
 	</div>
 </div>

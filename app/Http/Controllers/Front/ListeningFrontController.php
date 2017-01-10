@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ListeningCat;
 use App\Models\ListeningDialog;
 use App\Models\ListeningQuestion;
+use Illuminate\Support\Facades\Session;
 
 
 class ListeningFrontController extends Controller
@@ -24,15 +25,18 @@ class ListeningFrontController extends Controller
     public function dialogs($id) {
         $cats = ListeningCat::all();
         $cat = ListeningCat::find($id);
-        $dialogs = ListeningCat::find($id)->dialogs()->orderBy('id')->paginate(20);
+        $dialogs = ListeningCat::find($id)->dialogs()->orderBy('id')->paginate(10);
+        Session::set("cat_selected", $id);
         // echo '<pre>'; var_dump($dialogs);  echo '</pre>';
         return view('front.listenDialogs', compact('dialogs','cats','cat'));
     }
     public function test($id) {
-        $list = ListeningDialog::all();
         $dialogs = ListeningDialog::find($id);
         $questions = ListeningDialog::find($id)->questions();
-        // echo '<pre>'; var_dump($cat);  echo '</pre>';
-        return view('front.listenTest', compact('dialogs', 'questions','list'));
+        $cat_selected = Session::get('cat_selected');
+        $cats = ListeningCat::all();
+        $cat = ListeningCat::find($cat_selected);
+        // echo '<pre>'; var_dump($value);  echo '</pre>';
+        return view('front.listenTest', compact('dialogs', 'questions', 'cats', 'cat'));
     }
 }

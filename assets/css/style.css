@@ -8292,13 +8292,38 @@ body.md-skin {
 .categories_listen a:hover {  
   background: aqua;
 }
-.link_listen {
-  float: left;
-  font-size: 15px;
+.sidebar_page_front {
+  border: 5px solid;
+  margin-top: 15px;
 }
-.link_listen span {
-  margin: 0 10px;
+.spf_title h3 {
+  font-size: 20px;
 }
-.link_listen span:last-child {
-  margin: 0;
+.spf_content ul {
+  list-style: none;
+  padding: 0;
+  border-top: 5px solid;
+}
+.spf_content a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 5px 10px 30px;
+  font-size: 16px;
+  position: relative;
+}
+.spf_content a:hover {
+  background: aqua;
+  font-weight: bold;
+}
+.spf_content a:before {
+  content: "\f138";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 10px;
+}
+.spf_content a.cl_active {
+  color: yellowgreen;
+}
+.spf_content a.cl_active:hover {
+  background: antiquewhite;
 }

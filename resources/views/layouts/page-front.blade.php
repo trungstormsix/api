@@ -25,9 +25,16 @@
         }
         .landing-page .navy-line {
             margin: 150px auto 0;
+            opacity: 0;
         }
         .landing-page .navbar-default {
             background: #fff;
+        }
+        h1 {
+            margin-bottom: 50px;
+        }
+        .ibox-content {
+            border-top: 0;
         }
     </style>
 
