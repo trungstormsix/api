@@ -88,7 +88,20 @@
 	            		<div class="lq_block_content">
 	            			<p>{!! $dialogs->dialog !!}</p>	
 	            		</div>
-	            	</div>     
+	            	</div>   
+	            	<div class="listen_comment_fb">
+	            	  	<div id="fb-root"></div>
+						<script>
+							(function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0];
+							if (d.getElementById(id)) return;
+							js = d.createElement(s); js.id = id;
+							js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=1247438108670507";
+							fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));
+						</script>
+						<div class="fb-comments" data-href="{{url('/listening/test/'.$get_id)}}" data-width="100%" data-numposts="5"></div>
+					</div>
 	            </div>
 	        </div>
 	    </div>

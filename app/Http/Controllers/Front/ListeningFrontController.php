@@ -37,7 +37,8 @@ class ListeningFrontController extends Controller
         $cat_selected = Session::get('cat_selected');
         $cats = ListeningCat::all();
         $cat = ListeningCat::find($cat_selected);
+        $get_id = $id;
         // echo '<pre>'; var_dump($grammars);  echo '</pre>';
-        return view('front.listenTest', compact('dialogs', 'questions', 'cats', 'cat', 'grammars'));
+        return view('front.listenTest', compact('dialogs', 'questions', 'cats', 'cat', 'grammars', 'get_id'));
     }
 }
