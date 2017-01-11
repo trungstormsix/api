@@ -11,13 +11,56 @@
 	    <div class="col-lg-8">
 	        <div class="ibox float-e-margins">
 	            <div class="ibox-content">
-	                <div class="panel panel-success">
-	                	<div class="panel-heading"><h2>{{$dialogs->title}}</h2></div>
-	                	<div class="panel-body">
-	                		<audio controls class="m-b">
+		            @php if ($dialogs->vocabulary != null && !is_object(json_decode($dialogs->vocabulary))) { @endphp
+		            	<div class="lq_block lq_block_show lq_clicked">
+		            		<div class="lq_block_click">
+		            			<div class="lq_block_cl">
+		            				<i class="fa fa-caret-down" aria-hidden="true"></i>
+			            			<span>Preperation</span>
+		            			</div>
+		            		</div>
+		            		<div class="lq_block_content">
+		            			<p>{!!$dialogs->vocabulary!!}</p>
+		            		</div>
+		            	</div>
+		            @php } @endphp
+	            	@php if (count($grammars) != 0) { @endphp
+		            	<div class="lq_block lq_block_show lq_clicked">
+		            		<div class="lq_block_click">
+		            			<div class="lq_block_cl">
+		            				<i class="fa fa-caret-down" aria-hidden="true"></i>
+			            			<span>Grammar</span>
+		            			</div>
+		            		</div>
+		            		<div class="lq_block_content">
+		            			@foreach ($grammars as $grammar)
+		            				<p>{!!$grammar->title!!}</p>
+		            			@endforeach
+		            		</div>
+		            	</div>
+	            	@php } @endphp
+	            	<div class="lq_block lq_block_show lq_clicked lq_block_audio">
+	            		<div class="lq_block_click">
+	            			<div class="lq_block_cl">
+	            				<i class="fa fa-caret-down" aria-hidden="true"></i>
+		            			<span>Audio</span>
+	            			</div>
+	            		</div>
+	            		<div class="lq_block_content">
+	            			<audio controls class="m-b m-t">
 								<source src="{!! asset('assets/audio/'.$dialogs->audio) !!}">
 							</audio>
-							<form action="" class="form-horizontal">
+	            		</div>
+	            	</div>	 
+	            	<div class="lq_block lq_block_test">
+	            		<div class="lq_block_click">
+	            			<div class="lq_block_cl">
+	            				<i class="fa fa-caret-right" aria-hidden="true"></i>
+		            			<span>Test</span>
+	            			</div>
+	            		</div>
+	            		<div class="lq_block_content">
+	            			<form action="" class="form-horizontal">
 								@foreach ($questions as $question)
 									<div class="m-b has-warning">
 										<label for="">{{$question->question}}</label>
@@ -33,13 +76,19 @@
 								@endforeach
 							</form>
 							<button type="button" class="btn btn-primary  m-t check_result">Check Result</button>
-							<div class="test_dialog m-t">
-								<h3>Dialog</h3>
-								<p>{!! $dialogs->dialog !!}</p>								
-							</div>
-	                	</div>
-	                </div>
-
+	            		</div>
+	            	</div>	
+	            	<div class="lq_block">
+	            		<div class="lq_block_click">
+	            			<div class="lq_block_cl">
+	            				<i class="fa fa-caret-right" aria-hidden="true"></i>
+		            			<span>Dialog</span>
+	            			</div>
+	            		</div>
+	            		<div class="lq_block_content">
+	            			<p>{!! $dialogs->dialog !!}</p>	
+	            		</div>
+	            	</div>     
 	            </div>
 	        </div>
 	    </div>
@@ -52,7 +101,7 @@
 	    			<ul>
 	    				@foreach ($cats as $new_cat)
 	    					@if ($new_cat->title == $cat->title)
-	            				<li><a class="cl_active">{{$new_cat->title}}</a></li>
+	            				<li><a href="{{url('/listening/dialogs/'.$new_cat->id)}}" class="cl_active">{{$new_cat->title}}</a></li>
 	            			@else
 	            				<li><a href="{{url('/listening/dialogs/'.$new_cat->id)}}">{{$new_cat->title}}</a></li>
 	            			@endif

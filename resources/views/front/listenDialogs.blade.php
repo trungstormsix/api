@@ -41,7 +41,7 @@
 	    			<ul>
 	    				@foreach ($cats as $new_cat)
 	    					@if ($new_cat->title == $cat->title)
-	            				<li><a class="cl_active">{{$new_cat->title}}</a></li>
+	            				<li><a href="{{url('/listening/dialogs/'.$new_cat->id)}}" class="cl_active">{{$new_cat->title}}</a></li>
 	            			@else
 	            				<li><a href="{{url('/listening/dialogs/'.$new_cat->id)}}">{{$new_cat->title}}</a></li>
 	            			@endif

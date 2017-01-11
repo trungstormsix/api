@@ -8329,3 +8329,42 @@ body.md-skin {
 .lll_item_title a:hover {
   text-decoration: underline;
 }
+.lq_block {
+  padding: 0;
+  border: none;
+  margin-bottom: 15px;
+  position: relative;
+  margin: 10px 0;
+  min-height: 30px;
+}
+.lq_block_cl {
+  color: #fff;
+  font-weight: bold;
+  width: 100%;
+  background: transparent url(../img/fieldset-title.png) no-repeat scroll;
+  padding-right: 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-size: 100%;
+  background-position: inherit;
+  padding: 2px 15px 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.lq_block_cl i {
+  font-size: 16px;
+}
+.lq_block_content {
+  background-color: #e6ecf3;
+  padding: 45px 13px 15px;
+  margin: 0 5px;
+  z-index: 1;
+  display: none;
+}
+.lq_block_show .lq_block_cl {
+  background-position: bottom;
+}
+.lq_block_show .lq_block_content {
+  display: block;
+}
