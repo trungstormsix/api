@@ -273,7 +273,9 @@ Route::Get('listening/test/{id}', 'Front\ListeningFrontController@test');
  */
 Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
-
+/*
+    Build HTML contact form
+ */
 Route::get('buildform',function(){
     return view('buildform');
 });
