@@ -1,0 +1,210 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She won't speak to her boyfriend.........  he apologizes.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>until</c1>
+       <c2>while</c2>
+       <c3>as long as</c3>
+       <c4>when</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Our doctor advised us to have malaria vaccinations .........  we travel to Lombok.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>before</c1>
+       <c2>until</c2>
+       <c3>as soon as</c3>
+       <c4>as long as</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My English class ends at 3 pm. So at 4 o'clock it ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will have ended</c1>
+       <c2>will be ending</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='42'>Future perfect tense</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>John swims from 9 to 10 every morning. So at 9:30 tomorrow morning he ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will be swimming</c1>
+       <c2>will have swum</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='41'>The future continuous </article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I will graduate in December. So, in January I ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will have graduated</c1>
+       <c2>will be graduating</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='42'>Future perfect tense</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The movie starts at 5:30. It's 5:20. It will take us 30 minutes to get to the theater. When we get there, the movie ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will have started</c1>
+       <c2>will be starting</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='42'>Future perfect tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary always watches the news on TV from 8 to 8:30 pm. It's 8:15 now.  
+If we call her now, she ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will be watching the news</c1>
+       <c2>will have watched the news</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='41'>The future continuous </article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I will go to Europe on February 10th. Please call me before that day. If you call me after February 10, I already ___ to Europe.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will have gone</c1>
+       <c2>will be going</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='42'>Future perfect tense</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My father uses the computer until 6 pm every day. It's 5 o'clock now. Let's wait until 6. If we go home now, he ___ the computer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will be using</c1>
+       <c2>will have used</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='41'>The future continuous </article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Susan is on vacation in Florida. She doesn't have much money and she's spending it too quickly. Before the end of her vacation, she ___  it all her money. She'll be broke.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will have spent</c1>
+       <c2>will be spending</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='42'>Future perfect tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I'm very tired today. I'm going to bed early. Please don't call me after 9 pm because I ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will be sleeping</c1>
+       <c2>will have slept</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='41'>The future continuous </article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I have a very important English test tomorrow. I will study hard today and I'm sure before I go to bed I ___ them all the verb tenses.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will have learned</c1>
+       <c2>will be learning</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='42'>Future perfect tense</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Janelle .........  for the neighbours next Saturday night.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will baby-sit</c1>
+       <c2>baby-sat</c2>
+       <c3>baby-sit</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='37'>Simple future tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Which sentence is correct?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Mary will be here tomorrow.</c1>
+       <c2>Mary will be tomorrow here.</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She will ___ my breakfast in the morning.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>cook</c1>
+       <c2>cooking</c2>
+       <c3>cooked</c3>
+       <c4>cooks</c4>
+   <exp></exp>
+   <article id='37'>Simple future tense</article>
+</item>
+</rss>

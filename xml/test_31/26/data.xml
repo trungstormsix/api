@@ -1,0 +1,213 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>This truck runs ___ diesel.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>into</c2>
+       <c3>off</c3>
+       <c4>in</c4>
+       <c5>down</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We are almost out of gas. Let's fill ___ the tank.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>up</c1>
+       <c2>down</c2>
+       <c3>into</c3>
+       <c4>on</c4>
+       <c5>off</c5>
+       <c6>in</c6>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We cut ___ the tree, then cut it up into firewood.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>down</c1>
+       <c2>into</c2>
+       <c3>on</c3>
+       <c4>off</c4>
+       <c5>in</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We have run ___ of gasoline. The tank is totally empty.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>out</c1>
+       <c2>off</c2>
+       <c3>into</c3>
+       <c4>in</c4>
+       <c5>on</c5>
+       <c6>down</c6>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We have used ___ all the sugar. Please go buy some more.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>up</c1>
+       <c2>down</c2>
+       <c3>on</c3>
+       <c4>off</c4>
+       <c5>in</c5>
+       <c6>into</c6>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What a mess! Please clean this up and throw ___ the garbage.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>out</c1>
+       <c2>down</c2>
+       <c3>off</c3>
+       <c4>into</c4>
+       <c5>on</c5>
+       <c6>in</c6>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You are driving way too fast. Please slow ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>down</c1>
+       <c2>in</c2>
+       <c3>on</c3>
+       <c4>off</c4>
+       <c5>into</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You can count ___ him to be on time.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>into</c2>
+       <c3>off</c3>
+       <c4>down</c4>
+       <c5>in</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You can save electricity by turning ___ unnecessary lights.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>off</c1>
+       <c2>into</c2>
+       <c3>on</c3>
+       <c4>in</c4>
+       <c5>down</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You should give ___ smoking.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>up</c1>
+       <c2>in</c2>
+       <c3>on</c3>
+       <c4>down</c4>
+       <c5>into</c5>
+       <c6>off</c6>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>A sudden illness prevented her ___ attending the meeting.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>from</c1>
+       <c2>upon</c2>
+       <c3>into</c3>
+       <c4>against</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are you angry ___ me?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>with</c1>
+       <c2>for</c2>
+       <c3>to</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Crime has been ___ the increase recently.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>for</c2>
+       <c3>at</c3>
+       <c4>in</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Eating well is the key ___ good health.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to</c1>
+       <c2>against</c2>
+       <c3>in</c3>
+       <c4>with</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>English is spoken ___ America.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in</c1>
+       <c2>at</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+</rss>

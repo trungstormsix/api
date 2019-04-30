@@ -13,6 +13,7 @@ use App\Models\ListeningCat;
 use App\Models\ListeningDialog;
 use File;
 use Illuminate\Support\Facades\Session;
+use App\Models\ListeningQuestion;
 
 class ListeningController extends Controller {
 
@@ -58,27 +59,100 @@ class ListeningController extends Controller {
      * search listening
      * @return type
      */
-    public function search() {
-        $search = \Illuminate\Support\Facades\Input::get('idiom');
-
-        $listening = Idiom::where('word', 'like', '%' . $search . '%')->paginate(30);
-
-        return view('admin/listening/listening', ['listening' => $listening, 'search' => $search]);
-    }
+   
 
     public function getDialog($id) {
         $dialog = ListeningDialog::find($id);
-        return view('admin/listening/dialog', ['dialog' => $dialog]);
+        $question_ids = json_decode($dialog->question);
+        $questions = ListeningQuestion::whereIn('id', $question_ids)->get();
+
+        return view('admin/listening/dialog', compact('dialog', 'questions'));
+    }
+
+    public function postQuestionAjax(Request $req) {
+        $dl_id = $req->dlId;
+        if (!$dl_id) {
+            return response()->json(['success' => false, 'message' => "Can not found lesson"]);
+        }
+        $dialog = ListeningDialog::find($dl_id);
+        if (!$dialog) {
+            return response()->json(['success' => false, 'message' => "Can not found lesson"]);
+        }
+        $question_ids = [];
+        $questions = null;
+        if ($dialog->question && $dialog->question != "null") {
+            $question_ids = json_decode($dialog->question);
+            $questions = ListeningQuestion::whereIn('id', $question_ids)
+                    ->get();
+        }
+        $q = trim($req->q);
+        $c = trim($req->c);
+        $ans_raw = $req->ans;
+        $ans = [];
+        foreach ($ans_raw as $a) {
+            if ($a["value"]) {
+                $ans[] = trim($a["value"]);
+            }
+        }
+        $ans = array_unique($ans);
+        if (!$q) {
+            return response()->json(['success' => false, 'message' => "please add Question"]);
+            ;
+        }
+        if (!in_array($c, $ans)) {
+            return response()->json(['success' => false, 'message' => "please add correct answer in the answers"]);
+            ;
+        }
+        if ($questions) {
+            foreach ($questions as $eq) {
+                if ($eq->question == $q) {
+                    return response()->json(['success' => false, 'message' => "Question exist"]);
+                    ;
+                }
+            }
+        }
+
+        $question = new ListeningQuestion();
+        $question->question = $q;
+        $question->correct = $c;
+        $question->answers = json_encode($ans);
+        $question->save();
+        $question_ids[] = $question->id;
+        $dialog->question = json_encode($question_ids);
+        $dialog->save();
+        return response()->json(['success' => true, 'message' => "Question added sucessfully"]);
     }
 
     public function postDialog(Request $req) {
-        echo $req->status;
 
         if ($req->id) {
+            $answers = $req->questions_an;
+            $corrects = $req->questions_correct;
+            $questions = $req->questions;
+            $questions_id = [];
+            foreach ($questions as $qid => $q) {
+                $qans = array_filter($answers[$qid]);
+                $question = ListeningQuestion::find($qid);
+                if (!$q) {
+                    $question->delete();
+                    continue;
+                }
+                $question->question = $q ? $q : $question->question;
+                $question->correct = $corrects[$qid] ? $corrects[$qid] : $question->correct;
+                if (!in_array($question->correct, $qans)) {
+                    continue;
+                }
+                $question->answers = json_encode($qans);
+                $question->save();
+                $questions_id[] = $qid;
+            }
+
             $dialog = ListeningDialog::find($req->id);
             $dialog->status = $req->status ? 1 : 0;
             $dialog->dialog = $req->dialog;
             $dialog->vocabulary = $req->vocabulary;
+            $dialog->title = trim($req->title) ? trim($req->title) : $dialog->title;
+            $dialog->question = json_encode($questions_id);
             $dialog->save();
             return Redirect::to('/admin/listening/dialog/' . $dialog->id);
         }
@@ -119,6 +193,26 @@ class ListeningController extends Controller {
         Input::flash();
         return Redirect::to('/admin/listening/add-cat');
     }
+
+    public function searchDialog() {
+        $search = Input::get('search', "");
+        if (@$_GET['sort_by']) {
+            Session::put('sort_by', $_GET['sort_by']);
+            $dimen = @$_GET['sort_dimen'] ? $_GET['sort_dimen'] : 'asc';
+            Session::put('sort_dimen', $dimen);
+        }
+        $sort_by = Session::get('sort_by', 'status');
+        $dimen = Session::get('sort_dimen', 'desc');
+        $dialogs = ListeningDialog::where("title", "like", "%" . $search . "%")->orWhere("audio", "like", "%" . $search . "%")->orderBy($sort_by, $dimen)->paginate(20);
+        if(!$dialogs || $dialogs->isEmpty() ){
+             
+            $dialogs = ListeningDialog::where("dialog", "like", "%" . $search . "%")->orderBy($sort_by, $dimen)->paginate(20);
+        }
+//        return view('admin/ielts/articles', ['articles' => $articles, "cat" => null, 'sort_by' => $sort_by, 'sort_dimen' => $dimen, 'search' => $search]);
+        return view('admin/listening/dialogs', ['cat' => null, 'dialogs' => $dialogs, 'sort_by' => $sort_by, 'sort_dimen' => $dimen, 'search' => $search]);
+
+        
+        }
 
     /*     * *********************
      * ********* ajax ******

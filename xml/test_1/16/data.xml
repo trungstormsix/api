@@ -1,0 +1,194 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>According to the police, the killer of the boys in both cities ___ probably between the ages of 40 and 50.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>be</c3>
+       <c4>been</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Without the new taxes, houses built before World War II ___ lower costs than more modern homes do.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have</c1>
+       <c2>has</c2>
+       <c3>had</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Neither the teacher nor the students ___ to use this book again.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>want</c1>
+       <c2>wants</c2>
+       <c3>must</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Much of the machinery on these farms ___ usable.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>an</c3>
+       <c4>a</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Far from being a poor city with little diversity, New Orleans certainly ___ as one of the most interesting spots in the United States.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>ranks</c1>
+       <c2>rank</c2>
+       <c3>ranked</c3>
+       <c4>runk</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>That Shakespeare was one of the most talented writers ___ an understatement to those who are really familiar with the field of literature.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>was</c3>
+       <c4>were</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Common knowledge to anyone who studies science, the earth ___ on its own axis once every twenty-four hours.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>revolves</c1>
+       <c2>revolve</c2>
+       <c3>resolved</c3>
+       <c4>resolve</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Paul is Mary's father, so Mary is Paul's ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>daughter</c1>
+       <c2>wife</c2>
+       <c3>niece</c3>
+       <c4>nephew</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There isn't ___ salt on the table.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>any</c1>
+       <c2>a</c2>
+       <c3>the</c3>
+       <c4>some</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The ___ is downstairs in the kitchen.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sink</c1>
+       <c2>bath</c2>
+       <c3>toilet</c3>
+       <c4>hall</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Visitors can only watch the workings of the stock exchange from the third-floor ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Visitor's Gallery</c1>
+       <c2>Visitor Gallery's</c2>
+       <c3>Visitor Gallery</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='8'>How to form the possessive</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Those students ___ to London tomorrow.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are going</c1>
+       <c2>is going</c2>
+       <c3>goes</c3>
+       <c4>has gone</c4>
+   <exp></exp>
+   <article id='40'>Future with GOING TO</article>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My father's farm has a lot of ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>fields</c1>
+       <c2>grasses</c2>
+       <c3>gardens</c3>
+       <c4>lands</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+   <article id='96'>Quantifiers with countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I can sell you some bananas but only ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a few</c1>
+       <c2>a little</c2>
+       <c3>few</c3>
+       <c4>little</c4>
+   <exp></exp>
+   <article id='97'>The quantifiers FEW and LITTLE</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+</rss>

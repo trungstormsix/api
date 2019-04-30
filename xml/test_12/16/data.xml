@@ -1,0 +1,30 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You will pass this test if you work ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hard</c1>
+       <c2>excellent</c2>
+       <c3>good</c3>
+       <c4>hardly</c4>
+   <exp></exp>
+   <article id='79'>Adverbs of manner</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Which sentence is correct?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Jerry went to the supermarket last night.</c1>
+       <c2>Jerry last night went to the supermarket.</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='86'>Adverbs of time</article>
+</item>
+</rss>

@@ -1,0 +1,222 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My mother ___ that sweater last winter.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>made</c1>
+       <c2>has made</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How often did you ___ when you were a child?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swim</c1>
+       <c2>swims</c2>
+       <c3>swum</c3>
+       <c4>swimming</c4>
+       <c5>swam</c5>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> But that was in the past. Things have changed because something happened to him exactly two years.........  .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>ago</c1>
+       <c2>gone</c2>
+       <c3>passed</c3>
+       <c4>over</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Your father drove to work, ___ he?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't</c1>
+       <c2>won't</c2>
+       <c3>doesn't he</c3>
+       <c4>does</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Your parents went to a concert, ___ they?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't</c1>
+       <c2>don't</c2>
+       <c3>doesn't</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We ___ go to the meeting yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>could not</c1>
+       <c2>is not able</c2>
+       <c3>was not able</c3>
+       <c4>cannot</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Lisa and I ___ sick yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>am</c2>
+       <c3>was</c3>
+       <c4>be</c4>
+       <c5>are</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>A: I drove from New York yesterday.
+B: What time ___ Boston?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did you reach</c1>
+       <c2>have you reached</c2>
+       <c3>have reached</c3>
+       <c4>your reached</c4>
+       <c5>you reached</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ you play tennis yesterday?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Did</c1>
+       <c2>Does</c2>
+       <c3>Do</c3>
+       <c4>Doing</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When was the last time you went shopping?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yesterday.</c1>
+       <c2>Near the Station.</c2>
+       <c3>Tomorrow.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What were you doing last night at 7:00?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I was sleeping.</c1>
+       <c2>I slept.</c2>
+       <c3>I will be sleeping.</c3>
+       <c4>I sleep.</c4>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When did you go to that restaurant?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Last night.</c1>
+       <c2>About 30 minutes.</c2>
+       <c3>Speghetti.</c3>
+       <c4>With Jane.</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What did you do yesterday?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I swam.</c1>
+       <c2>I swim.</c2>
+       <c3>I will swim.</c3>
+       <c4>I am swimming.</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We ___ to the library last night.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>went</c1>
+       <c2>go</c2>
+       <c3>goes</c3>
+       <c4>going</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My younger brother ___ dinner last night.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>cooked</c1>
+       <c2>cooking</c2>
+       <c3>cook</c3>
+       <c4>cooks</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+</rss>

@@ -1,0 +1,210 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> I find that difficult to believe. Do you trust .........  ?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>me</c1>
+       <c2>his</c2>
+       <c3>my</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='164'>subject pronouns and object pronouns</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>..........  is the name of the team in red?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>What</c1>
+       <c2>Which</c2>
+       <c3>Who</c3>
+       <c4>Whom</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Each of them ___ to a different school.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>goes</c1>
+       <c2>go</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Every country ___ good people and bad people.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>have</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The ship started ___ maiden voyage on April 10th, 1912.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>her</c1>
+       <c2>your</c2>
+       <c3>it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary was worried about the children, so she convinced ___ husband not to accept the job abroad.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>her</c1>
+       <c2>his</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We came across a friend of ___ at the mall yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>ours</c1>
+       <c2>us</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I can't find ___ pencil. Can I use ___ , Mary?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>my, yours</c1>
+       <c2>mine, your</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Give it back to ___ . It's ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>me, mine</c1>
+       <c2>me, my</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Despite ___ old age, he is very active.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>his</c1>
+       <c2>its</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They enjoyed ___ a lot at the cocktail party.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>themselves</c1>
+       <c2>theirselves</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are ___ German stamps?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>these</c1>
+       <c2>this</c2>
+       <c3>that</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Do it by ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>yourself</c1>
+       <c2>your</c2>
+       <c3>you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='167'>Reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The proud parents brought home .........  new baby girl.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>their</c1>
+       <c2>his</c2>
+       <c3>her</c3>
+       <c4>them</c4>
+   <exp></exp>
+   <article id='166'>Personal pronouns</article>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Despite her parents complaints, she decided to live by ___ in New York City.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>herself</c1>
+       <c2>her</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+</rss>

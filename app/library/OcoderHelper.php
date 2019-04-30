@@ -1,13 +1,33 @@
 <?php
 
 namespace App\library;
+use Illuminate\Support\Facades\Storage;
 
 class OcoderHelper {
 
+    public static function dowloadImage($link){
+        var_dump(parse_url($link));
+        $thumb_host = @parse_url($link)['host'];
+        $current_host = parse_url(url('/'))['host'];
+        if($thumb_host && $thumb_host != $current_host){
+            $thumb = 'imgs/'. rand(1,10) . OcoderHelper::getFileName($link);                         
+                if (!Storage::disk('images')->has($thumb)) {
+                    @Storage::disk('images')->put($thumb, file_get_contents($link));
+                    $thumb = "/images/".$thumb;
+                }else{
+                    $thumb = "/images/".$thumb;
+                }
+        }else{
+            $thumb = str_replace(url('/'), "", $link);
+        }
+        
+        return $thumb;
+    }
     public static function getFileName($url) {
         $path = parse_url($url, PHP_URL_PATH);
         $pathFragments = explode('/', $path);
         $end = end($pathFragments);
+		$end = str_replace("%","_",$end);
         return $end;
     }
 
@@ -81,7 +101,7 @@ class OcoderHelper {
     public static function GenerateIcon($value, $id, $url) {
         $generate = '<div class="generate_input" style="position: relative;">
 			<input class="form-control" type="text" name="' . $id . '" value="' . $value . '" id="' . $id . '" style="padding: 0 122px 0 45px;">
-			<i class="fa fa-eye" aria-hidden="true" title="" id="preview_image" onmouseover="PreviewImage(\'preview_image\',\'' . $id . '\')" style="position: absolute;top: 0;font-size: 20px;line-height: 32px;padding: 0 10px;background: #eeeeee; border: 1px solid #cccccc; cursor: pointer;"></i>
+			<i class="fa fa-eye preview_img" aria-hidden="true" title="" id="preview_image' . $id . '" onmouseover="PreviewImage(\'preview_image' . $id . '\',\'' . $id . '\')" style="position: absolute;top: 0;font-size: 20px;line-height: 32px;padding: 0 10px;background: #eeeeee; border: 1px solid #cccccc; cursor: pointer;"></i>
 			<button type="button" class="btn btn-primary" onclick="BrowseServer(\'' . $id . '\',\'' . $url . ' \')" style="position: absolute; top: 0; right: 55px; border-radius: 0; background: #f2f2f2; border: 1px solid #cccccc; color: black;">Select</button>
 			<span onclick="ResetValue(\'' . $id . '\')" style="display: inline-block; position: absolute; top: 0; right: 0; line-height: 32px; font-size: 25px; font-weight: bold; padding: 0px 20px; cursor: pointer; background: #f2f2f2;    border: 1px solid #cccccc; color: #000;">x</span></div>';
         return $generate;

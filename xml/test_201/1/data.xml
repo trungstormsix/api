@@ -1,0 +1,225 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You don't smoke, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do you</c1>
+       <c2>have you</c2>
+       <c3>are you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You haven't got a car, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have you</c1>
+       <c2>are you</c2>
+       <c3>do you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You don't know her, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do you</c1>
+       <c2>have you</c2>
+       <c3>are you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You aren't going to Rome, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are you</c1>
+       <c2>have you</c2>
+       <c3>do you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You haven't been to London, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have you</c1>
+       <c2>are you</c2>
+       <c3>do you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You don't like ice cream, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do you</c1>
+       <c2>have you</c2>
+       <c3>are you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You aren't twenty-one, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are you</c1>
+       <c2>have you</c2>
+       <c3>do you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You aren't still angry, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are you</c1>
+       <c2>have you</c2>
+       <c3>do you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You haven't been on holiday, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have you</c1>
+       <c2>are you</c2>
+       <c3>do you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You aren't from America, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are you</c1>
+       <c2>have you</c2>
+       <c3>do you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You're coming to the party, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>aren't you</c1>
+       <c2>isn't you</c2>
+       <c3>shouldn't you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It wasn't very difficult, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was it</c1>
+       <c2>wasn't it</c2>
+       <c3>isn't it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Tom is getting something for Sue, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't he</c1>
+       <c2>wasn't he</c2>
+       <c3>was he</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It won't be anything expensive, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will it</c1>
+       <c2>won't it</c2>
+       <c3>isn't it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There's some milk in the refrigerator, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't there</c1>
+       <c2>isn't it</c2>
+       <c3>wasn't it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+</rss>

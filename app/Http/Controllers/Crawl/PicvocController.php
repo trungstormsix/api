@@ -25,7 +25,54 @@ class PicvocController extends Controller {
     public function __construct() {
         $this->middleware('auth');
     }
-
+	public function deleteVoc($id) {
+        $voc = Voc::find($id);
+		$voc->cats()->sync([]);
+		$voc->delete();
+		if($id){
+			echo "Delete completed!";
+		}
+        exit;
+    }
+	
+	public function getOxfordMeanOfWord($id) {
+        $voc = Voc::find($id);
+//        $vocs = Voc::where("status",0)->orderBy("updated","DESC")->orderBy("id","DESC")->paginate(50);
+         if($voc){
+            echo $voc->en_us . '<br>';
+            $result = $this->updateWord($voc);
+            if (!$result) {
+                if (!$voc->status || $voc->status == 0 && $voc->liked == 0) {
+                    $voc->cats()->sync([]);
+                    $voc->delete();
+                } else {
+                    $voc->status = 2;
+                    $voc->save();
+                }
+            }
+        }
+        exit;
+    }
+	
+	public function getOxfordMean1() {
+        $vocs = Voc::where("en_us_type", "")->where("status", 0)->orderBy("id","DESC")->paginate(150);
+//        $vocs = Voc::where("status",0)->orderBy("updated","DESC")->orderBy("id","DESC")->paginate(50);
+ 
+        foreach ($vocs as $voc) {
+            echo $voc->en_us . '<br>';
+            $result = $this->updateWord($voc);
+            if (!$result) {
+                if (!$voc->status || $voc->status == 0 && $voc->liked == 0) {
+                    $voc->cats()->sync([]);
+                    $voc->delete();
+                } else {
+                    $voc->status = 2;
+                    $voc->save();
+                }
+            }
+        }
+        exit;
+    }
     public function getOxfordMean() {
         $vocs = Voc::where("en_us_mean", "")->where("en_us_ex", "")->where("status", 0)->orderBy("id","DESC")->paginate(150);
 //        $vocs = Voc::where("status",0)->orderBy("updated","DESC")->orderBy("id","DESC")->paginate(50);
@@ -70,15 +117,18 @@ class PicvocController extends Controller {
         if (!$content->find(".pron-gs .sound", 0))
             return;
         $mp3 = $content->find(".pron-gs .sound", 0)->getAttribute("data-src-mp3");
+		 
         $mp3_file = \App\library\OcoderHelper::getFileName($mp3);
-        $audio = 'picvoc/' . $mp3_file;
+        $audio =  $mp3_file;
         $status = true;
         //get audio
-        if (!Storage::disk('audios')->has($audio)) {
-            $status  = Storage::disk('audios')->put($audio, file_get_contents($mp3));
+        if (!Storage::disk('picvoc_audios')->has($audio)) {
+			echo "<b>Audio:</b>".$audio."<br>";;
+            $status  = Storage::disk('picvoc_audios')->put($audio, file_get_contents($mp3));
         }
-
+ 
         $mean = @$content->find('.sn-gs .gram-g', 0)->plaintext . @$content->find('.sn-gs .def', 0)->plaintext;
+		echo "<b>Mean:</b>".$mean."<br>";
         $example_content = $content->find('.sn-gs .x-gs .x-g');
         $examples = [];
         $i = 0;
@@ -103,6 +153,8 @@ class PicvocController extends Controller {
         $voc->en_us_ex = $example_str;
         $voc->status = 0;
         $voc->save();
+		echo "<b>Examples:</b>".$example_str."<br>";
+
         return true;
     }
 
@@ -113,6 +165,7 @@ class PicvocController extends Controller {
             $voc->delete();
         }
         $cat->vocs()->detach();
+		
     }
 
     public function getCommonWords() {

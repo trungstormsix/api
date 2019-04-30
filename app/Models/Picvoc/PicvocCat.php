@@ -13,4 +13,7 @@ class PicvocCat extends Model
         return $this->belongsToMany('App\Models\Picvoc\Voc', 'picvoc_cat_voc','cat_id','voc_id');
     }
    
+    public function parent(){
+        return $this->find($this->parent_id);
+    }
 }

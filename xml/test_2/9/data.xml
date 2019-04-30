@@ -1,0 +1,205 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She was happy ___ his mother.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to meet</c1>
+       <c2>meet</c2>
+       <c3>meets</c3>
+       <c4>will meet</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> When you read something you've written on the computer screen, it often looks all right although you should always ......... read it first.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>proof</c1>
+       <c2>check</c2>
+       <c3>prove</c3>
+       <c4>proven</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There was a ___ cup in the sink.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>broken</c1>
+       <c2>breaking</c2>
+       <c3>break</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='11'>Functions of adjectives</article>
+   <article id='10'>Form and placement of adjectives</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I often eat (boil) eggs for breakfast.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>boiled</c1>
+       <c2>boil</c2>
+       <c3>boiling</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='10'>Form and placement of adjectives</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The comedian we saw last night really ___ us.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>amused</c1>
+       <c2>amusing</c2>
+       <c3>amuse</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='200'>Adjectives ending in ED and ING</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My uncle saved the drowning girl ___ of his own life.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at the risk</c1>
+       <c2>for the sake</c2>
+       <c3>at the mercy</c3>
+       <c4>in event</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ is fun to play soccer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>It</c1>
+       <c2>That</c2>
+       <c3>One</c3>
+       <c4>This</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My cousin was very ___ with the news.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>pleased</c1>
+       <c2>pleasing</c2>
+       <c3>please</c3>
+       <c4>to please</c4>
+   <exp></exp>
+   <article id='10'>Form and placement of adjectives</article>
+   <article id='200'>Adjectives ending in ED and ING</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Most European emigrants left their homelands searching for greater ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>economic opportunities</c1>
+       <c2>economical opportunities</c2>
+       <c3>economy opportunities</c3>
+       <c4>economics opportunities</c4>
+   <exp></exp>
+   <article id='10'>Form and placement of adjectives</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>At the end of the night the girls were fast ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>asleep</c1>
+       <c2>sleeping</c2>
+       <c3>sleep</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Two occasions of ___ declining activity were registered in the years of 1929 and 1987.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>disastrously</c1>
+       <c2>disastrous</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are you afraid ___ any insects or animals?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>of</c1>
+       <c2>to</c2>
+       <c3>against</c3>
+       <c4>from</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are you afraid ___ making mistakes with your English?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>of</c1>
+       <c2>with</c2>
+       <c3>from</c3>
+       <c4>about</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You will pass this test if you work ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hard</c1>
+       <c2>excellent</c2>
+       <c3>good</c3>
+       <c4>hardly</c4>
+   <exp></exp>
+   <article id='10'>Form and placement of adjectives</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Sorry, I can't repay you this week. I'm completely ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>broke</c1>
+       <c2>destroyed</c2>
+       <c3>dead</c3>
+       <c4>broken</c4>
+   <exp></exp>
+</item>
+</rss>

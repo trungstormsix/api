@@ -58,7 +58,7 @@ jQuery(document).ready(function ($) {
         jQuery('.click2editvoc').summernote({focus: true, styleWithSpan: false});
     }
     )
-    jQuery('#save_voc').click(function () {
+    jQuery('#save_voc,#save').click(function () {
         var aHTML = $('.click2editvoc').code(); //save HTML If you need(aHTML: array).
         jQuery("#voc_content").val(aHTML);
         jQuery('.click2editvoc').destroy();
@@ -196,18 +196,23 @@ jQuery(document).ready(function ($) {
 function ResetValue(id) {
 	document.getElementById(id).value = "";
 }
-function PreviewImage(obj,id) {
-	var src = document.getElementById(id).value;
-	document.getElementById(obj).setAttribute("data-original-title", "<img src ='"+src+"'/>"); 
-	if(src == "") 
-	{
-		document.getElementById(obj).setAttribute("data-original-title", "Select image"); 
-	}
-	$("#"+obj).tooltip({
+
+$(".preview_img").tooltip({
 	    animated: 'fade',
 	    placement: 'bottom',
 	    html: true
 	});
+        
+function PreviewImage(obj,id) {
+        
+	var src = document.getElementById(id).value;
+       
+	document.getElementById(obj).setAttribute("data-original-title", "<img style='max-height: 600px; max-width: 600px;' src ='"+src+"'/>"); 
+	if(src == "") 
+	{
+		document.getElementById(obj).setAttribute("data-original-title", "Select image"); 
+	}
+	
 }
 var urlobj;
 

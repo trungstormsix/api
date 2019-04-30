@@ -8,7 +8,7 @@ class ListeningDialog extends Model {
 
     var $table = 'enli_dialogs';
 
-    //    public $timestamps = false;
+    //   public $timestamps = false;
     const UPDATED_AT = 'updated';
     const CREATED_AT = 'updated';
 

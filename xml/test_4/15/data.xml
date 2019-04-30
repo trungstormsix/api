@@ -1,0 +1,229 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ it a good film?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Was</c1>
+       <c2>Were</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Tom and Sarah ___ watching television.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Two teenage boys ___ fighting.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Sally ___ jogging with her friend this morning.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The young newly weds ___ sleeping.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>A baby ___ crying.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't type very well, but my boyfriend ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does</c1>
+       <c2>do</c2>
+       <c3>did</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He said he would do it and he ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did</c1>
+       <c2>do</c2>
+       <c3>does</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='64'>Simple past tense</article>
+   <article id='180'>tell, say, speak, talk</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>A man ___ walking his dog.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>A lot of people ___ shopping.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='155'>matching verbs to collective nouns </article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You don't need glasses, but I ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do</c1>
+       <c2>does</c2>
+       <c3>did</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Sally didn't enjoy the movies, but everyone else ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did</c1>
+       <c2>do</c2>
+       <c3>does</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Dave doesn't want to go out tonight, but his girlfriend ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does</c1>
+       <c2>do</c2>
+       <c3>did</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She doesn't smoke, but he ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does</c1>
+       <c2>do</c2>
+       <c3>did</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't know her very well, but my friends ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do</c1>
+       <c2>does</c2>
+       <c3>did</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='3'>Plural form of nouns</article>
+   <article id='68'>Simple present tense</article>
+</item>
+</rss>

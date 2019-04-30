@@ -17,6 +17,7 @@
         <br>
         <br>
         <div class="pull-right tooltip-demo">
+            <a href="{{url('/admin/promote/cat/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Cat"><i class="fa fa-plus"></i> Add Cat</a>
             <a href="{{url('/admin/promote/app/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new app"><i class="fa fa-plus"></i> Add App</a>
         </div>
     </div>
@@ -85,7 +86,7 @@
                         @foreach($groups as $group)
                         <div id="tab-{{$group->id}}" class="tab-pane">
                             <div class="panel-body">
-
+                                    <a href="{{url('/admin/promote/cat/'.$group->id)}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new app"><i class="fa fa-plus"></i> Edit Cat</a>
                                 <div class="table-responsive">
                                     <table id="promote_apps" class="table table-bordered table-striped">
                                         <thead>

@@ -1,0 +1,213 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We spent a lot of time swimming in ...... sea on holiday</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>London is on ...... River Thames</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>----</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She did ..... MA in French literature</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>an</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My garden's looking lovely now that ...... daffodils are in flower</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>----</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It's ...... most expensive hotel in town</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>----</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>.......Mount Everest is in the Himalayas</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>a</c2>
+       <c3>the</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My mother is allergic to ........ cigarette smoke</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>the</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>An atheist does not believe in ....... God</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>a</c2>
+       <c3>the</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He never listens to ....... classical music</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>a</c2>
+       <c3>the</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You can pay that bill at ..... bank</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>----</c2>
+       <c3>an</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My flat is on ..... second floor</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It was ...... excellent meal last night</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>an</c1>
+       <c2>the</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We usually have ...... dinner at eight</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>a</c2>
+       <c3>the</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I'm against ..... capital punishment</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>the</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Would you like .... orange?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>an</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+</rss>

@@ -1,0 +1,225 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Her best friend.........  in that apartment building over there.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>lives</c1>
+       <c2>live</c2>
+       <c3>living</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Does Sally usually ___ here?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swim</c1>
+       <c2>swum</c2>
+       <c3>swimming</c3>
+       <c4>swam</c4>
+       <c5>swims</c5>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='181'>Auxiliary verbs</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>His pants ___ ripped over his left knee.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>is</c2>
+       <c3>was</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='61'>How to use the passive voice</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What time does he ___ dinner?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>eat</c1>
+       <c2>eating</c2>
+       <c3>eats</c3>
+       <c4>eaten</c4>
+       <c5>ate</c5>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My brother ___ Korean.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does not speak</c1>
+       <c2>do not speaking</c2>
+       <c3>does not speaks</c3>
+       <c4>do not speak</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='181'>Auxiliary verbs</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ know who she is.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>don't</c1>
+       <c2>doesn't</c2>
+       <c3>not</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What does Tim do after school?
+He ___ baseball.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>plays</c1>
+       <c2>playing</c2>
+       <c3>play</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='181'>Auxiliary verbs</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Both Tom and Joe ___ to that school.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>go</c1>
+       <c2>goes</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Every Christmas my grandfather ___ me a present.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sends</c1>
+       <c2>send</c2>
+       <c3>sending</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Both my sister and I ___ how to bake bread.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>know</c1>
+       <c2>knows</c2>
+       <c3>are knowing</c3>
+       <c4>am know</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='69'>Present continuous or present progressive tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I know his sister, and Jane ___ her, too.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>knows</c1>
+       <c2>knowing</c2>
+       <c3>know</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>German ___ a difficult language to learn.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Greek and Chinese ___ difficult languages to learn.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>is</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Tomorrow's homework ___ on page 37.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>begins</c1>
+       <c2>begin</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Each of them ___ to a different school.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>goes</c1>
+       <c2>go</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+</rss>

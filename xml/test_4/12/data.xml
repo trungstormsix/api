@@ -1,0 +1,214 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She doesn't want to go, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does she</c1>
+       <c2>doesn't she</c2>
+       <c3>did she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She looks tired, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>doesn't she</c1>
+       <c2>does she</c2>
+       <c3>did she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Although it contains many difficult words, I ___ read this book now.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>can</c1>
+       <c2>could</c2>
+       <c3>may</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>But I ___ have read it last year.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>couldn't</c1>
+       <c2>mayn't</c2>
+       <c3>can't</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When you receive the new books ___ try to read one of them?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>could I</c1>
+       <c2>can I</c2>
+       <c3>may I</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Can you find your way to the hotel? Yes I ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>can</c1>
+       <c2>could</c2>
+       <c3>am able</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Can you fix my car today? Yes, I ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>can</c1>
+       <c2>may</c2>
+       <c3>could</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ reach that apple, I'll have to use a ladder.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>can't</c1>
+       <c2>don't</c2>
+       <c3>couldn't</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ you just jump?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Can't</c1>
+       <c2>Don't</c2>
+       <c3>If</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You don't ___ very hard, do you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>study</c1>
+       <c2>studies</c2>
+       <c3>studying</c3>
+       <c4>studied</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ Mary live in Orlando?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Does</c1>
+       <c2>Do</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ you ever been to England?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Have</c1>
+       <c2>Has</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They ___ in a play every year.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>act</c1>
+       <c2>acting</c2>
+       <c3>acts</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='22'>Verb tenses in English</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Can you ___ the teacher the question?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>ask</c1>
+       <c2>asking</c2>
+       <c3>asked</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='52'>The Zero Infinitive</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We ___ for our trip to Europe.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>packed</c1>
+       <c2>packing</c2>
+       <c3>packs</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='22'>Verb tenses in English</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+</rss>

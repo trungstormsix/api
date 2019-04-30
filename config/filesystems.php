@@ -47,6 +47,16 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+        'jlpt_audios' => [
+            'driver' => 'local',
+            'root' => storage_path('../jlpt/audios'),
+            'visibility' => 'public',
+        ],
+         'jlpt_images' => [
+            'driver' => 'local',
+            'root' => storage_path('../jlpt/images'),
+            'visibility' => 'public',
+        ],
         'images' => [
             'driver' => 'local',
             'root' => storage_path('../images'),
@@ -57,7 +67,7 @@ return [
             'root' => storage_path('../xml'),
             'visibility' => 'public',
         ],
-        'picvoc_audios' => [
+        'audios' => [
             'driver' => 'local',
             'root' => storage_path('../audios'),
             'visibility' => 'public',
@@ -77,7 +87,11 @@ return [
             'root' => storage_path('app/public'),
             'visibility' => 'public',
         ],
-
+        'enstory_audios' => [
+            'driver' => 'local',
+            'root' => storage_path('../../public_html/audios/estory'),
+            'visibility' => 'public',
+        ],
         's3' => [
             'driver' => 's3',
             'key' => 'your-key',

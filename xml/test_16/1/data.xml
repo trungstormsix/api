@@ -1,0 +1,226 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>That's exactly what he said about .........  .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>you</c1>
+       <c2>yours</c2>
+       <c3>me</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='164'>subject pronouns and object pronouns</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I will cook dinner later this evening."
+Jill: "Mary said (that) she would cook dinner later ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>that evening</c1>
+       <c2>in the evening</c2>
+       <c3>this evening</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I went to bed early last night."
+Jill: "Mary said (that) she had gone to bed early ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the night before</c1>
+       <c2>last night</c2>
+       <c3>the night prior</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I am going to go to London in 10 days."
+Jill: "Mary said (that) she was going to go to London ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>10 days later</c1>
+       <c2>in 10 days</c2>
+       <c3>on Wednesday</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I had lunch at noon."
+Jill: "Mary said (that) she had had lunch ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>that noon</c1>
+       <c2>at 12 o'clock</c2>
+       <c3>at noon</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I will play cards the day after tomorrow."
+Jill: Mary said (that) she would play cards ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>two days later</c1>
+       <c2>in two days</c2>
+       <c3>on Thursday</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I bought it three years ago."
+Jill: "Mary said (that) she had bought it ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>three years before</c1>
+       <c2>in three years</c2>
+       <c3>three years ago</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary "I love chocolate."
+ 	Jill: "Mary said (that) she ___ chocolate."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>loved</c1>
+       <c2>loves</c2>
+       <c3>loving</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I went skiing."
+Jill: "Mary said (that) she ___ skiing."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had gone</c1>
+       <c2>went</c2>
+       <c3>have gone</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I will eat steak for dinner."
+Jill: "Mary said (that) she ___ eat steak for dinner."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>would</c1>
+       <c2>willing</c2>
+       <c3>will</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I have been to Sydney."
+Jill: "Mary said (that) she ___ to Sydney."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had been</c1>
+       <c2>has been</c2>
+       <c3>was being</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I have had three cars."
+Jill: "Mary said (that) she ___ three cars.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had had</c1>
+       <c2>has</c2>
+       <c3>has had</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I'm going to go to Long Beach."
+Jill: "Mary said (that) she ___ going to go to Long Beach."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>is</c2>
+       <c3>went</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I don't like spinach."
+Jill: "Mary said (that) she ___ like spinach."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't</c1>
+       <c2>doesn't</c2>
+       <c3>don't</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I have never been to London."
+Jill: "Mary said (that) she ___ never been to London."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had</c1>
+       <c2>has</c2>
+       <c3>have</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='110'>Tense changes when reporting speech </article>
+</item>
+</rss>

@@ -1,0 +1,229 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My father ___ not go to work yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did</c1>
+       <c2>does</c2>
+       <c3>doing</c3>
+       <c4>done</c4>
+       <c5>do</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What did you ___ yesterday afternoon?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do</c1>
+       <c2>does</c2>
+       <c3>doing</c3>
+       <c4>did</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='52'>The Zero Infinitive</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Tuesday was the last time we ___ the house before we left.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had cleaned</c1>
+       <c2>have been cleaning</c2>
+       <c3>clean</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='66'>Past perfect tense</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ the house when they returned.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was cleaning</c1>
+       <c2>am cleaning</c2>
+       <c3>have been cleaning</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ her house while she was ill.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had not been cleaning</c1>
+       <c2>will not be cleaning</c2>
+       <c3>do not clean</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='67'>Past perfect continuous tense</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Bill wrote a report about ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swimming</c1>
+       <c2>swim</c2>
+       <c3>swam</c3>
+       <c4>swims</c4>
+       <c5>swum</c5>
+   <exp></exp>
+   <article id='47'>Gerund</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Dan finished his homework, then he ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swam</c1>
+       <c2>swim</c2>
+       <c3>swimming</c3>
+       <c4>swum</c4>
+       <c5>swims</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Dick ___ the day before yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swam</c1>
+       <c2>swum</c2>
+       <c3>swims</c3>
+       <c4>swim</c4>
+       <c5>swimming</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He could have ___ here yesterday, but he didn't.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swum</c1>
+       <c2>swim</c2>
+       <c3>swims</c3>
+       <c4>swam</c4>
+       <c5>swimming</c5>
+   <exp></exp>
+   <article id='174'>Irregular Verbs</article>
+   <article id='194'>could have, should have, would have</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How many hours a day did you spend ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swimming</c1>
+       <c2>swim</c2>
+       <c3>swum</c3>
+       <c4>swims</c4>
+       <c5>swam</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swam</c1>
+       <c2>swimming</c2>
+       <c3>swim</c3>
+       <c4>swum</c4>
+       <c5>swims</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Martha was ___ this morning.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swimming</c1>
+       <c2>swims</c2>
+       <c3>swim</c3>
+       <c4>swam</c4>
+       <c5>swum</c5>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Peggy ___ with Herbert last week.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swam</c1>
+       <c2>swimming</c2>
+       <c3>swum</c3>
+       <c4>swims</c4>
+       <c5>swim</c5>
+   <exp></exp>
+   <article id='174'>Irregular Verbs</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When was the last time you ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swam</c1>
+       <c2>swims</c2>
+       <c3>swim</c3>
+       <c4>swimming</c4>
+       <c5>swum</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Where did you ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swim</c1>
+       <c2>swimming</c2>
+       <c3>swam</c3>
+       <c4>swims</c4>
+       <c5>swum</c5>
+   <exp></exp>
+   <article id='52'>The Zero Infinitive</article>
+</item>
+</rss>

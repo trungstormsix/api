@@ -1,0 +1,216 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I have no cigarettes left so I will go to the store to buy ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>some</c1>
+       <c2>any</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>If they have ___ Cuban cigars, please buy one for me.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>any</c1>
+       <c2>some</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Then you must give me ___ more money.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>some</c1>
+       <c2>any</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ate ___ soup for dinner.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a little</c1>
+       <c2>a few</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='97'>The quantifiers FEW and LITTLE</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I buy ___ bananas every week.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a few</c1>
+       <c2>a little</c2>
+       <c3>few</c3>
+       <c4>little</c4>
+   <exp></exp>
+   <article id='97'>The quantifiers FEW and LITTLE</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't have ___ money for lunch.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>any</c1>
+       <c2>some</c2>
+       <c3>few</c3>
+       <c4>little</c4>
+   <exp></exp>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't like ___ vegetables.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>many</c1>
+       <c2>much</c2>
+       <c3>little</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I have ___ friends in America.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a few</c1>
+       <c2>a little</c2>
+       <c3>few</c3>
+       <c4>little</c4>
+   <exp></exp>
+   <article id='97'>The quantifiers FEW and LITTLE</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary likes to eat ___ chicken for dinner.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>some</c1>
+       <c2>any</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She doesn't like ___ catsup on her French fries.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>any</c1>
+       <c2>some</c2>
+       <c3>little</c3>
+       <c4>few</c4>
+   <exp></exp>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There are ___ students.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a lot of</c1>
+       <c2>much</c2>
+       <c3>any</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+   <article id='96'>Quantifiers with countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There aren't ___ eggs in the refrigerator.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a lot of</c1>
+       <c2>much</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+   <article id='96'>Quantifiers with countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There is ___ ice cream.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a lot of</c1>
+       <c2>many</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We don't drink ___ coffee.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>much</c1>
+       <c2>many</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='96'>Quantifiers with countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We don't drink ___ orange juice.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>much</c1>
+       <c2>many</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+   <article id='96'>Quantifiers with countable and uncountable nouns</article>
+</item>
+</rss>

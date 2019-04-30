@@ -1,0 +1,211 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He likes ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to sing</c1>
+       <c2>sing</c2>
+       <c3>sings</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='49'>Gerund or Infinitive</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He likes to ___ basketball.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>play</c1>
+       <c2>plays</c2>
+       <c3>playing</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='49'>Gerund or Infinitive</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Would you mind (shut) the window?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>shutting</c1>
+       <c2>shut</c2>
+       <c3>to shut</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='48'>Verbs followed by the gerund</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You must be tired of (do) the same thing over and over.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>doing</c1>
+       <c2>do</c2>
+       <c3>to do</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='47'>Gerund</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>On (enter) the house he took off his hat.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>entering</c1>
+       <c2>enter</c2>
+       <c3>to enter</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='46'>Present participle</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I was tired after walking so far, so I stopped (take) a rest.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to take</c1>
+       <c2>take</c2>
+       <c3>taking</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='50'>Gerund or Infinitive, continued</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My brother has stopped (try) to learn German.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>trying</c1>
+       <c2>to try</c2>
+       <c3>try</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='50'>Gerund or Infinitive, continued</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>His doctor advised him to stop (smoke).</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>smoking</c1>
+       <c2>to smoke</c2>
+       <c3>smoke</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='50'>Gerund or Infinitive, continued</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I tried to avoid (meet) him.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>meeting</c1>
+       <c2>meet</c2>
+       <c3>met</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='48'>Verbs followed by the gerund</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I am looking forward ____(see) you soon</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to seeing</c1>
+       <c2>see</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I enjoyed ____(talk) with him.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>talking</c1>
+       <c2>to talk</c2>
+       <c3>talk</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='48'>Verbs followed by the gerund</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We heard the birds ___ outside our window.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>singing</c1>
+       <c2>sings</c2>
+       <c3>to sing</c3>
+       <c4>sang</c4>
+   <exp></exp>
+   <article id='46'>Present participle</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My mother has just finished ___ the newspaper.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>reading</c1>
+       <c2>to read</c2>
+       <c3>read</c3>
+       <c4>reads</c4>
+   <exp></exp>
+   <article id='48'>Verbs followed by the gerund</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He likes ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to sing</c1>
+       <c2>sing</c2>
+       <c3>sings</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='49'>Gerund or Infinitive</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I can't put off ___ my homework any longer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>doing</c1>
+       <c2>to be doing</c2>
+       <c3>to do</c3>
+       <c4>been doing</c4>
+   <exp></exp>
+   <article id='47'>Gerund</article>
+</item>
+</rss>

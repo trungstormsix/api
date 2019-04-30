@@ -1,0 +1,225 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He (go) to Chicago with his brother four days ago.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>went</c1>
+       <c2>go</c2>
+       <c3>goes</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They (be) in New York last week.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>are</c3>
+       <c4>is</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They (watch) the television when I entered the room</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were watching</c1>
+       <c2>watch</c2>
+       <c3>watched</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I lost the book which you (give) me.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>gave</c1>
+       <c2>had given</c2>
+       <c3>give</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='174'>Irregular Verbs</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ____(go) to Boston last week.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>went</c1>
+       <c2>go</c2>
+       <c3>gone</c3>
+       <c4>goes</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ____(write) a letter last night.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>wrote</c1>
+       <c2>was writing</c2>
+       <c3>write</c3>
+       <c4>am writing</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>George was (hurry) home from school when I saw him.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hurrying</c1>
+       <c2>hurry</c2>
+       <c3>hurred</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When ___ that new suit?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did you buy</c1>
+       <c2>have you bought</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The Washington Monument ___ (build) in honor of George Washington, the first president of the United States.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was built</c1>
+       <c2>is built</c2>
+       <c3>build</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='61'>How to use the passive voice</article>
+   <article id='63'>Passive tenses and active equivalents</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mount Everest, the highest elevation in the world, ___ (first scale) in 1953 by members of an expedition including Sir Edmund Hillary and Tenzing Norgay.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was first scaled</c1>
+       <c2>first scale</c2>
+       <c3>is first scaled</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='61'>How to use the passive voice</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Ernest Hemingway was a famous American writer who ___ (win) the 1954 Nobel Prize for literature.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>won</c1>
+       <c2>win</c2>
+       <c3>will win</c3>
+       <c4>is won</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Queen Victoria ___ (be) the first sovereign to reside in Buckingham Palace.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>is</c3>
+       <c4>are</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The telephone ___ (invent) by the Scottish-born American inventor Alexander Graham Bell in 1876.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was invented</c1>
+       <c2>invent</c2>
+       <c3>invented</c3>
+       <c4>is invented</c4>
+   <exp></exp>
+   <article id='61'>How to use the passive voice</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The first heart transplant ___ (perform) on December 3, 1967 by Dr. Christian Barnard in Cape Town, South Africa.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was performed</c1>
+       <c2>performs</c2>
+       <c3>is performed</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='61'>How to use the passive voice</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I didn't hear what that man ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>said</c1>
+       <c2>say</c2>
+       <c3>says</c3>
+       <c4>saying</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+</rss>

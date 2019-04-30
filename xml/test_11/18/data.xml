@@ -1,0 +1,214 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She wants to ___ a teacher.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>be</c1>
+       <c2>being</c2>
+       <c3>was</c3>
+       <c4>is</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Spring ___ come.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>having</c2>
+       <c3>have</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Sue often ___ her flute in her bedroom.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>practices</c1>
+       <c2>practicing</c2>
+       <c3>practice</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The black and white dog ___ sitting under the tree.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The rich ___ not always happy.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>is</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='155'>matching verbs to collective nouns </article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They ___ to play volleyball since yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have been wanting</c1>
+       <c2>wanted</c2>
+       <c3>to want</c3>
+       <c4>wanting</c4>
+       <c5>want</c5>
+   <exp></exp>
+   <article id='74'>Present perfect continuous tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>This camera ___ to me.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>belongs</c1>
+       <c2>is belonging</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='69'>Present continuous or present progressive tense</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What country is William going to ___ this summer?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>visit</c1>
+       <c2>visited</c2>
+       <c3>visiting</c3>
+       <c4>visits</c4>
+   <exp></exp>
+   <article id='40'>Future with GOING TO</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What time ___ Tim usually leave for school?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does</c1>
+       <c2>doing</c2>
+       <c3>do</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When ___? Next Sunday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are they going</c1>
+       <c2>have they gone</c2>
+       <c3>did they go</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='38'>Present continuous for the future</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You don't ___ very hard, do you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>study</c1>
+       <c2>studied</c2>
+       <c3>studying</c3>
+       <c4>studies</c4>
+   <exp></exp>
+   <article id='52'>The Zero Infinitive</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ Mary live in Orlando?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Does</c1>
+       <c2>Do</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ you ever been to England?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Have</c1>
+       <c2>Has</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She ___ her mother's house for her quite often but she can't do it anymore.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has been cleaning</c1>
+       <c2>is cleaning</c2>
+       <c3>cleans</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='74'>Present perfect continuous tense</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How long ___ the house?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have you been cleaning</c1>
+       <c2>have you cleaned</c2>
+       <c3>have you clean</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='74'>Present perfect continuous tense</article>
+</item>
+</rss>

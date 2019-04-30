@@ -1,0 +1,213 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> I found the exam _____.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>easy enough</c1>
+       <c2>enough easy</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> If it isn't ____, you'll have to redo it.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>good enough</c1>
+       <c2>enough good</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> The flat isn't _____ for them now they've got a child.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>big enough</c1>
+       <c2>enough big</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He isn't ........ to get into university</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>clever enough</c1>
+       <c2>enough clever</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> Can you be quiet now; that's ......... noise</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>quite enough</c1>
+       <c2>enough quite</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> People say that the new law isn't .......</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>tough enough</c1>
+       <c2>enough tough</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I turned the heating on because the room wasn't ........</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>warm enough</c1>
+       <c2>enough warm</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> They were not ......... to get the job</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>experienced enough</c1>
+       <c2>enough experienced</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> We weren't ....... to catch the bus</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>fast enough</c1>
+       <c2>enough fast</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='94'>The quantifier ENOUGH</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Bryan Adams is a really ___ singer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>interesting</c1>
+       <c2>interested</c2>
+       <c3>interest</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='200'>Adjectives ending in ED and ING</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I think flying in an airplane is a ___ experience.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>terrifying</c1>
+       <c2>terrified</c2>
+       <c3>terrify</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='200'>Adjectives ending in ED and ING</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Have you heard about the ___ new roller coaster at the amusement park?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>exciting</c1>
+       <c2>excited</c2>
+       <c3>excite</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='200'>Adjectives ending in ED and ING</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He ___ us with his knowledge of Medieval history.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>surprised</c1>
+       <c2>surprising</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='200'>Adjectives ending in ED and ING</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>That three hour lecture yesterday was really ___ !</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>tiring</c1>
+       <c2>tired</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='200'>Adjectives ending in ED and ING</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Halloween is coming soon! What a ___ holiday!</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>frightening</c1>
+       <c2>frighten</c2>
+       <c3>frightened</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='200'>Adjectives ending in ED and ING</article>
+   <article id='47'>Gerund</article>
+</item>
+</rss>

@@ -1,0 +1,189 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Swimming in heated pools ___ very common in this part of the country in the winter.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>was</c3>
+       <c4>were</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>As most sports magazines can attest, playing sports such as tennis and basketball ___ not only mental ability but also physical strength.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>requires</c1>
+       <c2>require</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Unlike similar kinds of pets such as neon tetras, the guppy ___ very little food and attention to survive.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>needs</c1>
+       <c2>need</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>A gong ___ at 9:15 am to signal the beginning of a new work day at the New York Stock Market.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is struck</c1>
+       <c2>is striking</c2>
+       <c3>struck</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='60'>Passive voice</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The temperature has ___ all day long.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>risen</c1>
+       <c2>raised</c2>
+       <c3>rose</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When I ___ up, I want to be a doctor.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>grow</c1>
+       <c2>grew</c2>
+       <c3>had grown</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They have agreed to offer me a job if I ___ to stay for at least one year.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>agree</c1>
+       <c2>agreed</c2>
+       <c3>have agreed</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are you able to drink a glass of water while you ___ a cigar?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>smoke</c1>
+       <c2>smoked</c2>
+       <c3>have smoked</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Investors ___ at the electronic billboard where bright green letters and numbers flow by on a black background.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>gaze</c1>
+       <c2>gazes</c2>
+       <c3>gazing</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When I ___ up, I want to be a doctor.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>grow</c1>
+       <c2>had grown</c2>
+       <c3>grew</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He has a party every weekend and his friends ___ to it without fail.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>come</c1>
+       <c2>came</c2>
+       <c3>are coming</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I bring a radio with me and I ___ to it on my way to work.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>listen</c1>
+       <c2>am listening</c2>
+       <c3>listened</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She cooks dinner every night and she ___ it while she watches TV.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>eats</c1>
+       <c2>ate</c2>
+       <c3>is eating</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+</rss>

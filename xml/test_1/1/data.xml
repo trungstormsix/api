@@ -1,0 +1,210 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My mother is allergic to ........ cigarette smoke</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>the</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Since that package contains valuable items, you must send it by ......... post.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>registered</c1>
+       <c2>required</c2>
+       <c3>resigned</c3>
+       <c4>repeated</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Quite honestly I cannot trust this particular letter to be sent by post and so I am using the services of a ......... to deliver it for me.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>courier</c1>
+       <c2>runner</c2>
+       <c3>traveller</c3>
+       <c4>carrier</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There are some ___ playing in the park.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>children</c1>
+       <c2>child</c2>
+       <c3>childs</c3>
+       <c4>child's</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't like ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>cats</c1>
+       <c2>cat</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There are many ___ in our house.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>mice</c1>
+       <c2>mouse's</c2>
+       <c3>mouses</c3>
+       <c4>mouse</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The ___ rooms are upstairs.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>children's</c1>
+       <c2>childrens'</c2>
+       <c3>children</c3>
+       <c4>childs</c4>
+   <exp></exp>
+   <article id='8'>How to form the possessive</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There are many ___ in our city.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>churches</c1>
+       <c2>church</c2>
+       <c3>churchs</c3>
+       <c4>church's</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>That is my ___ umbrella.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>father's</c1>
+       <c2>fathers</c2>
+       <c3>father</c3>
+       <c4>fathers'</c4>
+   <exp></exp>
+   <article id='8'>How to form the possessive</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Please put the shoes on the baby's ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>feet</c1>
+       <c2>foots</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+   <article id='8'>How to form the possessive</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How many ___ does the farmer have?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>geese</c1>
+       <c2>gooses</c2>
+       <c3>geeses</c3>
+       <c4>goose</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Most of the ___ have already changed colors.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>leaves</c1>
+       <c2>leaf</c2>
+       <c3>leafs</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How many ___ have you visited?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>countries</c1>
+       <c2>countrys</c2>
+       <c3>country</c3>
+       <c4>country's</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>One of the ___ broke his glasses.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>men</c1>
+       <c2>man</c2>
+       <c3>man's</c3>
+       <c4>men's</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>That woman bought six ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>knives</c1>
+       <c2>knifes</c2>
+       <c3>knife</c3>
+       <c4>knife's</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+</rss>

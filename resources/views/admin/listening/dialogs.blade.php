@@ -20,9 +20,12 @@
     <div class="col-lg-2">
         <br>
         <br>
-<!--        <div class="pull-right tooltip-demo">
-            <a href="{{url('/admin/ielts/article/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Article"><i class="fa fa-plus"></i> Add Article</a>
-        </div>-->
+        <form type="GET" action="{!! URL::route('listening.search') !!}">
+            Search: <input name='search' value='{{ @$search }}' placeholder="Search" required />
+        </form>
+        <!--        <div class="pull-right tooltip-demo">
+                    <a href="{{url('/admin/ielts/article/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Article"><i class="fa fa-plus"></i> Add Article</a>
+                </div>-->
     </div>
 </div>
 
@@ -37,8 +40,9 @@
                             <tr>
                                 <th>N.o</th>                                
                                 <th>Id</th>                                
-                                <th>
+                                <th data-sort="title" class="sort">
                                     Title
+                                    <span class="title fa fa-sort"></span>
                                 </th>
                                 <th>
                                     Audio
@@ -51,8 +55,10 @@
                                     Status
                                     <span class="status fa fa-sort"></span>
                                 </th>
+                                 @if($cat)
                                 <th data-sort="ordering" class="sort">Ordering  <span class="ordering fa fa-sort"></span>
                                 </th>
+                                @endif
                                 <th data-sort="updated" class="sort">Updated  <span class="updated fa fa-sort"></span></th>
                             </tr>
                         </thead>
@@ -76,9 +82,13 @@
                                 <td>
                                     <span class="switchery" {!! ($dialog->status == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($dialog->status == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
                                 </td>
+                                 @if($cat)
                                 <td>
-                                    <input class="ordering" data-cat_id="{{$cat->id}}" data-dialog_id="{{$dialog->id}}" value="{{$dialog->pivot->ordering}}" />
+                                   
+                                    <input class="ordering" data-cat_id="{{@$cat ? @$cat->id : 0}}" data-dialog_id="{{$dialog->id}}" value="{{$dialog->pivot->ordering}}" />
+                                   
                                 </td>
+                                 @endif
                                 <td>
                                     {{$dialog->updated}}
                                 </td>
@@ -96,12 +106,12 @@
         </div>
     </div>
 </div>
-<form id="sort">
+<form id="sort" style="display: none">
     <input class="sort_by" name="sort_by" value="{{$sort_by}}" />
     <input class="sort_dimen"  name="sort_dimen" value="{{$sort_dimen}}" />
-
+    <input name='search' value='{{ @$search }}' placeholder="Search"  />
 </form>
- @endsection
+@endsection
 
 @section('search_form')
 <form role="search" class="navbar-form-custom" action="{{url('admin/listening/search')}}">

@@ -171,6 +171,9 @@ body  a{outline: none !important;}
   border-left: 4px solid #19aa8d;
   background: #293846;
 }
+.nav-second-level .nav-second-level{
+    padding-left: 15px;
+}
 .nav.nav-second-level > li.active {
   border: none;
 }
@@ -8231,10 +8234,15 @@ body.md-skin {
 
 /*-------------------------- Style for roles page -----------------------*/
 
-.ibox-content a.btn-primary {
+.ibox-content .m-b-sm a.btn {
   margin: 30px 0 40px 0;
 }
+.ibox-content .m-b-sm  #action{
+    display: inline-block;
+    width: auto;
+      margin: 30px 0 40px 0;
 
+}
 .cat-link{
     margin-right: 10px;
 }
@@ -8246,4 +8254,11 @@ body.md-skin {
 }
 #promote_apps img{
     max-width: 240px;
+}
+.questions li{
+    margin-bottom: 20px;
+}
+.questions input{
+    width: 100%;
+    
 }

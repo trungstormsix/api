@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin\IELTS;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use App\library\OcoderHelper;
+use Illuminate\Support\Facades\Storage;
+
 use App\Http\Controllers\Controller;
 use App\Role;
 use App\Permission;
@@ -77,12 +80,28 @@ class IELTSController extends Controller {
         return Redirect::to('/admin/ielts/add-cat');
     }
 
+	public function search() {
+		$search = Input::get('search', "");
+         if (@$_GET['sort_by']) {
+            Session::put('sort_by', $_GET['sort_by']);
+            $dimen = @$_GET['sort_dimen'] ? $_GET['sort_dimen'] : 'asc';
+            Session::put('sort_dimen', $dimen);
+        }
+		$sort_by = Session::get('sort_by', 'status');
+        $dimen = Session::get('sort_dimen', 'desc');
+        $articles = IELTSArticle::where("title","like","%".$search."%")->orderBy($sort_by, $dimen)->paginate(20);
+		return view('admin/ielts/articles', ['articles' => $articles, "cat" => null, 'sort_by' => $sort_by, 'sort_dimen' => $dimen,'search'=>$search]);
+
+    }
+	
     public function listAll($cat_id = 0) {
         $cat = IELTSCat::find($cat_id);
+		Session::put('il_cat_id', $cat_id);
+		  
         if ($cat->type == "article") {
             return $this->_getArticles($cat);
         } else {
-            $this->_getVocs($cat_id);
+            //$this->_getVocs($cat_id);
         }
     }
 
@@ -122,13 +141,34 @@ class IELTSController extends Controller {
                 'title' => 'required|unique:il_articles|max:255',
             ]);
             $article = new IELTSArticle();
+			$req->audio = trim(@$req->audio);
+			
             $article->save($req->all());
         }
         $req->status = $req->status ? 1 : 0;
         $article->status = $req->status ? $req->status : 0;
+		$audio = OcoderHelper::getFileName($req->audio);
+		$audio = $audio ? "/ielts/".$req->category."/".$audio : "";
+		
+		//get audio
+		if (!Storage::disk('audios')->has($audio) && $req->audio) {
+			Storage::disk('audios')->put($audio, file_get_contents($req->audio));
+			$req->audio = $audio ?  "http://apiv1.ocodereducation.com/audios".$audio : "";	
+
+		}
+		
+		 	
         $result = $article->update($req->all());
- 
+		
         if ($result) {
+			 
+			if ($audio && Storage::disk('audios')->has($audio)) {
+				$article->audio = $req->audio;
+				$article->save();
+			}else{
+				$article->audio = "";
+				$article->save();
+			}
             Session::flash('success', 'IELTS Article saved successfully!');
             return Redirect::to('/admin/ielts/article/' . $article->id);
         }

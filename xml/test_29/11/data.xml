@@ -1,0 +1,216 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When did you go to that restaurant?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Last night.</c1>
+       <c2>Speghetti.</c2>
+       <c3>With Jane.</c3>
+       <c4>About 30 minutes.</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>When was the last time you took a picture?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>About four days ago.</c1>
+       <c2>A picture of Jane.</c2>
+       <c3>Seven pictures.</c3>
+       <c4>With my camera.</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What were you doing last night at 7:00?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I was sleeping.</c1>
+       <c2>I sleep.</c2>
+       <c3>I slept.</c3>
+       <c4>I will be sleeping.</c4>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What are you going to do after dinner?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I'll take a bath.</c1>
+       <c2>I took a bath</c2>
+       <c3>I take a bath.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='40'>Future with GOING TO</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How long have you been playing the trumpet?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>For four years.</c1>
+       <c2>About 50 cm.</c2>
+       <c3>In my room.</c3>
+       <c4>By myself.</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How many hours a day do you sleep?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I sleep 7 hours.</c1>
+       <c2>I have slept 7 hours.</c2>
+       <c3>I am sleeping 7 hours.</c3>
+       <c4>I slept 7 hours.</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How often do you write letters?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Two times a week.</c1>
+       <c2>Two pages.</c2>
+       <c3>Two people.</c3>
+       <c4>Two hours.</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Where can I buy beer?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>At a liquor store.</c1>
+       <c2>When you are twenty years old.</c2>
+       <c3>About two bottles.</c3>
+       <c4>With Jane.</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>At the meeting the committee ___ six questions.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>raised</c1>
+       <c2>rised</c2>
+       <c3>rose</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='153'>rise or raise </article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>To taste good, bread must ___ properly.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>rise</c1>
+       <c2>be raised</c2>
+       <c3>raise</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='153'>rise or raise </article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Do you think that prices will ___ next year?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>rise</c1>
+       <c2>raised</c2>
+       <c3>raise</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='153'>rise or raise </article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He had ___ flowers every year until this year. Now he grows only vegetables.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>raised</c1>
+       <c2>rised</c2>
+       <c3>risen</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='153'>rise or raise </article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He is an early ___ but he hates to stay up late.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>riser</c1>
+       <c2>raiser</c2>
+       <c3>roser</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Higher inflation usually ___ prices.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>raises</c1>
+       <c2>rises</c2>
+       <c3>raised</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='153'>rise or raise </article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>In ancient Rome, the peasants ___ up against the Emperor many times.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>rose</c1>
+       <c2>rised</c2>
+       <c3>raised</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='153'>rise or raise </article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+</rss>

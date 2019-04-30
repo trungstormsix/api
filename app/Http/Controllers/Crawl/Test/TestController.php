@@ -31,12 +31,13 @@ class TestController extends Controller {
     }
 
     public function index() {
+        $part = 4;
         if (!Storage::disk('xml')->has("toeic_test.json")) {
             $this->_getList();
         }
         $json = json_decode(Storage::disk('xml')->get("toeic_test.json"));
         $count = 0;
-        $base_folder = "part4";
+        $base_folder = "part$part";
         $this->_createList($base_folder);
         $list_xml = simplexml_load_file("xml/$base_folder/list.xml");
         $time = 0;
@@ -58,7 +59,7 @@ class TestController extends Controller {
                     $list_xml->saveXML("xml/$base_folder/list.xml");
                 }
                 $list_xml->item[$count_item]->type = "content";
-                $list_xml->item[$count_item]->title = "Part 1 - test $folder";
+                $list_xml->item[$count_item]->title = "Part $part - test $folder";
                 $list_xml->item[$count_item]->folder = $folder;
             }
             $folder = $base_folder . '/' . $folder;
@@ -162,7 +163,7 @@ class TestController extends Controller {
                     $i++;
                 }
                 $question = new \stdClass();
-                $question->question = trim($div->plaintext);
+                $question->question = trim(preg_replace('/^\d*\)\.|(&nbsp;)/','',$div->plaintext)).' ';
                 $answers = [];
             } else {
                 $answers[] = trim($div->plaintext);

@@ -18,11 +18,16 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($cat_id = 0)
     {
-        $categories = Categories::paginate(10);
+        if($cat_id){
+          $categories =   Categories::where("parent_id", $cat_id)->paginate(20);
+        }else{
+            $categories = Categories::paginate(20);
+        }
         return view('admin.categories.home', ['categories' => $categories]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -87,6 +92,7 @@ class CategoriesController extends Controller
         if ($id == 0) {
             $post_data = $request->all();
             $categories = new Categories();
+            
             $categories->name = $post_data['name'];
             if(!$post_data['alias'] == '') {
                 $categories->alias = $post_data['alias'];
@@ -103,6 +109,8 @@ class CategoriesController extends Controller
             $categories = Categories::findOrFail($id); 
             if($categories) {
                 $categories->published = $request->published ? $request->published : 0;
+                $categories->params = json_encode($request->params);
+                 
                 $result = $categories->update($request->all());
             } 
         }

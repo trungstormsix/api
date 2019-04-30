@@ -1,0 +1,212 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Do you think this is something ___ can be learned?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>that</c1>
+       <c2>who</c2>
+       <c3>X (the conjunction can be omitted)</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='161'>WHEN TO USE THAT IN RELATIVE CLAUSE</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Don't go out ___ you've finished your work.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>until</c1>
+       <c2>as</c2>
+       <c3>while</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I think I know ___ he left the job.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>why</c1>
+       <c2>until</c2>
+       <c3>where</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='85'>Relative adverbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The Internet, ___ is the fastest means of communication, will be available for most people very soon.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>which</c1>
+       <c2>that</c2>
+       <c3>X</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+   <article id='119'>Non-defining relative clauses </article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My friend John, ___ lives in California, has a car with a New York license.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>who</c1>
+       <c2>whose</c2>
+       <c3>that</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> The person in the house next to mine knows someone .........  met the Queen.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>who</c1>
+       <c2>whom</c2>
+       <c3>which</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> The grass, .........  I cut every week, seems to grow very quickly.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>which</c1>
+       <c2>who</c2>
+       <c3>who's</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='119'>Non-defining relative clauses </article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> I don't understand a word.........  you are talking about.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>that</c1>
+       <c2>what</c2>
+       <c3>who</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='161'>WHEN TO USE THAT IN RELATIVE CLAUSE</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> They have a very large house round.........  there are some lovely gardens.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>which</c1>
+       <c2>that</c2>
+       <c3>whose</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> I'm looking at the photograph.........  you sent me with your letter.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>which</c1>
+       <c2>who</c2>
+       <c3>whom</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There is a new television programme called: '.........  wants to be a millionaire?'.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Who</c1>
+       <c2>Which</c2>
+       <c3>What</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> I think you will see that this is the best museum.........  you can find in the town.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>that</c1>
+       <c2>which</c2>
+       <c3>who</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='161'>WHEN TO USE THAT IN RELATIVE CLAUSE</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> The police want to find out.........  drove the red car into the shop window.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>who</c1>
+       <c2>who's</c2>
+       <c3>whose</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> Did you meet the lady .........  uncle works in the library?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>whose</c1>
+       <c2>who</c2>
+       <c3>who's</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> ..........  is that sitting over there in the corner?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Who</c1>
+       <c2>Whom</c2>
+       <c3>Which</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='117'>Forming relative clauses</article>
+</item>
+</rss>

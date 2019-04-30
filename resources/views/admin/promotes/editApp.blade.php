@@ -101,7 +101,7 @@
                             Cat
                         </label>
                         <div class="col-sm-10">
-                            <select class="form-control m-b" name="group_id">'
+                            <select  name="group_id" data-placeholder="Choose a Group..." class="form-control m-b chosen-select" style="width:350px;" tabindex="2">
                                 @foreach($groups as $group)
                                 <option {{($app && $app->group_id == $group->id) ? "selected" : (Session::get('group_id')  == $group->id ? "selected" :"")}} value='{{$group->id}}'>
                                     {{$group->title}}
@@ -124,7 +124,7 @@
                             Key Start App
                         </label>
                         <div class="col-sm-10">
-                            <input name="key_starapp" value="{{old('key_starapp')    ?   old('key_starapp') :   $app->key_starapp}}"
+                            <input name="key_startapp" value="{{old('key_startapp')    ?   old('key_startapp') :   $app->key_startapp}}"
                          </div>
                     </div>      
                 </div>
@@ -137,7 +137,8 @@
 @section('content_js')
 <script src="{!! asset('assets/js/plugins/jsKnob/jquery.knob.js') !!}"></script>
 <script src="{!! asset('assets/ckeditor/ckeditor.js') !!}"></script>
-
+<script src="{!! asset('assets/js/plugins/chosen/chosen.jquery.js') !!}"></script>
+<link href="{!! asset('assets/css/plugins/chosen/chosen.css')!!}" rel="stylesheet">
 <script>
 var elem = document.querySelector('.js-switch');
 var switchery = new Switchery(elem, {color: '#1AB394'});
@@ -154,5 +155,16 @@ CKEDITOR.disableAutoInline = true;
 CKEDITOR.inline('description', {
 filebrowserBrowseUrl: '{!! url("public/filemanager/index.html") !!}'
         });
+//choosen
+var config = {
+            '.chosen-select'           : {},
+            '.chosen-select-deselect'  : {allow_single_deselect:true},
+            '.chosen-select-no-single' : {disable_search_threshold:10},
+            '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+            '.chosen-select-width'     : {width:"95%"}
+        }
+for (var selector in config) {
+    $(selector).chosen(config[selector]);
+}
 </script>
 @endsection

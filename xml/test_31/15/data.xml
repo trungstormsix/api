@@ -1,0 +1,209 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He studies here on this table.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Incorrect</c1>
+       <c2>Correct</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Samuel worked in the the garden ___ three hours.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for</c1>
+       <c2>since</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='73'>Present perfect tense with FOR and SINCE </article>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He left his keys ___ the door.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in</c1>
+       <c2>on</c2>
+       <c3>at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They were reassured ___ the outcome ___ the elections.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>by, of</c1>
+       <c2>about, in</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>While ___ holiday, they vacationed ___ Australia.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on, in</c1>
+       <c2>in, on</c2>
+       <c3>in,in</c3>
+       <c4>on,at</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He was concerned ___ his low grade ___ the class.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>about, in</c1>
+       <c2>with, on</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He was happy ___ them when he learned ___ their success.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for, of</c1>
+       <c2>with, about</c2>
+       <c3>about,about</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Everybody sat ___ the floor, but Mr. Spencer sat ___ a chair ___ the  corner.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on - on - in</c1>
+       <c2>over - in - on</c2>
+       <c3>about - on - at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The elderly lady was always ___ home ___ night.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at - at</c1>
+       <c2>in - at</c2>
+       <c3>into - inside</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>During the week I get up early ___ the morning and go to bed late   ___ night. But normally ___ weekends I sleep until midday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in - at - on</c1>
+       <c2>on - at - at</c2>
+       <c3>in - in - at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Peter lives ___ Boa Viagem Avenue, now, but he lived ___ 109, Amizade Street ___ 1980.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on - at - in</c1>
+       <c2>in - at - on</c2>
+       <c3>on - at - on</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He was born ___ 8:15 ___ the morning ___ June, 18th, 1928</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at - in - on</c1>
+       <c2>in - on - at</c2>
+       <c3>on - on - in</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>"I'm staying ___ the Jangadeiro Hotel. It's ___ Boa Viagem Ave. ___   Recife".</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at - on - in</c1>
+       <c2>at - in - on</c2>
+       <c3>in - on - at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Thomas was born ___ January 9th ___ Buenos Aires.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on - in</c1>
+       <c2>in - on</c2>
+       <c3>at - on</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Jenny is ___ work now.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at</c1>
+       <c2>on</c2>
+       <c3>in</c3>
+       <c4>over</c4>
+   <exp></exp>
+</item>
+</rss>

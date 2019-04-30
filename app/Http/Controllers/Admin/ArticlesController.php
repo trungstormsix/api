@@ -16,8 +16,30 @@ class ArticlesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $articles = Articles::paginate(10);
+        $articles = Articles::paginate(45);
         return view('admin.articles.home', ['articles' => $articles]);
+    }
+
+    public function articles($cat_id) {
+        $lang = \Illuminate\Support\Facades\Input::get("lang",\Session::get('lang', "all") );
+        \Session::set('lang', $lang);
+        \Session::set('a_cat_id', $cat_id);
+        $cat = Categories::find($cat_id);
+        $title = $cat->name;
+        $trash = \Illuminate\Support\Facades\Input::get('trash', false);
+        if (!$trash) {
+            $query = Articles::where('cat_id', $cat_id);
+            if($lang != "all"){
+                $query->where("lang", $lang);
+            }
+        } else {
+            $query = $articles = Articles::where('cat_id', $cat_id)->where("published", 2);
+            if($lang != "all"){
+                $query->where("lang", $lang);
+            }
+        }
+        $articles = $query->paginate(45);
+        return view('admin.articles.home', compact('articles', 'title', 'trash', 'cat'));
     }
 
     /**
@@ -80,7 +102,7 @@ class ArticlesController extends Controller {
         ]);
         if ($id == 0) {
             $articles = new Articles();
-            $articles->title = $request->title;                     
+            $articles->title = $request->title;
             $articles->save();
         } else {
             $articles = Articles::findOrFail($id);
@@ -90,10 +112,10 @@ class ArticlesController extends Controller {
         }
         //get alias
         if (!$request->alias == '') {
-                $articles->alias = $request->alias;
-            } else {
-                $articles->alias = str_slug($request->title, '-');
-            }   
+            $articles->alias = $request->alias;
+        } else {
+            $articles->alias = str_slug($request->title, '-');
+        }
         $result = $articles->update($request->all());
 
         if ($result) {
@@ -118,9 +140,37 @@ class ArticlesController extends Controller {
     }
 
     public function delete($id) {
+        $cat_id = \Session::get('a_cat_id');
+
         $articles = Articles::find($id);
         $articles->delete();
-        return redirect('admin/articles');
+        return redirect()->route('articels.list_cat', ['cat_id' => $cat_id]);
+    }
+
+    public function postDeleteArts(Request $request) {
+
+        $cat_id = \Session::get('a_cat_id');
+
+        $ids = $request->get("ids");
+        $delete = $request->get("delete");
+        $trash = null;
+        foreach ($ids as $article_id) {
+            $article = Articles::find($article_id);
+            if (!$article)
+                continue;
+            if ($delete == 3) {
+                $trash = "trash=1";
+                $article->delete();
+            } else {
+                //re-publish
+                $article->published = $delete;
+                $article->save();
+            }
+        }
+
+
+
+        return redirect()->route('articels.list_cat', ['trash' => $trash, 'cat_id' => $cat_id]);
     }
 
 }

@@ -1,0 +1,210 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ baseball very much.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>like</c1>
+       <c2>have</c2>
+       <c3>was liked</c3>
+       <c4>am</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ in London now.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>am</c1>
+       <c2>are</c2>
+       <c3>is</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I can't come, and my father can't come ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>either</c1>
+       <c2>too</c2>
+       <c3>also</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I didn't see ___ today.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>him</c1>
+       <c2>his</c2>
+       <c3>he</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I will ___ up at five tomorrow.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>get</c1>
+       <c2>getting</c2>
+       <c3>got</c3>
+       <c4>gets</c4>
+   <exp></exp>
+   <article id='37'>Simple future tense</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Is this book interesting?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>No, it's boring.</c1>
+       <c2>No, it's blue.</c2>
+       <c3>No, it's interesting.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Is this yours? Yes, it's ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>mine</c1>
+       <c2>me</c2>
+       <c3>my</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It seems to me that most restaurants are too expensive?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I don't think so.</c1>
+       <c2>I don't think.</c2>
+       <c3>I don't think it.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It will ___ fine this afternoon.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>be</c1>
+       <c2>are</c2>
+       <c3>is</c3>
+       <c4>being</c4>
+   <exp></exp>
+   <article id='37'>Simple future tense</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Jim has a dog. ___ name is Rover.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Its</c1>
+       <c2>It's</c2>
+       <c3>It</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>John and Sally ___ very kind to us.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>am</c2>
+       <c3>is</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>John is the ___ runner in our class.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>fastest</c1>
+       <c2>faster</c2>
+       <c3>fast</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Let's try to do ___ best.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>our</c1>
+       <c2>us</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Miss Washington is a teacher, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't she</c1>
+       <c2>don't she</c2>
+       <c3>is Miss Washington</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My brother is tall, but I ___ short.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>am</c1>
+       <c2>is</c2>
+       <c3>are</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='134'>The Verb To Be</article>
+</item>
+</rss>

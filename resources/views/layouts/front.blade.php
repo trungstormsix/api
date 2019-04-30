@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
-        <title>oCoder Education</title>
+        @if(@$refresh)
+        <meta http-equiv="refresh" content="{{@$refresh}}"/>
+        @endif
+        <title>{{@$coin ? $coin."-BTC" : "oCoder" }}</title>
 
         <!-- Bootstrap core CSS -->
         <link href="{!! asset('assets/css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />
@@ -36,16 +38,12 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="{{url('/')}}">Home</a></li>
-                            <li><a class="page-scroll" href="{{url('/listening')}}">Listening</a></li>
-                            @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li>
-                            <a href="{{ url('admin/user/profile') }}"> {{ Auth::user()->username }} </a></li>
-                        <li><a href="{{ url('/logout') }}">Logout</a></li>
-                    @endif
+                            <li><a class="page-scroll" href="{!! URL::route('trade.total') !!}">Home</a></li>
+                            <li><a class="page-scroll" href="{!! URL::route('trade.coins') !!}">Kèo Hồi</a></li>
+<!--                            <li><a class="page-scroll" href="#team">Team</a></li>
+                            <li><a class="page-scroll" href="#testimonials">Testimonials</a></li>
+                            <li><a class="page-scroll" href="#pricing">Pricing</a></li>-->
+                            <li><a class="page-scroll" href="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -167,8 +165,6 @@
         <script type="text/javascript" src="{!! asset('assets/js/inspinia.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('assets/js/plugins/pace/pace.min.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('assets/js/plugins/wow/wow.min.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('assets/js/plugins/iCheck/icheck.min.js') !!}"></script>
-        <script type="text/javascript" src="{!! asset('assets/js/front.js') !!}"></script>
 
 
         <script>
@@ -221,17 +217,6 @@
             // Activate WOW.js plugin for animation on scrol
             new WOW().init();
         </script>
-        <!-- iCheck -->
-        
-            <script>
-                $(document).ready(function () {
-                    $('.i-checks').iCheck({
-                        checkboxClass: 'icheckbox_square-green',
-                        radioClass: 'iradio_square-green',
-                    });
-                });
-            </script>
-
         @yield('content_script')
     </body>
 </html>

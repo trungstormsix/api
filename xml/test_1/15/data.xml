@@ -1,0 +1,218 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>William has some friends who ___ near here.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>live</c1>
+       <c2>living</c2>
+       <c3>lives</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There ___ any sugar.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't</c1>
+       <c2>aren't</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There are many ___ in the sink.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>dishes</c1>
+       <c2>dish</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It will be ___ fun to go camping with you.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a lot of</c1>
+       <c2>a few</c2>
+       <c3>very many</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='96'>Quantifiers with countable and uncountable nouns</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There is ___ water in the well.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>little</c1>
+       <c2>few</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='97'>The quantifiers FEW and LITTLE</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How many teachers ___ there in your school?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>am</c2>
+       <c3>is</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+   <article id='134'>The Verb To Be</article>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are there ___ boys in the park?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>many</c1>
+       <c2>much</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The provincial legislatures of Saskatchewan and Manitoba are in the ___ of Regina and Winnepeg, respectively.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>cities</c1>
+       <c2>city</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Visitors can only watch the workings of the stock exchange from the third-floor ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Visitor's Gallery</c1>
+       <c2>Visitor Gallery</c2>
+       <c3>Visitor Gallery's</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='8'>How to form the possessive</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Investors ___ at the electronic billboard where bright green letters and numbers flow by on a black background.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>gaze</c1>
+       <c2>gazes</c2>
+       <c3>gazing</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What ___ this is!</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>delicious coffee</c1>
+       <c2>a delicious coffee</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How ___ is it for a cup of soup?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>much</c1>
+       <c2>often</c2>
+       <c3>many</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> But you must remember that two years ago the two main characters hadn't met, which was surprising when you consider the close.........  of Andrew's cottage and Sally's.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>proximity</c1>
+       <c2>approximation</c2>
+       <c3>standing</c3>
+       <c4>placing</c4>
+   <exp></exp>
+   <article id='5'>Compound nouns</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Of all the countries in that area of the world, perhaps Nigeria ___ the most potential.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>have</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Despite the bad weather we have had in the past days, there ___ no doubt that the tournament will go on.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>a</c3>
+       <c4>an</c4>
+   <exp></exp>
+</item>
+</rss>

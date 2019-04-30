@@ -1,0 +1,210 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Sally looked very ___ in her new dress.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>happy</c1>
+       <c2>happily</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='10'>Form and placement of adjectives</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The teacher told us to be ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>quiet</c1>
+       <c2>quietly</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='10'>Form and placement of adjectives</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There is an airplane ___ in the sky.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>high</c1>
+       <c2>highly</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Try to speak as ___ as you can.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>clearly</c1>
+       <c2>clear</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She won the ___ prize.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>second</c1>
+       <c2>twice</c2>
+       <c3>two</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>  There wasn't ........ space for everybody</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>nearly enough</c1>
+       <c2>enough nearly</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='81'>Adverbs of degree</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It was dark ___ we got home.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>when</c1>
+       <c2>that</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='86'>Adverbs of time</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I think I know ___ he left the job.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>why</c1>
+       <c2>until</c2>
+       <c3>where</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='85'>Relative adverbs</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Make sure you close all the windows ___ it starts to rain.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>before</c1>
+       <c2>after</c2>
+       <c3>for</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='86'>Adverbs of time</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The boy was allowed to leave at 10 am, and so ___ the girl.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>would</c2>
+       <c3>did</c3>
+       <c4>will</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The detective has already solved the crime, and so ___ the police.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have</c1>
+       <c2>do</c2>
+       <c3>does</c3>
+       <c4>has</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I took a detour to avoid the town center, and so ___ Mary.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did</c1>
+       <c2>would</c2>
+       <c3>does</c3>
+       <c4>had</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Bob's parents were astonished by their child's determination, and so ___ his grandfather.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>did</c3>
+       <c4>had</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The dollar has risen against the yen, and so ___ the pound.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>did</c2>
+       <c3>had</c3>
+       <c4>is</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Joyce should study math, and so ___ her brother.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>should</c1>
+       <c2>can</c2>
+       <c3>must</c3>
+       <c4>might</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+</rss>

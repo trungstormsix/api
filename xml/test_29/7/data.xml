@@ -1,0 +1,211 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ the answer?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Who knows</c1>
+       <c2>Who know</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ to the airport?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>How far is it</c1>
+       <c2>How far is</c2>
+       <c3>How distance is it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How much ___ ?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do you weigh</c1>
+       <c2>do you weight</c2>
+       <c3>does your weight</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How long ___ waiting for me?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have you been</c1>
+       <c2>you have been</c2>
+       <c3>have you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='74'>Present perfect continuous tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Karen is rich; ___, her cousin Kate is poor.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>however</c1>
+       <c2>therefore</c2>
+       <c3>otherwise</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You'd better take a taxi. ___, you'll arrive late.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Otherwise</c1>
+       <c2>Consequently</c2>
+       <c3>Furthermore</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I enjoy reading this new magazine. ___, it has good articles.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Moreover</c1>
+       <c2>Nevertheless</c2>
+       <c3>However</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Jack wasn't tired. ___, he took a nap.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Nevertheless</c1>
+       <c2>Otherwise</c2>
+       <c3>Hence</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Phil was not thirsty; ___, he drank five glasses of water.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>however</c1>
+       <c2>moreover</c2>
+       <c3>furthermore</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The kids didn't study. ___, they failed the course.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Therefore</c1>
+       <c2>Nonetheless</c2>
+       <c3>Otherwise</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The weather was terrible. ___, we decided to delay our trip.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Therefore</c1>
+       <c2>Furthermore</c2>
+       <c3>Besides</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You must buy the tickets; ___, we won't be able to see that play.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>otherwise</c1>
+       <c2>although</c2>
+       <c3>besides</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The neighborhood isn't very interesting. I like the house, ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>though</c1>
+       <c2>moreover</c2>
+       <c3>thus</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We live in the same building; ___, we hardly see each other.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>however</c1>
+       <c2>therefore</c2>
+       <c3>furthermore</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He didn't earn enough money. ___, his wife decided to get a job.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Therefore</c1>
+       <c2>Moreover</c2>
+       <c3>Although</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='208'>Conjunctive adverbs</article>
+</item>
+</rss>

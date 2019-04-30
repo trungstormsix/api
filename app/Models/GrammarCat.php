@@ -16,6 +16,6 @@ class GrammarCat extends Model {
     }
 
     public function lessons() {
-        return $this->hasMany('App\Models\GrammarLesson', 'the_loai');
+        return $this->belongsToMany('App\Models\GrammarLesson', 'engr_types_articles',  'the_loai', 'truyen_ngan')->where("published",1);
     }  
 }

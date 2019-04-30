@@ -1,0 +1,209 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I have no house ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to live in</c1>
+       <c2>living in</c2>
+       <c3>live in</c3>
+       <c4>to live</c4>
+   <exp></exp>
+   <article id='55'>How and when to use the infinitive</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I haven't heard from him ___ five years.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for</c1>
+       <c2>before</c2>
+       <c3>from</c3>
+       <c4>since</c4>
+   <exp></exp>
+   <article id='73'>Present perfect tense with FOR and SINCE </article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I saw an accident ___ home.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on my way</c1>
+       <c2>on my way to</c2>
+       <c3>on my going</c3>
+       <c4>at the way</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I was ___ all my money.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>robbed of</c1>
+       <c2>stolen of</c2>
+       <c3>stolen</c3>
+       <c4>robbed</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I was spoken ___ by my teacher.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to</c1>
+       <c2>of</c2>
+       <c3>with</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I wish I ___ play golf as well as my father.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>could</c1>
+       <c2>can</c2>
+       <c3>able</c3>
+       <c4>am able</c4>
+   <exp></exp>
+   <article id='188'>clause after wish</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Is this car ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hers</c1>
+       <c2>of hers</c2>
+       <c3>her</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It is ___ cold to go outside without wearing a coat.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>too</c1>
+       <c2>so</c2>
+       <c3>very</c3>
+       <c4>much</c4>
+       <c5>enough</c5>
+   <exp></exp>
+   <article id='81'>Adverbs of degree</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It is important for everyone ___ learn English.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to</c1>
+       <c2>by</c2>
+       <c3>when</c3>
+       <c4>how</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It isn't good ___ you to stay outside in the sun all day.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for</c1>
+       <c2>at</c2>
+       <c3>in</c3>
+       <c4>with</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It will be ___ fun to go camping with you.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a lot of</c1>
+       <c2>a few</c2>
+       <c3>very many</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='96'>Quantifiers with countable and uncountable nouns</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It's time for lunch. You ___ not go outside and play now.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>should</c1>
+       <c2>have</c2>
+       <c3>would</c3>
+       <c4>did</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Look at the clouds in the sky. It ___ rain.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>may</c1>
+       <c2>will go on</c2>
+       <c3>will become</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='185'>may or might</article>
+   <article id='37'>Simple future tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mrs. Jones went shopping, ___ she?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't</c1>
+       <c2>won't</c2>
+       <c3>can't</c3>
+       <c4>doesn't</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My brother has a radio ___ in America.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>made</c1>
+       <c2>makes</c2>
+       <c3>making</c3>
+       <c4>make</c4>
+   <exp></exp>
+   <article id='186'>Reduced Relative Clauses</article>
+</item>
+</rss>

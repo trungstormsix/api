@@ -1,0 +1,222 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ talk to?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Who did you</c1>
+       <c2>Who you did</c2>
+       <c3>Who you</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ to the train station?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>How do I get</c1>
+       <c2>How I get</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ you have?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>How much hand-luggage do</c1>
+       <c2>How many hand-luggage do</c2>
+       <c3>How much hand-luggage</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+   <article id='4'>Countable and uncountable nouns</article>
+   <article id='181'>Auxiliary verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The Titanic ___ an iceberg and ___ on the night of April 14th, 1912.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>struck, sank</c1>
+       <c2>striked, sank</c2>
+       <c3>struck, sunken</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He ___ smoke a lot, but after he developed a lung disease, he decided to quit smoking.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>used to</c1>
+       <c2>was used to</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='189'>Be used to, get used to, used to</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He was ___ for murder.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hanged</c1>
+       <c2>hung</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We ___ the pictures on the wall.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hung</c1>
+       <c2>hanged</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He ___ me to go to the store and get some milk.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>told</c1>
+       <c2>said</c2>
+       <c3>spoke</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='180'>tell, say, speak, talk</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The computational speed of computers ___ doubled in the last decade.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>have</c2>
+       <c3>will</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't like when she tells me that I have to study.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Incorrect</c1>
+       <c2>Correct</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She's used to running in the park after 6 p.m.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Correct</c1>
+       <c2>Incorrect</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='189'>Be used to, get used to, used to</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Another man ___ watching her.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The students ___ using the computer lab.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='3'>Plural form of nouns</article>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She is thirty now, so last year she ___ twenty-nine.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I'll try not to ___ any more errors.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>make</c1>
+       <c2>do</c2>
+       <c3>did</c3>
+       <c4>made</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+</rss>

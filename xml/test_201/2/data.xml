@@ -1,0 +1,225 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We don't need to go to the store today, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do we</c1>
+       <c2>don't we</c2>
+       <c3>do I</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Susan can bring some food, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>can't she</c1>
+       <c2>won't she</c2>
+       <c3>will she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The party starts at eight o'clock, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>doesn't it</c1>
+       <c2>isn't it</c2>
+       <c3>does it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The movie was very long, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>wasn't it</c1>
+       <c2>isn't it</c2>
+       <c3>was it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There's a dictionary on the shelf, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't there</c1>
+       <c2>isn't it</c2>
+       <c3>aren't there</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There's a lot of noise outside, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't there</c1>
+       <c2>aren't there</c2>
+       <c3>is there</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mrs. Smith is sick, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't she</c1>
+       <c2>is she</c2>
+       <c3>wasn't she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The dishes are dirty, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>aren't they</c1>
+       <c2>weren't they</c2>
+       <c3>isn't they</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Steven won't be at the party, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will he</c1>
+       <c2>won't he</c2>
+       <c3>isn't he</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The math test was very difficult, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>wasn't it</c1>
+       <c2>isn't it</c2>
+       <c3>weren't they</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We can go tomorrow, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>can't we</c1>
+       <c2>won't we</c2>
+       <c3>can we</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I'm early, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>aren't I</c1>
+       <c2>isn't I</c2>
+       <c3>are I</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='179'>some notes with question tag</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>This shirt is too big for me, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't it</c1>
+       <c2>doesn't it</c2>
+       <c3>does it</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Emily plays the piano well, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>doesn't she</c1>
+       <c2>isn't it</c2>
+       <c3>does she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Your neighbors went on vacation, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't they</c1>
+       <c2>isn't they</c2>
+       <c3>aren't they</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+</rss>

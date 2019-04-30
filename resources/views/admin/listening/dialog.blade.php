@@ -50,7 +50,7 @@
                             <label class="col-sm-2 control-label">     
                                 Title
                             </label>
-                            <div class="col-sm-10">{{$dialog->title}} </div>     
+                            <div class="col-sm-10"><input name="title" value="{{$dialog->title}} " /></div>     
                         </div>
                         <div class="hr-line-dashed"></div>
 
@@ -120,8 +120,8 @@
                                 <div class="ibox float-e-margins">
                                     <button id="edit" class="btn btn-primary btn-xs m-l-sm"   type="button">Edit</button>
                                     <button id="save" class="btn btn-primary  btn-xs"   type="button">Done</button>
-                                    <textarea id="dialog_content" name="dialog" style="display: none;"> {!!$dialog->dialog!!}</textarea>
-                                    <div class="ibox-content no-padding">
+                                    <textarea id="dialog_content" name="dialog" spellcheck="true" style="display: none;"> {!!$dialog->dialog!!}</textarea>
+                                    <div class="ibox-content no-padding" spellcheck="true">
                                         <div class="click2edit wrapper p-md">
                                             {!!$dialog->dialog!!}
                                         </div>
@@ -143,17 +143,19 @@
                                     <!--                                    <div class="ibox-content no-padding">
                                                                             <div class="click2editvoc wrapper p-md">{!!$dialog->vocabulary!!}</div>
                                                                         </div>-->
-                                    <script src="//cdn.ckeditor.com/4.5.3/standard/ckeditor.js"></script>
-                                    <textarea id="voc_content" name="vocabulary" style="display: none;">
+                                     <textarea id="voc_content" name="vocabulary" style="display: none;" spellcheck="true"> {!!$dialog->vocabulary!!}</textarea>
+
+                                     <div class="click2editvoc" contenteditable="true" spellcheck="true">
+                                        {!!$dialog->vocabulary!!}
+                                    </div>
+                                    <!--<script src="//cdn.ckeditor.com/4.5.3/standard/ckeditor.js"></script>-->
+
+<!--                                    <textarea id="voc_content" name="vocabulary" style="display: none;">
                                     <div id="vocabulary" contenteditable="true">
                                         {!!$dialog->vocabulary!!}
                                     </div>
-</textarea>
-                                    <script>
-                                    // Turn off automatic editor creation first.
-                                    CKEDITOR.inline('vocabulary', {
-                                    filebrowserBrowseUrl: '{!! url('public/filemanager/index.html') !!}'
-                                    });</script>
+                                    </textarea>-->
+     
                                 </div>
                             </div>
                         </div>
@@ -185,6 +187,55 @@
                             </label>
                             <div class="col-sm-10">
                                 {{$dialog->question}}
+                                <button id="show_hide_q" class="btn btn-primary">Show Questions</button> <br>
+                                Delete question to empty and server will delete the question of the dialog.<br>
+                                <ol class="questions" style="display: none;">
+                                    @if($questions)
+                                    @foreach(@$questions as $q)
+                                    <li>
+                                        <label>Question</label>
+                                        <input name="questions[{{$q->id}}]" value="{{$q->question}}" style="width: 100%;" spellcheck="true"/>
+                                        <label>Correct</label>
+                                        <input name="questions_correct[{{$q->id}}]" value="{{$q->correct}}" style="width: 100%;" spellcheck="true"/>
+                                        <label>Answers</label>
+                                        @php($answers = @json_decode($q->answers)) 
+                                        @if($answers)
+                                        @foreach($answers as $an)              
+                                        <input name="questions_an[{{$q->id}}][]" value="{{$an}}" style="width: 100%;" spellcheck="true"/>
+                                        @endforeach
+                                        @else
+                                        {{$q->answers}}
+                                        <input name="questions_an[{{$q->id}}][]" value="" style="width: 100%;" spellcheck="true"/>
+                                        <input name="questions_an[{{$q->id}}][]" value="" style="width: 100%;" spellcheck="true"/>
+                                        <input name="questions_an[{{$q->id}}][]" value="" style="width: 100%;" spellcheck="true"/>
+                                        <input name="questions_an[{{$q->id}}][]" value="" style="width: 100%;" spellcheck="true"/>
+                                        
+                                        @endif
+                                        <input name="questions_an[{{$q->id}}][]" value="" style="width: 100%;" spellcheck="true"/>
+                                        
+                                    </li>
+
+                                    @endforeach
+                                    @endif
+                                </ol>
+                                <ul id="place_question">
+                                    <li>
+                                        <label>Question</label>
+                                        <input name="nquestions" value="" style="width: 100%;"/>
+                                        <label>Correct</label>
+                                        <input name="nquestions_correct" value="" style="width: 100%;"/>
+                                        <label>Answers</label>                                                  
+                                        <input name="nquestions_an[]" value="" style="width: 100%;"/>                                         
+                                        <input name="nquestions_an[]" value="" style="width: 100%;"/>                                         
+                                        <input name="nquestions_an[]" value="" style="width: 100%;"/>                                         
+                                        <input name="nquestions_an[]" value="" style="width: 100%;"/>                                         
+                                        <input name="nquestions_an[]" value="" style="width: 100%;"/>                                         
+                                        <input name="nquestions_an[]" value="" style="width: 100%;"/>                                         
+                                         
+                                    </li>
+                                </ul>
+                                <button id="add_q" class="btn btn-primary">Add a Question</button>
+
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -203,7 +254,7 @@
                                 Reports
                             </label>
                             <div class="col-sm-10">
-                                <table>
+                                <table class="table table-bordered table-striped">
                                     <tr>
                                         <th>Email</th>
                                         <th>Status </th>
@@ -212,8 +263,10 @@
                                     @foreach($dialog->reports   as $report)
                                     <tr>
                                         <td>{{$report->email}} </td>
-                                        <td style="text-align: center">{{$report->status}} </td>
+                                        <td style="text-align: center">{{$report->status}} <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox"
+                                           data-id="{{ $report->id}}"  name="status{{ $report->id}}" {{ $report->status ? 'checked' : '' }} ></td>
                                         <td>{{$report->message}} </td>
+                                         
                                     </tr>
 
                                     @endforeach
@@ -221,6 +274,10 @@
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
+                        <button class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add new playlist"
+                                style="position: fixed; bottom: 40px;right: 42px;"    >
+                            <i class="fa fa-plus"></i> Save</button>
+
                     </div>
                 </div>
             </div>
@@ -238,9 +295,67 @@
 @endsection
 
 @section('content_js')
+<!--<script src="{!! asset('assets/ckeditor/ckeditor.js') !!}"></script>-->
+
 <script>
-    var elem = document.querySelector('.js-switch');
-    var switchery = new Switchery(elem, {color: '#1AB394'});
+  
+//    CKEDITOR.inline('vocabulary', {
+//        filebrowserBrowseUrl: '{!! url('public/filemanager/index.html') !!}',
+//        customConfig: '',
+//        extraPlugins: 'sourcedialog'    
+//     });
+    $('#add_q').click(function(e){
+        e.preventDefault();
+        $(this).prop('disabled', true);
+        var that = this;
+//        console.log($('input[name="nquestions_an[]"]').serializeArray())
+        jQuery.ajax({
+                url: "{{url('admin/listening/ajax-add-qu')}}",
+                type: "POST",
+                dataType: 'json',
+                data:   { "_token": "{{ csrf_token() }}", dlId: {{$dialog->id}},q:$('input[name="nquestions"]').val(),c:$('input[name="nquestions_correct"]').val(), ans: $('input[name="nquestions_an[]"]').serializeArray() }
+            }).done(function (data) {
+                 if(data["success"] == false){
+                     alert(data["message"]);
+                     $(that).prop('disabled', false);
+                 }else{
+                      location.reload(); 
+                 }
+            })
+            .fail(function () {
+                alert("error");
+                $(that).prop('disabled', false);
+            });
+    });
+    $('#show_hide_q').click(function(e){e.preventDefault(); $('.questions').toggle(300); })
+//    var elem = document.querySelector('.js-switch');
+//    var switchery = new Switchery(elem, {color: '#1AB394'});
+    var elem = jQuery('.js-switch').each(function (index) {
+        new Switchery(this, {color: '#1AB394'});
+
+    });
+
+    jQuery('.js-switch').change(function () {
+        var report_id = jQuery(this).data('id');
+        if (jQuery(this).is(':checked')) {
+            var that = this;
+            if (report_id) {
+                var that = this;
+                jQuery.ajax({
+                    url: "{{url('admin/listening/report/fix')}}",
+                    type: "GET",
+                    dataType: 'json',
+                    data: {report_id: report_id}
+                }).done(function (data) {
+//                    $(that).click();
+                })
+                        .fail(function () {
+                            $(that).click();
+                            alert("error");
+                        });
+            }
+        }
+    });
     var linkRemoveCat = "{{url('admin/listening/remove-cat')}}";
     var linkAutocompleteCat = "{{url('admin/listening/autocomplete-cat')}}";
     var linkAddCat = "{{url('admin/listening/add-cat')}}";

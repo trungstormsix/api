@@ -1,0 +1,133 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I wonder how much ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>that car is.</c1>
+       <c2>is that car</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='112'>Question forms when reporting speech </article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't know where ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the bookstore is.</c1>
+       <c2>is the bookstore</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='112'>Question forms when reporting speech </article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I will go downtown tomorrow."
+Jill: "Mary said (that) she would go downtown ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the following/next day</c1>
+       <c2>on Friday</c2>
+       <c3>tomorrow</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I am going to play tennis today."
+Jill: "Mary said (that) she was going to play tennis ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>that day</c1>
+       <c2>today</c2>
+       <c3>tomorrow</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I went shopping yesterday."
+ Jill: "Mary said (that) she had gone shopping ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the day before</c1>
+       <c2>yesterday</c2>
+       <c3>on Saturday</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I am enjoying life now."
+Jill: "Mary said (that) she was enjoying life ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at that time</c1>
+       <c2>now</c2>
+       <c3>today</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I don't know ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>what country he comes from</c1>
+       <c2>what country does he come from</c2>
+       <c3>from what country does come</c3>
+       <c4>from what country does he come</c4>
+   <exp></exp>
+   <article id='112'>Question forms when reporting speech </article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He asked me ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>where she lived</c1>
+       <c2>where does she live</c2>
+       <c3>where did she live</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='112'>Question forms when reporting speech </article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mary: "I'm going to class in three hours."
+Jill: "Mary said (that) she was going to class ___ ."</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>three hours later</c1>
+       <c2>three hours before</c2>
+       <c3>in three hours</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='111'>Changing time and place references </article>
+</item>
+</rss>

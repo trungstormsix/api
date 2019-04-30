@@ -1,0 +1,215 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He ___ his name on the paper.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>signed</c1>
+       <c2>sign</c2>
+       <c3>signing</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='22'>Verb tenses in English</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She ___ up early on her trip last week.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>woke</c1>
+       <c2>wakes</c2>
+       <c3>waking</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='22'>Verb tenses in English</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>His house used ___ on Elm Street but he doesn't live there anymore.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to be</c1>
+       <c2>is</c2>
+       <c3>are</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='189'>Be used to, get used to, used to</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Joyce should study math, and so ___ her brother.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>should</c1>
+       <c2>can</c2>
+       <c3>must</c3>
+       <c4>might</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I can remember all their names, and so ___ my teacher.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>can</c1>
+       <c2>may</c2>
+       <c3>does</c3>
+       <c4>might</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He might do it, and so ___ his best friend.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>might</c1>
+       <c2>should</c2>
+       <c3>will</c3>
+       <c4>may</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The dollar has risen against the yen, and so ___ the pound.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>did</c2>
+       <c3>had</c3>
+       <c4>is</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ he play baseball after school?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Does</c1>
+       <c2>Is</c2>
+       <c3>Has</c3>
+       <c4>Do</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Which sentence is correct?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Only my wife and I are coming.</c1>
+       <c2>Only I and my wife are coming.</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They ___ so naughty as kids.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>John, as well as his brother, ___ coming to the party.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There ___ milk in the refrigerator.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ there any tomatoes in the salad?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Are</c1>
+       <c2>Is</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The detective has already solved the crime, and so ___ the police.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have</c1>
+       <c2>do</c2>
+       <c3>does</c3>
+       <c4>has</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I took a detour to avoid the town center, and so ___ Mary.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did</c1>
+       <c2>would</c2>
+       <c3>does</c3>
+       <c4>had</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+</rss>

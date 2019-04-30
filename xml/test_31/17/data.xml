@@ -1,0 +1,203 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The man spoke to me ___ a low voice.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in</c1>
+       <c2>on</c2>
+       <c3>at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The sun sank ___ the horizon.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>over</c1>
+       <c2>from</c2>
+       <c3>by</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The train was running ___ full speed.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at</c1>
+       <c2>on</c2>
+       <c3>with</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There are three houses ___ your house and mine.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>between</c1>
+       <c2>from</c2>
+       <c3>in</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They went to a concert ___ the evening.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in</c1>
+       <c2>on</c2>
+       <c3>from</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We have a math test ___ Monday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>in</c2>
+       <c3>at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You must come back ___ noon.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>by</c1>
+       <c2>before</c2>
+       <c3>after</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='190'>Prepositions - Time</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>A sudden illness prevented her ___ attending the meeting.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>from</c1>
+       <c2>upon</c2>
+       <c3>against</c3>
+       <c4>into</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are you angry ___ me?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>with</c1>
+       <c2>to</c2>
+       <c3>for</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Crime has been ___ the increase recently.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>for</c2>
+       <c3>in</c3>
+       <c4>at</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Eating well is the key ___ good health.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to</c1>
+       <c2>with</c2>
+       <c3>in</c3>
+       <c4>against</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>English is spoken ___ America.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in</c1>
+       <c2>at</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He failed the test much ___ the disappointment of his parents.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to</c1>
+       <c2>at</c2>
+       <c3>of</c3>
+       <c4>with</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He fell ___ his face.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>at</c2>
+       <c3>with</c3>
+       <c4>against</c4>
+       <c5>in</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He grabbed me ___ the arm.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>by</c1>
+       <c2>at</c2>
+       <c3>in</c3>
+       <c4>with</c4>
+   <exp></exp>
+</item>
+</rss>

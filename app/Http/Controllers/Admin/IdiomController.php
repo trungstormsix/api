@@ -20,8 +20,6 @@ class IdiomController  extends Controller {
  
     var $url = 'http://idioms.thefreedictionary.com/';
     /**
-     * Create a new controller instance.
-     *
      * @return void
      */
     public function __construct() {
@@ -75,7 +73,10 @@ class IdiomController  extends Controller {
         $idiom = Idiom::find($id);             
         return view('admin/idioms/idiom',['idiom'=>$idiom]);
     }
-     
+    
+    public function createIdiom($id){
+        return view('admin/idioms/idiom',['idiom'=>null]);
+    }
         /**
      * get Playlist
      */

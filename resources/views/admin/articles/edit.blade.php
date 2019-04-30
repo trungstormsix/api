@@ -29,7 +29,7 @@
             <br>
             <div class="pull-right tooltip-demo">
                 <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-plus"></i> Save</button>
-                <a href="{{url('/admin/articles')}}" class="btn btn-danger btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel Edit"><i class="fa fa-times"></i>Discard</a>
+                <a href="{{ URL::previous() }}" class="btn btn-danger btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel Edit"><i class="fa fa-times"></i>Discard</a>
             </div>
         </div>
     </div>
@@ -75,7 +75,11 @@
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
+                            @if($articles && $articles->link)
+                            <a href="{!!old('link') ? old('link') : ($articles? $articles->link : '')!!}" target="blank">Link</a>
+                            @else
                             Link
+                            @endif
                         </label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" name='link' value="{!!old('link') ? old('link') : ($articles? $articles->link : '')!!}">
@@ -95,10 +99,10 @@
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">   
-                            Excerpt
+                            Intro
                         </label>
                         <div class="col-sm-10">
-                            <textarea id="editor2" class="form-control" type="text" name='excerpt'>{!! old('excerpt') ? old('excerpt') : ($articles ? $articles->excerpt : '') !!}</textarea>
+                            <textarea id="editor2" class="form-control" type="text" name='intro'>{!! old('excerpt') ? old('intro') : ($articles ? $articles->intro : '') !!}</textarea>
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>   
@@ -108,8 +112,8 @@
                             Category
                         </label>
                         <div class="col-sm-10">
-                            @php ($category_id = old('categories_id') ? old('categories_id') : ($articles ? $articles->categories_id : ''))
-                            <select name="categories_id" data-placeholder="Choose a Country..." class="chosen-select" style="width:350px;" tabindex="2">
+                            @php ($category_id = old('cat_id') ? old('cat_id') : ($articles ? $articles->cat_id : ''))
+                            <select name="cat_id" data-placeholder="Choose a Country..." class="chosen-select" style="width:350px;" tabindex="2">
                                 <option value="0">none</option>	
                                 @foreach ($categories_level as $categories_level_1)	
                                 @if ($categories_level_1->id == $category_id)		
@@ -136,6 +140,18 @@
                                 @endif
                                 @endforeach			
                                 @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>     
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">   
+                            Ngôn Ngữ:
+                        </label>
+                        <div class="col-sm-10">
+                             <select name="lang" data-placeholder="Chọn Ngôn Ngữ..." class="chosen-select" style="width:350px;" tabindex="2">
+                                <option value="vi" {{(old('lang') == "vi" || ($articles && $articles->lang == "vi")) ? "selected='selected'" : "" }}>Tiếng Việt</option>	
+                                <option value="en" {{(old('lang') == "en" || ($articles && $articles->lang == "en")) ? "selected='selected'" : "" }}>Tiếng Anh</option>	
                             </select>
                         </div>
                     </div>
@@ -168,9 +184,9 @@
     CKEDITOR.replace('editor1', {
         filebrowserBrowseUrl: '{{URL::asset("filemanager")}}/index.html',
     });
-    CKEDITOR.replace('editor2', {
-        filebrowserBrowseUrl: '{{URL::asset("filemanager")}}/index.html',
-    });
+//    CKEDITOR.replace('editor2', {
+//        filebrowserBrowseUrl: '{{URL::asset("filemanager")}}/index.html',
+//    });
 
     var elem = document.querySelector('.js-switch');
     var switchery = new Switchery(elem, {color: '#1AB394'});

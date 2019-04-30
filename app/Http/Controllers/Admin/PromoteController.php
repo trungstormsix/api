@@ -35,19 +35,45 @@ class PromoteController extends Controller {
     public function index() {
 
         $groups = PromoteGroup::all();
-        $published_apps = PromoteApp::where("status",1)->where("publish_up","<",date("Y-m-d H:i:s"))->where("publish_down",">",date("Y-m-d H:i:s"))->get();
-        
-        return view('admin/promotes/home', compact("groups",'published_apps'));
+        $published_apps = PromoteApp::where("status", 1)->where("publish_up", "<", date("Y-m-d H:i:s"))->where("publish_down", ">", date("Y-m-d H:i:s"))->get();
+
+        return view('admin/promotes/home', compact("groups", 'published_apps'));
     }
 
-    public function getApp($id = 0) {            
-        if($id){
+    public function getApp($id = 0) {
+        if ($id) {
             $app = PromoteApp::find($id);
-        }else{
-            $app = new PromoteApp();            
+        } else {
+            $app = new PromoteApp();
         }
         $groups = PromoteGroup::all();
         return view('admin/promotes/editApp', ['app' => $app, 'groups' => $groups]);
+    }
+
+    public function getCat($id = 0) {
+
+        $cat = PromoteGroup::find($id);
+
+        return view('admin/promotes/editCat', compact('cat'));
+    }
+
+    public function postCat(Request $req) {
+        
+        $this->validate($req, [
+            'title' => 'required|max:255',
+        ]);
+        if ($req->id) {
+            $app = PromoteGroup::find($req->id);
+            $app->title = $req->title;
+            $message = "Category is updated sucessfully!";
+        } else {
+            $app = new PromoteGroup();
+            $app->title = $req->title;
+            $message = "Category is created sucessfully!";
+        }
+        $app->save();
+ 
+       return redirect('admin/promote/cat/'.$app->id)->with('success',$message);
     }
 
     /**
@@ -56,7 +82,7 @@ class PromoteController extends Controller {
     public function postApp(Request $req) {
         $this->validate($req, [
             'title' => 'required|max:255',
-            'package'=> 'required|max:255',
+            'package' => 'required|max:255',
         ]);
         if ($req->id) {
             $app = PromoteApp::find($req->id);
@@ -69,6 +95,7 @@ class PromoteController extends Controller {
 
         $app->publish_up = date("Y-m-d H:i:s", strtotime($req->publish_up));
         $app->publish_down = $req->publish_down;
+        $app->key_startapp = $req->key_startapp;
         $app->status = $req->status ? $req->status : 0;
 
         $result = $app->update($req->all());

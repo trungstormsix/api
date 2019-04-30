@@ -5,7 +5,7 @@ namespace App\Models\IELTS;
 use Illuminate\Database\Eloquent\Model;
 
 class IELTSArticle extends Model {
-    protected $fillable =  ['title', 'category',  'updated', 'status','article','is_pro'];
+    protected $fillable =  ['title', 'category','audio',  'updated', 'status','article','is_pro'];
 
     var $table = 'il_articles';
 

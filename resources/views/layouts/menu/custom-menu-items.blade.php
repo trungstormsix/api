@@ -3,7 +3,9 @@
         <li class="{!! $item->isActive ? 'active' : '' !!} {{$item->class}}">
             @if($item->hasChildren())
                 <a href="{!! $item->url() !!}">
-                    <i class="fa fa-{{$attr? $attr["pre_icon"] : 'user'}}"></i>
+                    @if($attr && @$attr["pre_icon"])
+                    <i class="fa fa-{{$attr ? @$attr["pre_icon"] : 'user'}}"></i>
+                    @endif
                     <span class="nav-label">{!! $item->title !!}</span>
                     <span class="fa arrow"></span>
                 </a>
@@ -16,7 +18,9 @@
                     @if($item->parent)
                     {!! $item->title !!}
                     @else
-                    <i class="fa fa-{{$attr? $attr["pre_icon"] : 'user'}}"></i>
+                        @if($attr && @$attr["pre_icon"])
+                        <i class="fa fa-{{$attr? @$attr["pre_icon"] : 'user'}}"></i>
+                        @endif
                     <span class="nav-label">{!! $item->title !!}</span>
                     @endif
                 </a>

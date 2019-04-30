@@ -17,7 +17,7 @@ class User extends Authenticatable {
      * @var array
      */
     protected $fillable = [
-        'facebook_id', 'username', 'name', 'first', 'middle','last', 'email', 'password',
+        'username', 'first', 'middle', 'last', 'email', 'password',
     ];
 
     /**
@@ -35,5 +35,9 @@ class User extends Authenticatable {
         }
         return false;
     }
+    
+    public function questions() {
+        return $this->belongsToMany('App\Models\GrammarQuestion', 'engr_user_questions',"uid","qid");
 
+    }
 }

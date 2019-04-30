@@ -1,0 +1,211 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>____ apple</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>an</c1>
+       <c2>a</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She's reading Italian at ____.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>university</c1>
+       <c2>the university</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>If you're looking for ___ place to only do bodybuilding, you'll be happy in a basic gym.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a</c1>
+       <c2>an</c2>
+       <c3>the</c3>
+       <c4>no article is needed</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Try to talk to other members of the club. Find out what they believe are ___ advantages and disadvantages there.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>no article is needed</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Finally, before you sign ___ agreement to join, read the contract carefully.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>an</c1>
+       <c2>a</c2>
+       <c3>the</c3>
+       <c4>no article is needed</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Albert Einstein was ___ famous scientist.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a</c1>
+       <c2>an</c2>
+       <c3>the</c3>
+       <c4>X [Nothing]</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Einstein was born in ___ Germany in 1879.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>X [Nothing]</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>the</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Einstein won ___ Nobel Prize in Physics in 1921.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>X [Nothing]</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Einstein left his country and lived in ___ States until he died in 1955.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>X [Nothing]</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Einstein is known for his theory of ___ relativity.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>X [Nothing]</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>the</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Roentgen was ___ German physicist who discovered x-rays, revolutionizing medical diagnosis.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a</c1>
+       <c2>an</c2>
+       <c3>the</c3>
+       <c4>X [Nothing]</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mandela was born in ___ South Africa.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>X [Nothing]</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>the</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mother Teresa was ___ Roman Catholic nun.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a</c1>
+       <c2>an</c2>
+       <c3>the</c3>
+       <c4>X [Nothing]</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mother Teresa became famous for her hard work with ___ poor.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>an</c3>
+       <c4>X [Nothing]</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She was ___ founder of ___ order of nuns called the Missionaries of Charity.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the / an</c1>
+       <c2>a / an</c2>
+       <c3>a / X</c3>
+       <c4>the / X [Nothing]</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+   <article id='91'>Indefinite articles</article>
+</item>
+</rss>

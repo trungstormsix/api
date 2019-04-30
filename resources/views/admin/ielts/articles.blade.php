@@ -30,7 +30,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel-body">
-
+				<form type="GET" action="{!! URL::route('ielts_articles.search') !!}">
+					Search: <input name='search' value='{{ @$search }}' placeholder="Search" required />
+				</form>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -47,6 +49,10 @@
                                 <th data-sort="liked" class="sort">
                                     Like
                                     <span class="liked fa fa-sort"></span>
+                                </th>
+								<th data-sort="is_pro" class="sort">
+                                    Pro
+                                    <span class="is_pro fa fa-sort"></span>
                                 </th>
                                 <th data-sort="status" class="sort">
                                     Status
@@ -69,9 +75,15 @@
                                     </a>
                                 </td>                                
                                 <td>
+								@if($dialog->audio)
+									<span class="ordering fa fa-check"></span>
+								@endif
                                  </td>
                                 <td>
                                  </td>
+								  <td>
+                                    <span class="switchery" {!! ($dialog->is_pro == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($dialog->is_pro == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
+                                </td>
                                 <td>
                                     <span class="switchery" {!! ($dialog->status == 1) ? 'style="background-color: rgb(26, 179, 148); border-color: rgb(26, 179, 148); box-shadow: rgb(26, 179, 148) 0px 0px 0px 16px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"' : '' !!}><small {!! ($dialog->status == 1) ? 'style="left: 20px; transition: left 0.2s;"' : '' !!}></small></span>
                                 </td>

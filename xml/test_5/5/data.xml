@@ -1,0 +1,72 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I would have told you if I ___ the answer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had known</c1>
+       <c2>would had knew</c2>
+       <c3>would have known</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='31'>Type 3 Conditional Sentences</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>If you ask me, I will tell you if I ___ the answer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>know</c1>
+       <c2>have known</c2>
+       <c3>had known</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='28'>Type 1 conditional with IF</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Roger would have offered to pay the tuition if I ___ to return to school.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had decided</c1>
+       <c2>has decided</c2>
+       <c3>decide</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='31'>Type 3 Conditional Sentences</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They have agreed to offer me a job if I ___ to stay for at least one year.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>agree</c1>
+       <c2>have agreed</c2>
+       <c3>agreed</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='28'>Type 1 conditional with IF</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You will pass this test if you work ___ .</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hard</c1>
+       <c2>excellent</c2>
+       <c3>good</c3>
+       <c4>hardly</c4>
+   <exp></exp>
+   <article id='10'>Form and placement of adjectives</article>
+</item>
+</rss>

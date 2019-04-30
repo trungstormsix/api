@@ -199,7 +199,7 @@
 
                 <div class="alert alert-danger  alert-dismissable animated fadeInDown">
                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                    {!! Session::get('error') !!}
+                    {{ Session::get('error') }}
                 </div>
                 @elseif (count($errors) > 0)
                 <div class="alert alert-danger  alert-dismissable animated fadeInDown">

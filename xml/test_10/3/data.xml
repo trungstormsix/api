@@ -1,0 +1,223 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He ___ the window a few days ago.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>broke</c1>
+       <c2>break</c2>
+       <c3>broken</c3>
+       <c4>breaks</c4>
+       <c5>breaking</c5>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Where ___ you go last weekend?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did</c1>
+       <c2>does</c2>
+       <c3>do</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ him at the station yesterday afternoon.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>met</c1>
+       <c2>meet</c2>
+       <c3>meets</c3>
+       <c4>meeting</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He stood up and ___ the room.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>left</c1>
+       <c2>leave</c2>
+       <c3>leaving</c3>
+       <c4>leaves</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Dr. Jones ___ to see us yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>came</c1>
+       <c2>coming</c2>
+       <c3>comes</c3>
+       <c4>come</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Fred ___ a rock and broke the window.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>threw</c1>
+       <c2>thrown</c2>
+       <c3>throws</c3>
+       <c4>throwing</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They ___ as fast as they could, but they missed the bus.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>ran</c1>
+       <c2>run</c2>
+       <c3>running</c3>
+       <c4>runs</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He was very busy so he ___ to the party.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did not go</c1>
+       <c2>does not went</c2>
+       <c3>did not went</c3>
+       <c4>went not</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='52'>The Zero Infinitive</article>
+   <article id='53'>Forming the negative infinitive </article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What ___ you doing last night?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>are</c2>
+       <c3>was</c3>
+       <c4>is</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The dog was ___ after the cat.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>running</c1>
+       <c2>runs</c2>
+       <c3>run</c3>
+       <c4>has run</c4>
+       <c5>ran</c5>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The manager was ___ the number of guests.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>counting</c1>
+       <c2>counts</c2>
+       <c3>counted</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He ___ at school at 9:00 every Thursday morning.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>are</c2>
+       <c3>were</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Something ___ cooking in the kitchen when we came home.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>were</c2>
+       <c3>is</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='65'>Past continuous tense</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Their keys ___on the seat of the car all the time.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>were</c1>
+       <c2>was</c2>
+       <c3>is</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Bob was hungry, and so ___ Mike.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>was</c1>
+       <c2>is</c2>
+       <c3>did</c3>
+       <c4>does</c4>
+   <exp></exp>
+   <article id='172'>so, too, neither, either</article>
+</item>
+</rss>

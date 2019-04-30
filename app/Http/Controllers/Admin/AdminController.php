@@ -15,8 +15,9 @@ use App\Models\Playlist;
 use App\Models\Video;
 use App\Models\Ycat;
 use File;
+ 
 use Illuminate\Support\Facades\Session;
-
+use App\Models\CommonWord;
 class AdminController extends AdminBaseController {
 
     /**
@@ -27,5 +28,10 @@ class AdminController extends AdminBaseController {
     public function index() {
         return view('admin/home');
     }
- 
+    
+    public function lookedUp(){
+        $words = CommonWord::orderBy('count', 'desc')->paginate(30);
+        return view('admin/lookedup', compact("words"));
+    }
+ 	 
 }

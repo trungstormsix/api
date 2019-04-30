@@ -1,0 +1,209 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He___ a serious charge against his employer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has laid</c1>
+       <c2>has lied</c2>
+       <c3>has lain</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What I did ___ heavily on my conscience ever since.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has lain</c1>
+       <c2>has laid</c2>
+       <c3>has lied</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='182'>lay - lie</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It is often easier to make plans than to ___ them out.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>carry</c1>
+       <c2>take</c2>
+       <c3>do</c3>
+       <c4>practice</c4>
+       <c5>put</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Before you put the letter in the envelope, make sure you ......... it in the right way.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>fold</c1>
+       <c2>double</c2>
+       <c3>treble</c3>
+       <c4>hold</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c> When you read something you've written on the computer screen, it often looks all right although you should always ......... read it first.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>proof</c1>
+       <c2>check</c2>
+       <c3>prove</c3>
+       <c4>proven</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I will get in ___ with you by telephone.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>touch</c1>
+       <c2>ringing</c2>
+       <c3>call</c3>
+       <c4>talking</c4>
+       <c5>say</c5>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I'll try not to ___ any more errors.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>make</c1>
+       <c2>do</c2>
+       <c3>did</c3>
+       <c4>made</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Oh, dear! There is so much laundry to ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do</c1>
+       <c2>make</c2>
+       <c3>did</c3>
+       <c4>made</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Look at the yard! You'll have to ___ it soon.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do</c1>
+       <c2>make</c2>
+       <c3>did</c3>
+       <c4>made</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ you speak any foreign languages?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Can</c1>
+       <c2>May</c2>
+       <c3>Have</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Liz ___ get tired of her job. It is so boring.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>must</c1>
+       <c2>has to</c2>
+       <c3>should</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='184'>Must and Have To</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Where's Nick? He ___ be in his office.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>might</c1>
+       <c2>mustn't</c2>
+       <c3>is to</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='185'>may or might</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Take an umbrella. It ___ rain later.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>might</c1>
+       <c2>has to</c2>
+       <c3>need</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='185'>may or might</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Jack ___ go to hospital yesterday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>had to</c1>
+       <c2>must</c2>
+       <c3>need</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='184'>Must and Have To</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ it be true?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Can</c1>
+       <c2>Must</c2>
+       <c3>May</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+</rss>

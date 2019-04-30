@@ -1,0 +1,59 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The Dow Jones is an index ___ the economists Edward Jones and Charles Henry Dow.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>named after</c1>
+       <c2>name after</c2>
+       <c3>naming after</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='61'>How to use the passive voice</article>
+   <article id='60'>Passive voice</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Which sentence is correct?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Why was he late this morning?</c1>
+       <c2>Why he was late this morning?</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Which sentence is correct?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Jerry went to the supermarket last night.</c1>
+       <c2>Jerry last night went to the supermarket.</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='86'>Adverbs of time</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Which sentence is correct?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Was he in the swimming pool?</c1>
+       <c2>He was in the swimming pool?</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+</item>
+</rss>

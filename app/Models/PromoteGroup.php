@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class PromoteGroup extends Model
 {
     var $table = 'prm_groups';
+    var $timestamps = false;
     /**
      * The videos that belong to the playlist.
      */

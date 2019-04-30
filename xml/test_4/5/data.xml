@@ -1,0 +1,211 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Can you tell me how much money he ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>makes</c1>
+       <c2>does</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Can you ___ me a favour and lend me some money?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>do</c1>
+       <c2>make</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She spends too much time ___ her hair and nails.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>doing</c1>
+       <c2>making</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I think he is trying to ___ trouble for you.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>make</c1>
+       <c2>do</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Hurry up and ___ a decision.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>make</c1>
+       <c2>do</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='154'>do or make</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The sun ___ in the west.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sets</c1>
+       <c2>sits</c2>
+       <c3>seats</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The old man was ___ by the fire.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sitting</c1>
+       <c2>setting</c2>
+       <c3>seating</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ the vase on the table, please.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Set</c1>
+       <c2>Sit</c2>
+       <c3>Seat</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Please be ___ , ladies and gentlemen.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>seated</c1>
+       <c2>set</c2>
+       <c3>sat</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The young girl ___ in the first row.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sat</c1>
+       <c2>set</c2>
+       <c3>seated</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Don't ___ on the table. ___ at the table.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sit</c1>
+       <c2>set</c2>
+       <c3>seat</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She ___ the clock for 5 p.m.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>set</c1>
+       <c2>sat</c2>
+       <c3>seated</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>To avoid back pain you should ___ straight.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sit</c1>
+       <c2>set</c2>
+       <c3>seat</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The auditorium ___ 500 people.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>seats</c1>
+       <c2>sets</c2>
+       <c3>sits</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They ___ among their friends.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>sat</c1>
+       <c2>set</c2>
+       <c3>seated</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='160'>Transitive and intransitive</article>
+</item>
+</rss>

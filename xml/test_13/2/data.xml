@@ -1,0 +1,212 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Did you see the film on ..... TV last night?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>the</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I've got to get to ...... post office before it closes</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It is ...... largest producer of computer keyboards in the world</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I always listen to ..... radio on my way into work</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>..... Andes are in South America</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>The</c1>
+       <c2>----</c2>
+       <c3>An</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There is a major problem with ....... crime nowadays</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>the</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Paris is ...... capital of France</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Could you close ..... door, please?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They go to ....... church every week</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>a</c2>
+       <c3>the</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They crashed because they had ..... burst tyre</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a</c1>
+       <c2>the</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Would you mind turning off ...... lights when you leave?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>----</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The party was so loud that she asked them to turn ...... music down</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>a</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They live in  ...... lovely flat</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>a</c1>
+       <c2>the</c2>
+       <c3>----</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Their offices are on ....... fifth floor</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the</c1>
+       <c2>----</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='88'>Definite articles</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We start ...... work at a quarter to nine</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>----</c1>
+       <c2>the</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='90'>Exceptions when using definite articles</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+</rss>

@@ -1,0 +1,203 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He looked ___ the countryside for signs of spring.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>about</c1>
+       <c2>in</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He joined ___ his allies to win the battle.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>with</c1>
+       <c2>against</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He looked ___ his friends for advice.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to</c1>
+       <c2>on</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The cook waited ___ the customers because the server left early.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>for</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He waited ___ her reply until it was too late to make a decision.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for</c1>
+       <c2>on</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The winner of the competition was ___ the drawing-room.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in</c1>
+       <c2>on</c2>
+       <c3>at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The judge poured champagne ___ the glass.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>into</c1>
+       <c2>on</c2>
+       <c3>inside</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Adriana used to swin ___ the sea and sunbathe ___ the sand.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>in - on</c1>
+       <c2>on -at</c2>
+       <c3>on - in</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The hanging light is ___ the table.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>over</c1>
+       <c2>in</c2>
+       <c3>at</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He's arriving from Europe ___ Wednesday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>at</c2>
+       <c3>of</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She doesn't work ___ night.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at</c1>
+       <c2>in</c2>
+       <c3>on</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>The bookstore is just ___ the corner.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>around</c1>
+       <c2>across</c2>
+       <c3>over</c3>
+       <c4>opposite</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Jill was standing ___ me.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>next to</c1>
+       <c2>along</c2>
+       <c3>at</c3>
+       <c4>across</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Tracy waited ___ the bus station for an hour.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>at</c1>
+       <c2>under</c2>
+       <c3>across</c3>
+       <c4>along</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Donald lives ___ Coronation Street.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>on</c1>
+       <c2>around</c2>
+       <c3>by</c3>
+       <c4>through</c4>
+   <exp></exp>
+   <article id='191'>prepositions - place</article>
+</item>
+</rss>

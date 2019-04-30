@@ -1,0 +1,218 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My car is not as ___ as yours.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>new</c1>
+       <c2>newer</c2>
+       <c3>newest</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='17'>Comparisons using AS</article>
+   <article id='18'>Negative comparisons using NOT AS</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>At a land mass of 9,970,610 square kilimeters, Canada is ___ than the Russian Federation.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>smaller</c1>
+       <c2>smallest</c2>
+       <c3>as small</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='16'>Comparisons using THAN</article>
+   <article id='13'>Comparative and superlative adjectives</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I got up ___ than my mother.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>earlier</c1>
+       <c2>early</c2>
+       <c3>the earliest</c3>
+       <c4>earliest</c4>
+   <exp></exp>
+   <article id='16'>Comparisons using THAN</article>
+   <article id='13'>Comparative and superlative adjectives</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ your father taller than you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Is</c1>
+       <c2>Does</c2>
+       <c3>Are</c3>
+       <c4>Am</c4>
+   <exp></exp>
+   <article id='16'>Comparisons using THAN</article>
+   <article id='13'>Comparative and superlative adjectives</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>This book is much ___ than that one.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>easier</c1>
+       <c2>easiest</c2>
+       <c3>easy</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='16'>Comparisons using THAN</article>
+   <article id='13'>Comparative and superlative adjectives</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I got up ___ than my mother.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>earlier</c1>
+       <c2>the earliest</c2>
+       <c3>earliest</c3>
+       <c4>early</c4>
+   <exp></exp>
+   <article id='16'>Comparisons using THAN</article>
+   <article id='13'>Comparative and superlative adjectives</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Your sister doesn't study as ___ as you do.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hard</c1>
+       <c2>hardest</c2>
+       <c3>the hardest</c3>
+       <c4>hardly</c4>
+       <c5>harder</c5>
+   <exp></exp>
+   <article id='18'>Negative comparisons using NOT AS</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Joe is (tall) of all the boys.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>the tallest</c1>
+       <c2>tall</c2>
+       <c3>taller</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>___ your father taller than you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Is</c1>
+       <c2>Are</c2>
+       <c3>Does</c3>
+       <c4>Am</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='13'>Comparative and superlative adjectives</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Tokyo is the ___ city in Japan.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>largest</c1>
+       <c2>larger</c2>
+       <c3>large</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>John is the ___ runner in our class.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>fastest</c1>
+       <c2>faster</c2>
+       <c3>fast</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Vancouver is Canada's third ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>largest</c1>
+       <c2>large</c2>
+       <c3>larger</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Canada is the world's second ___ country.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>largest</c1>
+       <c2>larger</c2>
+       <c3>large</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What is your busiest day of the week?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Tuesday.</c1>
+       <c2>In the morning.</c2>
+       <c3>Every day.</c3>
+       <c4>Last week.</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Sebastien can drink ___ a gallon of beer in one sitting.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>as much as</c1>
+       <c2>so much that</c2>
+       <c3>their</c3>
+       <c4>mostly</c4>
+   <exp></exp>
+</item>
+</rss>

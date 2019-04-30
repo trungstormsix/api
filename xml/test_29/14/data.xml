@@ -1,0 +1,207 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Canada has three northern territories which ___ have a capital: Northwest Territories (Yellowknife), Yukon Territory (Whitehorse), and Nunavut (Iqualuit).</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>each</c1>
+       <c2>every</c2>
+       <c3>any</c3>
+       <c4>none</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Canada is the world's second ___ country.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>largest</c1>
+       <c2>larger</c2>
+       <c3>large</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Canada ___ 7 percent of the world's land mass.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>occupies</c1>
+       <c2>occupy</c2>
+       <c3>occupied</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Canada ___ 9 percent of all of the world's fresh water.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>holds</c1>
+       <c2>hold</c2>
+       <c3>held</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are there ___ boys in the park?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>many</c1>
+       <c2>much</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are you ___ at the moon?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>looking</c1>
+       <c2>looked</c2>
+       <c3>looks</c3>
+       <c4>look</c4>
+   <exp></exp>
+   <article id='69'>Present continuous or present progressive tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Are your shoes new?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>No, they're old.</c1>
+       <c2>No, he's old.</c2>
+       <c3>No, it's old.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Can you roller skate?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>No, but I can ski.</c1>
+       <c2>No, but I to ski.</c2>
+       <c3>No, but skiing.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='183'>Auxiliary Verb -  Can</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Did you ski last weekend?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yes, I skied on Sunday.</c1>
+       <c2>Yes, I played on Saturday.</c2>
+       <c3>Yes, I skied on Tuesday.</c3>
+       <c4>Yes, I played on Wednesday.</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Do you enjoy baseball?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yes. I play it every day.</c1>
+       <c2>Yes. I play this everyday.</c2>
+       <c3>Yes. I play that every day.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Do you have a dog?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yes, I have two.</c1>
+       <c2>Yes, I have a cat.</c2>
+       <c3>Yes, it's a dog.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Do you like reading books?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yes, I do.</c1>
+       <c2>Yes, I read.</c2>
+       <c3>Yes, I like.</c3>
+       <c4>Yes, I have.</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Does your mother jog?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yes, she jogs twice a week.</c1>
+       <c2>Yes, she jog twice a week.</c2>
+       <c3>Yes, she was jogging twice a week.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>English ___ not easy for me.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>am</c2>
+       <c3>are</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Have you eaten lunch yet?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yes, I've already eaten.</c1>
+       <c2>Yes, I've already ate.</c2>
+       <c3>Yes, I've ate yet.</c3>
+       <c4>Yes, I've eaten yet.</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+</item>
+</rss>

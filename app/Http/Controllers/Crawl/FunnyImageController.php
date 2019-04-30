@@ -38,7 +38,7 @@ class FunnyImageController extends Controller {
                     $img = $image->src;
                     //save image
                     $thumb = 'funny/' . $pic_date . '/' . OcoderHelper::getFileName($img);
-                    $Image = \App\Models\Funny\Image::where("image", $thumb)->first();
+                    $Image = \App\Models\Funny\Image::where("image", $img)->first();
                     if (!$Image) {
                         $width = 0;
                         if (!Storage::disk('images')->has($thumb)) {
@@ -57,9 +57,10 @@ class FunnyImageController extends Controller {
                         $Image = new \App\Models\Funny\Image();
                         $Image->title = $title;
                         $Image->liked = rand(0, 30);
-                        $Image->image = $thumb;
+                        $Image->image = $img;
                         if (Storage::disk('images')->has($thumb)) {
                             $Image->status = 1;
+                            Storage::disk('images')->delete($thumb);
                         } else if ($width == 0) {
                             $Image->status = 0;
                         }
@@ -144,7 +145,7 @@ class FunnyImageController extends Controller {
         //save image
         $thumb = 'funny/' . $pic_date . '/' . OcoderHelper::getFileName($img);
         $raw = 'funny/raw/' . OcoderHelper::getFileName($img);
-        $Image = \App\Models\Funny\Image::where("image", $thumb)->first();
+        $Image = \App\Models\Funny\Image::where("image", $img)->first();
         if (!$Image) {
             $width = 0;
             if (!Storage::disk('images')->has($raw)) {
@@ -159,15 +160,18 @@ class FunnyImageController extends Controller {
             $Image = new \App\Models\Funny\Image();
             $Image->title = $title;
             $Image->liked = $liked;
-            $Image->image = $thumb;
+            $Image->image = $img;
             if (Storage::disk('images')->has($thumb)) {
                 $Image->status = 1;
+                Storage::disk('images')->delete($thumb);
             } else if ($width == 0) {
                 $Image->status = 0;
                 $Image->url = $url;
+                Storage::disk('images')->delete($thumb);
             } else {
                 $Image->status = 2;
                 $Image->url = $url;
+                Storage::disk('images')->delete($thumb);
             }
             $Image->url = $url;
 

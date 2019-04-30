@@ -1,0 +1,220 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Where are you (go)?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>going</c1>
+       <c2>to go</c2>
+       <c3>go</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='69'>Present continuous or present progressive tense</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>By the time you ___ to Portland, I'll be there.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>get</c1>
+       <c2>getting</c2>
+       <c3>will get</c3>
+       <c4>got</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Clint ___ left for Paris.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>have</c2>
+       <c3>having</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Does your girlfriend ___ coffee for you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>make</c1>
+       <c2>made</c2>
+       <c3>makes</c3>
+       <c4>making</c4>
+   <exp></exp>
+   <article id='181'>Auxiliary verbs</article>
+   <article id='52'>The Zero Infinitive</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Frank as well as his sister ___ planning to come to our party.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He ___ on Hill Street since 1997.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has lived</c1>
+       <c2>is living</c2>
+       <c3>lives</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ four classes in the morning.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have</c1>
+       <c2>has</c2>
+       <c3>having</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I ___ studied English for five years.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>have</c1>
+       <c2>has</c2>
+       <c3>having</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I didn't hear what that man ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>said</c1>
+       <c2>saying</c2>
+       <c3>say</c3>
+       <c4>says</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I didn't know what ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to do</c1>
+       <c2>doing</c2>
+       <c3>do</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='54'>The infinitive after question words </article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>It is wrong ___ a lie.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to tell</c1>
+       <c2>tell</c2>
+       <c3>tells</c3>
+       <c4>told</c4>
+   <exp></exp>
+   <article id='55'>How and when to use the infinitive</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mr. Jones ___ his car every day, doesn't he?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>washes</c1>
+       <c2>washing</c2>
+       <c3>wash</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My brother will go abroad as soon as he ___ his passport.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>gets</c1>
+       <c2>will get</c2>
+       <c3>getting</c3>
+       <c4>get</c4>
+       <c5>could get</c5>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My mother always tells me ___ hard.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>to study</c1>
+       <c2>studying</c2>
+       <c3>studied</c3>
+       <c4>study</c4>
+       <c5>studies</c5>
+   <exp></exp>
+   <article id='58'>Verbs usually followed by the infinitive, part 2</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Neither you nor he ___ to blame.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+   <article id='68'>Simple present tense</article>
+</item>
+</rss>

@@ -68,7 +68,25 @@
                         </div>
                         <div class="hr-line-dashed"></div>
 
+						<div class="form-group">
+                            <label class="col-sm-2 control-label">     
+                                Audio
+                            </label>
+                            <div class="col-sm-10">
+								@if(@$article->audio)
+									
+									<div class="ckeditor-html5-audio" style="text-align:center">
+									<audio controls="controls" src="{{$article->audio}}">&nbsp;</audio>
+									</div>
 
+								@endif
+                                <input name="audio" class='form-control' value="{{ old('audio') ?  old('audio') : ($article ? $article->audio  :'')}}" />
+                            </div>
+
+                        </div>
+                        <div class="hr-line-dashed"></div>
+						
+						
                         <div class="form-group">
                             <label class="col-sm-2 control-label">     
                                 Category
@@ -79,7 +97,7 @@
                                 <select class="form-control m-b" name="category">
 
                                     @foreach($cats as $cat)
-                                    <option {{$category== $cat->id ? 'selected' : ""}} value="{{$cat->id}}">{{$cat->title}}</option>
+                                    <option {{$category == $cat->id  ||  (!$category && $cat->id == Session::get('il_cat_id')) ? 'selected' : ""}} value="{{$cat->id}}">{{$cat->title}}</option>
 
                                     @endforeach
 

@@ -1,0 +1,220 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She didn't close the door, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>did she</c1>
+       <c2>does she</c2>
+       <c3>doesn't she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She doesn't drive, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does she</c1>
+       <c2>doesn't she</c2>
+       <c3>did she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She doesn't want to go, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>does she</c1>
+       <c2>doesn't she</c2>
+       <c3>did she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She looks tired, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>doesn't she</c1>
+       <c2>does she</c2>
+       <c3>did she</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He's got my newspaper again, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>hasn't he</c1>
+       <c2>has he</c2>
+       <c3>had he</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+   <article id='176'>Form of question tags</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mr. Jones ___ his car every day, doesn't he?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>washes</c1>
+       <c2>washing</c2>
+       <c3>wash</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='176'>Form of question tags</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You play the trumpet, ___ you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>don't</c1>
+       <c2>are</c2>
+       <c3>aren't</c3>
+       <c4>won't</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Your father drove to work, ___ he?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't</c1>
+       <c2>won't</c2>
+       <c3>doesn't he</c3>
+       <c4>does</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+   <article id='64'>Simple past tense</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Your parents went to a concert, ___ they?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't</c1>
+       <c2>don't</c2>
+       <c3>doesn't</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='64'>Simple past tense</article>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mrs. Jones went shopping, ___ she?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>didn't</c1>
+       <c2>won't</c2>
+       <c3>can't</c3>
+       <c4>doesn't</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You aren't busy now, ___ you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>don't</c2>
+       <c3>aren't</c3>
+       <c4>do</c4>
+   <exp></exp>
+   <article id='177'>positive question tags</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You are Carter's friend, ___ you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>aren't</c1>
+       <c2>do</c2>
+       <c3>don't</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Miss Washington is a teacher, ___?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>isn't she</c1>
+       <c2>don't she</c2>
+       <c3>is Miss Washington</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>You ___ up your mess in the house before they come, won't you?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will have cleaned</c1>
+       <c2>have cleaned</c2>
+       <c3>clean</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='42'>Future perfect tense</article>
+   <article id='175'>Question tags</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They love English weather, ___</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>don't they?</c1>
+       <c2>are they?</c2>
+       <c3>isn't it?</c3>
+       <c4>aren't they?</c4>
+   <exp></exp>
+   <article id='178'>Negative question tags</article>
+</item>
+</rss>

@@ -1,0 +1,215 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My friend ___ a party every month.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>having</c2>
+       <c3>have</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My mother is a good cook.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I agree with you.</c1>
+       <c2>I agree to you.</c2>
+       <c3>I agree for you.</c3>
+       <c4>I agree you.</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>New York is beautiful. London and Paris ___ beautiful, too.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>is</c2>
+       <c3>be</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>One of my brothers ___ a teacher.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>She wants to ___ a nurse.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>be</c1>
+       <c2>is</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='59'>Verbs usually followed by the infinitive, part 3</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There ___ a tall building near the park.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>is</c1>
+       <c2>are</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There are ___ pencils in the drawer.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>some</c1>
+       <c2>any</c2>
+       <c3>a</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='98'>The relative adverbs SOME and ANY</article>
+   <article id='91'>Indefinite articles</article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>There is ___ water in the well.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>little</c1>
+       <c2>few</c2>
+       <c3>NULL</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='97'>The quantifiers FEW and LITTLE</article>
+   <article id='4'>Countable and uncountable nouns</article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Tokyo is the ___ city in Japan.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>largest</c1>
+       <c2>larger</c2>
+       <c3>large</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='15'>Superlatives</article>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We ___ baseball next Saturday.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>will play</c1>
+       <c2>playing</c2>
+       <c3>played</c3>
+       <c4>plays</c4>
+   <exp></exp>
+   <article id='37'>Simple future tense</article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We ___ students.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>is</c2>
+       <c3>be</c3>
+       <c4>being</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We played football with ___.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>them</c1>
+       <c2>they</c2>
+       <c3>their</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='107'>Possessive pronouns and adjectives and reflexive pronouns</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What are you doing?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I'm eating.</c1>
+       <c2>I ate.</c2>
+       <c3>I have eaten.</c3>
+       <c4>I will be eating.</c4>
+   <exp></exp>
+   <article id='69'>Present continuous or present progressive tense</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What are you going to do after dinner?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I'll take a bath.</c1>
+       <c2>I took a bath</c2>
+       <c3>I take a bath.</c3>
+       <c4>I am taking a bath.</c4>
+   <exp></exp>
+   <article id='40'>Future with GOING TO</article>
+   <article id='37'>Simple future tense</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What did you eat last night?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Spaghetti.</c1>
+       <c2>At home.</c2>
+       <c3>At six.</c3>
+       <c4>With my family.</c4>
+   <exp></exp>
+   <article id='205'>WH Question Words</article>
+</item>
+</rss>

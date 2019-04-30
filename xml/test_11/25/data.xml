@@ -1,0 +1,224 @@
+<rss>
+<item>
+   <idgroup>1</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mr. Jones ___ his car every day, doesn't he?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>washes</c1>
+       <c2>wash</c2>
+       <c3>washing</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>2</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I have never ___ in that lake.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swum</c1>
+       <c2>swims</c2>
+       <c3>swim</c3>
+       <c4>swam</c4>
+       <c5>swimming</c5>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>3</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I've already ___ today.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swum</c1>
+       <c2>swam</c2>
+       <c3>swimming</c3>
+       <c4>swims</c4>
+       <c5>swim</c5>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>4</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Mr. Jones has never ___ here?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swum</c1>
+       <c2>swimming</c2>
+       <c3>swims</c3>
+       <c4>swim</c4>
+       <c5>swam</c5>
+   <exp></exp>
+   <article id='174'>Irregular Verbs</article>
+   <article id='70'>Present perfect tense</article>
+</item>
+<item>
+   <idgroup>5</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Have you ever ___ with your mother?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>swum</c1>
+       <c2>swam</c2>
+       <c3>swimming</c3>
+       <c4>swim</c4>
+       <c5>swims</c5>
+   <exp></exp>
+   <article id='70'>Present perfect tense</article>
+   <article id='174'>Irregular Verbs</article>
+</item>
+<item>
+   <idgroup>6</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We've been here ___ noon.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>since</c1>
+       <c2>if</c2>
+       <c3>unless</c3>
+       <c4>for</c4>
+   <exp></exp>
+   <article id='73'>Present perfect tense with FOR and SINCE </article>
+</item>
+<item>
+   <idgroup>7</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They have been raising horses and cows on their farm ___ many years.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for</c1>
+       <c2>unless</c2>
+       <c3>if</c3>
+       <c4>since</c4>
+   <exp></exp>
+   <article id='190'>Prepositions - Time</article>
+   <article id='73'>Present perfect tense with FOR and SINCE </article>
+</item>
+<item>
+   <idgroup>8</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>They've been teaching here ___ quite a long time.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for</c1>
+       <c2>unless</c2>
+       <c3>if</c3>
+       <c4>since</c4>
+   <exp></exp>
+   <article id='73'>Present perfect tense with FOR and SINCE </article>
+</item>
+<item>
+   <idgroup>9</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>He's been working in the field ___ early this morning.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>since</c1>
+       <c2>if</c2>
+       <c3>unless</c3>
+       <c4>for</c4>
+   <exp></exp>
+</item>
+<item>
+   <idgroup>10</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>I haven't heard from him ___ five years.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>for</c1>
+       <c2>before</c2>
+       <c3>from</c3>
+       <c4>since</c4>
+   <exp></exp>
+   <article id='73'>Present perfect tense with FOR and SINCE </article>
+</item>
+<item>
+   <idgroup>11</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>What are you doing?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I'm eating.</c1>
+       <c2>I ate.</c2>
+       <c3>I have eaten.</c3>
+       <c4>I will be eating.</c4>
+   <exp></exp>
+   <article id='69'>Present continuous or present progressive tense</article>
+</item>
+<item>
+   <idgroup>12</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>We ___ students.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>are</c1>
+       <c2>is</c2>
+       <c3>be</c3>
+       <c4>being</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='134'>The Verb To Be</article>
+</item>
+<item>
+   <idgroup>13</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>My friend ___ a party every month.</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>has</c1>
+       <c2>having</c2>
+       <c3>have</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='138'>Matching subjects and verbs</article>
+</item>
+<item>
+   <idgroup>14</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>How many hours a day do you sleep?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>I sleep 7 hours.</c1>
+       <c2>I slept 7 hours.</c2>
+       <c3>I have slept 7 hours.</c3>
+       <c4>I am sleeping 7 hours.</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+   <article id='205'>WH Question Words</article>
+</item>
+<item>
+   <idgroup>15</idgroup>
+      <loai>Reading</loai>
+   <chc>khong</chc>
+   <c>Does your mother jog?</c>
+   <hinhanh>khong</hinhanh>
+   <amthanh>khong</amthanh>
+   <c1>Yes, she jogs twice a week.</c1>
+       <c2>Yes, she jog twice a week.</c2>
+       <c3>Yes, she was jogging twice a week.</c3>
+       <c4>NULL</c4>
+   <exp></exp>
+   <article id='68'>Simple present tense</article>
+</item>
+</rss>
