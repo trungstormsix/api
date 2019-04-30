@@ -623,7 +623,7 @@ Route::Get('listening/test/{id}', 'Front\ListeningFrontController@test');
  */
 Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
-
+ 
 Route::group(['prefix' => 'trade'], function () {
     Route::get('/total', array(
         'as' => 'trade.total',
@@ -642,7 +642,12 @@ Route::group(['prefix' => 'face'], function () {
         'uses' => 'HomeController@saveAd'
     ));
     Route::get('/cron', array(
-        'as' => 'face.saveCron',
+        'as' => 'face.saveCron', 
         'uses' => 'HomeController@saveCron'
     ));
-});
+ /*
+    Build HTML contact form
+ */
+Route::get('buildform',function(){
+    return view('buildform');
+ });

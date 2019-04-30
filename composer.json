@@ -12,8 +12,10 @@
 		"laravelcollective/html": "^5.2",
 		"facebook/graph-sdk": "5.0",
 		"facebook/php-ads-sdk": "2.11.*",
-		"intervention/image": "dev-master",
-		"bestmomo/filemanager": "1.1.*"
+                "intervention/image": "^2.3",
+		"bestmomo/filemanager": "1.1.*",
+                "laravel/socialite": "^2.0",
+                "phpmailer/phpmailer": "^5.2"
  			
 
     },

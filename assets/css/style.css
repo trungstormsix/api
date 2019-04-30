@@ -8255,10 +8255,135 @@ body.md-skin {
 #promote_apps img{
     max-width: 240px;
 }
+ 
 .questions li{
     margin-bottom: 20px;
 }
 .questions input{
     width: 100%;
-    
 }
+ 
+.clr {
+  clear: both;
+}
+.sidebar_page_front {
+  border: 5px solid;
+  background: #fff;
+}
+.spf_title h3 {
+  font-size: 20px;
+}
+.spf_content ul {
+  list-style: none;
+  padding: 0;
+  border-top: 5px solid;
+}
+.spf_content a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 5px 10px 30px;
+  font-size: 16px;
+  position: relative;
+}
+.spf_content a:hover {
+  background: aqua;
+  font-weight: bold;
+}
+.spf_content a:before {
+  content: "\f138";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 10px;
+}
+.spf_content a.cl_active {
+  color: yellowgreen;
+}
+.spf_content a.cl_active:hover {
+  background: antiquewhite;
+}
+.list_listen_lesson {
+  background: #fff;
+  padding: 30px 20px;
+}
+.lll_content {
+  background: #F0EAF2;
+  padding: 20px 10px;
+}
+.lll_item {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.lll_item_content {
+  background: #F0EAF2;
+  padding: 5px 15px;
+}
+.lll_item_content b {
+  color: #8F3778;
+}
+.lll_item_title {
+  display: inline-block;
+  background-image: url("../img/title-fold.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  left: -10px;
+  padding: 0px 0 0px 10px;
+  position: absolute;
+  top: -15px;
+  color: #fff;
+  font-weight: bold;
+}
+.lll_item_title a {
+  display: inline-block;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 10px;
+  color: #fff;
+}
+.lll_item_title a:hover {
+  text-decoration: underline;
+}
+.lq_block {
+  padding: 0;
+  border: none;
+  margin-bottom: 15px;
+  position: relative;
+  margin: 10px 0;
+  min-height: 30px;
+}
+.lq_block_cl {
+  color: #fff;
+  font-weight: bold;
+  width: 100%;
+  background: transparent url(../img/fieldset-title.png) no-repeat scroll;
+  padding-right: 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-size: 100%;
+  background-position: inherit;
+  padding: 2px 15px 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.lq_block_cl i {
+  font-size: 16px;
+}
+.lq_block_content {
+  background-color: #e6ecf3;
+  padding: 45px 13px 15px;
+  margin: 0 5px;
+  z-index: 1;
+  display: none;
+}
+.lq_block_show .lq_block_cl {
+  background-position: bottom;
+}
+.lq_block_show .lq_block_content {
+  display: block;
+}
+.listen_comment_fb {
+  margin-top: 50px;
+ }
