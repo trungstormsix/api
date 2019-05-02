@@ -67,6 +67,7 @@ class QuestionController extends AdminBaseController {
         $question->question = $request->question;
         $question->type = $request->type;
         $question->correct = $request->correct;
+        $question->published = $request->published;
         $ans_raw = $request->answers;
         $ans = [];
         foreach ($ans_raw as $a) {
@@ -93,4 +94,17 @@ class QuestionController extends AdminBaseController {
 
     }
 
+    public function ajaxPublishQuestion(){
+        $question_id = Input::get('question_id', '0');
+        
+        if($question_id){
+            $question = Question::find($question_id);
+            if($question){
+                $question->published = Input::get('published', '0');
+                $question->save();
+            }
+        }
+        return response()->json(['question_id' => $question_id, 'published' => $question->published]);
+
+    }
 }

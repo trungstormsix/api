@@ -14,10 +14,11 @@
             <br>
             <br>
             <div class="pull-right tooltip-demo">
+                
                 @if( $question)
-                        <a href="{{ URL::route('GrmQuestion.create_question') }}" type="button" class="btn btn-sm btn-primary dim">New</a>
+                        <a href="{{ URL::route('GrmQuestion.create_question') }}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
                 @endif       
-                <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-plus"></i> Save</button>
+                <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>
              </div>
         </div>
     </div>
@@ -131,6 +132,8 @@
                     </div>
                     <div class="hr-line-dashed"></div>
                 </div>
+                <button class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add new playlist" style="position: fixed; bottom: 30px;right: 42px;">
+                            <i class="fa fa-check"></i> Save</button>
             </div>
         </div>
     </div>

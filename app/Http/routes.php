@@ -330,6 +330,11 @@ Route::group(['prefix' => 'admin/grm-question', "namespace" => "Admin"], functio
         'as' => 'GrmQuestion.save_question',
         'uses' => 'QuestionController@postQuestion'
     ));
+    
+     Route::get('/ajax-publish-question', array(
+        'as' => 'GrmQuestion.ajax_publish_question',
+        'uses' => 'QuestionController@ajaxPublishQuestion'
+    ));
 });
 
 
@@ -651,3 +656,4 @@ Route::group(['prefix' => 'face'], function () {
 Route::get('buildform',function(){
     return view('buildform');
  });
+});

@@ -14,6 +14,7 @@
                     <th >Answers</th>
                     <th >Correct</th>
                     <th >Type</th>
+                    <th >Published</th>
                     <th >Explaination</th>
                     
                     <th >&nbsp;</th>
@@ -30,14 +31,13 @@
                     <td > {{$question->answers}} </td>
                     <td > {{$question->correct}} </td>
                     <td > {{$question->type}} </td>
-                    <td > {{$question->explanation}} </td>
+                    <td> <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox"
+                                           data-id="{{ $question->id}}"  name="status{{ $question->id}}" {{ $question->published ? 'checked' : '' }} >
+                    </td>
+                    <td > {{ substr(  strip_tags($question->explanation),0,100) }}</td>
                      
-                    <td style="width: 262px;">
- 
-                        <a href="{{ URL::route('GrmQuestion.edit_question', $question->id) }}" class="btn btn-info">Update</a>
-                        
-
-                        
+                    <td style="width: 262px;"> 
+                        <a href="{{ URL::route('GrmQuestion.edit_question', $question->id) }}" class="btn btn-info">Update</a>                                               
                     </td>
                 </tr>
                 @endforeach
@@ -52,6 +52,7 @@
 @section("content_js")
 <script src="{!! asset('assets/js/plugins/dataTables/datatables.min.js') !!}"></script>
 <link href="{!! asset('assets/css/plugins/dataTables/datatables.min.css')!!}" rel="stylesheet">
+ 
 <style>
     tr.title{
         background:  #2f4050;
@@ -65,7 +66,35 @@
     }
     </style>
 <script>
- 
+var elem = jQuery('.js-switch').each(function (index) {
+    new Switchery(this, {color: '#1AB394'});
+
+});
+
+
+ jQuery('.js-switch').change(function () {
+        var question_id = jQuery(this).data('id');
+        var published = jQuery(this).is(':checked') ? 1 : 0;
+          var checked = jQuery(this).is(':checked');
+             var that = this;
+            if (question_id) {
+                var that = this;
+                jQuery.ajax({
+                    url: "{{ URL::route('GrmQuestion.ajax_publish_question') }}",
+                    type: "GET",
+                    dataType: 'json',
+                    data: {question_id: question_id, published: published}
+                }).done(function (data) {
+   
+                }) 
+                .fail(function () {
+                
+
+                    alert("error");
+                });
+            }
+        
+    })
 
 </script>
 @endsection
