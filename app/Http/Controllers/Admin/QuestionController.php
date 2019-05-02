@@ -43,6 +43,7 @@ class QuestionController extends AdminBaseController {
 
     public function getQuestion($question_id) {
         $question = $question_id ? Question::find($question_id) : null;
+        $cat_ids = [];
         if ($question) {
            
             if ($question->cats) {
@@ -68,6 +69,7 @@ class QuestionController extends AdminBaseController {
         $question->type = $request->type;
         $question->correct = $request->correct;
         $question->published = $request->published;
+        $question->level = $request->level;
         $ans_raw = $request->answers;
         $ans = [];
         foreach ($ans_raw as $a) {

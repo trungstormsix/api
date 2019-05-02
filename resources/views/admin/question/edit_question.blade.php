@@ -76,14 +76,27 @@
                         <label class="col-sm-2 control-label">   
                             Type
                         </label>
-                         @php($type = old('correct') ? old('correct') : ($question ? $question->type : '1'))
+                         @php($type = old('type') ? old('type') : ($question ? $question->type : '1'))
                         <div class="col-sm-10">
                             <select name="type">
                                 <option value="1" {{$type == 1 ? "selected='selected'" : ""}}>Text</option>
                                 <option value="2" {{$type == 2 ? "selected='selected'" : ""}}>Audio</option>
                                 <option value="3" {{$type == 3 ? "selected='selected'" : ""}}>Image</option>
-                                <option value="4" {{$type == 4 ? "selected='selected'" : ""}}>Text</option>
-                            </select>            
+                             </select>            
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>   
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">   
+                            Level
+                        </label>
+                         @php($type = old('level') ? old('level') : ($question ? $question->level : '1'))
+                        <div class="col-sm-10">
+                            <select name="type">
+                                <option value="1" {{$type == 1 ? "selected='selected'" : ""}}>Easy</option>
+                                <option value="2" {{$type == 2 ? "selected='selected'" : ""}}>Intermidiate</option>
+                                <option value="3" {{$type == 3 ? "selected='selected'" : ""}}>Advance</option>
+                             </select>            
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>   
