@@ -313,26 +313,26 @@ Route::get('admin/pronunciation/crawl-oxford/{voc_id}', array(
     'as' => 'pronunciation.crawl_voc',
     'uses' => 'Admin\PronunciationController@getOxford'
 ));
-Route::group(['prefix' => 'admin/grm-question', "namespace" => "Admin"], function () {
+Route::group(['prefix' => 'admin/pron-question', "namespace" => "Admin"], function () {
     Route::get('/list/{cat_id}', array(
         'as' => 'Pronunciation.list_question',
         'uses' => 'QuestionController@listQuestions'
     ));
     Route::get('/edit-question/{question_id}', array(
-        'as' => 'GrmQuestion.edit_question',
+        'as' => 'PronQuestion.edit_question',
         'uses' => 'QuestionController@getQuestion'
     ));
     Route::get('/create-question', array(
-        'as' => 'GrmQuestion.create_question',
+        'as' => 'PronQuestion.create_question',
         'uses' => 'QuestionController@createQuestion'
     ));
     Route::post('/save-question', array(
-        'as' => 'GrmQuestion.save_question',
+        'as' => 'PronQuestion.save_question',
         'uses' => 'QuestionController@postQuestion'
     ));
     
      Route::get('/ajax-publish-question', array(
-        'as' => 'GrmQuestion.ajax_publish_question',
+        'as' => 'PronQuestion.ajax_publish_question',
         'uses' => 'QuestionController@ajaxPublishQuestion'
     ));
 });
@@ -416,7 +416,33 @@ Route::group(['prefix' => 'admin/img', 'namespace' => 'Admin'], function () {
         ));
     });
 });
-
+Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () {
+    Route::get('/', array(
+        'as' => 'grammar.index',
+        'uses' => 'GrammarController@index'
+    ));
+    Route::get('/create-cat', array(
+        'as' => 'grammar.create_cat',
+        'uses' => 'GrammarController@createCat'
+    ));
+    Route::get('/edit-cat/{cat_id}', array(
+        'as' => 'grammar.edit_cat',
+        'uses' => 'GrammarController@getCat'
+    ));
+    Route::get('/delete-cat/{cat_id}', array(
+        'as' => 'grammar.delete_cat',
+        'uses' => 'GrammarController@deleteCat'
+    ));
+    Route::post('/save-cat', array(
+        'as' => 'grammar.save_cat',
+        'uses' => 'GrammarController@postCat'
+    ));
+    Route::get('/lessons/{cat_id}', array(
+        'as' => 'grammar.lessons',
+        'uses' => 'GrammarController@lessons'
+    ));
+    
+});
 //   quotes
 Route::get('crawl/quotes', 'Crawl\QuoteController@index');
 /**

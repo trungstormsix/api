@@ -54,7 +54,7 @@ class QuestionController extends AdminBaseController {
         }
          
         $categories = Cat::all();
-        return view('admin/question/edit_question', compact("question", "categories", "cat_ids"));
+        return view('admin/pronunciation/edit_question', compact("question", "categories", "cat_ids"));
     }
 
     public function postQuestion(Request $request) {

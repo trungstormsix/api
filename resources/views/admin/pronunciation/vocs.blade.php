@@ -20,6 +20,7 @@
         <table class="table table-stripped  ">
             <thead>
                 <tr>
+                    <th style="width: 35px">N.0</th>
                     <th >Id</th>
                     <th >English</th>
                     <th >Pinyin</th>
@@ -31,9 +32,10 @@
             </thead>
             <tbody>  
                 
-                @foreach ($vocs as $category)
-                <tr  >	
-                    
+                @foreach ($vocs as $i => $category)
+                <tr>	
+                    <td > {{$i+1}} </td>
+
                     <td > {{$category->id}} </td>
                     <td ><a href="{!! URL::route('pronunciation.edit_voc', $category->id)!!}">{!!$category->english!!}</a> </td>
                     <td > {{$category->pinyin}} </td>

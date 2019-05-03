@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
- <form class="form-horizontal" role="form" method="POST" action="{{ URL::route('GrmQuestion.save_question') }}">
+ <form class="form-horizontal" role="form" method="POST" action="{{ URL::route('PronQuestion.save_question') }}">
  <input  type="hidden" name='id' value="{{ $question ? $question->id : '' }}">
  <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
@@ -16,7 +16,7 @@
             <div class="pull-right tooltip-demo">
                 
                 @if( $question)
-                        <a href="{{ URL::route('GrmQuestion.create_question') }}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
+                        <a href="{{ URL::route('PronQuestion.create_question') }}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
                 @endif       
                 <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>
              </div>

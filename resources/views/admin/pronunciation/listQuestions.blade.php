@@ -4,7 +4,7 @@
  
 <div id="home_categories" >
     <div class="ibox-content">
-        <a href="{{URL::route('GrmQuestion.create_question') }}" type="button" class="btn btn-primary btn-lg">Add new Question</a>
+        <a href="{{URL::route('PronQuestion.create_question') }}" type="button" class="btn btn-primary btn-lg">Add new Question</a>
         <div class="table-responsive">
         <table class="table table-stripped  ">
             <thead>
@@ -37,7 +37,7 @@
                     <td > {{ substr(  strip_tags($question->explanation),0,100) }}</td>
                      
                     <td style="width: 262px;"> 
-                        <a href="{{ URL::route('GrmQuestion.edit_question', $question->id) }}" class="btn btn-info">Update</a>                                               
+                        <a href="{{ URL::route('PronQuestion.edit_question', $question->id) }}" class="btn btn-info">Update</a>                                               
                     </td>
                 </tr>
                 @endforeach
@@ -80,7 +80,7 @@ var elem = jQuery('.js-switch').each(function (index) {
             if (question_id) {
                 var that = this;
                 jQuery.ajax({
-                    url: "{{ URL::route('GrmQuestion.ajax_publish_question') }}",
+                    url: "{{ URL::route('PronQuestion.ajax_publish_question') }}",
                     type: "GET",
                     dataType: 'json',
                     data: {question_id: question_id, published: published}
