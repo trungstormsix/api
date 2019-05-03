@@ -335,7 +335,9 @@ Route::group(['prefix' => 'admin/pron-question', "namespace" => "Admin"], functi
         'as' => 'PronQuestion.ajax_publish_question',
         'uses' => 'QuestionController@ajaxPublishQuestion'
     ));
+   
 });
+
 
 
 //Route::get('admin/looked-up/crawl', 'Admin\AdminController@getPronunciation');
@@ -441,6 +443,69 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'as' => 'grammar.lessons',
         'uses' => 'GrammarController@lessons'
     ));
+    Route::get('/create-lesson', array(
+        'as' => 'grammar.create_lesson',
+        'uses' => 'GrammarController@createLesson'
+    ));
+    
+    Route::get('/edit-lesson/{lesson_id}', array(
+        'as' => 'grammar.edit_lesson',
+        'uses' => 'GrammarController@getLesson'
+    ));
+    Route::post('/ajax-add-question-lesson', array(
+        'as' => 'grammar.add_question_lesson',
+        'uses' => 'GrammarController@postAddLessonQuestion'
+    ));
+    Route::get('autocomplete-cat',  array(
+        'as' => 'grammar.ajax_get_cats',
+        'uses' => 'GrammarController@ajaxGetCats'
+    ));
+
+     Route::post('/ajax-add-question-cat', array(
+        'as' => 'grammar.add_question_cat',
+        'uses' => 'GrammarController@postAddCatQuestion'
+    ));
+    Route::get('/delete-lesson-question', array(
+        'as' => 'grammar.delete_lesson_question',
+        'uses' => 'GrammarController@deleteLessonQuestion'
+    ));
+    Route::get('/delete-cat-question', array(
+        'as' => 'grammar.delete_cat_question',
+        'uses' => 'GrammarController@deleteCatQuestion'
+    ));
+    Route::post('/save-lesson', array(
+        'as' => 'grammar.save_lesson',
+        'uses' => 'GrammarController@postLesson'
+    ));
+    
+    Route::get('/list-cat-questions/{cat_id}', array(
+        'as' => 'grammar.list_cat_question',
+        'uses' => 'GrammarController@listCatQuestions'
+    ));
+    
+    Route::get('/list-lesson-questions/{cat_id}', array(
+        'as' => 'grammar.list_lesson_question',
+        'uses' => 'GrammarController@listLessonQuestions'
+    ));
+    
+    
+     Route::get('/edit-question/{question_id}', array(
+        'as' => 'grammar.edit_question',
+        'uses' => 'GrammarController@getQuestion'
+    ));
+    Route::get('/create-question', array(
+        'as' => 'grammar.create_question',
+        'uses' => 'GrammarController@createQuestion'
+    ));
+    Route::post('/save-question', array(
+        'as' => 'grammar.save_question',
+        'uses' => 'GrammarController@postQuestion'
+    ));
+    
+     Route::get('/ajax-publish-question', array(
+        'as' => 'PronQuestion.ajax_publish_question',
+        'uses' => 'GrammarController@ajaxPublishQuestion'
+    ));
     
 });
 //   quotes
@@ -450,6 +515,36 @@ Route::get('crawl/quotes', 'Crawl\QuoteController@index');
  */
 $menu = Menu::make('MyNavBar', function($menu) {
             $menu->add('Home', 'admin')->attr(array('pre_icon' => 'user'));
+              //Pronunciation
+            $menu->add('Pronunciation', 'admin/pronunciation')->attr(array('pre_icon' => 'bullhorn'))->active('admin/pronunciation/*');
+              //Grammar
+            $menu->add('Grammar', 'admin/grammar')->attr(array('pre_icon' => 'book'))->active('admin/grammar/*');
+               //idioms
+            $menu->add('Listening', 'listening')->attr(array('pre_icon' => 'phone'))->active('admin/listening/*');
+            $menu->listening->add('Cat', 'admin/listening')->attr(array('pre_icon' => 'phone'))->active('admin/listening/*');
+            $menu->listening->add('Reports', 'admin/listening/reports')->attr(array('pre_icon' => 'report'))->active('admin/listening/reports/*');
+
+            
+            $menu->add('IELTS', 'admin/ielts')->attr(array('pre_icon' => 'bar-chart-o'))->active('admin/ielts/*');
+            $menu->iELTS->add('Types', 'admin/ielts')->attr(array('pre_icon' => 'user'));
+            $menu->iELTS->add('Vocabulary', 'admin/ielts/vocabulary')->attr(array('pre_icon' => 'user'));
+            foreach (App\Models\IELTS\IELTSCat::where("type", "article")->get() as $cat) {
+                $menu->iELTS->add($cat->title, 'admin/ielts/cat/' . $cat->id);
+            }
+            $menu->add('Content', '')->attr(array('pre_icon' => 'file-text'))->active('admin/categories/*|admin/articles/*');
+            $menu->content->add('Categories', 'admin/categories')->attr(array('pre_icon' => 'tag'));
+            $i = 0;
+            foreach (\App\Models\Categories::where("parent_id", 0)->get() as $cat) {
+                $nick_name = str_slug("cat " . $cat->name, '-');
+                $menu->content->add($cat->name, 'admin/categories/' . $cat->id)->nickname($nick_name);
+
+                foreach (\App\Models\Categories::where("parent_id", $cat->id)->get() as $cat1) {
+                    $menu->item($nick_name)->add($cat1->name, 'admin/categories/' . $cat1->id)->attr(array('pre_icon' => 'tag'));
+                }
+            }
+
+          
+            
             /** youtube videos * */
             $menu->add('Video')->attr(array('pre_icon' => 'youtube'))->active('admin/youtube/*');
             foreach (\App\library\Menus::getCats() as $cat) {
@@ -473,11 +568,7 @@ $menu = Menu::make('MyNavBar', function($menu) {
             $menu->idioms->add('Get Idiom Ex', 'admin/idioms/get-idiom-example')->attr(array('pre_icon' => 'check'));
             $menu->idioms->add('Export', 'admin/idioms/export')->attr(array('pre_icon' => 'folder'));
 
-            //idioms
-            $menu->add('Listening', 'listening')->attr(array('pre_icon' => 'phone'))->active('admin/listening/*');
-            $menu->listening->add('Cat', 'admin/listening')->attr(array('pre_icon' => 'phone'))->active('admin/listening/*');
-            $menu->listening->add('Reports', 'admin/listening/reports')->attr(array('pre_icon' => 'report'))->active('admin/listening/reports/*');
-
+         
             //users
             $menu->add('Users Manager', 'users')->attr(array('pre_icon' => 'user'));
             $menu->usersManager->add('Users', 'admin/users')->attr(array('pre_icon' => 'user'))->active('admin/users/*');
@@ -489,26 +580,6 @@ $menu = Menu::make('MyNavBar', function($menu) {
 
 
 
-            $menu->add('IELTS', 'admin/ielts')->attr(array('pre_icon' => 'bar-chart-o'))->active('admin/ielts/*');
-            $menu->iELTS->add('Types', 'admin/ielts')->attr(array('pre_icon' => 'user'));
-            $menu->iELTS->add('Vocabulary', 'admin/ielts/vocabulary')->attr(array('pre_icon' => 'user'));
-            foreach (App\Models\IELTS\IELTSCat::where("type", "article")->get() as $cat) {
-                $menu->iELTS->add($cat->title, 'admin/ielts/cat/' . $cat->id);
-            }
-            $menu->add('Content', '')->attr(array('pre_icon' => 'file-text'))->active('admin/categories/*|admin/articles/*');
-            $menu->content->add('Categories', 'admin/categories')->attr(array('pre_icon' => 'tag'));
-            $i = 0;
-            foreach (\App\Models\Categories::where("parent_id", 0)->get() as $cat) {
-                $nick_name = str_slug("cat " . $cat->name, '-');
-                $menu->content->add($cat->name, 'admin/categories/' . $cat->id)->nickname($nick_name);
-
-                foreach (\App\Models\Categories::where("parent_id", $cat->id)->get() as $cat1) {
-                    $menu->item($nick_name)->add($cat1->name, 'admin/categories/' . $cat1->id)->attr(array('pre_icon' => 'tag'));
-                }
-            }
-
-            //Pronunciation
-            $menu->add('Pronunciation', 'admin/pronunciation')->attr(array('pre_icon' => 'bullhorn'))->active('admin/pronunciation/*');
 //            $menu->pronunciation->add('Cat', 'admin/pronunciation')->attr(array('pre_icon' => 'volume-up'))->active('admin/pronunciation/*');
 //            $menu->listening->add('Reports', 'admin/listening/reports')->attr(array('pre_icon' => 'report'))->active('admin/listening/reports/*');
 //            $menu->get("German Grammar")->add('TiengNhat', 'admin/categories');

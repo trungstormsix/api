@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class GrammarQuestion extends Model {
 
     var $table = 'engr_questions';
-
+    public $timestamps = false;
     /**
      * The videos that belong to the playlist.
      */

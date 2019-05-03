@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class GrammarCat extends Model {
 
     var $table = 'engr_types';
-
+    public $timestamps = false;
     /**
      * The videos that belong to the playlist.
      */

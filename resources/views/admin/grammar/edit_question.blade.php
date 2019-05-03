@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
- <form class="form-horizontal" role="form" method="POST" action="{{ URL::route('PronQuestion.save_question') }}">
+ <form class="form-horizontal" role="form" method="POST" action="{{ URL::route('grammar.save_question') }}">
  <input  type="hidden" name='id' value="{{ $question ? $question->id : '' }}">
  <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
@@ -16,7 +16,7 @@
             <div class="pull-right tooltip-demo">
                 
                 @if( $question)
-                        <a href="{{ URL::route('PronQuestion.create_question') }}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
+                        <a href="{{ URL::route('grammar.create_question') }}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
                 @endif       
                 <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>
              </div>
@@ -100,26 +100,44 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>   
+                    @if($question)
                     <div class="form-group">
                         <label class="col-sm-2 control-label">   
-                            Category
+                            Categories
                         </label>
                         <div class="col-sm-10">
-                            @php ($cat_ids = old('cat_ids') ? old('cat_ids') : ($cat_ids ? $cat_ids : []))
-                            <select multiple  name="cat_ids[]" data-placeholder="Choose a Cat..." class="chosen-select" style="width:350px;" tabindex="2">
-                                <option value="0">none</option>	
-                                @foreach ($categories as $category)	
-                                  		
-                                <option value="{{$category->id}}" {{in_array($category->id, $cat_ids) ? "selected='selected'" : ""}}>{{$category->title}}</option>                               
-                                		
+                           <div id="cat_container_{{$question->id}}" style="display: inline-block">
+                                @foreach ($question->cat as $cat)
+                                <span class="alert alert-warning delete-cat" style="display: inline-block;">
+                                    <button aria-hidden="true" data-cat="{{$cat->id}}" data-main="{{$question->id}}" class="close" type="button">×</button>
+                                    <a class="cat-link" target="_blank" href="{{ URL::route('grammar.lessons', $cat->id) }}">{{$cat->title}}</a> 
+                                </span>
                                 @endforeach
-                            </select>
-                            <br>
+                            </div>
+                            <input placeholder="type a grammar ctegory" class="add_cat" data-id="{{$question->id}}" />
+                            </div> 
+                             
+                      </div>
+                    <div class="hr-line-dashed"></div>  
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">   
+                            Lessons
+                        </label>
+                        <div class="col-sm-10">
+                           <div id='lesson_container_{{$question->id}}'>
+                            @foreach ($question->article as $grammar)
+                            <span class="alert alert-warning delete-lesson" style="display: inline-block;">
+                                <button aria-hidden="true" data-gr="{{$grammar->id}}" data-main="{{$question->id}}" class="close" type="button">×</button>
+                                <a class="lesson-link" target="_blank"  href="{{ URL::route('grammar.edit_lesson', $grammar->id) }}">{{$grammar->title}}</a> <br>
+                            </span>
+                            @endforeach
+                            </div>
+                            <input placeholder="type a grammar lesson" class="add_lesson" data-id="{{$question->id}}" />
                              
                         </div>
                     </div>
-                    <div class="hr-line-dashed"></div>   
-                    
+                    <div class="hr-line-dashed"></div>  
+                    @endif
                      
                     
                     <div class="form-group">
@@ -181,5 +199,108 @@
             for (var selector in config) {
                 $(selector).chosen(config[selector]);
             }
+            
+            
+function ajaxAddCat(cat_id, question_id, cat_title) {
+    if (cat_id) {
+        var that = this;
+        jQuery.ajax({
+            url: "{{ URL::route('grammar.add_question_cat') }}",
+            type: "POST",
+            dataType: 'json',
+            data: {"_token": "{{ csrf_token() }}",cat_id: cat_id, question_id: question_id}
+        }).done(function (data) {
+            if(data.changed.attached.length > 0)
+            jQuery('#cat_container_' + question_id).append('<span class="alert alert-warning delete-cat" style="display: inline-block;">' 
+                                +    '<button aria-hidden="true" data-cat="' + cat_id + '" data-main="' + question_id + '" class="close" type="button">×</button>'
+                                +    '<a class="cat-link" target="_blank" href="' + data.url + '">' + cat_title + '</a> '
+                                + '</span>');
+        })
+        .fail(function () {
+            alert("error");
+        });
+    }
+}
+
+ function ajaxAddLesson(lesson_id, question_id, lesson_title) {
+    if (lesson_id) {
+        var that = this;
+        jQuery.ajax({
+            url: "{{ URL::route('grammar.add_question_lesson') }}",
+            type: "POST",
+            dataType: 'json',
+            data: {"_token": "{{ csrf_token() }}",lesson_id: lesson_id, question_id: question_id}
+        }).done(function (data) {
+            if(data.changed.attached.length > 0)
+            jQuery('#lesson_container_' + question_id).append('<span class="alert alert-warning delete-lesson" style="display: inline-block;">' 
+                               + '<button aria-hidden="true" data-gr="' + lesson_id + '" data-main="' + question_id + '" class="close" type="button">×</button>'
+                               + '<a class="lesson-link" target="_blank" href="' + data.url + '">' + lesson_title + '</a> <br>'
+                            +'</span>');
+        })
+        .fail(function (error) {
+            alert(error.error.message);
+        });
+    }
+}
+jQuery(document).ready(function () {
+    jQuery(".add_lesson").autocomplete({
+        source: "{{url('admin/listening/autocomplete-grammar')}}",
+        minLength: 2,
+        select: function (event, ui) {
+            event.preventDefault();
+            var dl_id = jQuery(event.target).data('id');
+            ajaxAddLesson(ui.item.key, dl_id, ui.item.value);
+            this.value = "";
+        },
+    });
+    jQuery(".add_cat").autocomplete({
+        source: "{{ URL::route('grammar.ajax_get_cats') }}",
+        select: function (event, ui) {
+            event.preventDefault();
+            var dl_id = jQuery(event.target).data('id');
+            ajaxAddCat(ui.item.key, dl_id, ui.item.value);
+            this.value = "";
+        },
+    });
+});
+
+jQuery('.delete-lesson button').click(function () {
+    var gr_id = jQuery(this).data('gr');
+    var main_id = jQuery(this).data('main');
+    if (gr_id) {
+        var that = this;
+        jQuery.ajax({
+            url: "{{ URL::route('grammar.delete_lesson_question') }}",
+            type: "GET",
+            dataType: 'json',
+            data: {lesson_id: gr_id, question_id: main_id}
+        }).done(function (data) {
+            jQuery(that).parent().remove();
+        })
+                .fail(function () {
+                    alert("error");
+                });
+    }
+});
+jQuery('.delete-cat button').click(function () {
+    var cat_id = jQuery(this).data('cat');
+    var main_id = jQuery(this).data('main');
+    if (cat_id) {
+        var that = this;
+        jQuery.ajax({
+            url: "{{ URL::route('grammar.delete_cat_question') }}",
+            type: "GET",
+            dataType: 'json',
+            data: {cat_id: cat_id, question_id: main_id}
+        }).done(function (data) {
+            jQuery(that).parent().remove();
+        })
+                .fail(function () {
+                    alert("error");
+                });
+    }
+})
 </script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 @endsection

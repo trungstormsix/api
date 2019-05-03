@@ -92,7 +92,7 @@ class QuestionController extends AdminBaseController {
         $question->save();
         $cats = $request->get("cat_ids") ? $request->get("cat_ids") : [];
         $question->cats()->sync($cats);
-        return redirect()->route('GrmQuestion.edit_question', ['question_id' => $question->id]);
+        return redirect()->route('PronQuestion.edit_question', ['question_id' => $question->id]);
 
     }
 

@@ -594,6 +594,9 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 .btn {
   border-radius: 3px;
 }
+a.btn{
+    margin-bottom: 4px;
+}
 .float-e-margins .btn {
   margin-bottom: 5px;
 }
@@ -8386,4 +8389,9 @@ body.md-skin {
 }
 .listen_comment_fb {
   margin-top: 50px;
+ }
+ 
+ td .remove-cat, td .remove-grammar{
+     padding: 5px;
+     margin: 5px;
  }

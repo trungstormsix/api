@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class GrammarLesson extends Model {
 
     var $table = 'engr_articles';
-    public $timestamps = false;
-
+//    public $timestamps = false;
+    const UPDATED_AT = 'date_edit';
+    const CREATED_AT = 'date_edit';
+    protected $fillable = ["title","published","content","link","order","intro_img"];
      /**
      * The videos that belong to the playlist.
      */
@@ -17,6 +19,7 @@ class GrammarLesson extends Model {
     }
 
     public function cat() {
-        return $this->belongTo('App\Models\GrammarCat', 'engr_questions_articles');
+        return $this->belongsToMany('App\Models\GrammarCat', 'engr_types_articles',"truyen_ngan","the_loai");
+        
     }  
 }
