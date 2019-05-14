@@ -92,7 +92,7 @@
                         </label>
                          @php($type = old('level') ? old('level') : ($question ? $question->level : '1'))
                         <div class="col-sm-10">
-                            <select name="type">
+                            <select name="level">
                                 <option value="1" {{$type == 1 ? "selected='selected'" : ""}}>Easy</option>
                                 <option value="2" {{$type == 2 ? "selected='selected'" : ""}}>Intermidiate</option>
                                 <option value="3" {{$type == 3 ? "selected='selected'" : ""}}>Advance</option>

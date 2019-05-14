@@ -22,43 +22,10 @@ class AudioBookController extends Controller {
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
-    public function cat($catId){
-//        echo $catId;
-//        echo         $audio = Storage::disk('enstory_audios')->getAdapter()->getPathPrefix();
-        $cat = StoryType::find($catId);
-       
-        if($cat){
-            $stories = $cat->stories()->get();
-              
-            foreach ($stories as $story){
-                echo "<br>";
-                $audio = $story->audio;
-                echo "http://ocodereducation.com/apiv1/audios/estory/". $story->audio;
-                $audio_link =  "http://ocodereducation.com/apiv1/audios/estory/". $story->audio;
-                $audio_link = "http://ocodereducation.com/apiv1/audios/estory/theageofinnocence_wharton_chapter01.mp3";
-                $status = false;
-                //get audio
-                if (!Storage::disk('enstory_audios')->has($audio)) {
-                    
-                    $status = Storage::disk('enstory_audios')->put($audio, file_get_contents($audio_link));
-//                    echo $status;
-                    dd($status);
-                    exit;
-                }
-                if($status){
-                     
-                    $this->setDuration($story);
-                }
-         
-            }
-        }
-        exit;
-    }
-
-    //http://etc.usf.edu/lit2go/books/
+       //http://etc.usf.edu/lit2go/books/
     public function index() {
 //                $this->_getStoryETC("http://etc.usf.edu/lit2go/21/the-adventures-of-huckleberry-finn/99/chapter-1/", null, null);
 //        $this->_getStoriesETC("http://etc.usf.edu/lit2go/21/the-adventures-of-huckleberry-finn/", null);
@@ -75,7 +42,8 @@ class AudioBookController extends Controller {
             $cat = StoryType::where("link", $cat_title_html->href)->orWhere("title", trim($cat_title_html->plaintext))->first();
             if ($cat) {                  
                 if ($cat->parent == 11) {
-                    dd($cat);
+					echo $cat->id." ". $cat->title. "<br><b>Complete</b><br>";
+                   continue;
                 } else {
                     $this->_getStoriesETC($cat->link, $cat);
                     $cat->parent = 11;
@@ -103,13 +71,15 @@ class AudioBookController extends Controller {
         $i = 1;
         foreach ($stories_html as $story_html) {
 //            $stories_html = $stories_html->find("a",0);
-            $story_title = $i++ . ". ".trim($story_html->plaintext);
+            $story_title = trim($story_html->plaintext);
             $story_link = $story_html->href;
-            echo $story_title . " <br> " . $story_link . "<br>";
-            $storyPart = Story::where("link", $link)->first();
+            echo $i++ . $story_title . " <br> " . $story_link . "<br>";
+            $storyPart = Story::where("link", $story_link)->first();
             if(!$storyPart){
                 $this->_getStoryETC($story_link, $story_title, $cat);
-            }
+            }else{
+				echo "exist";
+			}
         }
     }
     var $i = 0;
@@ -118,16 +88,23 @@ class AudioBookController extends Controller {
         $html = $parser->file_get_html($link);
         $story_html = $html->find("#i_apologize_for_the_soup", 0);
         $audio_html = $story_html->find("audio source[type='audio/mpeg']", 0);
-        $audio_link = $audio_html->src;
+		$audio = "";
+		if($audio_html){
+			$audio_link = $audio_html->src;
+		    $audio = "etc_".OcoderHelper::getFileName($audio_link);
+			$story_html->find("audio", 0)->outertext = "";
+		}else{
+			echo "No Audio";
+			//exit;
+		}
 //        echo $audio_link;
-        $story_html->find("audio", 0)->outertext = "";
+        
         $description = $story_html->innertext;
 //        echo $description;
-        $audio = "etc_".OcoderHelper::getFileName($audio_link);
             
         $status = true;
         //get audio
-        if (!Storage::disk('enstory_audios')->has($audio)) {
+        if ($audio && !Storage::disk('enstory_audios')->has($audio)) {
             $status &= Storage::disk('enstory_audios')->put($audio, file_get_contents($audio_link));
         }
         if (!$status) {

@@ -11,4 +11,8 @@ class Dictionary extends Model
     public function word() {
         return $this->hasOne('App\Models\CommonWord','id', 'word_id');
     }  
+    
+    public function userWord() {
+        return $this->hasMany('App\Models\DictionaryUser', 'common_word_mean_id', 'id');
+    } 
 }

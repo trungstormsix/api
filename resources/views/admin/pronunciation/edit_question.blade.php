@@ -4,19 +4,20 @@
  <form class="form-horizontal" role="form" method="POST" action="{{ URL::route('PronQuestion.save_question') }}">
  <input  type="hidden" name='id' value="{{ $question ? $question->id : '' }}">
  <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-10">
+        <div class="col-lg-8">
             <h2>{{ $question ? "Edit" : 'Create' }} Question</h2>
 
 
             
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-4">
             <br>
             <br>
             <div class="pull-right tooltip-demo">
                 
                 @if( $question)
                         <a href="{{ URL::route('PronQuestion.create_question') }}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
+                        <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" name="copy" value="copy" title="Save As Copy"><i class="fa fa-copy"></i> Save As Copy</button>
                 @endif       
                 <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>
              </div>
@@ -92,7 +93,7 @@
                         </label>
                          @php($type = old('level') ? old('level') : ($question ? $question->level : '1'))
                         <div class="col-sm-10">
-                            <select name="type">
+                            <select name="level">
                                 <option value="1" {{$type == 1 ? "selected='selected'" : ""}}>Easy</option>
                                 <option value="2" {{$type == 2 ? "selected='selected'" : ""}}>Intermidiate</option>
                                 <option value="3" {{$type == 3 ? "selected='selected'" : ""}}>Advance</option>

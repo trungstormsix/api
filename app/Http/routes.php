@@ -267,10 +267,12 @@ Route::group(['prefix' => 'admin/content'], function () {
 });
 
 Route::get('admin/dictionary', 'Admin\DictionaryController@index');
+Route::get('admin/dictionary/search', 'Admin\DictionaryController@search');
 Route::get('admin/dictionary/{lang}', 'Admin\DictionaryController@lookedUp');
 Route::get('admin/dictionary/edit/{id}', 'Admin\DictionaryController@edit');
 Route::get('admin/dictionary/refresh/{id}', 'Admin\DictionaryController@refresh');
 Route::post('admin/dictionary/save', 'Admin\DictionaryController@save');
+Route::get('admin/dictionary/delete/{id}', 'Admin\DictionaryController@delete');
 
 //pronunciation
 Route::get('admin/pronunciation', 'Admin\PronunciationController@index');
@@ -588,6 +590,8 @@ $menu = Menu::make('MyNavBar', function($menu) {
             $menu->lamDep->add('Cat', 'admin/makeup/cat')->attr(array('pre_icon' => 'female'))->active('admin/makeup/cat/*');
             $menu->lamDep->add('Article', 'admin/makeup/articles')->attr(array('pre_icon' => 'phone'))->active('admin/makeup/article/*');
             $menu->add('Looked Up', 'admin/dictionary')->attr(array('pre_icon' => 'search'))->active('admin/dictionary/*');
+            $menu->lookedUp->add('Over View', 'admin/dictionary')->attr(array('pre_icon' => 'search'))->active('admin/dictionary/*');
+            $menu->lookedUp->add('Search', 'admin/dictionary/search')->attr(array('pre_icon' => 'search'))->active('admin/dictionary/search');
 
             $menu->add('Images', 'img')->attr(array('pre_icon' => 'phone'))->active('admin/img/*');
             $menu->images->add('Categories', 'admin/img/cats')->attr(array('pre_icon' => 'phone'))->active('admin/img/cats');

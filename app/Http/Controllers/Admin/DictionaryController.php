@@ -42,7 +42,8 @@ class DictionaryController extends AdminBaseController {
                 ->get();
         $words = Dictionary::where("lang", $lang)->orderBy("count", "DESC")->paginate(10);
         $word = $words[0];
-         
+        //crawl word
+        if(false){
         $json_text = file_get_contents("https://glosbe.com/gapi_v0_1/translate?from=eng&dest=$lang&format=json&phrase=" . $word->word->word . "&page=1&pretty=false&tm=true");
         $json = json_decode($json_text);
         $mean = $json->tuc;
@@ -50,6 +51,7 @@ class DictionaryController extends AdminBaseController {
         $word->mean = json_encode($mean);
         $word->example = json_encode($example);
         $word->save();
+        }
         return view('admin/dictionary/listwords', compact("words", "lang", "langs"));
     }
     public function refresh($id = 1) {
@@ -153,5 +155,42 @@ class DictionaryController extends AdminBaseController {
         $word->save();
         return redirect('admin/dictionary/edit/' . $word->id);
     }
+    
+    public function search(){
+        $search = Input::get("search","");
+        $words = null;
+        if($search){
+            
+          $words =  CommonWord::where("word","like",$search)->whereOr("en_uk_pro","like",$search)->paginate(40);
+          $query = CommonWord::where("word","like",$search)->whereOr("en_uk_pro","like",$search);
+          print_r($query->getBindings() );
+          dd($query->toSql());
+          
+          $words->appends(['search' => $search]);
+        }
+                
+        return view('admin/dictionary/search', compact("words", "search"));
+   
+    }
 
+    public function delete($id = 1) {
+        if(!$id){
+            echo "Id fail";
+        }
+        $word = CommonWord::find($id);
+        $word_means = $word->means;
+        if($word_means){
+            foreach($word_means as $mean){
+                $uws = $mean->userWord;
+                if($uws){
+                    foreach($uws as $u){
+                        $u->delete();
+                    }
+                }
+                $mean->delete();
+            }
+        }
+        $word->delete();
+        echo "Word: <b>".$word->word."</b><br>Deleted completely";
+    }
 }

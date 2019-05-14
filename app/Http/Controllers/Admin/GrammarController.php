@@ -266,12 +266,12 @@ class GrammarController extends AdminBaseController {
         ]);
         $question = GrammarQuestion::find($request->id);
         if (!$question) {
-            $question = new Question();
+            $question = new GrammarQuestion();
         }
         $question->question = $request->question;
         $question->type = $request->type;
         $question->correct = $request->correct;
-        $question->published = $request->published;
+        $question->published = $request->published ? $request->published : 0;
         $question->level = $request->level;
         $ans_raw = $request->answers;
         $ans = [];

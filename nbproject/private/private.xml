@@ -3,15 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/web/laravel/api/app/Models/GrammarLesson.php</file>
-            <file>file:/D:/web/laravel/api/resources/views/admin/grammar/listQuestions.blade.php</file>
-            <file>file:/D:/web/laravel/api/app/Http/Controllers/Admin/GrammarController.php</file>
-            <file>file:/D:/web/laravel/api/resources/views/admin/grammar/cats.blade.php</file>
+            <file>file:/D:/web/laravel/api/app/Http/Controllers/Admin/DictionaryController.php</file>
+            <file>file:/D:/web/laravel/api/app/Models/CommonWord.php</file>
+            <file>file:/D:/web/laravel/api/resources/views/admin/pronunciation/edit_question.blade.php</file>
+            <file>file:/D:/web/laravel/api/resources/views/admin/listening/dialogs.blade.php</file>
+            <file>file:/D:/web/laravel/api/app/Http/Controllers/Admin/QuestionController.php</file>
             <file>file:/D:/web/laravel/api/app/Http/routes.php</file>
-            <file>file:/D:/web/laravel/api/resources/views/admin/listening/dialog.blade.php</file>
-            <file>file:/D:/web/laravel/api/app/Models/GrammarQuestion.php</file>
-            <file>file:/D:/web/laravel/api/app/Http/Controllers/Admin/ListeningController.php</file>
-            <file>file:/D:/web/laravel/api/assets/css/style.css</file>
+            <file>file:/D:/web/laravel/api/resources/views/admin/dictionary/listwords.blade.php</file>
+            <file>file:/D:/web/laravel/api/app/Http/Controllers/Api/ApiController.php</file>
+            <file>file:/D:/web/laravel/api/resources/views/admin/dictionary/search.blade.php</file>
+            <file>file:/D:/web/laravel/api/app/Models/DictionaryUser.php</file>
         </group>
     </open-files>
 </project-private>

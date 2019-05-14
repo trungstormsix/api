@@ -61,14 +61,16 @@ class QuestionController extends AdminBaseController {
         $this->validate($request, [
             'question' => 'required|max:1255'
         ]);
+//                dd($request);
+
         $question = Question::find($request->id);
-        if (!$question) {
+    if (!$question || $request->copy == "copy") {
             $question = new Question();
         }
         $question->question = $request->question;
         $question->type = $request->type;
         $question->correct = $request->correct;
-        $question->published = $request->published;
+         $question->published = $request->published ? $request->published : 0;
         $question->level = $request->level;
         $ans_raw = $request->answers;
         $ans = [];

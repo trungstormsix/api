@@ -18,6 +18,10 @@
                     <option value="{{$l->lang}}" >{{$l->lang." (".$l->total.")"}}</option>
                     @endforeach
                 </select>
+                
+                 <form type="GET" action="{!! url('admin/dictionary/search') !!}">
+             <input name='search'   placeholder="Search for word..." required class='form-control'/>
+         </form>
             </div>
         </div>
     </div>

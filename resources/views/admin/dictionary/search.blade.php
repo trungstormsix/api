@@ -4,24 +4,15 @@
 <!-- header -->
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>Looked up</h2>
+        <h2>Search Word</h2>
 
     </div>
     <div class="col-lg-2">
         <br>
         <br>
-        <div class="pull-right tooltip-demo">
-            <select name="lang" id="selectLang" data-placeholder="Chọn Ngôn Ngữ..." class="chosen-select" style="width:350px;" tabindex="2">
-                <option value=""  >All</option>
-                @foreach($langs as $l)
-                <option value="{{$l->lang}}" {{$l->lang == $lang ? "selected='selected'" : "" }}>{{$l->lang." (".$l->total.")"}}</option>
-                @endforeach
-            </select>
-            
-             <form type="GET" action="{!! url('admin/dictionary/search') !!}">
-             <input name='search'   placeholder="Search for word..." required class='form-control'/>
+           <form type="GET" action="{!! url('admin/dictionary/search') !!}">
+             <input name='search' value='{{ @$search }}' placeholder="Search for word..." required class='form-control'/>
          </form>
-        </div>
     </div>
 </div>
 
@@ -29,8 +20,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel-body">
-
+                @if($words)
                 <div class="table-responsive">
+                    
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -39,41 +31,51 @@
                                 <th>
                                     Word
                                 </th>
-                                <th>
-                                    Lang
+                                 <th>
+                                    UK
                                 </th>
-
                                 <th>
-                                    Count
+                                    US
                                 </th>
-
-                                <th>Created</th>
-                                <th>Updated</th>
+                               
+                                <th>Count</th>
+                                 <th>Updated</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             @php ($i= (($words->currentPage() -1 ) * $words->perPage()) + 1)
-                            @foreach($words as $word)
+                            @foreach($words as $idiom)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$word->id}}</td>
+                                <td>{{$idiom->id}}</td>
                                 <td>
-                                    <a href="{{url("admin/dictionary/edit/".$word->id)}}" target="_blank"><b>{{$word->word->word}}</b></a>                                </td>                                
+                                    <b>{{$idiom->word}}</b>
+                                </td>    
+                                <td>
+                                    @if($idiom->en_us_pro)
+                                        <span class="click2copy">/{!!$idiom->en_uk_pro!!}/</span>
+                                    @else
+                                        <a href="{{url('admin/dictionary/delete/'.$idiom->id )}}" target="_blank">Delete</a>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($idiom->en_us_pro)
+                                    <span class="click2copy">/{!!$idiom->en_us_pro!!}/</span>
+                                    @else
+                                    <a href="{{url('api/looked-up/crawl?word_id='.$idiom->id )}}" target="_blank">Crawl</a>
+                                    @endif
+                                </td>
+                                <td>
+                                    {{$idiom->count}}
+                                </td>
+ 
+                                <td>
+                                    {{$idiom->updated_at}}
+                                </td>
 
-                                <td>
-                                    {!!$word->lang!!}
-                                </td>
-                                <td>
-                                    {!!$word->count!!}
-                                </td>
-                                <td>
-                                    {{$word->created_at}}
-                                </td>
-                                <td>
-                                    {{$word->updated_at}}
-                                </td>                                
                             </tr>
+
                             @endforeach
 
 
@@ -81,6 +83,7 @@
                     </table>
                 </div>
                 {{$words->links()}}
+                @endif
             </div>
         </div>
     </div>
@@ -91,7 +94,14 @@
 <script src="{!! asset('assets/ckeditor/ckeditor.js') !!}"></script>
 <script src="{!! asset('assets/js/plugins/chosen/chosen.jquery.js') !!}"></script>
 <link href="{!! asset('assets/css/plugins/chosen/chosen.css')!!}" rel="stylesheet">
-
+<style>
+    .click2copy{
+        display: inline-block;
+        border: 1px solid #cacaca;
+        cursor: copy;
+        padding: 4px;
+    }
+</style>
 <script>
 $('#selectLang').change(function() {
 var url = ("{{url('/admin/dictionary/')}}/" + $(this).val());
@@ -109,5 +119,13 @@ var config = {
 for (var selector in config) {
 $(selector).chosen(config[selector]);
 }
+jQuery(".click2copy").click(function(){    
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(this).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+//    $(this).style("color","#ff0000");
+})
 </script>
 @endsection

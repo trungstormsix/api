@@ -180,7 +180,7 @@ class PicvocController extends Controller {
         }
 // $this->delete($cat);
 // exit;
-        $link = "http://www.ef.com/english-resources/english-vocabulary/top-1000-words/";
+        $link = "http://www.ef.com/english-resources/english-vocabulary/top-3000-words/";
         $dom = new DomParser();
         $html = $dom->file_get_html($link);
         $content = $html->find(".content .even p", 1);

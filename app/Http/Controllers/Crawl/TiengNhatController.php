@@ -1009,7 +1009,7 @@ class TiengNhatController extends Controller {
             $status = true;
             //get audio
             if (!Storage::disk('jlpt_images')->has($img_file)) {
-                echo "<b>Audio:</b>" . $audio . "<br>";
+                echo "<b>Image:</b>" . $img_link . "<br>";
                 ;
                 $status = Storage::disk('jlpt_images')->put($img_file, file_get_contents($img_link));
             }

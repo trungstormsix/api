@@ -97,6 +97,15 @@ class ApiController extends Controller {
     }
 
     public function getPronunciation() {
+         $word_id = Input::get("word_id");
+        if($word_id){
+            $word = CommonWord::find($word_id);
+//            dd($word);
+            if($word){
+                $this->crawlOxford($word);
+            }
+            exit;
+        }
         $words = CommonWord::whereNull("en_us_pro")->orderBy('count', 'desc')->paginate(1);
         foreach ($words as $word) {
             $this->crawlOxford($word);
@@ -111,7 +120,7 @@ class ApiController extends Controller {
     private function crawlOxford($voc) {
         $word = str_replace(" ", "+", $voc->word);
         $link = "http://www.oxfordlearnersdictionaries.com/definition/english/";
-        echo $link . $word . '_1' . "<br>";
+        echo "<a href='".$link . $word . '_1' . "' target='_blank'>Link</a><br>";
 
         $dom = new DomParser();
         $html = @$dom->file_get_html($link . $word . '_1');
@@ -120,8 +129,12 @@ class ApiController extends Controller {
             $html = @$dom->file_get_html($link . $word);
         }
         if (!$html) {
+            $html = @$dom->file_get_html($link . strtolower($word));
+        }
+        if (!$html) {
             $voc->count = 0 - $voc->count;
             $voc->save();
+            echo "Crawl Fail";
             return;
         }
 
@@ -194,6 +207,17 @@ class ApiController extends Controller {
                 $word->get = 1;
                 $word->save();
                 return;
+            }
+			 
+			if($word->lang == "null"){
+                $nword = Dictionary::where("word_id", $word->word_id)->where("lang", "en")->first();
+				if($nword){
+                    $word->delete();
+                      exit;
+                }else{
+                    $word->lang = "en";
+                    $word->save();
+                }
             }
             $link = "https://glosbe.com/gapi_v0_1/translate?from=eng&dest=$word->lang&format=json&phrase=" . $word_text . "&page=1&pretty=false&tm=true";
             echo "<a href='$link'>" . $link . "</a><br>";
@@ -300,7 +324,19 @@ class ApiController extends Controller {
 //        $this->getDefinitionFromHtml($mean_html);
 //
 //        exit;
-        $words = Dictionary::where("get", 0)->orderBy("count", "desc")->paginate(4);
+		$word_id = Input::get("word_id", 0);
+		if($word_id){
+			$word = Dictionary::find($word_id);
+			$word->mean = "";
+			$word->example ="";
+			$word->get = 0;
+			$word->save();
+			exit;
+			$words = [];
+			$words[] = $word;
+		}else{
+			$words = Dictionary::where("get", 0)->orderBy("count", "desc")->paginate(4);
+		}
         foreach ($words as $word) {
 
             $word_text = urlencode($word->word->word);
@@ -341,6 +377,7 @@ class ApiController extends Controller {
             /**
              * examples
              */
+			 
             $examples_html = $html->find("#translationExamples .tableRow");
             $examples = [];
             foreach ($examples_html as $example_html) {
@@ -378,6 +415,7 @@ class ApiController extends Controller {
         if (!$first) {
             $first = $example_html->find(".span6", 0);
         }
+		if(!$first->find(".tm-p-em", 0)) return;
 //        $first->find("sup",0)->outertext = "";
         $first->find(".tm-p-em", 0)->outertext = "<strong>" . $first->find(".tm-p-em", 0)->innertext . "</strong>";
         $spans = $first->find("span");
@@ -391,7 +429,12 @@ class ApiController extends Controller {
         }
         $example->first = trim($first->innertext);
         //get mean
+		  
+
         $second = $example_html->find(".span6", 1)->find(".nobold", 0);
+		 if(!$second){
+            $second = $example_html->find(".span6", 1)->find("span span", 0);
+        }
         if (!$second) {
             $second = $example_html->find(".span6", 1);
             $ss = $second->find(".source,.visible-phone");
@@ -399,6 +442,10 @@ class ApiController extends Controller {
                 $s->outertext = "";
             }
         }
+		 
+		if($second->find(".tm-p-em", 0))
+		$second->find(".tm-p-em", 0)->outertext = "<strong>" . $second->find(".tm-p-em", 0)->innertext . "</strong>";
+		 
         $span1s = $second->find("span");
         foreach ($span1s as $span) {
 
@@ -492,103 +539,5 @@ class ApiController extends Controller {
 
         return $phrase;
     }
-    
-    public function getLang(){
-        $dom = new DomParser();
-        $html = $dom->file_get_html("https://glosbe.com/");
-        $lang = $html->find("#toLanguage optgroup",1);
-        $langs =  $lang->find("option");
-        $exist = " <item>af</item>
-        <item>sq</item>
-        <item>ar</item>
-        <item>hy</item>
-        <item>az</item>
-        <item>eu</item>
-        <item>be</item>
-        <item>bn</item>
-        <item>bs</item>
-        <item>bg</item>
-        <item>my</item>
-        <item>ca</item>
-        <item>zh</item>
-        <item>hr</item>
-        <item>cs</item>
-        <item>da</item>
-        <item>nl</item>
-        <item>en</item>
-        <item>et</item>
-        <item>fi</item>
-        <item>fr</item>
-        <item>gl</item>
-        <item>ka</item>
-        <item>de</item>
-        <item>el</item>
-        <item>gu</item>
-        <item>ht</item>
-        <item>he</item>
-        <item>hi</item>
-        <item>hu</item>
-        <item>is</item>
-        <item>id</item>
-        <item>ga</item>
-        <item>it</item>
-        <item>ja</item>
-        <item>kn</item>
-        <item>ko</item>
-        <item>ku</item>
-        <item>lv</item>
-        <item>lt</item>
-        <item>mk</item>
-        <item>ms</item>
-        <item>mt</item>
-        <item>nb</item>
-        <item>fa</item>
-        <item>pl</item>
-        <item>pt</item>
-        <item>ro</item>
-        <item>ru</item>
-        <item>sr</item>
-        <item>sk</item>
-        <item>sl</item>
-        <item>es</item>
-        <item>sw</item>
-        <item>sv</item>
-        <item>tl</item>
-        <item>ta</item>
-        <item>te</item>
-        <item>th</item>
-        <item>tr</item>
-        <item>uk</item>
-        <item>ur</item>
-        <item>vi</item>
-        <item>cy</item>
-        <item>yi</item>";
-        $exist_lang_html = $dom->str_get_html($exist);
-        $exit_langs = $exist_lang_html->find("item");
-        $exs = [];
-        foreach($exit_langs as $l){
-            $exs[] = trim($l->plaintext);
-        }
-        foreach($langs as $lang){
-            if(!in_array($lang->getAttribute("value"), $exs)){
-                echo "<item>".$lang->plaintext."</item> \n"."<br>";
-            }
-        }
-        echo "\n\n\n";
-        foreach($langs as $lang){
-            if(!in_array($lang->getAttribute("value"), $exs)){
-                echo "<item>".$lang->getAttribute("value")."</item> \n"."<br>";
-            }
-        }
-        echo "\n\n\n";
-        foreach($langs as $lang){
-            if(!in_array($lang->getAttribute("value"), $exs)){
-                echo "<item>".$lang->plaintext."</item> \n -"."     <item>".$lang->getAttribute("value")."</item> \n"."<br>";
-                echo "<a href='https://glosbe.com/en/".$lang->getAttribute("value")."/".$lang->plaintext."' target='_blank'>Link</a>\n"."<br>";
-                echo "\n\n"."<br>"."<br>";
-            }
-        }
-//        echo $lang->innertext;
-        exit;
-    }
+
 }
