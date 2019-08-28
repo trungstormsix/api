@@ -45,22 +45,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if ($request->ajax() || $request->wantsJson())
-        {
-            $err =  null;
-            if ($e instanceof ValidationException && $e->getResponse()) {
-               $err = (parent::render($request, $e)->getData());
-            }
-            $json = [
-                'success' => false,
-                'error' => [
-                    'code' => $e->getCode(),
-                    'message' => $e->getMessage(),
-                    'errors' =>   $err
-                ],
-            ];
-            return  response()->json($json, 400);
-        }
          echo ($e->getMessage());
 
          return parent::render($request, $e);

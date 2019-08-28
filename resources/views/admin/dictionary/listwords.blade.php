@@ -3,13 +3,25 @@
 @section('content')
 <!-- header -->
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
+    <div class="col-lg-8">
         <h2>Looked up</h2>
 
-    </div>
+    </div >
+	<div class="col-lg-2">
+	<br>
+	
+		<a href="{{url('admin/dictionary/word/get-delete-mean')}}" class="btn btn-info">View Delete Mean</a>
+		<br>
+	@if($lang == "delete")
+		<a href="{{url('admin/dictionary/word/delete-mean-search')}}" class="btn btn-danger">Delete Mean</a>
+	@endif
+            <a href="{{url('admin/dictionary/delete-for-recrawl')}}" class="btn btn-info">Delete 100 error Mean</a>
+
+	
+	</div>
     <div class="col-lg-2">
         <br>
-        <br>
+        
         <div class="pull-right tooltip-demo">
             <select name="lang" id="selectLang" data-placeholder="Chọn Ngôn Ngữ..." class="chosen-select" style="width:350px;" tabindex="2">
                 <option value=""  >All</option>
@@ -17,10 +29,10 @@
                 <option value="{{$l->lang}}" {{$l->lang == $lang ? "selected='selected'" : "" }}>{{$l->lang." (".$l->total.")"}}</option>
                 @endforeach
             </select>
-            
-             <form type="GET" action="{!! url('admin/dictionary/search') !!}">
-             <input name='search'   placeholder="Search for word..." required class='form-control'/>
-         </form>
+            <br>
+             <form style="margin-top: 5px;" type="GET" action="{!! url('admin/dictionary/search') !!}">
+				 <input name='search'   placeholder="Search for word..." required class='form-control'/>
+			 </form>
         </div>
     </div>
 </div>
@@ -49,7 +61,9 @@
 
                                 <th>Created</th>
                                 <th>Updated</th>
+																<th>Option</th>
 
+								
                             </tr>
                         </thead>
                         <tbody>
@@ -72,7 +86,10 @@
                                 </td>
                                 <td>
                                     {{$word->updated_at}}
-                                </td>                                
+                                </td>       
+<td>
+									<a href="{{url('admin/dictionary/word/delete-mean/'.$word->id)}}" target="_blank" class="btn btn-small btn-danger delete-mean">Delete Mean</a>
+								</td>								
                             </tr>
                             @endforeach
 
@@ -91,7 +108,11 @@
 <script src="{!! asset('assets/ckeditor/ckeditor.js') !!}"></script>
 <script src="{!! asset('assets/js/plugins/chosen/chosen.jquery.js') !!}"></script>
 <link href="{!! asset('assets/css/plugins/chosen/chosen.css')!!}" rel="stylesheet">
-
+<style>
+	.delete-mean:visited{
+		background: green !important;
+	}
+</style>
 <script>
 $('#selectLang').change(function() {
 var url = ("{{url('/admin/dictionary/')}}/" + $(this).val());

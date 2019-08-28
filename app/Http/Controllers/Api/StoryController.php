@@ -127,7 +127,7 @@ class StoryController extends Controller {
     }
 	
 	public function getCats() {
-        $cats = StoryType::where("lang","!=", 'es')->where("parent",">", '0')->get();         
+        $cats = StoryType::where("lang","!=", 'es')->where("parent",">", '0')->where("thumb","!=", '')->get();         
         return response()->json($cats);
     }
 	

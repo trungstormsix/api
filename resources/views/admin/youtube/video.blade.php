@@ -58,6 +58,27 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            Has Sub
+                        </label>
+                        <div class="col-sm-10">
+                            <input name="has_sub" value="{{old('has_sub') ? old('has_sub') : $video->has_sub }}" />
+                            @if($video && $video->has_sub)
+                            @if( $video->has_sub == 2)
+                            <a class="btn btn-sm btn-primary" href="{{url("/ysubs/".$video->yid)}}.txt" target="_blank" >Sub</a> 
+                            @endif
+                            <a class="btn btn-sm btn-primary" href="https://s3.amazonaws.com/soviosubtitles/truesubs/{{$video->yid}}.txt" target="_blank" >Sub A3</a> 
+                            <a class="btn btn-sm btn-primary"  href="{{url("/admin/youtube/video/crawl-a3-sub?yid=").$video->yid}}" target="_blank" >Crawl A3 Sub</a>
+                            @endif
+                            
+                            <a class="btn btn-sm btn-primary" href="{{url("/admin/youtube/video/crawl-y-sub?yid=").$video->yid}}" target="_blank" >Crawl Youtube Sub</a>
+
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    
+                    
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
                             Time
@@ -74,7 +95,7 @@
                             Playlist
                         </label>
                         <div class="col-sm-10">
-                                 <select   class="form-control m-b playlist" name="playlist">
+                                 <select   class="form-control m-b playlist chosen-select"  name="playlist">
 
                                     @foreach($playlist->cat->playlists()->orderBy("status","DESC")->orderBy("title","ASC")->get() as $pl)
                                     <option {{$pl->id == $playlist->id ? 'selected' : ""}} value="{{$pl->id}}">{{$pl->title.' ('.$pl->videos()->count().')'}}</option>
@@ -93,9 +114,22 @@
 @endsection
 
 @section('content_js')
+<script src="{!! asset('assets/js/plugins/chosen/chosen.jquery.js') !!}"></script>
+<link href="{!! asset('assets/css/plugins/chosen/chosen.css')!!}" rel="stylesheet">
+
 <script>
     var elem = document.querySelector('.js-switch');
     var switchery = new Switchery(elem, {color: '#1AB394'});
 
+var config = {
+                '.chosen-select'           : {},
+                '.chosen-select-deselect'  : {allow_single_deselect:true},
+                '.chosen-select-no-single' : {disable_search_threshold:10},
+                '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+                '.chosen-select-width'     : {width:"95%"}
+                }
+            for (var selector in config) {
+                $(selector).chosen(config[selector]);
+            }
 </script>
 @endsection

@@ -5,7 +5,7 @@
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/youtube/playlist/add') }}">
 
     <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-10">
+        <div class="col-lg-9">
             <h2>{{empty($title) ?  'oCoder' : $title}}</h2>
             <ol class="breadcrumb">
                 <li>
@@ -17,12 +17,15 @@
                 </li>
             </ol>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-3">
             <br>
             <br>
             <div class="pull-right tooltip-demo">
                 <button   class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new playlist"><i class="fa fa-plus"></i> Save</button>
                 <a href="{{url('/admin/youtube/playlists/'.($playlist ? $playlist->cat_id : Session::get('cat_id')))}}" class="btn btn-danger btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel Edit"><i class="fa fa-times"></i> Discard</a>
+                @if($playlist)
+                <a href="{{url('/admin/youtube/videos/'.($playlist->id  ))}}" class="btn btn-info btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancel Edit"><i class="fa fa-video-camera"></i> Videos</a>
+                @endif
             </div>
         </div>
     </div>
@@ -75,8 +78,31 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"> 
+                            View Count (for order)
+                        </label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name='view_count' value="{{old('view_count') ? old('view_count') : $playlist->view_count }}">
 
+                        </div>
+                    </div>
                     @endif
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"> 
+                            English Cat
+                        </label>
+                        <div class="col-sm-10">
+                            <select class="form-control m-b chosen-select" name="en_cat_id">'
+                                @foreach($enCats as $cat)
+                                <option {{($playlist && $playlist->en_cat_id == $cat->id) ? "selected" : (Session::get('en_cat_id')  == $cat->id ? "selected" :"")}} value='{{$cat->id}}'>
+                                    {{$cat->title}}
+                                </option>
+                                @endforeach
+                            </select>               
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
                             Cat
@@ -100,9 +126,21 @@
 @endsection
 
 @section('content_js')
+<script src="{!! asset('assets/js/plugins/chosen/chosen.jquery.js') !!}"></script>
+<link href="{!! asset('assets/css/plugins/chosen/chosen.css')!!}" rel="stylesheet">
+
 <script>
     var elem = document.querySelector('.js-switch');
     var switchery = new Switchery(elem, {color: '#1AB394'});
-
+    var config = {
+        '.chosen-select'           : {},
+        '.chosen-select-deselect'  : {allow_single_deselect:true},
+        '.chosen-select-no-single' : {disable_search_threshold:10},
+        '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+        '.chosen-select-width'     : {width:"95%"}
+        }
+    for (var selector in config) {
+        $(selector).chosen(config[selector]);
+    }
 </script>
 @endsection

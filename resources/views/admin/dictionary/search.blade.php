@@ -3,10 +3,18 @@
 @section('content')
 <!-- header -->
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
+    <div class="col-lg-9">
         <h2>Search Word</h2>
 
     </div>
+	 <div class="col-lg-1">
+	 <br>
+        <br>
+       			 <a class="btn btn-danger dim" href="{!! url('admin/dictionary/delete-search?'.'search='.urlencode ($search).'&page='.$words->currentPage()) !!}" target="_blank">Delete All</a>
+
+
+    </div>
+
     <div class="col-lg-2">
         <br>
         <br>
@@ -101,6 +109,9 @@
         cursor: copy;
         padding: 4px;
     }
+	a:visisted{
+		color: red;
+	}
 </style>
 <script>
 $('#selectLang').change(function() {

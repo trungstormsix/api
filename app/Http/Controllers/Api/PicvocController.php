@@ -41,7 +41,17 @@ class PicvocController extends Controller {
         
         $cat = PicvocCat::find($cat_id);
        
-        $vocs = $cat->vocs;
+        $vocs = $cat->vocs()->where('updated','>', "2015-01-01 00:00:01")->take(80)->orderBy("updated", 'desc')->get();
+		foreach($vocs as &$voc){
+			$cats = $voc->cats;
+			$cat_ids = [];
+			foreach($cats as $cat){
+				if($cat->id != $cat_id){
+					$cat_ids[] = $cat->id;
+				}
+			}
+			$voc->cat_ids = $cat_ids;
+		}
         return $vocs;
     }
     

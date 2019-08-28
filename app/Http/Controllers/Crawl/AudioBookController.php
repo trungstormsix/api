@@ -419,4 +419,22 @@ class AudioBookController extends Controller {
         $story->save();
     }
 
+    public function crawlDataFromOCoderEducation($cat_id){
+        if(!$cat_id){
+            return;
+        }
+        $json_text = file_get_contents("http://apiv1.ocodereducation.com/api/story/en/stories/".$cat_id);
+        $json = json_decode($json_text);
+        $status = 1;
+        foreach ($json as $story){
+            $audio = $story->audio;
+            $audio_link =   "http://ocodereducation.com/apiv1/audios/estory/".$story->audio;
+            $status = 1;
+            if (!Storage::disk('enstory_audios')->has($audio)) {
+                $status &= Storage::disk('enstory_audios')->put($audio, file_get_contents($audio_link));
+            }
+            echo $status." http://ocodereducation.com/apiv1/audios/estory/".$story->audio;
+            echo "<br>";
+        }
+    }
 }

@@ -29,6 +29,15 @@ class QuoteController extends Controller {
 //        $cats = Categories::where("done",1)->get();
         return response()->json($authors);
     }
+	 public function author($author_id){
+        $author_id = $author_id  ? $author_id : 1;
+        $author = Author::find($author_id);
+//        $quotes = $author->quotes()->where("updated_at",">=",$updated)->paginate(50);
+//        foreach ($quotes as $quote){
+//            $quote->cats = $quote->getCatIdsAttribute;            
+//        }
+        return response()->json($author);
+    }
     public function quoteByCat($cat_id){
         $updated = Input::get("max_date","0000-00-00 00:00:01");
          
@@ -49,15 +58,6 @@ class QuoteController extends Controller {
             $quote->cats = $quote->getCatIdsAttribute;            
         }
         return response()->json($quotes);
-    }
-    public function author($author_id){
-        $author_id = $author_id  ? $author_id : 1;
-        $author = Author::find($author_id);
-//        $quotes = $author->quotes()->where("updated_at",">=",$updated)->paginate(50);
-//        foreach ($quotes as $quote){
-//            $quote->cats = $quote->getCatIdsAttribute;            
-//        }
-        return response()->json($author);
     }
     
      public function setVote(){

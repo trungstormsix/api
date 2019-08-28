@@ -162,7 +162,11 @@
         filebrowserBrowseUrl: '{{URL::asset("filemanager")}}/index.html',
          
         enterMode : CKEDITOR.ENTER_BR,
-        shiftEnterMode: CKEDITOR.ENTER_P 
+        shiftEnterMode: CKEDITOR.ENTER_P,
+          init: function( editor ) {
+        
+        editor.addContentsCss( 'http://ocodereducation.com/template/css/grammar.css' );
+    }
     
     });
     CKEDITOR.config.contentsCss = 'http://ocodereducation.com/template/css/grammar.css' ;     

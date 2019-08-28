@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 use App\Models\ListeningCat;
 use App\Models\ListeningDialog;
 use App\Models\GrammarLesson;
@@ -97,7 +98,7 @@ class ListeningController extends Controller {
         $vote = Input::get("vote");
         if($vote > 0){
             //ListeningDialog::where("id",$id)->increment('liked');
-			if(ListeningDialog::find($id)->liked % 5 ==0){
+			if(ListeningDialog::find($id)->liked % 50 ==0){
 				ListeningDialog::where("id",$id)->increment('liked');
 			}else{
 				DB::table('enli_dialogs') ->where('id', $id)->increment('liked');
@@ -192,11 +193,10 @@ class ListeningController extends Controller {
 		clearstatcache();
 
     }
-    
     public function report(){
-         $api_token = Input::get("api_token","no_token");      
-         $message = Input::get("message","");
-         $dl_id = Input::get("id","");
+        $api_token = Input::get("api_token","no_token");      
+        $message = Input::get("message","");
+        $dl_id = Input::get("id","");
         $user = User::where("api_token", $api_token)->first();
          if(!$user){
             return response("please login!",403);
@@ -206,9 +206,28 @@ class ListeningController extends Controller {
         $report->email = $user->email;
         $report->message = $message;
         $report->dl_id = $dl_id;
-        if($dl_id && $message && leng){
+        if($dl_id && $message && strlen($message) > 2){
             $report->save();
         }
         
+    }
+    
+    
+    public function getSub(){
+        $id = Input::get("id");
+        
+        $video = ListeningDialog::find($id);
+        if(!$video || !$video->video_id){
+            
+            return;
+        } 
+
+        $yid = $video->video_id;
+        $fileName = $yid.".txt";
+        
+        if (Storage::disk('ysubs')->has($fileName)) {
+            $audio = Storage::disk('ysubs')->getAdapter()->getPathPrefix();
+              echo file_get_contents($audio.$fileName);
+        }
     }
 }

@@ -40,7 +40,9 @@
                             </label>
                             <div class="col-sm-10">
                                 <input type="hidden" name="id" value="{{$dialog->id}}" />
-                                {{$dialog->id}}
+                                <span class="btn btn-primary">{{$dialog->id}}</span>  <a href="{{url('admin/listening/dialog/'.$next->id)}}" class="btn btn-success"  >
+                                        <b>Next {{$next->id}}</b>
+                                    </a>
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -50,7 +52,23 @@
                             <label class="col-sm-2 control-label">     
                                 Title
                             </label>
-                            <div class="col-sm-10"><input name="title" value="{{$dialog->title}} " /></div>     
+                            <div class="col-sm-10"><input class="form-control" name="title" value="{{$dialog->title}}" /></div>     
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        
+                         <div class="form-group">
+
+                            <label class="col-sm-2 control-label">     
+                                Video Youtube
+                            </label>
+                            <div class="col-sm-3"><input class="form-control" name="video_id" value="{{$dialog->video_id}}" /><br>
+                                <a class="btn btn-sm btn-primary" href="{{url("/ysubs/".$dialog->video_id)}}.txt" target="_blank" >Sub</a> 
+                                <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url("/admin/listening/crawl-y-sub?id=").$dialog->id}}" target="_blank" ><i class="fa fa-download"></i> Crawl Youtube Sub</a>
+
+                            </div>     
+                            <div class="col-sm-7">
+                                {{substr($sub,36, 100)}}
+                            </div>
                         </div>
                         <div class="hr-line-dashed"></div>
 
@@ -58,9 +76,11 @@
                             <label class="col-sm-2 control-label">     
                                 audio
                             </label>
-                            <div class="col-sm-10">
-                                {!!$dialog->audio!!}<br><br>
-                                <audio controls="">
+                            <div class="col-sm-1">
+                                {!!$dialog->audio!!}
+                            </div> 
+                            <div class="col-sm-9">
+                                <audio class="form-control" controls="">
                                     <source src="http://ocodereducation.com/api/audio/{!!$dialog->audio!!}" type="audio/mpeg">
                                     Your browser does not support the audio element.
                                 </audio>
@@ -86,6 +106,27 @@
                         </div>      
                         <div class="hr-line-dashed"></div>
 
+                        
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">     
+                                Dialog
+                            </label>
+                            <div class="col-sm-10">
+                                <div class="ibox float-e-margins">
+                                    <button id="edit" class="btn btn-primary btn-xs m-l-sm"   type="button">Edit</button>
+                                    <button id="save" class="btn btn-primary  btn-xs"   type="button">Done</button>
+                                    <textarea id="dialog_content" name="dialog" spellcheck="true" style="display: none;"> {!!$dialog->dialog!!}</textarea>
+                                    <div class="ibox-content no-padding" spellcheck="true">
+                                        <div class="click2edit wrapper p-md">
+                                            {!!$dialog->dialog!!}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">     
                                 Grammar
@@ -110,26 +151,6 @@
                             </div>
 
                         </div>  
-                        <div class="hr-line-dashed"></div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">     
-                                Dialog
-                            </label>
-                            <div class="col-sm-10">
-                                <div class="ibox float-e-margins">
-                                    <button id="edit" class="btn btn-primary btn-xs m-l-sm"   type="button">Edit</button>
-                                    <button id="save" class="btn btn-primary  btn-xs"   type="button">Done</button>
-                                    <textarea id="dialog_content" name="dialog" spellcheck="true" style="display: none;"> {!!$dialog->dialog!!}</textarea>
-                                    <div class="ibox-content no-padding" spellcheck="true">
-                                        <div class="click2edit wrapper p-md">
-                                            {!!$dialog->dialog!!}
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">     
@@ -165,9 +186,18 @@
                             <label class="col-sm-2 control-label">     
                                 Status
                             </label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-2">
 
                                 <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox" name="status" {{(old('status') || $dialog->status) ? 'checked' : '' }} >
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+
+                            <label class="col-sm-2 control-label">     
+                                Video
+                            </label>
+                            <div class="col-sm-10"><input name="video" value="{{$dialog->video}}" type="number"/></div>     
+                        </div>
                             </div>
                         </div>         
                         <div class="hr-line-dashed"></div>

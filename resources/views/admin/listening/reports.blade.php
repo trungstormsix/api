@@ -142,7 +142,7 @@
 //                    $(that).click();
                 })
                         .fail(function () {
-//                            $(that).click();
+                            $(that).click();
                             alert("error");
                         });
             }

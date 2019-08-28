@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use App\library\OcoderHelper;
 use Illuminate\Support\Facades\Storage;
+use App\library\DomParser;
 
 use App\Http\Controllers\Controller;
 use App\Role;
@@ -18,6 +19,7 @@ use File;
 use Illuminate\Support\Facades\Session;
 use App\Models\IELTS\IELTSCat;
 use App\Models\IELTS\IELTSArticle;
+use App\Models\IELTS\IELTSVocabulary;
 
 class IELTSController extends Controller {
 
@@ -180,4 +182,80 @@ class IELTSController extends Controller {
         return Redirect::to('/admin/ielts/article/add');
     }
 
+    
+    /**
+     * vocabulary
+     */
+    public function updateWord($voc_id) {
+        $voc = IELTSVocabulary::find($voc_id);
+        $word = str_replace(" ", "+", $voc->en);
+        $link = "http://www.oxfordlearnersdictionaries.com/definition/english/";
+        $dom = new DomParser();
+        $html = @$dom->file_get_html($link . $word . '_1');
+        if (!$html) {
+            $html = @$dom->file_get_html($link . $word);
+        }
+        if (!$html)
+            return;
+        $content = $html->find(".h-g", 0);
+        if (!$content)
+            return;
+        $type_html = $content->find(".webtop-g .pos", 0);
+        if (!$type_html)
+            return;
+        $type = $type_html->plaintext;
+        $pron_html = $content->find(".pron-gs .phon", 0);
+        if (!$pron_html)
+            return;
+        $pron = trim(preg_replace("/BrE|\//", "", $pron_html->plaintext));
+        $pron = '/' . $pron . '/';
+        if (!$content->find(".pron-gs .sound", 0))
+            return;
+        $mp3 = $content->find(".pron-gs .sound", 0)->getAttribute("data-src-mp3");
+
+        $mp3_file = \App\library\OcoderHelper::getFileName($mp3);
+        $audio = "/ielts/".$mp3_file;
+        $status = true;
+        //get audio
+        if (!Storage::disk('listening_audios')->has($audio)) {
+            echo "<b>Audio:</b>" . $audio . "<br>";
+
+            $status = Storage::disk('listening_audios')->put($audio, file_get_contents($mp3));
+        }
+        $lis = @$content->find(".sn-g");
+        $mean ="<ol>";
+        foreach ($lis as $li){
+            $mean  .="<li>";
+            $mean .= "<p>".@$li->find('.gram-g', 0)->plaintext . @$li->find('.def', 0)->plaintext."</p>";
+            $exs = $li->find(".x-g");
+            $i = 0;
+            foreach ($exs as $ex){
+                $ex_text = "";
+                if($ex->find(".cf")){
+                    $ex_text = "<b>".$ex->find(".cf",0)->plaintext."</b>: ";
+                    $ex_text .= $ex->find(".x",0) ->plaintext;
+                }else{
+                    $ex_text = $ex->plaintext;
+                }
+                $mean .= "<p>" .$ex_text . "</p>";
+                if($i++ > 5) break;
+            }
+             $mean  .="</li>";
+        }
+        $mean .= "</ol>";
+        echo "<b>Mean:</b>" . $mean . "<br>";
+         
+
+        /** save voc * */
+         $voc->type = $type;
+        $voc->pronuciation = $pron;
+        
+            $voc->mean = $mean;
+         
+        $voc->audio = $mp3_file;
+       
+        $voc->save();
+  dd($voc);
+        return true;
+    }
 }

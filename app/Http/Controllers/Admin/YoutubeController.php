@@ -14,8 +14,11 @@ use App\User;
 use App\Models\Playlist;
 use App\Models\Video;
 use App\Models\Ycat;
+
+use App\Models\YcatEn;
 use File;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class YoutubeController extends AdminBaseController {
 
@@ -28,6 +31,78 @@ class YoutubeController extends AdminBaseController {
         return view('admin/home');
     }
 
+    public function crawlAmazoneSub(){
+        $yid = Input::get("yid");
+        $video = Video::where("yid", $yid)->first();
+        if(!$video){
+            echo "no video";
+            return;
+        }
+        $fileName = $yid.".txt";
+        $link = "https://s3.amazonaws.com/soviosubtitles/truesubs/".$fileName;
+        $status = false;
+        if (!Storage::disk('ysubs')->has($fileName)) {
+			echo "<b>sub:</b>".$fileName."<br>";;
+            $status  = Storage::disk('ysubs')->put($fileName, file_get_contents($link));
+            if($status){
+                $video->has_sub = 2;
+                $video->save();
+            }
+        }
+        
+        
+        echo "<a href='".url("/ysubs/".$fileName)."' target='_blank'>Link Sub</a>";
+         
+    }
+
+    public function crawlYoutubeSub(){
+        $yid = Input::get("yid");
+        $fileName = $yid.".txt";
+        $video = Video::where("yid", $yid)->first();
+        if(!$video){
+            echo "no video";
+            return;
+        } 
+        $lang = Input::get("lang","en");
+        $ysub_link = "http://video.google.com/timedtext?type=track&v=".$yid."&id=0&lang=".$lang;
+        $subs = [];
+        $list_xml = simplexml_load_file($ysub_link);
+        if($list_xml){
+            foreach ($list_xml as $text){
+                //var_dump($text);
+              $att = $text->attributes();
+               
+                $sub = new \stdClass();
+                $sub->from = $att['start'] * 1000;
+                $sub->to = $sub->from + ($att['dur'] * 1000);
+                $sub->text = html_entity_decode($text);
+                $subs[] = $sub;
+                
+            }
+        }
+        $sub_json = new \stdClass();
+        $sub_json->subs = $subs;
+       
+       
+        $status = false;
+        if (!Storage::disk('ysubs')->has($fileName)) {
+			echo "<b>sub:</b>".$fileName."<br>";;
+            $status  = Storage::disk('ysubs')->put($fileName, json_encode($sub_json));
+            if($status){
+                $video->has_sub = 2;
+                $video->save();
+            }
+        }else{
+            if($status){
+                $video->has_sub = 2;
+                $video->save();
+            }
+        }
+        
+        echo "<a href='".url("/ysubs/".$fileName)."' target='_blank'>Link Sub</a>";
+
+    }
+    
     /**
      * get Playlist
      */
@@ -40,7 +115,15 @@ class YoutubeController extends AdminBaseController {
         }
         return view('admin/youtube/cat', ['cat' => $cat]);
     }
-
+    public function getYcatEn($id = 0) {
+        $cat = null;
+        if ($id) {
+            $cat = YcatEn::find($id);
+        } else {
+            
+        }
+        return view('admin/youtube/en_cat', ['cat' => $cat]);
+    }
     /**
      * save cat
      */
@@ -67,6 +150,29 @@ class YoutubeController extends AdminBaseController {
         Input::flash();
         return Redirect::to('/admin/youtube/cat/add');
     }
+     public function postYcatEn(Request $req) {
+        $this->validate($req, [
+            'title' => 'required|max:255',
+        ]);
+
+        if ($req->id) {
+            $cat = YcatEn::find($req->id);
+        } else {
+            $cat = new YcatEn();
+        }
+        $cat->title = $req->title;
+        $result = $cat->save();
+
+        if ($result) {
+            Session::flash('success', 'Youtube Category  saved successfully!');
+
+            return Redirect::to('/admin/youtube/en-playlists/' . $cat->id);
+        }
+        Session::flash('error', 'Youtube Category failed to save!');
+
+        Input::flash();
+        return Redirect::to('/admin/youtube/en-cat/add');
+    }
 
     /**
      * 
@@ -78,7 +184,23 @@ class YoutubeController extends AdminBaseController {
         Session::set("cat_id", $catId);
         return view('admin/youtube/playlists', ['playlists' => $cat->playlists, 'cat' => $cat]);
     }
-
+     public function searchPlaylists() {
+         $search = Input::get("search","%ted%");
+        $cat = new Ycat();
+        $cat->title = "Search Playlist";
+        $playlists = Playlist::where("yid",$search)->orWhere("title","like",$search)->paginate(30);
+        
+        return view('admin/youtube/playlists', ['playlists' => $playlists, 'cat' => $cat,'search'=>$search]);
+    }
+     public function getEnPlaylists($catId) {
+        $cat = YcatEn::find($catId);
+        Session::set("en_cat_id", $catId);
+        return view('admin/youtube/playlists', ['playlists' => $cat->playlists()->orderBy("view_count","DESC")->get(), 'cat' => $cat]);
+    }
+    public function getEnCats(){
+        $cats = YcatEn::all();
+        return view('admin/youtube/en_cats', compact('cats'));
+    }
     /**
      * get Playlist
      */
@@ -88,7 +210,8 @@ class YoutubeController extends AdminBaseController {
             $playlist = Playlist::find($id);
         }
         $cats = Ycat::all();
-        return view('admin/youtube/editPlaylist', ['playlist' => $playlist, 'cats' => $cats]);
+        $enCats = YcatEn::all();
+        return view('admin/youtube/editPlaylist', compact("cats","enCats", "playlist"));
     }
 
     /**
@@ -102,7 +225,7 @@ class YoutubeController extends AdminBaseController {
         if (!$yid) {
             $message = "Please type a playlist id";
         } else {
-            if ($yid != "no_id") {
+            if ($yid != "no_id" && strpos($yid, "noplaylist") !== false) {
                 $plid = $this->_getPlaylist($req, $yid);
             } else {
                 $title = $req->get('title');
@@ -123,6 +246,11 @@ class YoutubeController extends AdminBaseController {
                     $playlist->status = 0;
                 }
                 $playlist->item_count = $playlist->videos()->count();
+                $playlist->cat_id = $req->get("cat_id");
+                $playlist->en_cat_id = $req->get("en_cat_id");
+                if($req->get("view_count",0) > 0){
+                    $playlist->view_count = $req->get("view_count");
+                }
                 $playlist->save();
             }
         }
@@ -145,13 +273,20 @@ class YoutubeController extends AdminBaseController {
         $html = $f->file_get_html("https://www.youtube.com/playlist?list=" . $plId);
         $title = $req->get('title') ? $req->title : $html->find("#pl-header h1.pl-header-title", 0)->plaintext;
         $thumb_url = $req->get('thumb_url');
-        $playlist = Playlist::where('yid', $plId)->first();
+        if ($req->id) {
+            $playlist = Playlist::find($req->id);
+        }
+        if (!$playlist) {
+            $playlist = Playlist::where('yid', $plId)->first();
+        }
         if (!$playlist) {
             $playlist = new Playlist();
             $playlist->yid = $plId;
         }
 
         $playlist->cat_id = $req->cat_id;
+        $playlist->en_cat_id = $req->en_cat_id;
+
         $playlist->title = trim($title);
         $playlist->thumb_url = $thumb_url ? $thumb_url : "";
 
@@ -160,11 +295,19 @@ class YoutubeController extends AdminBaseController {
         } else {
             $playlist->status = 0;
         }
+        $this->_getVideos($html, $playlist);
+
         $playlist->item_count = $playlist->videos()->count();
         $playlist->save();
 
-        $this->_getVideos($html, $playlist);
         return $playlist->id;
+    }
+
+    public function crawlVideos($id){
+        $f = new \App\library\DomParser();
+        $playlist = Playlist::find($id);
+        $html = $f->file_get_html("https://www.youtube.com/playlist?list=" . $playlist->yid);
+        $this->_getVideos($html, $playlist);
     }
 
     /**
@@ -180,8 +323,47 @@ class YoutubeController extends AdminBaseController {
         $sort_dimen = Session::get('sort_dimen', 'desc');
         
         $playlist = Playlist::find($id);
+        
         $videos = $playlist->videos()->orderBy($sort_by, $sort_dimen)->paginate(20);
-        return view('admin/youtube/videos', compact('videos', 'playlist','sort_by','sort_dimen'));
+        $playlists = $playlist->cat->playlists()->orderBy("status","DESC")->orderBy("title","ASC")->get();
+        foreach($playlists as $pl){
+         //   $pl->count = $pl->videos()->count();
+         //   $pl->count = $pl->videos()->count();
+        }
+         
+        return view('admin/youtube/videos', compact('videos', 'playlist','playlists','sort_by','sort_dimen'));
+    }
+    
+    /**
+     * get Videos from playlist
+     */
+    public function searchVideos() {
+        $search = Input::get("search","%ted%");
+
+        if (@$_GET['sort_by']) {
+            Session::put('vsort_by', $_GET['sort_by']);
+            $dimen = @$_GET['sort_dimen'] ? $_GET['sort_dimen'] : 'asc';
+            Session::put('sort_dimen', $dimen);
+        }
+        $sort_by = Session::get('vsort_by', 'title');
+        $sort_dimen = Session::get('sort_dimen', 'asc');
+        
+        $videos = Video::where("yid",$search)->orWhere("title","like",$search)->orderBy($sort_by, $sort_dimen)->paginate(30);
+        
+        $playlists = Playlist::all();
+        foreach($playlists as $pl){
+             
+            if($pl->videos){
+                $pl->count = $pl->videos()->count();
+            }else{
+                $pl->count = 1;
+            }
+             
+        }
+        
+
+        $playlist = $pl;
+        return view('admin/youtube/videos', compact('videos', 'playlist','playlists','sort_by','sort_dimen','search'));
     }
 
     /**
@@ -267,7 +449,7 @@ class YoutubeController extends AdminBaseController {
         if ($video) {
             $playlist = $video->playlists()->first();
         } else {
-            $playlist = YCat::find(Session::get('cat_id', 2))->playlists()->first();
+            $playlist = YCat::find(Session::get('cat_id', Session::get("cat_id", 5)))->playlists()->first();
         }
         return view('admin/youtube/video', compact('video', 'playlist'));
     }
@@ -286,9 +468,9 @@ class YoutubeController extends AdminBaseController {
         } else {
             $video = Video::where("yid", $req->get("yid"))->first();
             if ($video) {
-                Session::flash('error', 'Video is exist <a href="/admin/youtube/video/edit/' . $video->id.'">here</a>!');
+                Session::flash('error', 'Video is exist!');
                 Input::flash();
-                return Redirect::to('/admin/youtube/video/add');
+                return Redirect::to('/admin/youtube/video/edit/' . $video->id);
             }
             $video = new Video();
             $info = $this->_getVideoInfo($req->get("yid"));

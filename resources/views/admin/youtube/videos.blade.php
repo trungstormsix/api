@@ -3,7 +3,7 @@
 @section('content')
 <!-- header -->
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
+    <div class="col-lg-7">
         <h2>{{empty($title) ?  'oCoder' : $title}}</h2>
         <ol class="breadcrumb">
             <li>
@@ -19,8 +19,20 @@
     </div>
     <div class="col-lg-2">
         <br>
+        
+           <form type="GET" action="{!! url('admin/youtube/search-videos') !!}">
+             <input name='search' value='{{ @$search }}' placeholder="Search Videos..." required class='form-control'/>
+         </form>
+    </div>
+    <div class="col-lg-3">
+        <br>
         <div class="pull-right tooltip-demo">
-            <a href="{{ url('admin/youtube/video/add')}}" type="button" class="btn btn-primary btn-lg">Add New Video</a>
+            @if($playlist && $playlist->id)
+                        <a href="{{ url('admin/youtube/playlist/edit/'.$playlist->id)}}" type="button" class="btn btn-info btn-sm dim"><i class="fa fa-edit"></i> Edit Playlist</a>
+
+            @endif
+            <a href="{{ url('admin/youtube/video/add')}}" type="button" class="btn btn-primary btn-sm dim"><i class="fa fa-plus"></i> Add Video</a>
+			<button class="btn btn-primary crawl-all dim">Crawl All</button>
         </div>
 
 
@@ -60,7 +72,13 @@
                                 </div>  
                             </div>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-1">
+                             <b data-sort="has_sub" class="sort">
+                                has Sub
+                                <span class="has_sub fa fa-sort"></span>
+
+                            </b>
+                            <br>
                         </div>
                         <div class="col-xs-1">
                             <b data-sort="updated_at" class="sort">
@@ -87,20 +105,25 @@
                                     <img alt="{{$video->title}}" style="max-width: 130px  " class="img-circle circle-border" src="{{$video->thumb_url}}">
                                 </div>  
                                 <div class="col-xs-7">
-                                    <a href="https://www.youtube.com/watch?v={{$video->yid}}" target="_blank"><h2 class="font-bold">{{$video->title}}</h2></a>
-                                    {{$video->created_at}}
+                                    <a href="{{url('admin/youtube/video/edit/'.$video->id)}}" target="_blank"><h2 class="font-bold">{{$video->title}}</h2></a>
+                                    <a href="https://www.youtube.com/watch?v={{$video->yid}}" target="_blank" class="btn btn-success"><i class="fa fa-youtube"></i> Watch</a>
+                                    <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url("/admin/youtube/video/crawl-y-sub?yid=").$video->yid}}" target="_blank" ><i class="fa fa-download"></i> Crawl Youtube Sub</a>
+
                                 </div>
                                 <div class="col-xs-3">
                                     <select data-id="{{$video->id}}" class="form-control m-b playlist">
 
-                                        @foreach($playlist->cat->playlists()->orderBy("status","DESC")->orderBy("title","ASC")->get() as $pl)
-                                        <option {{$pl->id == $playlist->id ? 'selected' : ""}} value="{{$pl->id}}">{{$pl->title.' ('.$pl->videos()->count().')'}}</option>
+                                        @foreach($playlists as $pl)
+                                        <option {{$pl->id == $playlist->id ? 'selected' : ""}} value="{{$pl->id}}">{{$pl->title.' ('.$pl->count.')'}}</option>
 
                                         @endforeach
 
                                     </select>
                                 </div>  
                             </div>
+                        </div>
+                        <div class="col-xs-1">
+                            {{$video->has_sub}}
                         </div>
                         <div class="col-xs-2">
                             <a href="{{url('admin/youtube/video/edit/'.$video->id)}}" class="btn btn-success">Edit</a>
@@ -120,6 +143,7 @@
     <form id="sort">
         <input class="sort_by" name="sort_by" type="hidden" value="{{$sort_by}}" />
         <input class="sort_dimen"  name="sort_dimen" type="hidden" value="{{$sort_dimen}}" />
+        <input name='search' value='{{ @$search }}' placeholder="Search Videos..." required class='form-control'/>
 
     </form>
 </div>
@@ -151,6 +175,21 @@
         }).fail(function () {
             alert("error");
         });
-    })
+    });
+	function openLink(link) {
+		window.open(link, '_blank');
+	}
+			  
+	jQuery(".crawl-all").click(function(){
+		 
+		jQuery(".crawl-y-sub").each(function(index){			 
+			var link = jQuery(this).attr('href');
+			var time = 800 * (index);
+			console.log(time);
+			setTimeout(function(){
+				openLink(link);
+			}, time);			 
+		});
+	});
 </script>
 @endsection

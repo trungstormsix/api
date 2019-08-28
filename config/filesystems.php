@@ -47,6 +47,11 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
+        'ysubs' => [
+            'driver' => 'local',
+            'root' => storage_path('../ysubs'),
+            'visibility' => 'public',
+        ],
         'jlpt_audios' => [
             'driver' => 'local',
             'root' => storage_path('../jlpt/audios'),
@@ -74,7 +79,7 @@ return [
         ],
         'listening_audios' => [
             'driver' => 'local',
-            'root' => storage_path('../../api/audio'),
+            'root' => storage_path('../audios/listening'),
             'visibility' => 'public',
         ],
         'picvoc_audios' => [

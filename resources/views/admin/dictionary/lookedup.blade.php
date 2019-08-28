@@ -3,10 +3,15 @@
 @section('content')
 <!-- header -->
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
+    <div class="col-lg-8">
         <h2>Looked up</h2>
 
     </div>
+	<div class="col-lg-2">
+        <br>
+        <br>
+            <a href="{{url('admin/dictionary/delete-for-recrawl')}}" class="btn btn-info">Delete 100 error Mean</a>
+ </div>
     <div class="col-lg-2">
         <br>
         <br>

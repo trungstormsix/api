@@ -57,13 +57,47 @@ class ApiController extends Controller {
 
         return $playlists;
     }
-
+	public function getEnPlaylists($catid = 2) {
+        $ver = Input::get("ver");
+        $query = Playlist::where('en_cat_id', $catid)->orderBy('updated_at', 'desc');
+//        if ($ver >= 21) {
+//            $query->where("status", 0);
+//            $playlists = $query->get();
+//            foreach ($playlists as $playlist) {
+//                $playlist->status = 1;
+//            }
+//            return $playlists;
+//        }
+//        if ($catid == 31) {
+//            $playlists = $query->take(80)->get();
+//        } else {
+//            $playlists = $query->get();
+//        }
+        $playlists = $query->take(30)->get();
+        return $playlists;
+    }
     public function getVideos($id) {
         $playlist = Playlist::find($id);
         $playlist->videos = $playlist->videos->take(100);
         return $playlist->videos;
     }
-
+	public function getEnVideos($id) {
+		
+        $playlist = Playlist::where("yid",$id)->first();
+        $playlist->videos = $playlist->videos()->orderBy('updated_at', 'desc')->take(55)->get();
+        return $playlist->videos;
+    }
+    
+      public function crawlWordMean() {       
+        
+        $ms = Dictionary::where("crawl", 0)->orderBy("count", "desc")->paginate(20);
+        foreach($ms as $m){
+            $m->crawl = 1;
+            $m->save();
+        }
+        return response()->json($ms);
+    }
+    
     public function lookedUp() {
         $lookup_w = trim(Input::get('word'));
         $lang = trim(Input::get('lang'));
@@ -71,6 +105,9 @@ class ApiController extends Controller {
         
         $word = CommonWord::where("word", $lookup_w)->first();
         if (!$word) {
+			if(!$html){
+				return;
+			}
             $word = new CommonWord();
             $word->count = 0;
             $word->word = $lookup_w;
@@ -84,15 +121,48 @@ class ApiController extends Controller {
             $m->lang = $lang;
             $m->word_id = $word->id;
         }
-
+		 
         $m->save();
         $m->increment('count');
         if ($html && $m->get != 1) {
+//        if ($html) {
            $m = $this->getGlobeWebFromHTML($html, $m);
         }
-        $word->tuc = @$m->mean ? json_decode($m->mean) : [];
-        $word->examples = @$m->example ? json_decode($m->example) : [];
-        $word->result = "ok";
+//        dd($m->mean);
+		if(!@$m->mean){
+			//$m->delete();
+			$m->get = 0;
+			$m->save();
+		}else{
+                        $examples = [];
+                        if(@$m->example){
+                            $example1s = json_decode($m->example);
+                            foreach($example1s as $example){
+                                if(!@$example->second || $example->second == ""){
+                                    $m->get = 0;
+                                    $m->save();
+                                    break;
+                                }else{
+                                    $examples[] = $example;
+                                }
+                            }
+                        }
+                        if(@$m->mean){
+                            $means = json_decode($m->mean);
+                            foreach($means as $mean){
+                                $example = new \stdClass();
+                                if(@$mean->example && @$mean->example->example){
+                                    $example->first = $mean->example->example;
+                                    $example->second = $mean->example->mean;
+                                    array_unshift($examples, $example);
+                                }
+                            }
+                        }
+			$word->tuc = @$m->mean ? json_decode($m->mean) : [];
+			$word->examples = $examples;
+		}
+		$word->result = "ok";
+
         return response()->json($word);
     }
 
@@ -124,7 +194,7 @@ class ApiController extends Controller {
 
         $dom = new DomParser();
         $html = @$dom->file_get_html($link . $word . '_1');
-
+		//echo $html;
         if (!$html) {
             $html = @$dom->file_get_html($link . $word);
         }
@@ -144,17 +214,18 @@ class ApiController extends Controller {
         if (!$content) {
             $voc->count = 0 - $voc->count;
             $voc->save();
-            echo "no content";
+            echo "no content h-g";
             return;
         }
         $type_html = $content->find(".webtop-g .pos", 0);
         if (!$type_html) {
             $voc->count = 0 - $voc->count;
             $voc->save();
-            echo "no content";
-            return;
-        }
-        $type = $type_html->plaintext;
+            echo "no content pos <br>";
+            //return;
+        }else{
+			$type = $type_html->plaintext;
+		}
         //get pro uk
         $pron_uk_html = $content->find(".pron-g", 0);
         if (!$pron_uk_html) {
@@ -274,11 +345,15 @@ class ApiController extends Controller {
         }
         $meanings_html = $html->find("li.phraseMeaning");
         $meanings = [];
+		$count = 0;
         if ($meanings_html) {
             foreach ($meanings_html as $meaning_html) {
                 $phrase = $this->getMeaningFromHtml($meaning_html, $word);
                 if ($phrase) {
                     $meanings[] = $phrase;
+                    if($count++ > 14){
+                            break;
+                    }
                 }
             }
         } else {
@@ -291,12 +366,19 @@ class ApiController extends Controller {
          */
         $examples_html = $html->find("#translationExamples .tableRow");
         $examples = [];
+        $count = 0;
         foreach ($examples_html as $example_html) {
             $example = $this->getExampleFromHtml($example_html);
-            if ($example) {
-                $examples[] = $example;
+            if ($example && strlen($example->first) < 410) {
+                if($word->lang == "en" || (@$example->second && $example->second != "")){
+                    $examples[] = $example;
+                    if($count++ > 9){
+                        break;
+                    }
+                }
             }
         }
+//        var_dump($examples);
 
 //            dd($examples);
 
@@ -306,8 +388,10 @@ class ApiController extends Controller {
             $word->save();
             return $word;
         }
+//        echo json_encode(array('text' => 'ارتباطات و اطلاع رسانی'), JSON_UNESCAPED_UNICODE);
+//        exit;
         $word->mean = json_encode($meanings);
-        $word->example = json_encode($examples);
+        $word->example = json_encode($examples, JSON_UNESCAPED_UNICODE);
         $word->get = 1;
 
         $word->save();
@@ -405,7 +489,7 @@ class ApiController extends Controller {
         }
     }
 
-    private function getExampleFromHtml($example_html) {
+     private function getExampleFromHtml($example_html) {
         $example = new \stdClass();
         if (!$example_html || !$example_html->find(".span6", 0)) {
             return;
@@ -430,9 +514,9 @@ class ApiController extends Controller {
         $example->first = trim($first->innertext);
         //get mean
 		  
-
+       
         $second = $example_html->find(".span6", 1)->find(".nobold", 0);
-		 if(!$second){
+        if(!$second){
             $second = $example_html->find(".span6", 1)->find("span span", 0);
         }
         if (!$second) {
@@ -442,24 +526,36 @@ class ApiController extends Controller {
                 $s->outertext = "";
             }
         }
-		 
-		if($second->find(".tm-p-em", 0))
+        $has_mean  = 0;
+        if($second->find(".tm-p-em", 0)){
 		$second->find(".tm-p-em", 0)->outertext = "<strong>" . $second->find(".tm-p-em", 0)->innertext . "</strong>";
-		 
+                $has_mean = 1;
+        }
+        		 
+
         $span1s = $second->find("span");
         foreach ($span1s as $span) {
 
             if ($span->class == "tm-p-em") {
                 $span->outertext = "<strong class=\"keyword\">" . $span->innertext . "</strong>";
+                $has_mean = 1;
             } else {
                 $span->outertext = $span->innertext;
             }
         }
-        $example->second = trim($second->innertext);
+        
+        if($has_mean){           
+            $example->second = trim($second->innertext);
+            $example->second  = strip_tags($example->second , "<i><strong><b>");
 
+        }
+        if(@$example->first){
+            $example->first  = strip_tags($example->first , "<i><strong><b>");
+
+        }
         return $example;
     }
-
+	
     private function getDefinitionFromHtml($mean_html) {
 
         if (!$mean_html) {
@@ -476,7 +572,7 @@ class ApiController extends Controller {
         $phrase = new \stdClass();
         $subMean = new \stdClass();
         $subMean->language = "en";
-        $subMean->text = $mean_html->innertext;
+        $subMean->text = strip_tags($mean_html->innertext,"<b><strong><i><div>");;
 
         $phrase->meanings[] = $subMean;
         $meanings[] = $phrase;
@@ -509,26 +605,47 @@ class ApiController extends Controller {
         if ($subMeans_html) {
             $got = true;
             $phrase->meanings = [];
+            $i =0;
             foreach ($subMeans_html as $subMean_html) {
                 //submean
                 $submean = new \stdClass();
                 $submean->language = "en";
                 $submean->text = $subMean_html->plaintext;
                 $phrase->meanings[] = $submean;
+                if($i++ > 4){
+                    break;
+                }
             }
         }
+        
         $example_html = $mean_html->find(".examples", 0);
         if ($example_html && $example_html->find(".span6", 0) && $example_html->find(".span6", 1)) {
             $phrase->example = new \stdClass();
-            $phrase->example->example = $example_html->find(".span6", 0)->innertext;
+            $ex = $example_html->find(".span6", 0);
+            $removes = $ex->find(".pull-right,img");
+            if($removes){
+                foreach ($removes as &$span) { 
+                        $span->outertext = "";                 
+                }
+            }
+            $phrase->example->example = $ex->innertext;
+             
             if ($example_html->find(".span6", 1)->find("div[dir='ltr']", 0)) {
                 $phrase->example->mean = $example_html->find(".span6", 1)->find("div[dir='ltr']", 0)->innertext;
+               
             } else {
-                $phrase->example->mean = $example_html->find(".span6", 1)->outertext;
-//                exit;
+                $mean = $example_html->find(".span6", 1);
+                $removes = $mean->find(".pull-right,img");
+                if($removes){
+                    foreach ($removes as &$span) { 
+                            $span->outertext = "";                 
+                    }
+                }
+                $phrase->example->mean = $mean->outertext;
+                
             }
         }
-
+       
         if (!$got && $mean_html->plaintext) {
             $phrase->meanings = [];
             $subMean = new \stdClass();
@@ -536,7 +653,7 @@ class ApiController extends Controller {
             $subMean->text = $mean_html->plaintext;
             $phrase->meanings[] = $subMean;
         }
-
+ 
         return $phrase;
     }
 

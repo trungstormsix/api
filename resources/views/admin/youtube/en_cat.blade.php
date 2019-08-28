@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- header -->
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/youtube/cat/add') }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/youtube/en-cat/add') }}">
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
@@ -40,6 +40,21 @@
                         </label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" name='title' value="{{old('title') ? old('title') : ($cat ? $cat->title :'') }}">
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">   
+                            @if($cat && $cat->thumb_url)
+                            <img alt="{{$cat->title}}" style="max-width: 130px  " class="img-circle circle-border" src="{{$cat->thumb_url}}">
+                            @else
+                            Thumb Url 
+                            @endif
+                        </label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name='thumb_url' value="{{old('thumb_url') ? old('thumb_url') : ($cat? $cat->thumb_url : "") }}">
+                            
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>

@@ -35,8 +35,7 @@ class User extends Authenticatable {
         }
         return false;
     }
-    
-    public function questions() {
+public function questions() {
         return $this->belongsToMany('App\Models\GrammarQuestion', 'engr_user_questions',"uid","qid");
 
     }

@@ -29,14 +29,28 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::get('/cat/add', 'YoutubeController@getYcat');
         Route::get('/cat/edit/{id}', 'YoutubeController@getYcat');
         Route::post('/cat/add', 'YoutubeController@postYcat');
+
+        Route::get('/en-cats', 'YoutubeController@getEnCats');
+        Route::get('/cat/en-add', 'YoutubeController@getYcatEn');
+        Route::get('/cat/en-edit/{id}', 'YoutubeController@getYcatEn');
+        Route::post('/en-cat/add', 'YoutubeController@postYcatEn');
+        Route::get('/en-playlists/{catid}', 'YoutubeController@getEnPlaylists');
+        
         Route::get('/playlists/{catid}', 'YoutubeController@getPlaylists');
+        Route::get('/search-playlists', 'YoutubeController@searchPlaylists');
         Route::get('/videos/{id}', 'YoutubeController@videos');
+        Route::get('/search-videos', 'YoutubeController@searchVideos');
+
         Route::get('/playlist/add', 'YoutubeController@getPlaylist');
         Route::get('/playlist/edit/{id}', 'YoutubeController@getPlaylist');
         Route::post('/playlist/add', 'YoutubeController@postPlaylist');
         Route::get('/video/add', 'YoutubeController@video');
         Route::get('/video/edit/{id}', 'YoutubeController@video');
         Route::post('/video/save', 'YoutubeController@saveVideo');
+        
+        Route::get('/playlist/crawl-videos/{id}', 'YoutubeController@crawlVideos');
+        Route::get('/video/crawl-a3-sub', 'YoutubeController@crawlAmazoneSub');
+        Route::get('/video/crawl-y-sub', 'YoutubeController@crawlYoutubeSub');
         //ajax
         Route::post('/delete', 'YoutubeController@deleteVideo');
         Route::post('/change-playlist', 'YoutubeController@changePlaylist');
@@ -66,6 +80,8 @@ Route::group(['namespace' => 'Admin'], function () {
     /*     * ***************** pic voc *************************** */
     Route::get('picvoc/add', 'PicvocController@add');
     Route::get('picvoc/search-cat', 'PicvocController@searchCat');
+        Route::post('picvoc/search-cat', 'PicvocController@searchCat');
+
     Route::get('picvoc/delete', 'PicvocController@delete');
     /*     * *** ielts ******* */
     Route::group(['prefix' => 'admin/ielts', "namespace" => "IELTS"], function () {
@@ -81,6 +97,8 @@ Route::group(['namespace' => 'Admin'], function () {
             'as' => 'ielts_articles.search',
             'uses' => 'IELTSController@search'
         ));
+        Route::get('voc/crawl/{id}', 'IELTSController@updateWord');
+
     });
 
     //categories
@@ -162,6 +180,8 @@ Route::get('admin/idioms/crawl/english-club-phrasal-verb', 'Crawl\IdiomControlle
 
 /* * ***************** pic voc *************************** */
 Route::get('admin/picvoc/crawl', 'Crawl\PicvocController@getCommonWords');
+Route::get('admin/picvoc/crawl-quizlet', 'Crawl\PicvocController@getCrawlQuizlet');
+Route::post('admin/picvoc/crawl-quizlet', 'Crawl\PicvocController@crawlQuizlet');
 Route::get('admin/picvoc/get-oxford-words', 'Crawl\PicvocController@getOxfordMean');
 Route::get('admin/picvoc/get-oxford-word/{id}', 'Crawl\PicvocController@getOxfordMeanOfWord');
 Route::get('admin/picvoc/delete-voc/{id}', 'Crawl\PicvocController@deleteVoc');
@@ -197,6 +217,21 @@ Route::group(['prefix' => 'admin/listening'], function () {
 
     Route::get('reports', 'Admin\ListeningController@reports');
     Route::get('report/fix', 'Admin\ListeningController@ajaxFixReport');
+    Route::get('video', 'Admin\ListeningController@createVideo');
+    Route::get('jpg2png', 'Admin\ListeningController@jpg2Png');
+    Route::get('crawl-y-sub', 'Admin\ListeningController@crawlYoutubeSub');
+    Route::get('crawl-pl', 'Admin\ListeningController@crawlPlayList');
+    
+    
+});
+Route::group(['prefix' => 'admin/story'], function () {
+    Route::get('story/{id}', 'Admin\StoryController@getStory');
+    Route::post('story/save', 'Admin\StoryController@postStory');
+    Route::get('video', 'Admin\StoryController@createVideo'); 
+    Route::get('crawl-pl', 'Admin\StoryController@crawlPlayList');
+    Route::get('crawl-y-sub', 'Admin\StoryController@crawlYoutubeSub');
+
+    
 });
 Route::get('crawl/listening', 'Crawl\ListeningController@index');
 
@@ -227,6 +262,7 @@ Route::post('admin/user/profile', 'Admin\UserController@postProfile');
 Route::get('admin/truyen/crawl', 'Crawl\TruyenController@index');
 Route::get('admin/story/sp', 'Crawl\SpanishAudioBookController@index');
 Route::get('admin/story/en', 'Crawl\AudioBookController@index');
+Route::get('admin/story/en/cat/{cat_id}', 'Crawl\AudioBookController@crawlDataFromOCoderEducation');
 
 Route::get('funny/get-images', 'Crawl\FunnyImageController@index');
 Route::get('funny/get-9gag-images', 'Crawl\FunnyImageController@get9Gag');
@@ -267,7 +303,16 @@ Route::group(['prefix' => 'admin/content'], function () {
 });
 
 Route::get('admin/dictionary', 'Admin\DictionaryController@index');
+Route::get('admin/dictionary/crawl', 'Admin\DictionaryController@crawl');
+Route::get('admin/dictionary/delete-for-recrawl', 'Admin\DictionaryController@resetNotGetMean');
+
 Route::get('admin/dictionary/search', 'Admin\DictionaryController@search');
+Route::get('admin/dictionary/delete-search', 'Admin\DictionaryController@deleteSearch');
+Route::get('admin/dictionary/word/get-delete-mean', 'Admin\DictionaryController@getDeleteMeanSearch');
+Route::get('admin/dictionary/word/delete-mean-search', 'Admin\DictionaryController@deleteMeanSearch');
+
+Route::get('admin/dictionary/word/delete-mean/{id}', 'Admin\DictionaryController@deleteMean');
+
 Route::get('admin/dictionary/{lang}', 'Admin\DictionaryController@lookedUp');
 Route::get('admin/dictionary/edit/{id}', 'Admin\DictionaryController@edit');
 Route::get('admin/dictionary/refresh/{id}', 'Admin\DictionaryController@refresh');
@@ -550,7 +595,11 @@ $menu = Menu::make('MyNavBar', function($menu) {
             /** youtube videos * */
             $menu->add('Video')->attr(array('pre_icon' => 'youtube'))->active('admin/youtube/*');
             foreach (\App\library\Menus::getCats() as $cat) {
-                $menu->video->add($cat->title, 'admin/youtube/playlists/' . $cat->id);
+                if($cat->id == 5){
+                    $menu->video->add($cat->title, 'admin/youtube/en-cats');
+                }else{
+                    $menu->video->add($cat->title, 'admin/youtube/playlists/' . $cat->id);
+                }
             }
             $menu->video->add('Create Cat', 'admin/youtube/cat/add')->append('<span class="label label-primary pull-right">NEW</span>')->nickname("createCat");
             $menu->item("createCat")->divide(array('class' => 'my-divider'));
@@ -578,7 +627,7 @@ $menu = Menu::make('MyNavBar', function($menu) {
             $menu->usersManager->add('Roles', 'admin/user/roles')->attr(array('pre_icon' => 'users'))->active('admin/user/role/*');
             $menu->usersManager->add('Profile', 'admin/user/profile')->attr(array('pre_icon' => 'envelope'));
 
-            $menu->add('Pic Voc', 'admin/picvoc/get-oxford-words')->attr(array('pre_icon' => 'user'));
+            $menu->add('Pic Voc', 'admin/picvoc/crawl-quizlet')->attr(array('pre_icon' => 'image'))->active('admin/picvoc/*');
 
 
 
@@ -607,6 +656,8 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api'], function () {
 //    Route::get("playlists", 'ApiController@getPlaylists');
     Route::get("playlists/{catid}", 'ApiController@getPlaylists');
     Route::get("videos/{id}", 'ApiController@getVideos');
+    Route::get("en-playlists/{catid}", 'ApiController@getEnPlaylists');
+    Route::get("en-videos/{id}", 'ApiController@getEnVideos');
 
     Route::post("auth/login", 'ApiLoginController@login');
     Route::post("auth/create-user", 'ApiLoginController@createUser');
@@ -624,15 +675,7 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api'], function () {
         Route::get('duration', 'ListeningController@setDucations');
     });
 
-
-    /*     * *
-     * picvoc
-     */
-    Route::group(['prefix' => 'picvoc'], function () {
-        Route::get('/cats', 'PicvocController@cats');
-        Route::get('/vocs/{cat_id}', 'PicvocController@getVocByCat');
-        Route::get('vote', 'PicvocController@setVote');
-    });
+ 
     /**
      * idioms
      */
@@ -656,15 +699,8 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api'], function () {
     Route::get('grammar/numb-cat-questions/{id}', 'EnglishGrammarController@numbCatQuestion');
     Route::get('grammar/numb-lesson-questions/{id}', 'EnglishGrammarController@numbLessonQuestion');
     Route::get('grammar/getTest/{id}/{from}', 'EnglishGrammarController@getTest');
-    Route::group(['prefix' => 'grammar'], function () {
-        Route::get('cats', 'EnglishGrammarController@cats');
-        Route::get('lessons/{id}', 'EnglishGrammarController@lessons');
-        Route::get('lesson/{id}', 'EnglishGrammarController@lesson');
-        Route::get('vote', 'EnglishGrammarController@setVote');
-        Route::post('vote', 'EnglishGrammarController@setVote');
-    });
-    Route::get('looked-up', 'ApiController@lookedUp');
-    Route::post('looked-up', 'ApiController@lookedUp');
+    
+ 
     Route::get('ielts/cats', 'IELTSController@index');
     Route::get('ielts/articles', 'IELTSController@getArticles');
     Route::post('ielts/articles', 'IELTSController@getArticles');

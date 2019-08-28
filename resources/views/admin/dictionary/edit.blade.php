@@ -240,6 +240,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-1">
                                             <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><br>
+											<span>{{$i+1}}</span>
                                             <a href="#" class="remove">
                                                 <span class="glyphicon glyphicon-remove"></span>Remove
                                             </a>
@@ -253,13 +254,14 @@
                                                 <input class="form-control phone" type="text" name="exampleMean[]" value="{{ @old('exampleMean')[$i] ? @old('exampleMean')[$i]  : ($example ? $example->second : '' )}}" placeholder="Mean">                            
                                             </div>
 
-
+		
                                         </div>
 
 
                                     </div>
                                     <div class="hr-line-dashed"></div>
                                 </div>
+								@php($i++)
                                 @endforeach
                             </div>
                             <div class="form-group">     
