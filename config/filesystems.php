@@ -74,7 +74,7 @@ return [
         ],
         'audios' => [
             'driver' => 'local',
-            'root' => storage_path('../audios'),
+            'root' => storage_path('../audios/estory'),
             'visibility' => 'public',
         ],
         'listening_audios' => [

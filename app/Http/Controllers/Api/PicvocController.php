@@ -12,9 +12,11 @@ use App\User;
 use App\library\DomParser;
 use App\Models\Picvoc\Voc;
 use App\Models\Picvoc\PicvocCat;
+use App\Models\Picvoc\PicvocMean;
 use File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Input;
 
 class PicvocController extends Controller {
 
@@ -65,5 +67,23 @@ class PicvocController extends Controller {
             Voc::where("id",$id)->decrement('liked');
         }
        return Voc::find($id)->liked;
+    }
+    
+    public function saveWordMean(){
+        $id = trim(Input::get('id'));
+        $lang = trim(Input::get('lang'));
+        $mean = trim(Input::get('mean'));
+        if(!$id || !$lang || !$mean){
+            return;
+        }
+        $wordMean = PicvocMean::where("id",$id)->where("lang",$lang)->where('mean',$mean)->first();
+        if(!$wordMean){
+            $wordMean = new PicvocMean();
+            $wordMean->voc_id = $id;
+            $wordMean->lang = $lang;
+            $wordMean->mean = $mean;
+            $wordMean->save();
+        }
+
     }
 }

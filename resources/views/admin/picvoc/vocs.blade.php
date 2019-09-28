@@ -78,7 +78,8 @@
                         </tbody>
                     </table>
                 </div>
-                
+                {{$vocs->links()}}
+
             </div>
         </div>
     </div>

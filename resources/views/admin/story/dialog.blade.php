@@ -23,6 +23,7 @@
             <br>
             <br>
             <div class="pull-right tooltip-demo">
+                <a id="delete" class="btn btn-sm btn-danger dim"  href="{{url('admin/story/story/delete/'.$dialog->id)}}"><i class="fa fa-remove"></i> Delete</a>
                 <button class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add new playlist"><i class="fa fa-plus"></i> Save</button>
             </div>
         </div>
@@ -43,6 +44,8 @@
                                 <span class="btn btn-primary">{{$dialog->id}}</span>  <a href="{{url('admin/story/story/'.($next ? $next->id : 1))}}" class="btn btn-success"  >
                                         <b>Next {{$next? $next->id : ""}}</b>
                                     </a>
+                            <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url('admin/story/video/'.$dialog->id)}}" target="_blank" ><i class="fa fa-video-camera"></i> Create Video</a>
+
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -65,6 +68,9 @@
                                 <a class="btn btn-sm btn-primary" href="{{url("/ysubs/".$dialog->video_id)}}.txt" target="_blank" >Sub</a> 
                                 <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url("/admin/story/crawl-y-sub?id=").$dialog->id}}" target="_blank" ><i class="fa fa-download"></i> Crawl Youtube Sub</a>
 
+                                <a class="btn btn-sm btn-primary crawl-y-sub" href="https://studio.youtube.com/video/{{$dialog->video_id}}/edit" target="_blank" ><i class="fa fa-youtube"></i> Edit Sub</a>
+
+                                
                             </div>     
                              <div class="col-sm-7">
                                  <div class="form-group">
@@ -111,7 +117,7 @@
                             </label>
                             <div class="col-sm-10">
                                  <div class="ibox float-e-margins">
-                                {{substr($sub,36, 100)}}
+                                {{substr($sub,36, 400)}}
                                  </div>
                                 <div class="ibox float-e-margins">
                                     <button id="edit" class="btn btn-primary btn-xs m-l-sm"   type="button">Edit</button>
@@ -185,35 +191,27 @@
 
 @section('content_js')
 <!--<script src="{!! asset('assets/ckeditor/ckeditor.js') !!}"></script>-->
-
+<script src="{!! asset('assets/js/plugins/sweetalert/sweetalert.min.js') !!}"></script>
+<link href="{!! asset('assets/css/plugins/sweetalert/sweetalert.css')!!}" rel="stylesheet">
 <script>
   
-//    CKEDITOR.inline('vocabulary', {
-//        filebrowserBrowseUrl: '{!! url('public/filemanager/index.html') !!}',
-//        customConfig: '',
-//        extraPlugins: 'sourcedialog'    
-//     });
-    $('#add_q').click(function(e){
+    $("#delete").click(function(e){
         e.preventDefault();
-        $(this).prop('disabled', true);
-        var that = this;
-//        console.log($('input[name="nquestions_an[]"]').serializeArray())
-        jQuery.ajax({
-                url: "{{url('admin/listening/ajax-add-qu')}}",
-                type: "POST",
-                dataType: 'json',
-                data:   { "_token": "{{ csrf_token() }}", dlId: {{$dialog->id}},q:$('input[name="nquestions"]').val(),c:$('input[name="nquestions_correct"]').val(), ans: $('input[name="nquestions_an[]"]').serializeArray() }
-            }).done(function (data) {
-                 if(data["success"] == false){
-                     alert(data["message"]);
-                     $(that).prop('disabled', false);
-                 }else{
-                      location.reload(); 
-                 }
-            })
-            .fail(function () {
-                alert("error");
-                $(that).prop('disabled', false);
+        that = this;
+        swal({
+                title: "Are you sure?",
+                text: "Truyện này sẽ bị xóa vĩnh viễn và không thể khôi phục lại.",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, Xóa thẳng tay",
+                closeOnConfirm: false
+            }, function (is_confirm) {
+                if (is_confirm) {
+                    window.location.href = $(that).attr('href');;
+                } else {
+                    $(that).val(0);
+                }
             });
     });
     $('#show_hide_q').click(function(e){e.preventDefault(); $('.questions').toggle(300); })

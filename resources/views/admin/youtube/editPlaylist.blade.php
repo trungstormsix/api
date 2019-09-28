@@ -59,6 +59,16 @@
                         <div class="col-sm-10"><input class="form-control" placeholder="Title" type="text" name='title' value="{{empty($playlist) ? old('title') : $playlist->title}}"></div>
                     </div>
                     <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"> 
+                            Crawl 
+                        </label>
+                        <div class="col-sm-10">
+                             <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox" name="crawl" {{($playlist) ? '' : 'checked' }} >
+
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
                     @if($playlist)
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
@@ -130,8 +140,13 @@
 <link href="{!! asset('assets/css/plugins/chosen/chosen.css')!!}" rel="stylesheet">
 
 <script>
-    var elem = document.querySelector('.js-switch');
-    var switchery = new Switchery(elem, {color: '#1AB394'});
+//    var elem = document.querySelector('.js-switch');
+//    var switchery = new Switchery(elem, {color: '#1AB394'});
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+    elems.forEach(function (html) {
+        var switchery = new Switchery(html, {color: '#1AB394'});
+    });
+
     var config = {
         '.chosen-select'           : {},
         '.chosen-select-deselect'  : {allow_single_deselect:true},

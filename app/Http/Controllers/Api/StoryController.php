@@ -73,7 +73,7 @@ class StoryController extends Controller {
             $story->save();
         }
     }
-	public function setDucations(){
+    public function setDucations(){
 		?>
 		<html>
 		<head>
@@ -97,28 +97,37 @@ class StoryController extends Controller {
 		<?php
 		exit;
 	}
-	 public function setDurationAndSize($story) {
-        if($story->duration > 0 && $story->size > 0){
-            return;
+        public function setStoryDuration($id){
+            $story = Story::find($id);
+            $story->duration = 0;
+            $story->size = 0;
+            $story->save();
+            $this->setDurationAndSize($story);
         }
-        $audio = Storage::disk('audios')->getAdapter()->getPathPrefix();
-		if($story->duration == 0){
-			$mp3file = new MP3File($audio . $story->audio); //http://www.npr.org/rss/podcast.php?id=510282
-			$duration1 = @$mp3file->getDurationEstimate(); //(faster) for CBR only
-			$duration2 = @$mp3file->getDuration(); //(slower) for VBR (or CBR)
-			
-			$duration = $duration1 > $duration2 ? $duration1 : $duration2;
-			if ($duration > 0) {
-				$story->duration = $duration;
-				
-			}
-		}
-		if($story->size == 0){
-			$size = filesize($audio.$story->audio);
-			$story->size = $size;
-		}
-		$story->save();
-    }
+
+        public function setDurationAndSize($story) {
+            if($story->duration > 0 && $story->size > 0){
+                return;
+            }
+            $audio = Storage::disk('audios')->getAdapter()->getPathPrefix();
+                    if($story->duration == 0){
+                            $mp3file = new MP3File($audio . $story->audio); //http://www.npr.org/rss/podcast.php?id=510282
+                            $duration1 = @$mp3file->getDurationEstimate(); //(faster) for CBR only
+                            $duration2 = @$mp3file->getDuration(); //(slower) for VBR (or CBR)
+
+                            $duration = $duration1 > $duration2 ? $duration1 : $duration2;
+                            if ($duration > 0) {
+                                    $story->duration = $duration;
+
+                            }
+                    }
+                    if($story->size == 0){
+                            $size = filesize($audio.$story->audio);
+                            $story->size = $size;
+                    }
+                    $story->save();
+                
+        }
 	public function getLangCats() {
 		$lang = Input::get("lang","es");
 		 
@@ -177,5 +186,23 @@ class StoryController extends Controller {
             Story::where("id",$id)->decrement('liked');
         }
        return Story::find($id)->liked; 
+    }
+    
+    public function getSub(){
+        $id = Input::get("id");
+        
+        $video = Story::find($id);
+        if(!$video || !$video->video_id){
+            
+            return;
+        } 
+
+        $yid = $video->video_id;
+        $fileName = $yid.".txt";
+        
+        if (Storage::disk('ysubs')->has($fileName)) {
+            $audio = Storage::disk('ysubs')->getAdapter()->getPathPrefix();
+              echo file_get_contents($audio.$fileName);
+        }
     }
 }

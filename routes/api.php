@@ -58,6 +58,7 @@ Route::post('/quotes/syncLike', 'Api\QuoteController@setVote');
 //listening
 Route::post('/listening/report', 'Api\ListeningController@report'); //save report
 Route::get('/listening/sub', 'Api\ListeningController@getSub'); //save report
+Route::get('/story/sub', 'Api\StoryController@getSub'); //save report
 
 //pronunciation
 Route::group(['prefix' => 'pronu', 'namespace' => 'Api'], function () {
@@ -71,4 +72,6 @@ Route::group(['prefix' => 'picvoc','namespace' => 'Api'], function () {
     Route::get('/cats', 'PicvocController@cats');
     Route::get('/vocs/{cat_id}', 'PicvocController@getVocByCat');
     Route::get('vote', 'PicvocController@setVote');
+    Route::get("save-word-mean", 'PicvocController@saveWordMean');
+    Route::post("save-word-mean", 'PicvocController@saveWordMean');
 });

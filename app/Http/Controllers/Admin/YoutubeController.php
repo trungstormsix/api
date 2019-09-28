@@ -85,7 +85,7 @@ class YoutubeController extends AdminBaseController {
        
        
         $status = false;
-        if (!Storage::disk('ysubs')->has($fileName)) {
+        if (true || !Storage::disk('ysubs')->has($fileName)) {
 			echo "<b>sub:</b>".$fileName."<br>";;
             $status  = Storage::disk('ysubs')->put($fileName, json_encode($sub_json));
             if($status){
@@ -221,15 +221,17 @@ class YoutubeController extends AdminBaseController {
 
         $yid = trim($req->get('yid'));
         $plid = $req->get("id");
-        $message = null;
+        $message = null;         
         if (!$yid) {
             $message = "Please type a playlist id";
         } else {
-            if ($yid != "no_id" && strpos($yid, "noplaylist") !== false) {
-                $plid = $this->_getPlaylist($req, $yid);
-            } else {
+            if ($req->crawl) {
+                $playlist = $this->_getPlaylist($req, $yid);
+                
+            }else
+              {
                 $title = $req->get('title');
-
+                    
                 if ($req->id) {
                     $playlist = Playlist::find($req->id);
                 } else {
@@ -253,11 +255,15 @@ class YoutubeController extends AdminBaseController {
                 }
                 $playlist->save();
             }
+            
+            
+             
         }
+        
         Input::flash();
         $url = '/admin/youtube/playlist/add';
-        if ($plid) {
-            $url = '/admin/youtube/playlist/edit/' . $plid;
+        if ($playlist->id) {
+            $url = '/admin/youtube/playlist/edit/' . $playlist->id;
         }
         return Redirect::to($url)
                         ->with('error', $message)
@@ -300,7 +306,7 @@ class YoutubeController extends AdminBaseController {
         $playlist->item_count = $playlist->videos()->count();
         $playlist->save();
 
-        return $playlist->id;
+        return $playlist;
     }
 
     public function crawlVideos($id){

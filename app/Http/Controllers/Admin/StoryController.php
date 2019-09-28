@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
  use App\Models\Stories\StoryType;
 use App\Models\Stories\Story;
+use App\library\MP3File;
 
 class StoryController extends Controller {
 
@@ -28,19 +29,41 @@ class StoryController extends Controller {
     public function __construct() {
         $this->middleware('auth');
     }
+    public function cats(){
+        $cats = StoryType::where("lang","!=", 'es')->where("parent",">",0)->paginate(20);
+        return view('admin/story/cats', ['cats' => $cats]);
+
+    }
+    public function stories($cat_id){
+        $cat = StoryType::find($cat_id);
+        if (@$_GET['sort_by']) {
+            Session::put('sort_by', $_GET['sort_by']);
+            $dimen = @$_GET['sort_dimen'] ? $_GET['sort_dimen'] : 'asc';
+            Session::put('sort_dimen', $dimen);
+        }
+        $sort_by = Session::get('sort_by', 'liked');
+        $dimen = Session::get('sort_dimen', 'desc');
+        $dialogs = $cat->stories()->orderBy($sort_by, $dimen)->paginate(30);
+        
+        return view('admin/story/dialogs', ['cat' => $cat, 'dialogs' => $dialogs, 'sort_by' => $sort_by, 'sort_dimen' => $dimen]);
+
+    }
+
     public function getStory($id){
         $story = Story::find($id);
-        $cats = $story->types;
-        $cat = $cats[0];
+        $cats = @$story->types;
+        $cat = @$cats[0];
+        if($cat){
         $strs = $cat->stories()->where("id",">",$id)->orderBy("id","ASC")->first();
         $next = $strs;
         if(!$next){     
-            $cat = StoryType::where("lang","!=","es")->where("parent",">",0)->where("id",">",$cat->id)->orderBy("id","ASC")->first();
-            
+            $cat = StoryType::where("lang","!=","es")->where("parent",">",0)->where("id",">",$cat->id)->orderBy("id","ASC")->first();            
             $next = $cat->stories()->orderBy("id","ASC")->first();
              
         }
-         
+        }else{
+            $next = $story;
+        }
         $yid = $story->video_id;
         $fileName = $yid.".txt";
         $sub ="";
@@ -50,6 +73,18 @@ class StoryController extends Controller {
         }
         $dialog = $story;
         return view('admin/story/dialog', compact('dialog', 'next','sub'));
+        
+    }
+    public function deleteStory($id){
+        $story = Story::find($id);
+        $cats = $story->types;
+        $cat = @$cats[0];
+        $story->types()->detach();         
+        $story->delete();
+        if($cat){
+            return Redirect::to('/admin/story/stories/' . $cat->id)->with('success',"Story ".$story->id." deleted completely");
+        }
+        return Redirect::to('/admin/story/cats')->with('success',"Story ".$story->id." deleted completely");
         
     }
     public function postStory(Request $req){
@@ -118,7 +153,79 @@ class StoryController extends Controller {
         }
          
     }
+    public function setStoryDuration($id){
+        $story = Story::find($id);
+        $story->duration = 0;
+        $story->size = 0;
+        $story->save();
+        $this->setDurationAndSize($story);
+    }
+    public function setDurationAndSize($story) {
+        if($story->duration > 0 && $story->size > 0){
+            return;
+        }
+        $audio = Storage::disk('audios')->getAdapter()->getPathPrefix();
+                if($story->duration == 0){
+                        $mp3file = new MP3File($audio . $story->audio); //http://www.npr.org/rss/podcast.php?id=510282
+                        $duration1 = @$mp3file->getDurationEstimate(); //(faster) for CBR only
+                        $duration2 = @$mp3file->getDuration(); //(slower) for VBR (or CBR)
 
+                        $duration = $duration1 > $duration2 ? $duration1 : $duration2;
+                        if ($duration > 0) {
+                                $story->duration = $duration;
+
+                        }
+                }
+                if($story->size == 0){
+                        $size = filesize($audio.$story->audio);
+                        $story->size = $size;
+                }
+                $story->save();
+                echo "Size: $story->size Duration: $story->duration <br>";
+
+    }
+    public function createVideoId($id){
+            $dialog = Story::find($id);
+            $this->setDurationAndSize($dialog);
+            $this->_chageImagesName();
+            $base = "mp4Story/";
+            $types = $dialog->types;
+            $cat = $types[0];
+            $folder = $base.$cat->id."/";// "videos/$dialog->id/";
+            if (!file_exists($folder)) {
+                mkdir($folder, 0777, true);
+                mkdir($folder."txt/", 0777, true);
+            }
+            $fp = fopen($folder."txt/".$dialog->id.'.txt', 'w');
+            $text = strip_tags($dialog->dialog,"<br>");
+//            $text = str_replace("<br>", "\n", $text);
+            $text = preg_replace('(<br\s*\/?>\s*)', "\n", $text);
+            $text = html_entity_decode($text);
+            $text = preg_replace('/[A-Za-z][,.]\s/', "$0\n", $text);
+            
+            fwrite($fp, $text);
+            fclose($fp);
+           
+//            $this->htmlFileLink($folder.$dialog->id.'_z.html', "http://ocodereducation.com/apiv1/admin/listening/dialog/".$dialog->id);
+            $title = preg_replace('/[^A-Za-z0-9\-\s]/', '-', ($dialog->title))." - ";
+            foreach($types as $type){
+                $title .= " c".$type->id;
+            }
+            
+            $t = Input::get("t",10);
+           
+            
+//            echo $text."<br>";
+//            $command2="ffmpeg -f image2 -r 1/7 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 1000)." -vcodec mpeg4 -s 720x576 -vf fps=5 -y \"$folder".$dialog->id." - ".$dialog->title.".mp4\"";
+            $command2="ffmpeg -f image2 -r 1/$t -i images/video/%d.png -i \"audios/estory/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$title.".avi\"";
+
+            echo $command2."<br>";
+            //command for every 5 second image change in video along with 004-07.mp3 playing in background
+           $val =  exec($command2);
+           
+            $dialog->video = 1;
+            $dialog->save();
+    }
     public function createVideo(){      
         $cat_id = Input::get("cat_id");
         
@@ -127,16 +234,17 @@ class StoryController extends Controller {
         }else{
             $cats = StoryType::where("lang","!=", 'es')->where("parent",">",0)->get();
         }
-        echo  preg_replace('/[^A-Za-z0-9\-\s]/', '-', "This: is a Test?");
+//        echo  preg_replace('/[^A-Za-z0-9\-\s]/', '-', "This: is a Test?");
         $base = "mp4Story/";
        
         foreach($cats as $cat){
-            if($cat->video_ok == 0)                break;
+            if($cat->video_ok == 0 || $cat->thumb =="")                break;
         }
 //         dd($cat);
         echo $cat->id." ".$cat->title."<br>";
         $stories = $cat->stories()->orderBY("id", "ASC")->get();
         foreach($stories as $dialog){
+           
             $this->_chageImagesName();
             $folder = $base.$cat->id."/";// "videos/$dialog->id/";
             if (!file_exists($folder)) {
@@ -152,13 +260,21 @@ class StoryController extends Controller {
             
             fwrite($fp, $text);
             fclose($fp);
-            
+            $types = $dialog->types;
+           
 //            $this->htmlFileLink($folder.$dialog->id.'_z.html', "http://ocodereducation.com/apiv1/admin/listening/dialog/".$dialog->id);
-            $title = preg_replace('/[^A-Za-z0-9\-\s]/', '-', ($dialog->title));
+            $title = preg_replace('/[^A-Za-z0-9\-\s]/', '-', ($dialog->title))." - ";
+            foreach($types as $type){
+                $title .= " c".$type->id;
+            }
             
+            if($dialog->video == 1){
+                echo $title;
+                continue;
+            }
 //            echo $text."<br>";
 //            $command2="ffmpeg -f image2 -r 1/7 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 1000)." -vcodec mpeg4 -s 720x576 -vf fps=5 -y \"$folder".$dialog->id." - ".$dialog->title.".mp4\"";
-            $command2="ffmpeg -f image2 -r 1/5 -i images/video/%d.png -i \"audios/estory/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$title.".avi\"";
+            $command2="ffmpeg -f image2 -r 1/8 -i images/video/%d.png -i \"audios/estory/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$title.".avi\"";
 
             echo $command2."<br>";
             //command for every 5 second image change in video along with 004-07.mp3 playing in background
@@ -166,6 +282,7 @@ class StoryController extends Controller {
            
             $dialog->video = 1;
             $dialog->save();
+           
         }
          
         $cat->video_ok = 1;
@@ -270,7 +387,7 @@ class StoryController extends Controller {
      public function crawlPlayList(){
         $play_id = Input::get("playlist");
         if(!$play_id){
-            return view('admin/listening/playlist');
+            return view('admin/story/playlist');
 
         }
 //        PLM4Mkja-PGjwRFO5yNWH-FIKd0ZRjI2-z
@@ -282,22 +399,25 @@ class StoryController extends Controller {
             
             $video = null;
             $id_text = "data-video-ids";
-            $yid = $video_html->find(".addto-watch-queue-play-now", 0)->$id_text;
+            
+            $yid = $video_html->find(".addto-watch-queue-play-now,.addto-watch-later-button-sign-in", 0)->$id_text;
+            
             $ytitle = trim($video_html->find(".pl-video-title-link",0)->plaintext);
+             
             $dlIds = explode(" ", $ytitle);            
             $dlId = trim($dlIds[0]);
 			$i = 0;
             if ($yid) {               
-                $dialog = ListeningDialog::find($dlId);
-				if(!$dialog) dd($ytitle);
+                $dialog = Story::find($dlId);
+                if(!$dialog){ echo ($ytitle); continue; };
                 if(!$yid || !$dialog->video_id){
                     $dialog->video_id = $yid;
                     $dialog->save();
                     $this->_crawlYoutubeSub($dlId);
-                    echo " <br><a href='". \Illuminate\Support\Facades\URL::to('/')."/admin/listening/dialog/$dlId' target='_blank' >".$dialog->id." ".$dialog->title."</a><br>";
+                    echo " <br><a href='". \Illuminate\Support\Facades\URL::to('/')."/admin/story/story/$dlId' target='_blank' >".$dialog->id." ".$dialog->title."</a><br>";
 					 
                 } else{
-					echo $dialog->title. " <a href='". \Illuminate\Support\Facades\URL::to('/')."/admin/listening/dialog/$dlId' target='_blank' >".$dialog->id." Link</a>"."<br>";
+                    echo $dialog->title. " <a href='". \Illuminate\Support\Facades\URL::to('/')."/admin/story/story/$dlId' target='_blank' >".$dialog->id." Link</a>"."<br>";
                 }
 
                 

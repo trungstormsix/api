@@ -185,6 +185,10 @@ Route::post('admin/picvoc/crawl-quizlet', 'Crawl\PicvocController@crawlQuizlet')
 Route::get('admin/picvoc/get-oxford-words', 'Crawl\PicvocController@getOxfordMean');
 Route::get('admin/picvoc/get-oxford-word/{id}', 'Crawl\PicvocController@getOxfordMeanOfWord');
 Route::get('admin/picvoc/delete-voc/{id}', 'Crawl\PicvocController@deleteVoc');
+Route::get('admin/picvoc/cats', 'Admin\PicvocController@cats');
+Route::get('admin/picvoc/vocabularies/{cat_id}', 'Admin\PicvocController@vocs');
+Route::get('admin/picvoc/voc/{voc_id}', 'Admin\PicvocController@voc');
+Route::get('admin/picvoc/means', 'Admin\PicvocController@means');
 
 
 
@@ -225,13 +229,16 @@ Route::group(['prefix' => 'admin/listening'], function () {
     
 });
 Route::group(['prefix' => 'admin/story'], function () {
+    Route::get('cats', 'Admin\StoryController@cats');
+    Route::get('stories/{cat_id}', 'Admin\StoryController@stories');
     Route::get('story/{id}', 'Admin\StoryController@getStory');
+    Route::get('story/delete/{id}', 'Admin\StoryController@deleteStory');
     Route::post('story/save', 'Admin\StoryController@postStory');
+    Route::get('video/{id}', 'Admin\StoryController@createVideoId'); 
     Route::get('video', 'Admin\StoryController@createVideo'); 
     Route::get('crawl-pl', 'Admin\StoryController@crawlPlayList');
     Route::get('crawl-y-sub', 'Admin\StoryController@crawlYoutubeSub');
-
-    
+    Route::get('duration/{id}', 'Admin\StoryController@setStoryDuration');     
 });
 Route::get('crawl/listening', 'Crawl\ListeningController@index');
 
@@ -590,8 +597,10 @@ $menu = Menu::make('MyNavBar', function($menu) {
                 }
             }
 
-          
-            
+            $menu->add('Story')->attr(array('pre_icon' => 'book'))->active('admin/story/*');
+            $menu->story->add('Cats', 'admin/story/cats');
+            $menu->story->add('Crawl Subs', 'admin/story/crawl-pl')->append('<span class="label label-primary pull-right"><span class="fa fa-download"></span></span>');
+
             /** youtube videos * */
             $menu->add('Video')->attr(array('pre_icon' => 'youtube'))->active('admin/youtube/*');
             foreach (\App\library\Menus::getCats() as $cat) {
@@ -627,7 +636,10 @@ $menu = Menu::make('MyNavBar', function($menu) {
             $menu->usersManager->add('Roles', 'admin/user/roles')->attr(array('pre_icon' => 'users'))->active('admin/user/role/*');
             $menu->usersManager->add('Profile', 'admin/user/profile')->attr(array('pre_icon' => 'envelope'));
 
-            $menu->add('Pic Voc', 'admin/picvoc/crawl-quizlet')->attr(array('pre_icon' => 'image'))->active('admin/picvoc/*');
+            $menu->add('Pic Voc', 'admin/picvoc/cats')->attr(array('pre_icon' => 'image'))->active('admin/picvoc/*');
+            $menu->picVoc->add('Cats', 'admin/picvoc/cats');
+            $menu->picVoc->add('Means', 'admin/picvoc/means');
+            $menu->picVoc->add('Crawl', 'admin/picvoc/crawl-quizlet');
 
 
 

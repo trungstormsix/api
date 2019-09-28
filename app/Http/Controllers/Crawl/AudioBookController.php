@@ -428,6 +428,12 @@ class AudioBookController extends Controller {
         $status = 1;
         foreach ($json as $story){
             $audio = $story->audio;
+           if(!$audio){
+                echo "no Audio found for <a href='http://ocodereducation.com/admin/stories/update/".$story->id."' target='_blank'>".$story->title."</a><br>";
+                echo "<a href='http://ocodereducation.com/apiv1/admin/story/story/".$story->id."' target='_blank' > Apiv1".$story->title."</a><br>";
+        
+                exit;
+            }
             $audio_link =   "http://ocodereducation.com/apiv1/audios/estory/".$story->audio;
             $status = 1;
             if (!Storage::disk('enstory_audios')->has($audio)) {

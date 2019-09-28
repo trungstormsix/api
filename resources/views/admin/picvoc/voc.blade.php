@@ -48,13 +48,11 @@
                         <div class="form-group">
 
                             <label class="col-sm-2 control-label">     
-                                Title
+                                Word
                             </label>
-                            <div class="col-sm-10"><input name="title" value="{{$voc->en_us}}" /></div>     
+                            <div class="col-sm-10">{{$voc->en_us_type}} {{$voc->en_us_pr}}<br><input name="title" value="{{$voc->en_us}}" /></div>     
                         </div>
-                        <div class="hr-line-dashed"></div>
-
-                         
+                        <div class="hr-line-dashed"></div>                      
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">     
@@ -65,11 +63,11 @@
                                     @foreach ($voc->cats as $cat)
                                     <span class="alert alert-warning remove-cat" style="display: inline-block;">
                                         <button aria-hidden="true" data-cat="{{$cat->id}}" data-main="{{$voc->id}}" class="close" type="button">×</button>
-                                        <a class="cat-link" href="{{url('admin/listening/cat/'.$cat->id)}}">{{$cat->title}}</a> 
+                                        <a class="cat-link" href="{{url('admin/picvoc/vocabularies/'.$cat->id)}}">{{$cat->title}}</a> 
                                     </span>
                                     @endforeach
                                 </div>
-                                <input id="add_cat" data-id="{{$voc->id}}" />
+                                <!--<input id="add_cat" data-id="{{$voc->id}}" />-->
                             </div>
                         </div>      
  
@@ -79,11 +77,41 @@
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">     
-                                Related Words
+                                Means
                             </label>
                             <div class="col-sm-10">
                                 <div class="ibox float-e-margins">                                     
-                                    <textarea id="related" name="related">{!!$voc->related!!}</textarea>
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>N.o</th>                                
+                                                <th>Id</th>      
+                                                <th>Lang</th>
+                                                <th>Mean</th>
+                                                <th>rate</th>
+                                                <th>dis_like</th>
+                                                <th>updated</th>
+
+
+                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php($i = 0)
+                                            @foreach($means as $mean)
+                                            <tr>
+                                                <td>{{$i++}}</td>
+                                                <td>{{$mean->id}}</td>
+                                                <td>{{$mean->lang}}</td>
+                                                <td>{{$mean->mean}}</td>
+                                                <td>{{$mean->rate}}</td>
+                                                <td>{{$mean->dis_like}}</td>
+                                                <td>{{$mean->updated}}</td>
+                                            </tr>
+                                            @endforeach
+
+
+                                        </tbody>
+                                    </table>
                                    
                                 </div>
                             </div>

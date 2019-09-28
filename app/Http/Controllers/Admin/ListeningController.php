@@ -43,7 +43,6 @@ class ListeningController extends Controller {
      */
     public function dialogs($cat_id) {
         $cat = ListeningCat::find($cat_id);
-
         if (@$_GET['sort_by']) {
             Session::put('sort_by', $_GET['sort_by']);
             $dimen = @$_GET['sort_dimen'] ? $_GET['sort_dimen'] : 'asc';
@@ -52,7 +51,6 @@ class ListeningController extends Controller {
         $sort_by = Session::get('sort_by', 'liked');
         $dimen = Session::get('sort_dimen', 'desc');
         $dialogs = $cat->dialogs()->orderBy($sort_by, $dimen)->paginate(30);
-
         return view('admin/listening/dialogs', ['cat' => $cat, 'dialogs' => $dialogs, 'sort_by' => $sort_by, 'sort_dimen' => $dimen]);
     }
 
@@ -479,7 +477,7 @@ class ListeningController extends Controller {
         echo sizeof($files)."<br>";
          foreach($files as $file){
             if(strlen($file) > 2){           
-                imagepng(imagecreatefromstring(file_get_contents($dir.$file)), "images/videopng/".$file.".png");
+                imagepng(imagecreatefromstring(file_get_contents($dir.$file)), "images/video/".$file.".png");
 
 //                $name = $dir.rand(sizeof($files), 5*sizeof($files)).".png";
 //                while(file_exists($name)){

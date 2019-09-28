@@ -15,5 +15,7 @@ class Voc extends Model {
     public function cats() {
         return $this->belongsToMany('App\Models\Picvoc\PicvocCat', 'picvoc_cat_voc', 'voc_id', 'cat_id');
     }
-
+    public function means(){
+        return $this->hasMany('App\Models\Picvoc\PicvocMean', 'voc_id');
+    }
 }
