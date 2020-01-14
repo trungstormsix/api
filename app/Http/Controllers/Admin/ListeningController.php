@@ -410,6 +410,51 @@ class ListeningController extends Controller {
     
     }
     
+    
+    public function createVideoId($id){  
+        $dialog = ListeningDialog::find($id);
+//        $this->setDurationAndSize($dialog);
+            
+        $this->_chageImagesName();
+   
+            $folder = "mp4s/";// "videos/$dialog->id/";
+            if (!file_exists($folder)) {
+                mkdir($folder, 0777, true);
+            }
+            $fp = fopen($folder."txt/".$dialog->id.'.txt', 'w');
+            $text = strip_tags($dialog->dialog,"<br>");
+//            $text = str_replace("<br>", "\n", $text);
+            $text = preg_replace('(<br\s*\/?>\s*)', "\n", $text);
+            $text = html_entity_decode($text);
+            $text = preg_replace('/[A-Za-z][?.]\s/', "$0\n", $text);
+            fwrite($fp, $text);
+            fclose($fp);
+            
+            $this->htmlFileLink($folder.$dialog->id.'_z.html', "http://ocodereducation.com/apiv1/admin/listening/dialog/".$dialog->id);
+//            echo $text."<br>";
+//            $command2="ffmpeg -f image2 -r 1/7 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 1000)." -vcodec mpeg4 -s 720x576 -vf fps=5 -y \"$folder".$dialog->id." - ".$dialog->title.".mp4\"";
+            $command2="ffmpeg -f image2 -r 1/5 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$dialog->title.".avi\"";
+
+            echo $command2."<br>";
+            //command for every 5 second image change in video along with 004-07.mp3 playing in background
+            exec($command2);
+           
+            $dialog->video = 1;
+            $dialog->save();
+         
+        echo '<html>
+        <head>
+            <title>Create Video 55s</title>';
+         echo ' 
+        </head>
+        <body><a href="'.
+                 "file://D:\web\laravel\api\mp4s".'">link</a><br>'
+                 . 'D:\web\laravel\api\mp4s<br>'
+                 . 'D:\web\laravel\api\mp4s\txt<br>'
+                 . '</body></html>';
+       
+    
+    }
      public function htmlFileLink($file, $link){            
             $fp = fopen($file, 'w');
             $text = "<html><head>";

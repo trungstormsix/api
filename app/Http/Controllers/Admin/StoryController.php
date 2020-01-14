@@ -212,7 +212,7 @@ class StoryController extends Controller {
                 $title .= " c".$type->id;
             }
             
-            $t = Input::get("t",10);
+            $t = Input::get("t",35);
            
             
 //            echo $text."<br>";
@@ -427,4 +427,41 @@ class StoryController extends Controller {
         }
 
     }
+    
+    
+    
+    /*     * *********************
+     * ********* ajax ******
+     * ******************** */
+
+    public function removeCat() {
+        $cat = Input::get('cat_id', '0');
+        $dl_id = Input::get('main_id', '0');
+        $dl = Story::find($dl_id);
+        $dl->types()->detach($cat);
+        return response()->json(['cat' => $cat, 'main_id' => $dl_id]);
+    }
+    public function ajaxGetCats() {
+        $cat_term = Input::get('term', '');
+
+        $cats = StoryType::where('title', 'like', "%$cat_term%")->take(20)->get();
+
+        $return = [];
+        foreach ($cats as $cat) {
+            $return[] = ['key' => $cat->id, 'value' => $cat->title];
+        }
+        return response()->json($return);
+    }
+    public function ajaxAddCat() {
+        $cat = Input::get('cat_id', '0');
+        $dl_id = Input::get('dl_id', '0');
+        $dl = Story::find($dl_id);
+        $changed = $dl->types()->syncWithoutDetaching([$cat]);
+        if ($changed) {
+            $dl->touch();
+        }
+        return response()->json(['cat' => $cat, 'main_id' => $dl_id, 'changed' => $changed]);
+    }
+
+    
 }

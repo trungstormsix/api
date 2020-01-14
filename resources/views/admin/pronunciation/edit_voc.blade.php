@@ -1,44 +1,46 @@
 @extends('layouts.admin')
 
 @section('content')
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/pronunciation/save_voc') }}">
-    <input  type="hidden" name='id' value="{{ $voc ? $voc->id : '' }}">
-    <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-10">
-            <h2>{{ $voc ? "Edit" : 'Create' }} Pronunciation Vocabulary</h2>
 
-            <ol class="breadcrumb">
-                <li>
-                    <a href="{{url('/admin')}}">Home</a>
-                </li>
-                <li>
-                    <a href="{{url('/admin/pronunciation')}}">Pronunciation</a>
-                </li>
-                <li class="active">
-                    <strong>{{ $voc ? "Edit" : 'Create' }} Voc</strong>
-                </li>
-            </ol>
-        </div>
-        <div class="col-lg-2">
-            <br>
-            <br>
-            <div class="pull-right tooltip-demo">
-                <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>{{ $voc ? "Edit" : 'Create' }} Pronunciation Vocabulary</h2>
 
-                @if( $voc)
-                <a href="{{ URL::route('pronunciation.crawl_voc', $voc->id) }}" type="button"  id="crawl_voc"  class="btn btn-sm btn-warning  dim"><i class="fa fa-download"></i> Crawl</a>
-                <a href="{{ url('admin/pronunciation/create_voc')}}" type="button" class="btn btn-sm btn-info dim"><i class="fa fa-plus"></i> New</a>
-                @endif    
-            </div>
+        <ol class="breadcrumb">
+            <li>
+                <a href="{{url('/admin')}}">Home</a>
+            </li>
+            <li>
+                <a href="{{url('/admin/pronunciation')}}">Pronunciation</a>
+            </li>
+            <li class="active">
+                <strong>{{ $voc ? "Edit" : 'Create' }} Voc</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+        <br>
+        <br>
+        <div class="pull-right tooltip-demo">
+            <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>
+
+            @if( $voc)
+            <a href="{{ URL::route('pronunciation.crawl_voc', $voc->id) }}" type="button"  id="crawl_voc"  class="btn btn-sm btn-warning  dim"><i class="fa fa-download"></i> Crawl</a>
+            <a href="{{ url('admin/pronunciation/create_voc')}}" type="button" class="btn btn-sm btn-info dim"><i class="fa fa-plus"></i> New</a>
+            @endif    
         </div>
     </div>
+</div>
 
 
-    {{ csrf_field() }}
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="ibox float-e-margins">                
-                <div class="ibox-content">
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">                
+            <div class="ibox-content">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/pronunciation/save_voc') }}">
+                    <input  type="hidden" name='id' value="{{ $voc ? $voc->id : '' }}">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label class="col-sm-2 control-label">   
                             Category
@@ -53,7 +55,7 @@
                                 @else		
                                 <option value="{{$categories_level_1->id}}">{{$categories_level_1->title}}</option>
                                 @endif
-                                		
+
                                 @endforeach
                             </select>
                             <br>
@@ -61,15 +63,15 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>   
-                    
-                    
-                     
+
+
+
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
                             Vocabulary
                         </label>
                         <div class="col-sm-10">
-                                <textarea id="editVoc" class="form-control" type="text" name='english' >{!! old('english') ? old('english') : ($voc ? $voc->english : '') !!}</textarea>
+                            <textarea id="editVoc" class="form-control" type="text" name='english' >{!! old('english') ? old('english') : ($voc ? $voc->english : '') !!}</textarea>
 
                             {{old('english') ? old('english') : ($voc? $voc->english : '')}}
                         </div>
@@ -81,7 +83,7 @@
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
-                            Pronunciation
+                            Pronunciation (US)
                         </label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" name='pinyin' value="{{old('pinyin') ? old('pinyin') : ($voc? $voc->pinyin  : '')}}">
@@ -98,18 +100,35 @@
                     </div>
                     <div class="hr-line-dashed"></div>
 
-                    
+
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
-                            MP3
+                            MP3 (US)
                         </label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" name='mp3_link' value="{{old('mp3_link') ? old('mp3_link') : ($voc? $voc->mp3_link : '')}}">
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
-                    
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            Pronunciation UK
+                        </label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name='pinyin_uk' value="{{old('pinyin_uk') ? old('pinyin_uk') : ($voc? $voc->pinyin_uk  : '')}}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            MP3 UK
+                        </label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" name='mp3_link_uk' value="{{old('mp3_link_uk') ? old('mp3_link_uk') : ($voc? $voc->mp3_link_uk : '')}}">
+                        </div>
+                    </div>
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">     
@@ -120,13 +139,38 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
-                </div>
-                 <button class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add new playlist" style="position: fixed; bottom: 30px;right: 42px;">
-                            <i class="fa fa-check"></i> Save</button>
+                    <button class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add new playlist" style="position: fixed; bottom: 30px;right: 42px;">
+                        <i class="fa fa-check"></i> Save</button>
+                </form>
+               
+            </div>
+            <div class="ibox-title">
+                For Crawl Only
+            </div>
+            <div class="ibox-content">
+                 @if($voc)
+                <form class="form-horizontal" role="form" method="GET" action="{{ url('admin/pronunciation/crawl-oxford-by-link') }}">
+                    <input class="form-control" type="hidden" name='voc_id' value="{{$voc->id}}">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">     
+                            Link to Crawl
+                        </label>
+                        <div class="col-sm-8">
+                            <input class="form-control" type="text" name='link' value="">
+                        </div>
+                        <div class="col-sm-2">
+                            <button class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add new playlist" >
+                                <i class="fa fa-check"></i> Crawl</button>
+                        </div>
+                    </div>
+                </form>
+                @endif
             </div>
         </div>
     </div>
-</form>
+</div>
+
+
 @endsection
 @section("content_js")
 <script src="{!! asset('assets/js/plugins/sweetalert/sweetalert.min.js') !!}"></script>
@@ -135,43 +179,40 @@
 <script src="{!! asset('assets/js/plugins/chosen/chosen.jquery.js') !!}"></script>
 <link href="{!! asset('assets/css/plugins/chosen/chosen.css')!!}" rel="stylesheet">
 <script>
-    CKEDITOR.replace('editVoc', {
-        filebrowserBrowseUrl: '{{URL::asset("filemanager")}}/index.html',
-         
+CKEDITOR.replace('editVoc', {
+filebrowserBrowseUrl: '{{URL::asset("filemanager")}}/index.html',
         enterMode : CKEDITOR.ENTER_BR,
         shiftEnterMode: CKEDITOR.ENTER_P
-    
-    });
-   var elem = document.querySelector('.js-switch');
-    var switchery = new Switchery(elem, {color: '#1AB394'});
-    
-            var config = {
-                '.chosen-select'           : {},
-                '.chosen-select-deselect'  : {allow_single_deselect:true},
-                '.chosen-select-no-single' : {disable_search_threshold:10},
-                '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-                '.chosen-select-width'     : {width:"95%"}
-                }
-            for (var selector in config) {
-                $(selector).chosen(config[selector]);
-            }
-            
- $("#crawl_voc").click(function(){
-    that = this;     
-    swal({
-        title: "Are you sure?",
+
+});
+var elem = document.querySelector('.js-switch');
+var switchery = new Switchery(elem, {color: '#1AB394'});
+var config = {
+'.chosen-select'           : {},
+        '.chosen-select-deselect'  : {allow_single_deselect:true},
+        '.chosen-select-no-single' : {disable_search_threshold:10},
+        '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+        '.chosen-select-width'     : {width:"95%"}
+}
+for (var selector in config) {
+$(selector).chosen(config[selector]);
+}
+
+$("#crawl_voc").click(function(){
+that = this;
+swal({
+title: "Are you sure?",
         text: "Các thông số cũ có thể bị thay đổi mà không thể khôi phục lại được!",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
         confirmButtonText: "Yes, Crawl!",
         closeOnConfirm: false
-    }, function (is_confirm) {
-        if(is_confirm)
-            window.location = $(that).attr("href");
-          
-    });
-    return false;
+}, function (is_confirm) {
+if (is_confirm)
+        window.location = $(that).attr("href");
+});
+return false;
 });
 </script>
 @endsection

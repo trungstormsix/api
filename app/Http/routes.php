@@ -222,6 +222,7 @@ Route::group(['prefix' => 'admin/listening'], function () {
     Route::get('reports', 'Admin\ListeningController@reports');
     Route::get('report/fix', 'Admin\ListeningController@ajaxFixReport');
     Route::get('video', 'Admin\ListeningController@createVideo');
+    Route::get('video/{id}', 'Admin\ListeningController@createVideoId');
     Route::get('jpg2png', 'Admin\ListeningController@jpg2Png');
     Route::get('crawl-y-sub', 'Admin\ListeningController@crawlYoutubeSub');
     Route::get('crawl-pl', 'Admin\ListeningController@crawlPlayList');
@@ -238,7 +239,11 @@ Route::group(['prefix' => 'admin/story'], function () {
     Route::get('video', 'Admin\StoryController@createVideo'); 
     Route::get('crawl-pl', 'Admin\StoryController@crawlPlayList');
     Route::get('crawl-y-sub', 'Admin\StoryController@crawlYoutubeSub');
-    Route::get('duration/{id}', 'Admin\StoryController@setStoryDuration');     
+    Route::get('duration/{id}', 'Admin\StoryController@setStoryDuration');    
+    //ajax
+    Route::get('remove-cat', 'Admin\StoryController@removeCat');
+    Route::get('add-cat', 'Admin\StoryController@ajaxAddCat');
+    Route::get('autocomplete-cat', 'Admin\StoryController@ajaxGetCats');
 });
 Route::get('crawl/listening', 'Crawl\ListeningController@index');
 
@@ -367,6 +372,15 @@ Route::get('admin/pronunciation/crawl-oxford/{voc_id}', array(
     'as' => 'pronunciation.crawl_voc',
     'uses' => 'Admin\PronunciationController@getOxford'
 ));
+Route::get('admin/pronunciation/crawl-oxfords', array(
+    'as' => 'pronunciation.crawl_vocs',
+    'uses' => 'Admin\PronunciationController@getOxfords'
+));
+Route::get('admin/pronunciation/crawl-oxford-by-link', array(
+    'as' => 'pronunciation.crawl_voc_link',
+    'uses' => 'Admin\PronunciationController@getOxfordLink'
+));
+
 Route::group(['prefix' => 'admin/pron-question', "namespace" => "Admin"], function () {
     Route::get('/list/{cat_id}', array(
         'as' => 'Pronunciation.list_question',

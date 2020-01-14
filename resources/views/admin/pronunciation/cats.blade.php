@@ -5,6 +5,7 @@
 <div id="home_categories" >
     <div class="ibox-content">
         <a href="{{ url('admin/pronunciation/create_cat')}}" type="button" class="btn btn-primary btn-lg">Add new Categories</a>
+        <a href="{{ url('admin/pronunciation/crawl-oxfords')}}" type="button" class="btn btn-info btn-lg" id="crawl_vocs">Crawl All Vocs Pronunciation from Oxford</a>
         <div class="table-responsive">
         <table class="table table-stripped  ">
             <thead>
@@ -55,6 +56,9 @@
 @section("content_js")
 <script src="{!! asset('assets/js/plugins/dataTables/datatables.min.js') !!}"></script>
 <link href="{!! asset('assets/css/plugins/dataTables/datatables.min.css')!!}" rel="stylesheet">
+
+<script src="{!! asset('assets/js/plugins/sweetalert/sweetalert.min.js') !!}"></script>
+<link href="{!! asset('assets/css/plugins/sweetalert/sweetalert.css')!!}" rel="stylesheet">
 <style>
     tr.title{
         background:  #2f4050;
@@ -69,6 +73,22 @@
     </style>
 <script>
  
-
+ $("#crawl_vocs").click(function(){
+    that = this;     
+    swal({
+        title: "Are you sure?",
+        text: "Các thông số cũ có thể bị thay đổi mà không thể khôi phục lại được!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, Crawl!",
+        closeOnConfirm: false
+    }, function (is_confirm) {
+        if(is_confirm)
+            window.location = $(that).attr("href");
+          
+    });
+    return false;
+});
 </script>
 @endsection

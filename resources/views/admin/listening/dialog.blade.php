@@ -40,9 +40,15 @@
                             </label>
                             <div class="col-sm-10">
                                 <input type="hidden" name="id" value="{{$dialog->id}}" />
-                                <span class="btn btn-primary">{{$dialog->id}}</span>  <a href="{{url('admin/listening/dialog/'.$next->id)}}" class="btn btn-success"  >
+                                <span class="btn btn-primary">{{$dialog->id}}</span> 
+								@if($next):
+								<a href="{{url('admin/listening/dialog/'.$next->id)}}" class="btn btn-success"  >
                                         <b>Next {{$next->id}}</b>
-                                    </a>
+								</a>
+								@endif
+
+                                <a class="btn btn-sm btn-primary crawl-y-sub" href="http://localhost/laravel/api/admin/listening/video/{{$dialog->id}}" target="_blank" ><i class="fa fa-video-camera"></i> Create Video</a>
+
                             </div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -64,7 +70,10 @@
                             <div class="col-sm-3"><input class="form-control" name="video_id" value="{{$dialog->video_id}}" /><br>
                                 <a class="btn btn-sm btn-primary" href="{{url("/ysubs/".$dialog->video_id)}}.txt" target="_blank" >Sub</a> 
                                 <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url("/admin/listening/crawl-y-sub?id=").$dialog->id}}" target="_blank" ><i class="fa fa-download"></i> Crawl Youtube Sub</a>
+                                <a class="btn btn-sm btn-primary crawl-y-sub" href="https://studio.youtube.com/video/{{$dialog->video_id}}/edit/advanced" target="_blank" ><i class="fa fa-edit"></i> Edit Youtube Video</a>
+                                <a class="btn btn-sm btn-primary crawl-y-sub" href="https://www.youtube.com/timedtext_editor?v={{$dialog->video_id}}&lang=en&name=&kind=&contributor_id=0&bl=vmp&action_view_track=1&ref=rs&nv=1" target="_blank" ><i class="fa fa-create"></i> Edit Sub</a>
 
+ 
                             </div>     
                             <div class="col-sm-7">
                                 {{substr($sub,36, 100)}}

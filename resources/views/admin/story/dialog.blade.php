@@ -45,6 +45,7 @@
                                         <b>Next {{$next? $next->id : ""}}</b>
                                     </a>
                             <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url('admin/story/video/'.$dialog->id)}}" target="_blank" ><i class="fa fa-video-camera"></i> Create Video</a>
+                            <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url('admin/story/duration/'.$dialog->id)}}" target="_blank" ><i class="fa fa-clock-o"></i> Duration</a>
 
                             </div>
                         </div>
@@ -85,7 +86,10 @@
                                         <a class="cat-link" target="_blank" href="http://ocodereducation.com/admin/stories/dialogs/st-{{$cat->id}}">{{$cat->title}}</a> 
                                     </span>
                                     @endforeach
+
                                 </div>
+                                                                    <input id="add_cat" data-id="{{$dialog->id}}" />
+
                              </div>
                         </div>  
                              </div>
@@ -182,7 +186,7 @@
 @endsection
 
 @section('search_form')
-<form role="search" class="navbar-form-custom" action="{{url('admin/listening/search')}}">
+<form role="search" class="navbar-form-custom" action="{{url('admin/story/search')}}">
     <div class="form-group">
         <input type="text" placeholder="Search a lesson..." class="form-control" name="idiom" value="{{!empty($search) ? $search : ""}}" id="top-search">
     </div>
@@ -221,34 +225,13 @@
         new Switchery(this, {color: '#1AB394'});
 
     });
-
-    jQuery('.js-switch').change(function () {
-        var report_id = jQuery(this).data('id');
-        if (jQuery(this).is(':checked')) {
-            var that = this;
-            if (report_id) {
-                var that = this;
-                jQuery.ajax({
-                    url: "{{url('admin/listening/report/fix')}}",
-                    type: "GET",
-                    dataType: 'json',
-                    data: {report_id: report_id}
-                }).done(function (data) {
-//                    $(that).click();
-                })
-                        .fail(function () {
-                            $(that).click();
-                            alert("error");
-                        });
-            }
-        }
-    });
-    var linkRemoveCat = "{{url('admin/listening/remove-cat')}}";
-    var linkAutocompleteCat = "{{url('admin/listening/autocomplete-cat')}}";
-    var linkAddCat = "{{url('admin/listening/add-cat')}}";
-    var linkRemoveGrammar = "{{url('admin/listening/ajax-remove-grammar')}}";
-    var linkAutocompleteGrammar = "{{url('admin/listening/autocomplete-grammar')}}";
-    var linkAddGrammar = "{{url('admin/listening/ajax-add-grammar')}}";</script>
+ 
+    var linkRemoveCat = "{{url('admin/story/remove-cat')}}";
+    var linkAutocompleteCat = "{{url('admin/story/autocomplete-cat')}}";
+    var linkAddCat = "{{url('admin/story/add-cat')}}";
+//    var linkRemoveGrammar = "{{url('admin/listening/ajax-remove-grammar')}}";
+//    var linkAutocompleteGrammar = "{{url('admin/listening/autocomplete-grammar')}}";
+//    var linkAddGrammar = "{{url('admin/listening/ajax-add-grammar')}}";</script>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
