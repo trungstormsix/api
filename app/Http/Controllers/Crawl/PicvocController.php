@@ -151,7 +151,9 @@ class PicvocController extends Controller {
     }
 
     private function updateWord($voc, $save_mean = true) {
+      
         $word = str_replace(" ", "+", $voc->en_us);
+        $word = "balk";
         $link = "http://www.oxfordlearnersdictionaries.com/definition/english/";
         $dom = new DomParser();
         $html = @$dom->file_get_html($link . $word . '_1');
@@ -160,22 +162,26 @@ class PicvocController extends Controller {
         }
         if (!$html)
             return;
-        $content = $html->find(".h-g", 0);
+        $content = $html->find("#entryContent",0);
+       
         if (!$content)
             return;
-        $type_html = $content->find(".webtop-g .pos", 0);
+        $type_html = $content->find(".top-g .pos", 0);
+        
         if (!$type_html)
             return;
         $type = $type_html->plaintext;
-        $pron_html = $content->find(".pron-gs .phon", 0);
+         
+        $pron_html = $content->find(".phons_br .phon", 0);
+       
         if (!$pron_html)
             return;
         $pron = trim(preg_replace("/BrE|\//", "", $pron_html->plaintext));
         $pron = '/' . $pron . '/';
-        if (!$content->find(".pron-gs .sound", 0))
+        if (!$content->find(".phons_br .sound", 0))
             return;
-        $mp3 = $content->find(".pron-gs .sound", 0)->getAttribute("data-src-mp3");
-
+        $mp3 = $content->find(".phons_br .sound", 0)->getAttribute("data-src-mp3");
+  
         $mp3_file = \App\library\OcoderHelper::getFileName($mp3);
         $audio = $mp3_file;
         $status = true;
@@ -185,24 +191,78 @@ class PicvocController extends Controller {
 
             $status = Storage::disk('picvoc_audios')->put($audio, file_get_contents($mp3));
         }
-
-        $mean = @$content->find('.sn-gs .gram-g', 0)->plaintext . @$content->find('.sn-gs .def', 0)->plaintext;
-        echo "<b>Mean:</b>" . $mean . "<br>";
-        $example_content = $content->find('.sn-gs .x-gs .x-g');
-        $examples = [];
-        $i = 0;
-        if ($example_content) {
-            foreach ($example_content as $ex_html) {
-                $ex = trim($ex_html->plaintext);
-                if (strlen($ex) > 30) {
-                    $examples[] = $ex_html->plaintext;
-                    if ($i++ > 2) {
-                        break;
+        //multiple means
+        if($content->find('.senses_multiple',0)){
+            $shortcut_html = @$content->find(".shcut",0);
+            $shortcut= "";
+            if($shortcut_html){
+                $shortcut = $shortcut_html->innertext."<br>";
+            }
+            
+            $mean = $shortcut.@$content->find('.senses_multiple .grammar', 0)->plaintext ." ". @$content->find('.senses_multiple .def', 0)->plaintext;
+            echo "<b>Mean:</b>" . $mean . "<br>";
+             
+            $example_content = $content->find('.senses_multiple .examples li');
+            $examples = [];
+            $i = 0;
+            if ($example_content) {
+                foreach ($example_content as $ex_html) {
+                    $def = "";
+                    if($ex_html->find(".cf",0)){
+                        $def = trim($ex_html->find(".cf",0)->plaintext);
+                        
+                        if(strlen($def) > 5){
+                            $def = "(".$def.") ";
+                        }
+                        
+                    }
+                    
+                    $ex = $def.trim($ex_html->find(".x",0)->plaintext);
+                    if (strlen($ex) > 30) {
+                          
+                        $examples[] = $ex;
+                        if ($i++ > 2) {
+                            break;
+                        }
                     }
                 }
+                 
             }
         }
-
+        //single mean
+        else{
+            $mean =  @$content->find('.sense_single .grammar', 0)->plaintext ." ". @$content->find('.sense_single .def', 0)->plaintext;
+            echo "<b>Mean:</b>" . $mean . "<br>";
+            $example_content = $content->find('.sense_single .examples li');
+            $examples = [];
+            $i = 0;
+            if ($example_content) {
+                foreach ($example_content as $ex_html) {
+                    $def = "";
+                    if($ex_html->find(".cf",0)){
+                        $def = trim($ex_html->find(".cf",0)->plaintext);
+                        
+                        if(strlen($def) > 5){
+                            $def = "(".$def.") ";
+                        }
+                        
+                    }
+                    
+                    $ex = $def.trim($ex_html->find(".x",0)->plaintext);
+                    if (strlen($ex) > 30) {
+                          
+                        $examples[] = $ex;
+                        if ($i++ > 2) {
+                            break;
+                        }
+                    }
+                }
+                 
+            }
+            
+        }
+        dd($examples);
+        exit;
         /** save voc * */
         $example_str = implode("<br>", $examples);
         $voc->en_us_type = $type;

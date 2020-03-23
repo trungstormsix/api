@@ -208,7 +208,7 @@ class ApiController extends Controller {
             return;
         }
 
-        $content = $html->find(".h-g", 0);
+        $content = $html->find("#entryContent",0);
 
 
         if (!$content) {
@@ -217,17 +217,17 @@ class ApiController extends Controller {
             echo "no content h-g";
             return;
         }
-        $type_html = $content->find(".webtop-g .pos", 0);
+        $type_html = $content->find(".top-g .pos", 0);
         if (!$type_html) {
             $voc->count = 0 - $voc->count;
             $voc->save();
             echo "no content pos <br>";
             //return;
         }else{
-			$type = $type_html->plaintext;
-		}
+            $type = $type_html->plaintext;
+        }
         //get pro uk
-        $pron_uk_html = $content->find(".pron-g", 0);
+        $pron_uk_html = $content->find(".phons_br", 0);
         if (!$pron_uk_html) {
             $voc->count = 0 - $voc->count;
             $voc->save();
@@ -246,7 +246,7 @@ class ApiController extends Controller {
         $voc->en_uk_audio = $mp3_uk_file;
 
         //get pro us
-        $pron_us_html = $content->find(".pron-g", 1);
+        $pron_us_html = $content->find(".phons_n_am", 0);
         if (!$pron_us_html)
             return;
         if ($pron_us_html->find(".phon", 0)) {
@@ -261,9 +261,7 @@ class ApiController extends Controller {
         $voc->en_us_audio = $mp3_us_file;
 
         $mean = @$content->find('.sn-gs .gram-g', 0)->plaintext . @$content->find('.sn-gs .def', 0)->plaintext;
-        echo "<b>Mean:</b>" . $mean . "<br>";
-
-
+        
         /** save voc * */
         $voc->save();
 
