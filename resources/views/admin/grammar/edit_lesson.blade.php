@@ -15,6 +15,12 @@
                 <li>
                     <a href="{{url('/admin/grammar')}}">Grammar</a>
                 </li>
+                 @if($cat)
+    
+                 <li>
+                    <a href="{!! URL::route('grammar.lessons', $cat->id)!!}">{{$cat->title}}</a>
+                </li>
+                @endif
                 <li class="active">
                     <strong>{{ $lesson ? "Edit" : 'Create' }} Lesson</strong>
                 </li>
@@ -24,7 +30,7 @@
             <br>
             <br>
             <div class="pull-right tooltip-demo">
-                @if( $lesson)
+                @if( @$lesson)
                         <a href="{!! URL::route('grammar.create_lesson')!!}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
                 @endif       
                 <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>

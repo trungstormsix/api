@@ -17,7 +17,11 @@
                 
                 @if( $question)
                         <a href="{{ URL::route('grammar.create_question') }}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
-                @endif       
+                
+                @if(!@$question->published)
+                <a href="{{ URL::route('grammar.deleteQuestion', $question->id) }}" target="_blank" class="btn btn-danger btn-sm dim">Delete</a>      
+                @endif
+                @endif   
                 <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>
              </div>
         </div>

@@ -44,24 +44,52 @@ jQuery(document).ready(function ($) {
     /**********************
      * ** edit dialog *****
      *********************/
-    jQuery('#edit, .click2edit').click(function () {
-        jQuery('.click2edit').summernote({focus: true, styleWithSpan: false});
+        var HelloButton = function (context) {
+        var ui = $.summernote.ui;
+
+        // create button
+        var button = ui.button({
+            contents: '<i class="fa fa-plus"/> link',
+            tooltip: 'hello',
+            click: function () {
+                // invoke insertText method with 'hello' on editor module.
+                context.invoke('editor.pasteHTML', '<hr>');
+            }
+        });
+
+        return button.render();   // return button as jquery object
     }
-    )
+
+  
+    jQuery('#edit, .click2edit').click(function () {
+//        jQuery('.click2edit').summernote({focus: true, styleWithSpan: false});
+        jQuery('.click2edit').summernote({focus: true, buttons: {
+                hello: HelloButton
+            }, toolbar: [
+                ['style', ['style', 'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+                ['para', ['hr', 'ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture']],
+                ['view', ['codeview', 'help']],
+                ['height', ['height']],
+                ['fontname', ['fontname', 'fontsize', 'color','hello']],
+            ]});
+
+    });
+    
     jQuery('#save').click(function () {
-        var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+        var aHTML = $('.click2edit').summernote('code'); //save HTML If you need(aHTML: array).
         jQuery("#dialog_content").val(aHTML);
-        jQuery('.click2edit').destroy();
+        jQuery('.click2edit').summernote('destroy');
     });
 
     jQuery('#edit_voc, .click2editvoc').click(function () {
-        jQuery('.click2editvoc').summernote({focus: true, styleWithSpan: false});
-    }
-    )
+        jQuery('.click2editvoc').summernote({focus: true, styleWithSpan: false });
+    });
     jQuery('#save_voc,#save').click(function () {
-        var aHTML = $('.click2editvoc').code(); //save HTML If you need(aHTML: array).
+        var aHTML = $('.click2editvoc').summernote('code'); //save HTML If you need(aHTML: array).
         jQuery("#voc_content").val(aHTML);
-        jQuery('.click2editvoc').destroy();
+        jQuery('.click2editvoc').summernote('destroy');
     });
     /*************************
      * *** add cat **********

@@ -154,7 +154,9 @@ class StoryController extends Controller {
          
     }
     public function setStoryDuration($id){
+	 
         $story = Story::find($id);
+
         $story->duration = 0;
         $story->size = 0;
         $story->save();
@@ -186,23 +188,26 @@ class StoryController extends Controller {
     }
     public function createVideoId($id){
             $dialog = Story::find($id);
+			
             $this->setDurationAndSize($dialog);
             $this->_chageImagesName();
             $base = "mp4Story/";
             $types = $dialog->types;
+			   
             $cat = $types[0];
             $folder = $base.$cat->id."/";// "videos/$dialog->id/";
             if (!file_exists($folder)) {
                 mkdir($folder, 0777, true);
                 mkdir($folder."txt/", 0777, true);
             }
+			
             $fp = fopen($folder."txt/".$dialog->id.'.txt', 'w');
             $text = strip_tags($dialog->dialog,"<br>");
 //            $text = str_replace("<br>", "\n", $text);
             $text = preg_replace('(<br\s*\/?>\s*)', "\n", $text);
             $text = html_entity_decode($text);
             $text = preg_replace('/[A-Za-z][,.]\s/', "$0\n", $text);
-            
+          
             fwrite($fp, $text);
             fclose($fp);
            
@@ -220,6 +225,7 @@ class StoryController extends Controller {
             $command2="ffmpeg -f image2 -r 1/$t -i images/video/%d.png -i \"audios/estory/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$title.".avi\"";
 
             echo $command2."<br>";
+            echo "D:\web\laravel\api\\".$folder;
             //command for every 5 second image change in video along with 004-07.mp3 playing in background
            $val =  exec($command2);
            

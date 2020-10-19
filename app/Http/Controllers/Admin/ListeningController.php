@@ -130,7 +130,7 @@ class ListeningController extends Controller {
     }
 
     public function postDialog(Request $req) {
-
+       dd($req->dialog);
         if ($req->id) {
             $answers = $req->questions_an;
             $corrects = $req->questions_correct;
@@ -479,19 +479,21 @@ class ListeningController extends Controller {
         $ysub_link = "http://video.google.com/timedtext?type=track&v=".$yid."&id=0&lang=".$lang;
         $subs = [];
         $list_xml = simplexml_load_file($ysub_link);
+        
         if($list_xml){
             foreach ($list_xml as $text){
                 //var_dump($text);
               $att = $text->attributes();
                
                 $sub = new \stdClass();
-                $sub->from = $att['start'] * 1000;
-                $sub->to = $sub->from + ($att['dur'] * 1000);
+                $sub->from = intval(1000 * doubleval($att['start']));
+                $sub->to = intval($sub->from + (doubleval($att['dur']) * 1000));
                 $sub->text = html_entity_decode($text);
                 $subs[] = $sub;
                 
             }
         }
+        dd($subs);
         $sub_json = new \stdClass();
         $sub_json->subs = $subs;
        
@@ -544,13 +546,14 @@ class ListeningController extends Controller {
             echo "no file";
             return;
         } 
-
+ 
         $yid = $video->video_id;
         $fileName = $yid.".txt";
         $lang = Input::get("lang","en");
         $ysub_link = "http://video.google.com/timedtext?type=track&v=".$yid."&id=0&lang=".$lang;
         $subs = [];
         $list_xml = simplexml_load_file($ysub_link);
+        dd($list_xml);
         if($list_xml){
             foreach ($list_xml as $text){
                 //var_dump($text);
@@ -564,6 +567,7 @@ class ListeningController extends Controller {
                 
             }
         }
+        dd($subs);
         $sub_json = new \stdClass();
         $sub_json->subs = $subs;
        

@@ -337,7 +337,13 @@
 <!--<script src="{!! asset('assets/ckeditor/ckeditor.js') !!}"></script>-->
 
 <script>
-  
+  $('.form-horizontal').submit(function() {
+        var aHTML = $('.click2editvoc').summernote('code'); //save HTML If you need(aHTML: array).
+        jQuery("#voc_content").val(aHTML);
+       var dialog_content = $('.click2edit').summernote('code'); //save HTML If you need(aHTML: array).
+        jQuery("#dialog_content").val(dialog_content);
+  // your code here
+});
 //    CKEDITOR.inline('vocabulary', {
 //        filebrowserBrowseUrl: '{!! url('public/filemanager/index.html') !!}',
 //        customConfig: '',

@@ -19,7 +19,7 @@ use App\Models\IdiomCat;
 use App\Models\IdiomExample;
 use File;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Str;
 class GrammarController extends AdminBaseController {
 
     /**
@@ -51,10 +51,12 @@ class GrammarController extends AdminBaseController {
     public function getLesson($id = 0) {
         $lesson = null;
         $cat_ids = [];
+        $cat = null;
         if ($id) {
             $lesson = GrammarLesson::find($id);
             if ($lesson->cat) {
                 foreach ($lesson->cat as $cat) {
+                  
                     $cat_ids[] = $cat->id;
                 }
             }
@@ -63,9 +65,31 @@ class GrammarController extends AdminBaseController {
         }
         $categories = GrammarCat::all();
         
-        return view('admin/grammar/edit_lesson', compact('lesson',"categories", "cat_ids"));
+        return view('admin/grammar/edit_lesson', compact('lesson',"categories", "cat_ids","cat"));
     }
-    
+    public function searchLessons() {
+        $search = \Illuminate\Support\Facades\Input::get('search');
+        $plural = Str::plural($search,2);
+        $singular = Str::plural($search,1);
+     
+        $orderByClause  = "CASE WHEN title LIKE '".$singular."%' THEN 0 ELSE 1 END,";
+        $orderByClause  .= "CASE WHEN title LIKE '".$plural."%' THEN 0 ELSE 1 END,";
+        $orderByClause .= "CASE WHEN content LIKE '%".$singular."%' THEN 0 ELSE 1 END,";
+        $orderByClause  .= "CASE WHEN content LIKE '%".$plural."%' THEN 0 ELSE 1 END";
+//        $orderByClause .= "CASE WHEN question LIKE '%".$singular."%' THEN 0 ELSE 1 END,";
+//        $orderByClause .= "CASE WHEN question LIKE '%".$plural."%' THEN 0 ELSE 1 END";
+        
+        $lessons = GrammarLesson::where('title', 'like', '%' . $singular . '%')
+                ->orWhere('title', 'like', '%' . $plural . '%')
+                ->orWhere('content', 'like', '%' . $singular . '%')
+                ->orWhere('content', 'like', '%' . $plural . '%')
+                ->orderByRaw($orderByClause)
+                ->paginate(30);
+        $lessons->appends(['search' => $search]);
+//        return view('admin/grammar/listQuestions', compact("questions","search"));
+        return view('admin/grammar/lessons', ['cat' => null, 'lessons' => $lessons, 'search' => $search]);
+
+    }
     public function postLesson(Request $req) {
         $this->validate($req, [
             'title' => 'required|max:255'
@@ -83,7 +107,13 @@ class GrammarController extends AdminBaseController {
             }
         }
         $lesson->update($req->all());
-         
+        $cat_ids = $req->cat_ids;
+//         dd($req->cat_ids);
+        if($cat_ids){
+            $lesson->cat()->sync($cat_ids);
+        }else{
+            $lesson->cat()->sync([]);
+        }
 //        $lesson->save();
         if ($lesson->id)
             return redirect()->route('grammar.edit_lesson', ['lesson_id' => $lesson->id]);
@@ -163,9 +193,9 @@ class GrammarController extends AdminBaseController {
         if (!$cat) {
             return back()->with("error", "Category does not exist!");
         }
-        $questions = $cat->questions;
-        
-        return view('admin/grammar/listQuestions', compact("questions"));
+        $questions = $cat->questions()->paginate(30);
+        $title = $cat->title . " - Questions";
+        return view('admin/grammar/listQuestions', compact("questions","title"));
     }
     
     public function listLessonQuestions($lesson_id) {
@@ -173,11 +203,37 @@ class GrammarController extends AdminBaseController {
         if (!$lesson) {
             return back()->with("error", "Lesson does not exist!");
         }
-        $questions = $lesson->questions;
+        $questions = $lesson->questions()->paginate(30);
 
-        return view('admin/grammar/listQuestions', compact("questions"));
+        return view('admin/grammar/listQuestions', compact("questions", "lesson_id"));
+    }
+    /**
+     * search idioms
+     * @return type
+     */
+    public function searchQuestions() {
+        $search = \Illuminate\Support\Facades\Input::get('search');
+        $plural = Str::plural($search,2);
+        $singular = Str::plural($search,1);
+     
+        $orderByClause  = "CASE WHEN correct LIKE '".$singular."%' THEN 0 ELSE 1 END,";
+        $orderByClause  .= "CASE WHEN correct LIKE '".$plural."%' THEN 0 ELSE 1 END,";
+        $orderByClause .= "CASE WHEN answers LIKE '%".$singular."%' THEN 0 ELSE 1 END,";
+        $orderByClause  .= "CASE WHEN answers LIKE '%".$plural."%' THEN 0 ELSE 1 END,";
+        $orderByClause .= "CASE WHEN question LIKE '%".$singular."%' THEN 0 ELSE 1 END,";
+        $orderByClause .= "CASE WHEN question LIKE '%".$plural."%' THEN 0 ELSE 1 END";
+        
+        $questions = GrammarQuestion::where('question', 'like', '%' . $singular . '%')
+                ->orWhere('question', 'like', '%' . $plural . '%')
+                ->orWhere('answers', 'like', '%' . $singular . '%')
+                ->orWhere('answers', 'like', '%' . $plural . '%')
+                ->orderByRaw($orderByClause)
+                ->paginate(30);
+        $questions->appends(['search' => $search]);
+        return view('admin/grammar/listQuestions', compact("questions","search"));
     }
 
+    
     public function deleteLessonQuestion(){
         $lesson_id = Input::get('lesson_id', '0');
         $question_id = Input::get('question_id', '0');
@@ -191,7 +247,10 @@ class GrammarController extends AdminBaseController {
         $cat_id = Input::get('cat_id', '0');
         $question_id = Input::get('question_id', '0');
         $cat = GrammarCat::find($cat_id);
-         
+        $lessons = $cat->lessons;
+        foreach ($lessons as $lesson){
+            $changed = $lesson->questions()->detach([$question_id]);  
+        }
         $changed = $cat->questions()->detach([$question_id]);        
         return response()->json(['url' => url()->route('grammar.lessons', ['cat_id' => $cat->id]), 'main_id' => $question_id, 'changed' => $changed]);
     }
@@ -230,7 +289,7 @@ class GrammarController extends AdminBaseController {
         $question_id = Input::get('question_id', '0');
         
         if($question_id){
-            $question = Question::find($question_id);
+            $question = GrammarQuestion::find($question_id);
             if($question){
                 $question->published = Input::get('published', '0');
                 $question->save();
@@ -296,5 +355,86 @@ class GrammarController extends AdminBaseController {
         
         return redirect()->route('grammar.edit_question', ['question_id' => $question->id]);
 
+    }
+    
+    public function crawlQuize(){
+        $quizId = Input::get('quiz_id', '0');
+        $lessonId = Input::get('lesson_id', '206');
+        if(!$quizId || !$lessonId){
+            echo "error"; exit;
+        }
+        $lesson = GrammarLesson::find($lessonId);
+        $cats = $lesson->cat;
+                
+        $file = file_get_contents("https://quizizz.com/api/main/quiz/$quizId?cached=true&_=1599796645908");
+        $quiz_data = json_decode($file);
+        $data =  $quiz_data->data->quiz->info->questions;
+        $questions = [];
+        foreach ($data as $data_question){
+            $q_text = strip_tags($data_question->structure->query->text, '<br>');;
+            $question = GrammarQuestion::where('question',$q_text)->first();
+            if($question){
+                echo $q_text ." is exist<br>";
+                 $question_id = $question->id;
+ 
+//                exit;
+            }else{
+                $question = new GrammarQuestion();
+                $question->question = $q_text;
+                $question->type = 1;
+                $question->published = 0;
+                $question->level = 1;
+                $ans = [];
+                foreach ($data_question->structure->options as $a) {
+                    if ($a) {
+                        $ans[] = trim(strip_tags($a->text));
+                    }
+                }
+                $ans = array_unique($ans);
+                $question->answers = json_encode($ans);
+                if(is_array( $data_question->structure->answer)){
+                    continue;
+                }
+                echo $data_question->structure->answer;
+                $question->correct = $ans[$data_question->structure->answer];
+                $question->save();
+                  
+//                return redirect()->route('grammar.list_lesson_question', ['cat_id' => $lessonId]);
+//
+//dd($question);
+            }
+            
+             $question_id = $question->id;
+            
+                foreach ($cats as $cat) {
+                    $cat->questions()->syncWithoutDetaching([$question_id]);
+                }
+                $changed = $lesson->questions()->syncWithoutDetaching([$question_id]);    
+                $questions[] = $question;
+        }
+        return redirect()->route('grammar.list_lesson_question', ['cat_id' => $lessonId]);
+//        return view('admin/grammar/listQuestions', compact("questions"));
+
+            
+        dd($data);
+        echo $file;exit;
+    }
+    
+    public function deleteQuestion($question_id){
+        $question = GrammarQuestion::find($question_id);
+        if(!$question->published){
+            foreach($question->cat as $cat){
+                $changed = $cat->questions()->detach([$question_id]);    
+            }
+            foreach($question->article as $lesson){
+                $changed = $lesson->questions()->detach([$question_id]);   
+            }
+            $question->delete();
+            return redirect()->route('grammar.create_question')->with('success', "Question $question->id deleted successfully, you can create new one here!");
+//            return redirect()->route('grammar.edit_question', ['question_id' => $question->id])->with('error', "Cat not delete publised question, please unpublish first");
+
+        }else{
+            return redirect()->route('grammar.edit_question', ['question_id' => $question->id])->with('error', "Cat not delete publised question, please unpublish first");
+        }
     }
 }

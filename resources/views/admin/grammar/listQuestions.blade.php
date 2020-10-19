@@ -3,8 +3,26 @@
 @section('content')
 
 <div id="home_categories" >
+    <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+
+        <br>
+               <a href="{{URL::route('grammar.create_question') }}" type="button" class="btn btn-primary btn-lg">Add new Question</a>
+
+    </div>
+    <div class="col-lg-2">
+        <br>
+        <br>
+        <form type="GET" action="{!! URL::route('grammar.search_questions') !!}">
+            Search: <input name='search' value='{{ @$search }}' placeholder="Search" required />
+        </form>
+        <!--        <div class="pull-right tooltip-demo">
+                    <a href="{{url('/admin/ielts/article/add')}}" class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Article"><i class="fa fa-plus"></i> Add Article</a>
+                </div>-->
+    </div>
+</div>
+    
     <div class="ibox-content">
-        <a href="{{URL::route('grammar.create_question') }}" type="button" class="btn btn-primary btn-lg">Add new Question</a>
         <div class="table-responsive">
             
             <table class="table table-stripped  ">
@@ -61,15 +79,48 @@
                             <input class="add_lesson" data-id="{{$question->id}}" />
                         </td>
                         <td style="width: 262px;"> 
-                            <a href="{{ URL::route('grammar.edit_question', $question->id) }}" class="btn btn-info">Update</a>                                               
+                            <a href="{{ URL::route('grammar.edit_question', $question->id) }}" class="btn btn-info">Update</a>      
+                            @if(!$question->published)
+                            <a href="{{ URL::route('grammar.deleteQuestion', $question->id) }}" target="_blank" class="btn btn-danger">Delete</a>      
+                            @endif
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            <div class="menu_pagination"> </div>
+            <div class="menu_pagination">
+              {{@$questions->links()}}
+            </div>
         </div>
     </div>
+<br>
+  <div class="row wrapper border-bottom white-bg page-footer">
+      <br>
+    <div class="col-lg-5">
+
+ 
+    </div>
+      <div class="col-lg-2">
+        <a href="{{URL::route('grammar.create_question') }}" type="button" class="btn btn-success btn-sm dim"  target="_blank"><i class="fa fa-question-circle"></i> Add new Question</a>
+    </div>
+       @if(@$lesson_id)
+    <form type="GET" action="{!! URL::route('grammar.crawlQuize') !!}">
+
+    <div class="col-lg-4">
+       
+        <input name='lesson_id' type="hidden" class="form-control" value='{{$lesson_id}}' placeholder="Quizziz id" required />
+
+        <input name='quiz_id' class="form-control" value='{{ @$search }}' placeholder="Quizziz id" required />
+    </div>
+    <div class="col-lg-1">
+             <button class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Crawl Quiz"><i class="fa fa-check"></i> Crawl</button>
+    </div>
+    </form>
+       @endif
+      <br>
+</div>
+<br>
+<br>
 </div>
 
 @endsection

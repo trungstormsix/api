@@ -511,6 +511,10 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'as' => 'grammar.lessons',
         'uses' => 'GrammarController@lessons'
     ));
+    Route::get('/search-lessons', array(
+        'as' => 'grammar.search_lessons',
+        'uses' => 'GrammarController@searchLessons'
+    ));
     Route::get('/create-lesson', array(
         'as' => 'grammar.create_lesson',
         'uses' => 'GrammarController@createLesson'
@@ -555,9 +559,11 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'as' => 'grammar.list_lesson_question',
         'uses' => 'GrammarController@listLessonQuestions'
     ));
-    
-    
-     Route::get('/edit-question/{question_id}', array(
+    Route::get('/search-questions', array(
+        'as' => 'grammar.search_questions',
+        'uses' => 'GrammarController@searchQuestions'
+    ));
+      Route::get('/edit-question/{question_id}', array(
         'as' => 'grammar.edit_question',
         'uses' => 'GrammarController@getQuestion'
     ));
@@ -570,11 +576,20 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'uses' => 'GrammarController@postQuestion'
     ));
     
-     Route::get('/ajax-publish-question', array(
+    Route::get('/ajax-publish-question', array(
         'as' => 'PronQuestion.ajax_publish_question',
         'uses' => 'GrammarController@ajaxPublishQuestion'
     ));
     
+    Route::get('/crawl-quizziz', array(
+        'as' => 'grammar.crawlQuize',
+        'uses' => 'GrammarController@crawlQuize'
+    ));
+    
+     Route::get('/delete-question/{question_id}', array(
+        'as' => 'grammar.deleteQuestion',
+        'uses' => 'GrammarController@deleteQuestion'
+    ));
 });
 //   quotes
 Route::get('crawl/quotes', 'Crawl\QuoteController@index');

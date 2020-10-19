@@ -3,19 +3,21 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>{{$cat->title}}</h2>
+        <h2>{{@$cat ? $cat->title : "Search Lesson"}}</h2>
 
     </div>
     <div class="col-lg-2">
         <br>
         <br>
-
+  <form type="GET" action="{!! URL::route('grammar.search_lessons') !!}">
+            Search: <input name='search' value='{{ @$search }}' placeholder="Search lessons" required />
+        </form>
     </div>
 </div>
 <br>
 <div id="home_categories" >
     <div class="ibox-content">
-        <a href="{{ url('admin/pronunciation/create_cat')}}" type="button" class="btn btn-primary btn-lg">Add new Lessons</a>
+        <a href="{{ URL::route('grammar.create_lesson')}}" type="button" class="btn btn-primary btn-lg">Add new Lessons</a>
         <div class="table-responsive">
             <table class="table table-stripped  ">
                 <thead>
@@ -44,7 +46,7 @@
                                     data-id="{{ $lesson->id}}"  name="status{{ $lesson->id}}" {{ $lesson->published ? 'checked' : '' }} >
 
                         <td style="width: 262px;">
-                            <a href="{{URL::route('grammar.list_lesson_question', $lesson->id) }}" class="btn btn-info">Questions</a>
+                                    <a href="{{URL::route('grammar.list_lesson_question', $lesson->id) }}" class="btn btn-info">Questions <i>({!!$lesson->questions->count()!!})</i></a>
 
                             <a href="{{ URL::route('grammar.edit_lesson', $lesson->id) }}" class="btn btn-info">Update</a>
                             @if(false && !$lesson->in_drawable)
