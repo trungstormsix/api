@@ -73,8 +73,8 @@ class YoutubeController extends AdminBaseController {
               $att = $text->attributes();
                
                 $sub = new \stdClass();
-                $sub->from = $att['start'] * 1000;
-                $sub->to = $sub->from + ($att['dur'] * 1000);
+               $sub->from = intval(1000 * doubleval($att['start']));
+                $sub->to = intval($sub->from + (doubleval($att['dur']) * 1000));
                 $sub->text = html_entity_decode($text);
                 $subs[] = $sub;
                 
@@ -385,7 +385,7 @@ class YoutubeController extends AdminBaseController {
         foreach ($videos as $video_html) {
             $video = null;
             $id_text = "data-video-ids";
-            $yid = $video_html->find(".addto-watch-queue-play-now", 0)->$id_text;
+            $yid = $video_html->find(".addto-watch-queue-play-now,.addto-watch-later-button-sign-in", 0)->$id_text;
             if ($yid) {
                 $video = Video::where("yid", $yid)->first();
             } else {

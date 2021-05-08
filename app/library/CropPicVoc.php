@@ -4,7 +4,7 @@ namespace App\library;
 
 use Illuminate\Support\Facades\Storage;
 
-class CropAvatar {
+class CropPicVoc {
 
     private $src;
     private $data;
@@ -13,8 +13,16 @@ class CropAvatar {
     private $extension;
     private $msg;
     private $tmp_file;
+    private $_desfolder = "images";
+    private $des_width = 640;
     
-    function __construct($src, $data, $file) {
+    public function setDesWidth($width){
+        $this->des_width = $width;
+    }
+            function __construct($src, $data, $file, $des_folder = "") {
+        if($des_folder){
+            $this->_desfolder = $des_folder;
+        }
         if (substr($src, 0, 1) == "/") {
             $src = substr($src, 1);
         }
@@ -22,14 +30,25 @@ class CropAvatar {
         if (!$file["name"]) {
             $this->setSrc($src);
         }
+        
         $this->src = $src;
         $this->setData($data);
         $this->setFile($file);
 
+       
+    }
+    
+    public function cropImg(){
         $this->crop($this->src, $this->dst, $this->data);
         if (file_exists($this->tmp_file)) {
             unlink($this->tmp_file);
         }
+//        echo $this->extension;
+        
+    }
+
+    public function setDesFolder($des_folder){
+        $this->_desfolder = $des_folder;
     }
 
     private function setSrc($src) {
@@ -59,7 +78,7 @@ class CropAvatar {
                 
             if ($type) {
                 $extension = image_type_to_extension($type);
-                $src = 'images/' . date('YmdHis') . '.original' . $extension;
+                $src = $this->_desfolder."/" . date('YmdHis') . '.original' . $extension;
 
                 if ($type == IMAGETYPE_GIF || $type == IMAGETYPE_JPEG || $type == IMAGETYPE_PNG) {
 
@@ -90,7 +109,14 @@ class CropAvatar {
     }
 
     private function setDst() {
-        $this->dst = 'images/' . date('YmdHis') . '.png';
+//        echo $this->extension;
+//        exit;
+        if($this->extension == ".jpg" || $this->extension == ".jpeg"){
+            $this->dst = $this->_desfolder . '/' . date('YmdHis') . ".jpg";
+        }else{
+            $this->dst = $this->_desfolder . '/' . date('YmdHis') . ".png";
+        }
+                
     }
 
     private function crop($src, $dst, $data) {
@@ -145,9 +171,9 @@ class CropAvatar {
 
             $tmp_img_w = $data->width;
             $tmp_img_h = $data->height;
-            $dst_img_w = 350;
-            $dst_img_h = 350;
-
+            $dst_img_w = $this->des_width > $data->width ? $data->width : $this->des_width;
+            $dst_img_h = $dst_img_w * $data->height / $data->width;
+//            echo $dst_img_w . " / ".$dst_img_h;exit;
             $src_x = $data->x;
             $src_y = $data->y;
 
@@ -189,9 +215,21 @@ class CropAvatar {
             $result = imagecopyresampled($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
 
             if ($result) {
-                if (!imagepng($dst_img, $dst)) {
-                    $this->msg = "Failed to save the cropped image file";
+                if($this->extension == ".jpg" || $this->extension == ".jpeg"){
+//                for jpg format but png is best for android
+                    if (!imagejpeg($dst_img, $dst,85)) {
+                        $this->msg = "Failed to save the cropped image file";
+                    }
+//                    if (!imagepng($dst_img, $dst.".png",9)) {
+//                        $this->msg = "Failed to save the cropped image file";
+//                    }
+                }else{
+                    if (!imagepng($dst_img, $dst,9)) {
+                        $this->msg = "Failed to save the cropped image file";
+                    }
                 }
+               
+
             } else {
                 $this->msg = "Failed to crop the image file";
             }
@@ -220,7 +258,7 @@ class CropAvatar {
     }
 
     public function getResult() {
-        return !empty($this->data) ? "/" . $this->dst : "/" . $this->src;
+        return !empty($this->data) ?  $this->dst :   $this->src;
     }
 
     public function getMsg() {

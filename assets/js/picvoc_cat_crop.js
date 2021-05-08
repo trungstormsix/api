@@ -49,8 +49,8 @@
             noUiSlider.create(this.$slider, {
                 start: 0,
                 connect: [true, false], range: {
-                    'min': 1,
-                    'max': 5
+                    'min': 0,
+                    'max': 2
                 }
             });
             this.$slider.noUiSlider.on('slide', function (values, handle) {
@@ -189,12 +189,12 @@
                 this.$img = this.$avatarWrapper.find('img');
 //                this.$avatarWrapper.empty().html(this.$img);
                 this.$img.cropper({
-                    aspectRatio: 1 / 1,
+                    aspectRatio: 16 / 9,
                     zoomable: true,
                     scalable: true,
                     movable: true,
                     background: true,
-                    dragMode: 'crop',
+                    dragMode: 'move',
                     guides: true,
                     cropBoxResizable: true,
                     cropBoxMovable: true,
@@ -202,7 +202,7 @@
                     autoCropArea: 1,
                     highlight: true,
                     center: true,
-                    zoomOnWheel: false,
+                    zoomOnWheel: true,
                     built: function () {
                         $(this).cropper('getCroppedCanvas').toBlob(function (blob) {
                             console.log("ENtereedddd");
@@ -221,6 +221,7 @@
                         ].join();
                         _this.$avatarSrc.val(_this.url);
                         _this.$avatarData.val(json);
+                        
                     }
                 });
 
@@ -253,6 +254,7 @@
                 },
                 complete: function () {
                     _this.submitEnd();
+                     location.reload(); 
                 }
             });
         },
@@ -311,6 +313,6 @@
         }
     };
     $(function () {
-        return new CropAvatar($('.profile'));
+        return new CropAvatar($('.picvoc_cat'));
     });
 });

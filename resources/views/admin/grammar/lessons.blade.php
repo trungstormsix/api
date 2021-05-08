@@ -3,13 +3,13 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>{{@$cat ? $cat->title : "Search Lesson"}}</h2>
+        <h2>{{@$cat ? $cat->title : "Search Lesson by \"$search\""}}</h2>
 
     </div>
     <div class="col-lg-2">
         <br>
         <br>
-  <form type="GET" action="{!! URL::route('grammar.search_lessons') !!}">
+		<form type="GET" action="{!! URL::route('grammar.search_lessons') !!}">
             Search: <input name='search' value='{{ @$search }}' placeholder="Search lessons" required />
         </form>
     </div>

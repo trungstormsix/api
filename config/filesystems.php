@@ -42,7 +42,10 @@ return [
     */
 
     'disks' => [
-
+        'backup' => [
+            'driver' => 'local',
+            'root' => storage_path('backup'),
+        ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
@@ -87,6 +90,11 @@ return [
             'root' => storage_path('../../api/audio/picvoc'),
             'visibility' => 'public',
         ],
+        'picvoc_image' => [
+            'driver' => 'local',
+            'root' => storage_path('../../api/image/picvoc'),
+            'visibility' => 'public',
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -94,7 +102,9 @@ return [
         ],
         'enstory_audios' => [
             'driver' => 'local',
-            'root' => storage_path('../../public_html/audios/estory'),
+//            'root' => storage_path('../../public_html/audios/estory'),
+            'root' => storage_path('../audios/estory'),
+
             'visibility' => 'public',
         ],
         's3' => [

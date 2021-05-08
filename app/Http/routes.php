@@ -25,6 +25,8 @@ Route::group(['namespace' => 'Admin'], function () {
      * youtube
      */
     Route::get('admin', 'AdminController@index');
+    Route::get('admin/promote', 'PromoteController@index');
+	
     Route::group(['prefix' => 'admin/youtube'], function () {
         Route::get('/cat/add', 'YoutubeController@getYcat');
         Route::get('/cat/edit/{id}', 'YoutubeController@getYcat');
@@ -80,8 +82,6 @@ Route::group(['namespace' => 'Admin'], function () {
     /*     * ***************** pic voc *************************** */
     Route::get('picvoc/add', 'PicvocController@add');
     Route::get('picvoc/search-cat', 'PicvocController@searchCat');
-        Route::post('picvoc/search-cat', 'PicvocController@searchCat');
-
     Route::get('picvoc/delete', 'PicvocController@delete');
     /*     * *** ielts ******* */
     Route::group(['prefix' => 'admin/ielts', "namespace" => "IELTS"], function () {
@@ -97,7 +97,7 @@ Route::group(['namespace' => 'Admin'], function () {
             'as' => 'ielts_articles.search',
             'uses' => 'IELTSController@search'
         ));
-        Route::get('voc/crawl/{id}', 'IELTSController@updateWord');
+		        Route::get('voc/crawl/{id}', 'IELTSController@updateWord');
 
     });
 
@@ -179,21 +179,46 @@ Route::get('admin/idioms/crawl/idiom', 'Crawl\IdiomController@getIdioms');
 Route::get('admin/idioms/crawl/english-club-phrasal-verb', 'Crawl\IdiomController@getPhrasalVerbs');
 
 /* * ***************** pic voc *************************** */
+Route::get('admin/picvoc/cats', array(
+        'as' => 'picvoc.cats',
+        'uses' => 'Admin\PicvocController@cats'
+    ));
+Route::get('admin/picvoc/cat/{cat_id}', 'Admin\PicvocController@cat');
+Route::post('admin/picvoc/cat', 'Admin\PicvocController@postCat');
+Route::post('admin/picvoc/saveCatImg', array(
+    'as' => 'picvoc.catImg',
+    'uses' => 'Admin\PicvocController@postCatImage'
+));
+Route::post('admin/picvoc/saveVocImg', array(
+    'as' => 'picvoc.vocImg',
+    'uses' => 'Admin\PicvocController@postVocImage'
+));
+Route::post('admin/picvoc/update-cat-order', 'Admin\PicvocController@postUpdateCatOrder');
+Route::get('admin/picvoc/update-cat-orders', 'Admin\PicvocController@updateCatOrders');
+Route::get('admin/picvoc/voc/{voc_id}', 'Admin\PicvocController@voc');
+Route::post('admin/picvoc/voc/save', 'Admin\PicvocController@postVoc');
+Route::get('admin/picvoc/update-voc-orders', 'Admin\PicvocController@updateVocOrders');
+Route::post('admin/picvoc/update-voc-order', 'Admin\PicvocController@postUpdateVocOrder');
+Route::post('admin/picvoc/update-voc-image-link', 'Admin\PicvocController@postVocImageLink');
+Route::get('admin/picvoc/search', 'Admin\PicvocController@searchVoc');
+Route::get('admin/picvoc/auto-complete-vocs', 'Admin\PicvocController@ajaxGetVocs');
+
 Route::get('admin/picvoc/crawl', 'Crawl\PicvocController@getCommonWords');
-Route::get('admin/picvoc/crawl-quizlet', 'Crawl\PicvocController@getCrawlQuizlet');
-Route::post('admin/picvoc/crawl-quizlet', 'Crawl\PicvocController@crawlQuizlet');
 Route::get('admin/picvoc/get-oxford-words', 'Crawl\PicvocController@getOxfordMean');
 Route::get('admin/picvoc/get-oxford-word/{id}', 'Crawl\PicvocController@getOxfordMeanOfWord');
 Route::get('admin/picvoc/delete-voc/{id}', 'Crawl\PicvocController@deleteVoc');
-Route::get('admin/picvoc/cats', 'Admin\PicvocController@cats');
+Route::get('admin/picvoc/crawl-quizlet', 'Crawl\PicvocController@getCrawlQuizlet');
+Route::post('admin/picvoc/crawl-quizlet', 'Crawl\PicvocController@crawlQuizlet');
+Route::get('admin/picvoc/delete-voc/{id}', 'Crawl\PicvocController@deleteVoc');
+
 Route::get('admin/picvoc/vocabularies/{cat_id}', 'Admin\PicvocController@vocs');
-Route::get('admin/picvoc/voc/{voc_id}', 'Admin\PicvocController@voc');
 Route::get('admin/picvoc/means', 'Admin\PicvocController@means');
-
-
-
+Route::get('admin/picvoc/update-pron', 'Admin\PicvocController@updatePron');
+Route::get('admin/picvoc/ajax/update-status', 'Admin\PicvocController@ajaxPublish');
+Route::get('admin/picvoc/update-pron-by-id/{voc_id}', 'Admin\PicvocController@updatePronById');
 //ajax
 Route::get('admin/idiom/ajax-change-word', 'Admin\IdiomController@ajaxChangWord');
+/* * ***************** end pic voc *************************** */
 
 
 
@@ -221,30 +246,34 @@ Route::group(['prefix' => 'admin/listening'], function () {
 
     Route::get('reports', 'Admin\ListeningController@reports');
     Route::get('report/fix', 'Admin\ListeningController@ajaxFixReport');
-    Route::get('video', 'Admin\ListeningController@createVideo');
-    Route::get('video/{id}', 'Admin\ListeningController@createVideoId');
-    Route::get('jpg2png', 'Admin\ListeningController@jpg2Png');
+	Route::get('video', 'Admin\ListeningController@createVideo');
     Route::get('crawl-y-sub', 'Admin\ListeningController@crawlYoutubeSub');
-    Route::get('crawl-pl', 'Admin\ListeningController@crawlPlayList');
-    
-    
+	    Route::get('crawl-pl', 'Admin\ListeningController@crawlPlayList');
+
 });
+
 Route::group(['prefix' => 'admin/story'], function () {
     Route::get('cats', 'Admin\StoryController@cats');
     Route::get('stories/{cat_id}', 'Admin\StoryController@stories');
     Route::get('story/{id}', 'Admin\StoryController@getStory');
     Route::get('story/delete/{id}', 'Admin\StoryController@deleteStory');
     Route::post('story/save', 'Admin\StoryController@postStory');
+    Route::get('update-story-orders', 'Admin\StoryController@updateStoryOrders');
+    Route::post('update-story-order', 'Admin\StoryController@postUpdateStoryOrder');
+
+    
     Route::get('video/{id}', 'Admin\StoryController@createVideoId'); 
     Route::get('video', 'Admin\StoryController@createVideo'); 
     Route::get('crawl-pl', 'Admin\StoryController@crawlPlayList');
     Route::get('crawl-y-sub', 'Admin\StoryController@crawlYoutubeSub');
-    Route::get('duration/{id}', 'Admin\StoryController@setStoryDuration');    
-    //ajax
+    Route::get('duration/{id}', 'Admin\StoryController@setStoryDuration');   
+	//ajax
     Route::get('remove-cat', 'Admin\StoryController@removeCat');
     Route::get('add-cat', 'Admin\StoryController@ajaxAddCat');
-    Route::get('autocomplete-cat', 'Admin\StoryController@ajaxGetCats');
+    Route::get('autocomplete-cat', 'Admin\StoryController@ajaxGetCats');	
 });
+
+
 Route::get('crawl/listening', 'Crawl\ListeningController@index');
 
 /* * *********** user **************** */
@@ -315,6 +344,8 @@ Route::group(['prefix' => 'admin/content'], function () {
 });
 
 Route::get('admin/dictionary', 'Admin\DictionaryController@index');
+Route::get('admin/dictionary/backup', 'Admin\DictionaryController@backup');
+
 Route::get('admin/dictionary/crawl', 'Admin\DictionaryController@crawl');
 Route::get('admin/dictionary/delete-for-recrawl', 'Admin\DictionaryController@resetNotGetMean');
 
@@ -330,6 +361,8 @@ Route::get('admin/dictionary/edit/{id}', 'Admin\DictionaryController@edit');
 Route::get('admin/dictionary/refresh/{id}', 'Admin\DictionaryController@refresh');
 Route::post('admin/dictionary/save', 'Admin\DictionaryController@save');
 Route::get('admin/dictionary/delete/{id}', 'Admin\DictionaryController@delete');
+Route::get('admin/dictionary/word/{id}', 'Admin\DictionaryController@word');
+Route::get('admin/dictionary/word/reset/{id}', 'Admin\DictionaryController@wordReset');
 
 //pronunciation
 Route::get('admin/pronunciation', 'Admin\PronunciationController@index');
@@ -380,7 +413,6 @@ Route::get('admin/pronunciation/crawl-oxford-by-link', array(
     'as' => 'pronunciation.crawl_voc_link',
     'uses' => 'Admin\PronunciationController@getOxfordLink'
 ));
-
 Route::group(['prefix' => 'admin/pron-question', "namespace" => "Admin"], function () {
     Route::get('/list/{cat_id}', array(
         'as' => 'Pronunciation.list_question',
@@ -511,10 +543,6 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'as' => 'grammar.lessons',
         'uses' => 'GrammarController@lessons'
     ));
-    Route::get('/search-lessons', array(
-        'as' => 'grammar.search_lessons',
-        'uses' => 'GrammarController@searchLessons'
-    ));
     Route::get('/create-lesson', array(
         'as' => 'grammar.create_lesson',
         'uses' => 'GrammarController@createLesson'
@@ -528,6 +556,12 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'as' => 'grammar.add_question_lesson',
         'uses' => 'GrammarController@postAddLessonQuestion'
     ));
+	
+	Route::get('/search-lessons', array(
+        'as' => 'grammar.search_lessons',
+        'uses' => 'GrammarController@searchLessons'
+    ));
+	
     Route::get('autocomplete-cat',  array(
         'as' => 'grammar.ajax_get_cats',
         'uses' => 'GrammarController@ajaxGetCats'
@@ -563,7 +597,8 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'as' => 'grammar.search_questions',
         'uses' => 'GrammarController@searchQuestions'
     ));
-      Route::get('/edit-question/{question_id}', array(
+    
+     Route::get('/edit-question/{question_id}', array(
         'as' => 'grammar.edit_question',
         'uses' => 'GrammarController@getQuestion'
     ));
@@ -576,12 +611,12 @@ Route::group(['prefix' => 'admin/grammar', 'namespace' => 'Admin'], function () 
         'uses' => 'GrammarController@postQuestion'
     ));
     
-    Route::get('/ajax-publish-question', array(
+     Route::get('/ajax-publish-question', array(
         'as' => 'PronQuestion.ajax_publish_question',
         'uses' => 'GrammarController@ajaxPublishQuestion'
     ));
     
-    Route::get('/crawl-quizziz', array(
+	Route::get('/crawl-quizziz', array(
         'as' => 'grammar.crawlQuize',
         'uses' => 'GrammarController@crawlQuize'
     ));
@@ -626,6 +661,7 @@ $menu = Menu::make('MyNavBar', function($menu) {
                 }
             }
 
+          
             $menu->add('Story')->attr(array('pre_icon' => 'book'))->active('admin/story/*');
             $menu->story->add('Cats', 'admin/story/cats');
             $menu->story->add('Crawl Subs', 'admin/story/crawl-pl')->append('<span class="label label-primary pull-right"><span class="fa fa-download"></span></span>');
@@ -665,11 +701,10 @@ $menu = Menu::make('MyNavBar', function($menu) {
             $menu->usersManager->add('Roles', 'admin/user/roles')->attr(array('pre_icon' => 'users'))->active('admin/user/role/*');
             $menu->usersManager->add('Profile', 'admin/user/profile')->attr(array('pre_icon' => 'envelope'));
 
-            $menu->add('Pic Voc', 'admin/picvoc/cats')->attr(array('pre_icon' => 'image'))->active('admin/picvoc/*');
+			$menu->add('Pic Voc', 'admin/picvoc/cats')->attr(array('pre_icon' => 'image'))->active('admin/picvoc/*');
             $menu->picVoc->add('Cats', 'admin/picvoc/cats');
-            $menu->picVoc->add('Means', 'admin/picvoc/means');
+			$menu->picVoc->add('Means', 'admin/picvoc/means');
             $menu->picVoc->add('Crawl', 'admin/picvoc/crawl-quizlet');
-
 
 
 //            $menu->pronunciation->add('Cat', 'admin/pronunciation')->attr(array('pre_icon' => 'volume-up'))->active('admin/pronunciation/*');
@@ -682,6 +717,7 @@ $menu = Menu::make('MyNavBar', function($menu) {
             $menu->add('Looked Up', 'admin/dictionary')->attr(array('pre_icon' => 'search'))->active('admin/dictionary/*');
             $menu->lookedUp->add('Over View', 'admin/dictionary')->attr(array('pre_icon' => 'search'))->active('admin/dictionary/*');
             $menu->lookedUp->add('Search', 'admin/dictionary/search')->attr(array('pre_icon' => 'search'))->active('admin/dictionary/search');
+            $menu->lookedUp->add('Backup', 'admin/dictionary/backup')->attr(array('pre_icon' => 'save'))->active('admin/dictionary/backup');
 
             $menu->add('Images', 'img')->attr(array('pre_icon' => 'phone'))->active('admin/img/*');
             $menu->images->add('Categories', 'admin/img/cats')->attr(array('pre_icon' => 'phone'))->active('admin/img/cats');
@@ -740,6 +776,7 @@ Route::group(['namespace' => 'Api', 'prefix' => 'api'], function () {
     Route::get('grammar/numb-cat-questions/{id}', 'EnglishGrammarController@numbCatQuestion');
     Route::get('grammar/numb-lesson-questions/{id}', 'EnglishGrammarController@numbLessonQuestion');
     Route::get('grammar/getTest/{id}/{from}', 'EnglishGrammarController@getTest');
+    Route::get('grammar/getLessonTest/{id}/{from}', 'EnglishGrammarController@getLessonTest');
     
  
     Route::get('ielts/cats', 'IELTSController@index');

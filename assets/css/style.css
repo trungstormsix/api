@@ -8395,3 +8395,30 @@ body.md-skin {
      padding: 5px;
      margin: 5px;
  }
+ 
+ 
+ 
+.searchvoc:hover {
+    background: #959595;
+    cursor: pointer;
+}
+.searchvoc:active {
+    box-shadow: 0 0 30px #959595
+}
+.searchvoc {
+    border-radius: 0px;
+    background: #4a4a4a;
+    color: #96f226;
+    border: 1px solid #454545;
+    height: 0 0 30px;
+}
+.searchvoc:hover {
+    background: #656565
+}
+.searchvoc:active {
+    box-shadow: 0 0 30px #96f226
+}
+.searchvoc:focus {
+    box-shadow: 0 0 30px #96f226
+}
+ 

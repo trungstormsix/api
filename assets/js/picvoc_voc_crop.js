@@ -29,10 +29,16 @@
         this.$avatarSave = this.$avatarForm.find('.avatar-save');
         this.$avatarBtns = this.$avatarForm.find('.avatar-btns');
         this.$avatarWrapper = this.$avatarModal.find('.avatar-wrapper');
-        this.$slider = document.getElementById('range_slider');
+//        this.$slider = document.getElementById('range_slider');
         this.init();
     }
-
+$('#preview').css({ 
+	 width: '100%', //width,  sets the starting size to the same as orig image  
+	 overflow: 'hidden',
+	 height:    200,
+	 maxWidth:  200,
+	 maxHeight: 200
+   });
     CropAvatar.prototype = {
         constructor: CropAvatar,
         support: {
@@ -46,17 +52,17 @@
             if (!this.support.formData) {
                 this.initIframe();
             }
-            noUiSlider.create(this.$slider, {
-                start: 0,
-                connect: [true, false], range: {
-                    'min': 1,
-                    'max': 5
-                }
-            });
-            this.$slider.noUiSlider.on('slide', function (values, handle) {
-
-                _this.$img.cropper('zoomTo', values[0]);
-            });
+//            noUiSlider.create(this.$slider, {
+//                start: 0,
+//                connect: [true, false], range: {
+//                    'min': 0,
+//                    'max': 2
+//                }
+//            });
+//            this.$slider.noUiSlider.on('slide', function (values, handle) {
+//
+//                _this.$img.cropper('zoomTo', values[0]);
+//            });
             this.initTooltip();
             this.initModal();
             this.addListener();
@@ -179,22 +185,16 @@
             }
         },
         startCropper: function () {
-            var _this = this;
-            if (!this.url) {
-                this.url = $(".avatar-view img").attr("src");
-            }
-            if (this.active) {
-                this.$img.cropper('replace', this.url);
-            } else {
-                this.$img = this.$avatarWrapper.find('img');
-//                this.$avatarWrapper.empty().html(this.$img);
-                this.$img.cropper({
-                    aspectRatio: 1 / 1,
+            
+            var options = {
+                    preview: '#preview',
+                    aspectRatio: NaN,
+                    initialAspectRatio: 16 / 9,
                     zoomable: true,
                     scalable: true,
                     movable: true,
                     background: true,
-                    dragMode: 'crop',
+                    dragMode: 'move',
                     guides: true,
                     cropBoxResizable: true,
                     cropBoxMovable: true,
@@ -202,7 +202,7 @@
                     autoCropArea: 1,
                     highlight: true,
                     center: true,
-                    zoomOnWheel: false,
+                    zoomOnWheel: true,
                     built: function () {
                         $(this).cropper('getCroppedCanvas').toBlob(function (blob) {
                             console.log("ENtereedddd");
@@ -221,12 +221,28 @@
                         ].join();
                         _this.$avatarSrc.val(_this.url);
                         _this.$avatarData.val(json);
+                        $('#crop_img_height').html(Math.round(e.height));
+                        $('#crop_img_width').html(Math.round(e.width));
                     }
-                });
+                };
+            var _this = this;
+             $(document).on('click', '#toggle-aspect-ratio .btn', function () {
+          options.aspectRatio = $(this).attr('data-value'); 
+        _this.$img.cropper('destroy').cropper(options);
+    });
+            if (!this.url) {
+                this.url = $(".avatar-view img").attr("src");
+            }
+            if (this.active) {
+                this.$img.cropper('replace', this.url);
+            } else {
+                this.$img = this.$avatarWrapper.find('img');
+//                this.$avatarWrapper.empty().html(this.$img);
+                this.$img.cropper(options);
 
                 this.active = true;
             }
-            this.$slider.noUiSlider.set(1);
+//            this.$slider.noUiSlider.set(1);
             this.$avatarModal.one('hidden.bs.modal', function () {
 
             });
@@ -253,6 +269,7 @@
                 },
                 complete: function () {
                     _this.submitEnd();
+                     location.reload(); 
                 }
             });
         },
@@ -311,6 +328,6 @@
         }
     };
     $(function () {
-        return new CropAvatar($('.profile'));
+        return new CropAvatar($('.picvoc_cat'));
     });
 });

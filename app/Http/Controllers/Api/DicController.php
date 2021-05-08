@@ -84,6 +84,7 @@ class DicController extends Controller {
         $get_words = DictionaryUser::where("user_id", $user->id)->where("favorite",1)->get();
         $return_words = [];
         foreach($get_words as $w){
+			if(!$w->mean) continue;
             $word = new \stdClass();
             $w->mean->word;
             $word = $w->mean;

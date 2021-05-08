@@ -7,7 +7,7 @@
     <div class="col-lg-10">
 
         <br>
-               <a href="{{URL::route('grammar.create_question') }}" type="button" class="btn btn-primary btn-lg">Add new Question</a>
+        <a href="{{URL::route('grammar.create_question') }}" type="button" class="btn btn-success btn-sm dim"  target="_blank"><i class="fa fa-question-circle"></i> Add new Question</a>
 
     </div>
     <div class="col-lg-2">
@@ -27,19 +27,35 @@
             
             <table class="table table-stripped  ">
                 <thead>
+				@if(!@$search)
                     <tr>
                         <th style="width: 40px">N.O</th>
                         <th >Id</th>
-                        <th >Question</th>
-                        <th >Answers</th>
-                        <th >Correct</th>
-                        <th >Type</th>
-                        <th >Published</th>
+                        <th data-sort="question" class="sort">Question  <span class="question fa fa-sort"></span></th>
+                        <th data-sort="answers" class="sort">Answers <span class="answers fa fa-sort"></span></th>
+                        <th data-sort="correct" class="sort">Correct <span class="correct fa fa-sort"></span></th>
+                        <th data-sort="level" class="sort" style="width: 75px">Level <span class="level fa fa-sort"></span></th>
+                        <th data-sort="published" class="sort" style="width: 90px">Status <span class="published fa fa-sort"></span></th>
                         <th >Explaination</th>
                         <th>Cats</th>
                         <th>Lessons</th>
                         <th >&nbsp;</th>
                     </tr>
+					@else
+						<tr>
+                        <th style="width: 40px">N.O</th>
+                        <th >Id</th>
+                        <th  class="sort">Question</th>
+                        <th  >Answers  </th>
+                        <th >Correct  </th>
+                        <th >Level  </th>
+                        <th  >Published </th>
+                        <th >Explaination</th>
+                        <th>Cats</th>
+                        <th>Lessons</th>
+                        <th >&nbsp;</th>
+                    </tr>
+					@endif
                     </tr>
                 </thead>
                 <tbody>  
@@ -52,7 +68,7 @@
                         <td> {{$question->question}}</td>
                         <td > {{$question->answers}} </td>
                         <td > {{$question->correct}} </td>
-                        <td > {{$question->type}} </td>
+                        <td > {{$question->level}} </td>
                         <td> <input class="js-switch" style="display: none;" data-switchery="true" type="checkbox"
                                     data-id="{{ $question->id}}"  name="status{{ $question->id}}" {{ $question->published ? 'checked' : '' }} >
                         </td>
@@ -79,21 +95,21 @@
                             <input class="add_lesson" data-id="{{$question->id}}" />
                         </td>
                         <td style="width: 262px;"> 
-                            <a href="{{ URL::route('grammar.edit_question', $question->id) }}" class="btn btn-info">Update</a>      
-                            @if(!$question->published)
+                            <a href="{{ URL::route('grammar.edit_question', $question->id) }}" class="btn btn-info">Update</a>                                               
+							 @if(!$question->published)
                             <a href="{{ URL::route('grammar.deleteQuestion', $question->id) }}" target="_blank" class="btn btn-danger">Delete</a>      
                             @endif
-                        </td>
+						</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
             <div class="menu_pagination">
-              {{@$questions->links()}}
+              {{$questions->links()}}
             </div>
         </div>
     </div>
-<br>
+	<br>
   <div class="row wrapper border-bottom white-bg page-footer">
       <br>
     <div class="col-lg-5">
@@ -122,7 +138,12 @@
 <br>
 <br>
 </div>
-
+@if(!@$search)
+<form id="sort" style="display: none">
+    <input class="sort_by" name="grmq_sort_by" value="{{$sort_by}}" />
+    <input class="sort_dimen"  name="grmq_sort_dimen" value="{{$dimen}}" />
+ </form>
+ @endif
 @endsection
 @section("content_js")
 <!--<script src="{!! asset('assets/js/plugins/dataTables/datatables.min.js') !!}"></script>-->

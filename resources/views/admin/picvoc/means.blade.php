@@ -55,6 +55,7 @@
                                         <tbody>
                                             @php($i = 0)
                                             @foreach($means as $mean)
+                                            @if($mean)
                                             <tr>
                                                 <td>{{$i++}}</td>
                                                 <td>{{$mean->id}}</td>
@@ -62,11 +63,12 @@
                                                 <td>{{$mean->mean}}</td>
                                                 <td>{{$mean->rate}}</td>
                                                 <td>{{$mean->dis_like}}</td>
-                                                <td><a href="{{url('admin/picvoc/voc/'.$mean->voc->id)}}" target="_blank">
-													<b>{{$mean->voc->en_us}}</b>
+                                                <td><a href="{{url('admin/picvoc/voc/'.@$mean->voc->id)}}" target="_blank">
+													<b>{{@$mean->voc->en_us}}</b>
 												</a></td>
                                                 <td>{{$mean->updated}}</td>
                                             </tr>
+                                            @endif
                                             @endforeach
 
 

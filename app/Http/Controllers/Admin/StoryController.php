@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Storage;
  use App\Models\Stories\StoryType;
 use App\Models\Stories\Story;
 use App\library\MP3File;
+use Illuminate\Support\Facades\DB;
 
 class StoryController extends Controller {
 
@@ -154,9 +155,7 @@ class StoryController extends Controller {
          
     }
     public function setStoryDuration($id){
-	 
         $story = Story::find($id);
-
         $story->duration = 0;
         $story->size = 0;
         $story->save();
@@ -188,26 +187,23 @@ class StoryController extends Controller {
     }
     public function createVideoId($id){
             $dialog = Story::find($id);
-			
             $this->setDurationAndSize($dialog);
             $this->_chageImagesName();
             $base = "mp4Story/";
             $types = $dialog->types;
-			   
             $cat = $types[0];
             $folder = $base.$cat->id."/";// "videos/$dialog->id/";
             if (!file_exists($folder)) {
                 mkdir($folder, 0777, true);
                 mkdir($folder."txt/", 0777, true);
             }
-			
             $fp = fopen($folder."txt/".$dialog->id.'.txt', 'w');
             $text = strip_tags($dialog->dialog,"<br>");
 //            $text = str_replace("<br>", "\n", $text);
             $text = preg_replace('(<br\s*\/?>\s*)', "\n", $text);
             $text = html_entity_decode($text);
             $text = preg_replace('/[A-Za-z][,.]\s/', "$0\n", $text);
-          
+            
             fwrite($fp, $text);
             fclose($fp);
            
@@ -217,7 +213,7 @@ class StoryController extends Controller {
                 $title .= " c".$type->id;
             }
             
-            $t = Input::get("t",35);
+            $t = Input::get("t",10);
            
             
 //            echo $text."<br>";
@@ -225,7 +221,6 @@ class StoryController extends Controller {
             $command2="ffmpeg -f image2 -r 1/$t -i images/video/%d.png -i \"audios/estory/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$title.".avi\"";
 
             echo $command2."<br>";
-            echo "D:\web\laravel\api\\".$folder;
             //command for every 5 second image change in video along with 004-07.mp3 playing in background
            $val =  exec($command2);
            
@@ -234,6 +229,7 @@ class StoryController extends Controller {
     }
     public function createVideo(){      
         $cat_id = Input::get("cat_id");
+        $reset = Input::get("reset", 0);
         
         if($cat_id){
             $cats = StoryType::where("lang","!=", 'es')->where("id",$cat_id)->get();
@@ -274,7 +270,7 @@ class StoryController extends Controller {
                 $title .= " c".$type->id;
             }
             
-            if($dialog->video == 1){
+            if($reset == 0 && $dialog->video == 1){
                 echo $title;
                 continue;
             }
@@ -293,7 +289,7 @@ class StoryController extends Controller {
          
         $cat->video_ok = 1;
         $cat->save();
-        
+         if(!$cat_id){
         echo '<html>
         <head>
             <title>Create Video 55s</title>';
@@ -302,7 +298,7 @@ class StoryController extends Controller {
         </head>
         <body></body></html>';
        
-    
+         }
     }
     
      public function htmlFileLink($file, $link){            
@@ -315,8 +311,21 @@ class StoryController extends Controller {
         }
         
     public function crawlYoutubeSub(){
+		 
+		/*<html>
+				 <head>
+		  <meta http-equiv="refresh" content="8">
+		</head> 
+		<body>*/
+		 
         $id = Input::get("id");
+		//$id = Session::get('next_crawl_str_sub_id', $id);
+		 
         $this->_crawlYoutubeSub($id);
+		$next = Story::where("id",">",$id)->where("has_sub",1)->orderBy("id","ASC")->first();   
+		//Session::put('next_crawl_str_sub_id', $next->id);
+		if($next)
+		echo "<br><a href='http://ocodereducation.com/apiv1/admin/story/crawl-y-sub?id=$next->id'>next $next->id</a>";
 
     }
     public function jpg2Png(){
@@ -341,8 +350,9 @@ class StoryController extends Controller {
     
    public function _crawlYoutubeSub($id){
          
-        echo $id;
+        echo $id."<br>";
         $video = Story::find($id);
+		//dd($video);
         if(!$video || !$video->video_id){
             echo "no file";
             return;
@@ -354,14 +364,15 @@ class StoryController extends Controller {
         $ysub_link = "http://video.google.com/timedtext?type=track&v=".$yid."&id=0&lang=".$lang;
         $subs = [];
         $list_xml = simplexml_load_file($ysub_link);
+		 
         if($list_xml){
             foreach ($list_xml as $text){
                 //var_dump($text);
               $att = $text->attributes();
                
                 $sub = new \stdClass();
-                $sub->from = $att['start'] * 1000;
-                $sub->to = $sub->from + ($att['dur'] * 1000);
+                $sub->from = intval(1000 * doubleval($att['start']));
+                $sub->to = intval($sub->from + (doubleval($att['dur']) * 1000));
                 $sub->text = html_entity_decode($text);
                 $subs[] = $sub;
                 
@@ -369,8 +380,8 @@ class StoryController extends Controller {
         }
         $sub_json = new \stdClass();
         $sub_json->subs = $subs;
-       
-       
+        
+        
         $status = false;
         if (true || !Storage::disk('ysubs')->has($fileName)) {
 			echo "<b>sub:</b>".$fileName."<br>";;
@@ -405,11 +416,8 @@ class StoryController extends Controller {
             
             $video = null;
             $id_text = "data-video-ids";
-            
             $yid = $video_html->find(".addto-watch-queue-play-now,.addto-watch-later-button-sign-in", 0)->$id_text;
-            
             $ytitle = trim($video_html->find(".pl-video-title-link",0)->plaintext);
-             
             $dlIds = explode(" ", $ytitle);            
             $dlId = trim($dlIds[0]);
 			$i = 0;
@@ -433,9 +441,8 @@ class StoryController extends Controller {
         }
 
     }
-    
-    
-    
+	
+	
     /*     * *********************
      * ********* ajax ******
      * ******************** */
@@ -470,4 +477,64 @@ class StoryController extends Controller {
     }
 
     
+    public function updateStoryOrders(){
+        $id = Input::get('cat_id', '0');
+        $cats = Story::where("ordering",">",0)->orderBy("ordering","asc")->orderBy("id","asc")->get();
+        $order = 1;
+//        echo 1;exit;
+        foreach($cats as $cat){
+//            if($cat->ordering == 0){
+//                $cat->ordering = $order;
+//                $cat->save();
+//            }else{
+                if($cat->ordering != $order){
+                    $cat->ordering = $order;
+                    $cat->save();
+                }
+                $order++;
+//            }
+        }
+        $cats = Story::where("ordering",0)->orderBy("id","asc")->get();
+        foreach($cats as $cat){ 
+            $cat->ordering = $order;
+            $cat->save(); 
+            $order++;
+        }
+        
+        if($id){
+            return Redirect::to('/admin/story/stories/'.$id);
+        }else{
+            return Redirect::to('/admin/story/cats');
+        }
+    }
+    
+    public function postUpdateStoryOrder(Request $req){
+        if(!$req->id){
+            return json_encode(false);
+        }
+        $voc = Story::find($req->id);
+        $order = $req->ordering;
+        if($order <= 0){
+            return json_encode(false);
+        }
+        if($voc->ordering == 0){
+            Story::where("ordering",">=", $order)->update([
+                    'ordering'=> DB::raw('ordering + 1') 
+                ]);
+        } else{
+            if($order < $voc->ordering){
+                Story::where("ordering","<", $voc->ordering)->where("ordering",">=", $order)->where("ordering",">",0)->update([
+                    'ordering'=> DB::raw('ordering + 1') 
+                ]);
+            }else if($order > $voc->ordering){
+                Story::where("ordering",">", $voc->ordering)->where("ordering","<=", $order)->where("ordering",">",0)->update([
+                    'ordering'=> DB::raw('ordering - 1') 
+                ]);
+            }
+        }
+        $voc->ordering = $order;
+        $voc->save();
+        return json_encode(true);
+        
+    }
 }

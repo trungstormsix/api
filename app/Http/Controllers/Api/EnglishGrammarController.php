@@ -76,7 +76,7 @@ class EnglishGrammarController extends Controller {
         }
         return $numb;
     }
- public function numbLessonQuestion($id = 1){
+	public function numbLessonQuestion($id = 1){
         $numb = \App\Models\GrammarLesson::find($id)->questions()->count();
         return $numb;
     }
@@ -86,7 +86,17 @@ class EnglishGrammarController extends Controller {
 //        return $test;
         return view('api/grammarTest', ["result" => $test]);
     }
-    
+    public function getLessonTest($id=1,$from=0){
+        $test = \App\Models\GrammarLesson::find($id)->questions()->orderBy("level","ASC")->orderBy("id","ASC")->skip($from)->take(15)->get();
+		if($test->count() == 0){
+			$cats = \App\Models\GrammarLesson::find($id)->cat;
+			if($cats->count()){
+				$cat = $cats[0];
+				$test = $cat->questions()->orderBy("level","ASC")->inRandomOrder()->take(15)->get();
+			}
+		}
+        return view('api/grammarTest', ["result" => $test]);
+    }
      public function getUserTest(){
        $api_token = Input::get("api_token","no_token");  
      

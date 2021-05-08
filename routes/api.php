@@ -31,8 +31,11 @@ Route::group(['namespace' => 'Api', 'prefix' => 'grammar'], function () {
 //Route::post('/looked-up', 'Api\ApiController@testPost');
 Route::post('looked-up', 'Api\ApiController@lookedUp');
 Route::get('looked-up', 'Api\ApiController@lookedUp');
+Route::get('looked-up/test-globe', 'Api\ApiController@testGlobe');
 
 Route::get('/dic/crawl-mean', 'Api\ApiController@crawlWordMean');
+Route::get('/dic/get-word', 'Api\ApiController@getDicWord');
+Route::get('/dic/get-mean', 'Api\ApiController@getDicWordMean');
 
 Route::post('/looked-up/saveUserWord', 'Api\DicController@saveUserWord');
 Route::post('/looked-up/syncUserWords', 'Api\DicController@syncUserWords');

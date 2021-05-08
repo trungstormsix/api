@@ -55,8 +55,8 @@ class PicvocController extends Controller {
                 $word = strtolower($word);
             }
 
-            $mean = trim($word_html->find($mean_selector, 0)->plaintext);
-          
+            $mean = trim(@$word_html->find($mean_selector, 0)->plaintext);
+			if(!$mean) continue;
 //            echo "word: " . $word;
 //            echo " def: " . $mean;
 //            echo "<br>";
@@ -93,6 +93,7 @@ class PicvocController extends Controller {
     }
 
     public function getOxfordMeanOfWord($id) {
+		
         $voc = Voc::find($id);
 //        $vocs = Voc::where("status",0)->orderBy("updated","DESC")->orderBy("id","DESC")->paginate(50);
         if ($voc) {
@@ -153,7 +154,7 @@ class PicvocController extends Controller {
     private function updateWord($voc, $save_mean = true) {
       
         $word = str_replace(" ", "+", $voc->en_us);
-        $word = "balk";
+        
         $link = "http://www.oxfordlearnersdictionaries.com/definition/english/";
         $dom = new DomParser();
         $html = @$dom->file_get_html($link . $word . '_1');
@@ -171,28 +172,57 @@ class PicvocController extends Controller {
         if (!$type_html)
             return;
         $type = $type_html->plaintext;
-         
-        $pron_html = $content->find(".phons_br .phon", 0);
+          //get pro uk
+        $pron_uk_html = $content->find(".phons_br .phon", 0);
        
-        if (!$pron_html)
+        if (!$pron_uk_html)
             return;
-        $pron = trim(preg_replace("/BrE|\//", "", $pron_html->plaintext));
-        $pron = '/' . $pron . '/';
+        $pron = trim(preg_replace("/BrE|\//", "", $pron_uk_html->plaintext));
+        $pron_uk = '/' . $pron . '/';
         if (!$content->find(".phons_br .sound", 0))
             return;
-        $mp3 = $content->find(".phons_br .sound", 0)->getAttribute("data-src-mp3");
+        $mp3_uk_source = $content->find(".phons_br .sound", 0)->getAttribute("data-src-mp3");
   
-        $mp3_file = \App\library\OcoderHelper::getFileName($mp3);
-        $audio = $mp3_file;
-        $status = true;
+        $mp3_uk_file = \App\library\OcoderHelper::getFileName($mp3_uk_source);
+         
+        $status_uk = true;
         //get audio
-        if (!Storage::disk('picvoc_audios')->has($audio)) {
-            echo "<b>Audio:</b>" . $audio . "<br>";
+        if (!Storage::disk('picvoc_audios')->has($mp3_uk_file)) {
+            echo "<b>Audio UK:</b>" . $mp3_uk_file . "<br>";
 
-            $status = Storage::disk('picvoc_audios')->put($audio, file_get_contents($mp3));
+            $status_uk = Storage::disk('picvoc_audios')->put($mp3_uk_file, file_get_contents($mp3_uk_source));
         }
+        /*
+         * pronunciation
+         */
+         
+        //get pro us
+        $pron_us_html = $content->find(".phons_n_am", 0);
+        if (!$pron_us_html)
+            return;
+        if ($pron_us_html->find(".phon", 0)) {
+            $pron_us_text = trim(preg_replace("/NAmE|\//", "", $pron_us_html->find(".phon", 0)->plaintext));
+            $pron_us = '/' .$pron_us_text. '/';
+        }
+
+        if (!$pron_us_html->find(".sound", 0))
+            return;
+         $mp3_us_source = $pron_us_html->find(".sound", 0)->getAttribute("data-src-mp3");
+        $mp3_us_file = \App\library\OcoderHelper::getFileName($mp3_us_source);
+         
+        $status_us = true;
+        //get audio
+        if (!Storage::disk('picvoc_audios')->has($mp3_us_file)) {
+            echo "<b>Audio US:</b>" . $mp3_us_file . "<br>";
+
+            $status_uk = Storage::disk('picvoc_audios')->put($mp3_us_file, file_get_contents($mp3_us_source));
+        }
+        /*
+         * means
+         */
         //multiple means
         if($content->find('.senses_multiple',0)){
+			
             $shortcut_html = @$content->find(".shcut",0);
             $shortcut= "";
             if($shortcut_html){
@@ -202,6 +232,13 @@ class PicvocController extends Controller {
             $mean = $shortcut.@$content->find('.senses_multiple .grammar', 0)->plaintext ." ". @$content->find('.senses_multiple .def', 0)->plaintext;
             echo "<b>Mean:</b>" . $mean . "<br>";
              
+			 $unboxes = $content->find('[unbox=synonyms]' );
+			 
+			foreach($content->find('[unbox=synonyms]' ) as &$u){
+				$u->outertext = ''; 		 
+			}
+			 
+			
             $example_content = $content->find('.senses_multiple .examples li');
             $examples = [];
             $i = 0;
@@ -216,15 +253,25 @@ class PicvocController extends Controller {
                         }
                         
                     }
-                    
-                    $ex = $def.trim($ex_html->find(".x",0)->plaintext);
-                    if (strlen($ex) > 30) {
+                    if($ex_html->find(".x",0)){
+						$ex = $def.trim($ex_html->find(".x",0)->plaintext);
+						if (strlen($ex) > 40) {							  
+							$examples[] = $ex;
+							if ($i++ > 2) {
+								break;
+							}
+						}
+					}else{
+						 
+						$ex = $def.trim($ex_html->plaintext);
+						if (strlen($ex) > 40) {
                           
-                        $examples[] = $ex;
-                        if ($i++ > 2) {
-                            break;
-                        }
-                    }
+							$examples[] = $ex;
+							if ($i++ > 2) {
+								break;
+							}
+						}
+					}
                 }
                  
             }
@@ -247,39 +294,55 @@ class PicvocController extends Controller {
                         }
                         
                     }
-                    
-                    $ex = $def.trim($ex_html->find(".x",0)->plaintext);
-                    if (strlen($ex) > 30) {
+                    if($ex_html->find(".x",0)){
+						$ex = $def.trim($ex_html->find(".x",0)->plaintext);
+						if (strlen($ex) > 30) {
+							  
+							$examples[] = $ex;
+							if ($i++ > 2) {
+								break;
+							}
+						}
+					}else{
+						 
+						$ex = $def.trim($ex_html->plaintext);
+						if (strlen($ex) > 40) {
                           
-                        $examples[] = $ex;
-                        if ($i++ > 2) {
-                            break;
-                        }
-                    }
+							$examples[] = $ex;
+							if ($i++ > 2) {
+								break;
+							}
+						}
+					}
                 }
                  
             }
             
         }
-        dd($examples);
-        exit;
+       // dd($examples);
+       // exit;
         /** save voc * */
-        $example_str = implode("<br>", $examples);
+        $example_str = implode("<br>\n", $examples);
         $voc->en_us_type = $type;
-        $voc->en_us_pr = $pron;
+        $voc->en_us_pr = $pron_us;
+        $voc->en_us_audio = $mp3_us_file;
+        $voc->en_uk_pr = $pron_uk;
+        $voc->en_uk_audio = $mp3_uk_file;
+                
         if ($save_mean) {
             $voc->en_us_mean = $mean;
         }
-        $voc->en_us_audio = $mp3_file;
         $voc->en_us_ex = $example_str;
         $voc->status = 0;
         $voc->save();
         echo "<b>Examples:</b>" . $example_str . "<br>";
+        echo   " <a href='". \Illuminate\Support\Facades\URL::to('/')."/admin/picvoc/voc/".$voc->id."'  >Edit Word $voc->en_us</a>"."<br>";
+        return Redirect::to('/admin/picvoc/voc/'.$voc->id);
 
         return true;
     }
-
-    private function delete($cat) {
+ 
+ private function delete($cat) {
         $vocs = $cat->vocs()->get();
 
         foreach ($vocs as $voc) {

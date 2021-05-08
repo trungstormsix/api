@@ -60,7 +60,7 @@
                                 </th>
                                 @endif
                                 <th data-sort="updated" class="sort">Updated  <span class="updated fa fa-sort"></span></th>
-                                 <th data-sort="has_sub" class="sort">
+								<th data-sort="has_sub" class="sort">
                                     Has Sub
                                     <span class="has_sub fa fa-sort"></span>
                                 </th>
@@ -96,9 +96,10 @@
                                 <td>
                                     {{$dialog->updated}}
                                 </td>
-<td>
+								<td>
                                     {{$dialog->has_sub}}
                                 </td>
+
                             </tr>
 
                             @endforeach

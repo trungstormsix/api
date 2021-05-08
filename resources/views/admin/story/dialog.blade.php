@@ -44,7 +44,7 @@
                                 <span class="btn btn-primary">{{$dialog->id}}</span>  <a href="{{url('admin/story/story/'.($next ? $next->id : 1))}}" class="btn btn-success"  >
                                         <b>Next {{$next? $next->id : ""}}</b>
                                     </a>
-                            <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url('admin/story/video/'.$dialog->id)}}" target="_blank" ><i class="fa fa-video-camera"></i> Create Video</a>
+                            <a class="btn btn-sm btn-primary crawl-y-sub" href="http://localhost/laravel/api/admin/story/video/{{$dialog->id}}" target="_blank" ><i class="fa fa-video-camera"></i> Create Video</a>
                             <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url('admin/story/duration/'.$dialog->id)}}" target="_blank" ><i class="fa fa-clock-o"></i> Duration</a>
 
                             </div>
@@ -68,8 +68,9 @@
                             <div class="col-sm-3"><input class="form-control" name="video_id" value="{{$dialog->video_id}}" /><br>
                                 <a class="btn btn-sm btn-primary" href="{{url("/ysubs/".$dialog->video_id)}}.txt" target="_blank" >Sub</a> 
                                 <a class="btn btn-sm btn-primary crawl-y-sub" href="{{url("/admin/story/crawl-y-sub?id=").$dialog->id}}" target="_blank" ><i class="fa fa-download"></i> Crawl Youtube Sub</a>
-
-                                <a class="btn btn-sm btn-primary crawl-y-sub" href="https://studio.youtube.com/video/{{$dialog->video_id}}/edit" target="_blank" ><i class="fa fa-youtube"></i> Edit Sub</a>
+                                <a class="btn btn-sm btn-primary crawl-y-sub" href="https://www.youtube.com/timedtext_editor?v={{$dialog->video_id}}&lang=en&name=&kind=&contributor_id=0&bl=vmp&action_view_track=1&ref=rs&nv=1
+" target="_blank" ><i class="fa fa-youtube"></i> Edit Sub</a>
+                                <a class="btn btn-sm btn-primary crawl-y-sub" href="https://studio.youtube.com/video/{{$dialog->video_id}}/edit" target="_blank" ><i class="fa fa-youtube"></i> Edit Youtube Video</a>
 
                                 
                             </div>     

@@ -43,6 +43,7 @@ class ListeningController extends Controller {
      */
     public function dialogs($cat_id) {
         $cat = ListeningCat::find($cat_id);
+
         if (@$_GET['sort_by']) {
             Session::put('sort_by', $_GET['sort_by']);
             $dimen = @$_GET['sort_dimen'] ? $_GET['sort_dimen'] : 'asc';
@@ -51,6 +52,7 @@ class ListeningController extends Controller {
         $sort_by = Session::get('sort_by', 'liked');
         $dimen = Session::get('sort_dimen', 'desc');
         $dialogs = $cat->dialogs()->orderBy($sort_by, $dimen)->paginate(30);
+
         return view('admin/listening/dialogs', ['cat' => $cat, 'dialogs' => $dialogs, 'sort_by' => $sort_by, 'sort_dimen' => $dimen]);
     }
 
@@ -64,16 +66,16 @@ class ListeningController extends Controller {
         $dialog = ListeningDialog::find($id);
         $question_ids = json_decode($dialog->question);
         $questions = ListeningQuestion::whereIn('id', $question_ids)->get();
-        $next = ListeningDialog::where("id",">",$id)->orderBy("id","ASC")->first();   
-        $yid = $dialog->video_id;
-        $fileName = $yid.".txt";
+		$next = ListeningDialog::where("id",">",$id)->where("status",1)->orderBy("id","ASC")->first();   
+		$yid = $dialog->video_id;
+		$fileName = $yid.".txt";
         $sub ="";
         if (Storage::disk('ysubs')->has($fileName)) {
             $audio = Storage::disk('ysubs')->getAdapter()->getPathPrefix();
             $sub = file_get_contents($audio.$fileName);
         }
-        return view('admin/listening/dialog', compact('dialog', 'questions', 'next','sub'));
-    }
+        return view('admin/listening/dialog', compact('dialog', 'questions', 'next','sub'));   
+	}
 
     public function postQuestionAjax(Request $req) {
         $dl_id = $req->dlId;
@@ -130,7 +132,7 @@ class ListeningController extends Controller {
     }
 
     public function postDialog(Request $req) {
-       dd($req->dialog);
+
         if ($req->id) {
             $answers = $req->questions_an;
             $corrects = $req->questions_correct;
@@ -176,7 +178,6 @@ class ListeningController extends Controller {
         Input::flash();
         return Redirect::to('/admin/listening/add-cat');
     }
-
 
     /**
      * get Playlist
@@ -331,131 +332,7 @@ class ListeningController extends Controller {
         $reports = \App\Models\ListeningReport::where("status", 0)->orderBy("updated", "DESC")->paginate(30);
         return view('admin/listening/reports', ['reports' => $reports]);
     }
-    private function _chageImagesName(){
-        $dir = "images/video/";
-        $files = scandir($dir);
-        //copy from bk folder if image is deleted
-        if(sizeof($files) < 5){
-             $filesBk = scandir("images/bk/");
-             foreach($filesBk as $file){
-            if(strlen($file) > 2){                 
-                    copy("images/bk/".$file, $dir.$file);
-                }
-            }
-        }
-        //rename to random
-        $files = scandir($dir);
-        echo sizeof($files)."<br>";
-         foreach($files as $file){
-            if(strlen($file) > 2){                 
-                $name = $dir.rand(sizeof($files), 5*sizeof($files)).".png";
-                while(file_exists($name)){
-                    $name = $dir.rand(sizeof($files), 5*sizeof($files)).".png";
-                }
-                rename($dir.$file, $name);
-             }
-          
-        }
-        //re-order file
-        $files = scandir($dir);
-      
-        echo sizeof($files)."<br>";
-        $i = 1;
-        foreach($files as $file){
-            if(strlen($file) > 2){               
-                rename($dir.$file, $dir.$i.".png");
-                $i++;
-            }
-        }
-         
-    }
-
-    public function createVideo(){      
-        $this->_chageImagesName();
-  
-        $dialogs = ListeningDialog::where("video", "0")->where("status", "1")->orderBy("id", "ASC")->paginate(1);
-        foreach($dialogs as $dialog){
-            $folder = "mp4s/";// "videos/$dialog->id/";
-            if (!file_exists($folder)) {
-                mkdir($folder, 0777, true);
-            }
-            $fp = fopen($folder."txt/".$dialog->id.'.txt', 'w');
-            $text = strip_tags($dialog->dialog,"<br>");
-//            $text = str_replace("<br>", "\n", $text);
-            $text = preg_replace('(<br\s*\/?>\s*)', "\n", $text);
-            fwrite($fp, $text);
-            fclose($fp);
-            
-            $this->htmlFileLink($folder.$dialog->id.'_z.html', "http://ocodereducation.com/apiv1/admin/listening/dialog/".$dialog->id);
-//            echo $text."<br>";
-//            $command2="ffmpeg -f image2 -r 1/7 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 1000)." -vcodec mpeg4 -s 720x576 -vf fps=5 -y \"$folder".$dialog->id." - ".$dialog->title.".mp4\"";
-            $command2="ffmpeg -f image2 -r 1/5 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$dialog->title.".avi\"";
-
-            echo $command2."<br>";
-            //command for every 5 second image change in video along with 004-07.mp3 playing in background
-            exec($command2);
-           
-            $dialog->video = 1;
-            $dialog->save();
-        }
-        
-        echo '<html>
-        <head>
-            <title>Create Video 55s</title>';
-        echo '            <meta http-equiv="refresh" content="15" />';
-        echo ' 
-        </head>
-        <body></body></html>';
-       
-    
-    }
-    
-    
-    public function createVideoId($id){  
-        $dialog = ListeningDialog::find($id);
-//        $this->setDurationAndSize($dialog);
-            
-        $this->_chageImagesName();
-   
-            $folder = "mp4s/";// "videos/$dialog->id/";
-            if (!file_exists($folder)) {
-                mkdir($folder, 0777, true);
-            }
-            $fp = fopen($folder."txt/".$dialog->id.'.txt', 'w');
-            $text = strip_tags($dialog->dialog,"<br>");
-//            $text = str_replace("<br>", "\n", $text);
-            $text = preg_replace('(<br\s*\/?>\s*)', "\n", $text);
-            $text = html_entity_decode($text);
-            $text = preg_replace('/[A-Za-z][?.]\s/', "$0\n", $text);
-            fwrite($fp, $text);
-            fclose($fp);
-            
-            $this->htmlFileLink($folder.$dialog->id.'_z.html', "http://ocodereducation.com/apiv1/admin/listening/dialog/".$dialog->id);
-//            echo $text."<br>";
-//            $command2="ffmpeg -f image2 -r 1/7 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 1000)." -vcodec mpeg4 -s 720x576 -vf fps=5 -y \"$folder".$dialog->id." - ".$dialog->title.".mp4\"";
-            $command2="ffmpeg -f image2 -r 1/5 -i images/video/%d.png -i \"audios/listening/".$dialog->audio."\" -t ".($dialog->duration + 4)." -c:v mpeg4 -y \"$folder".$dialog->id." - ".$dialog->title.".avi\"";
-
-            echo $command2."<br>";
-            //command for every 5 second image change in video along with 004-07.mp3 playing in background
-            exec($command2);
-           
-            $dialog->video = 1;
-            $dialog->save();
-         
-        echo '<html>
-        <head>
-            <title>Create Video 55s</title>';
-         echo ' 
-        </head>
-        <body><a href="'.
-                 "file://D:\web\laravel\api\mp4s".'">link</a><br>'
-                 . 'D:\web\laravel\api\mp4s<br>'
-                 . 'D:\web\laravel\api\mp4s\txt<br>'
-                 . '</body></html>';
-       
-    
-    }
-     public function htmlFileLink($file, $link){            
+   public function htmlFileLink($file, $link){            
             $fp = fopen($file, 'w');
             $text = "<html><head>";
             $text .= '<meta http-equiv="refresh" content="0; url='.$link.'" />';
@@ -465,8 +342,28 @@ class ListeningController extends Controller {
         }
         
     public function crawlYoutubeSub(){
+		?>
+		
+		<?php
         $id = Input::get("id");
-        echo $id;
+		//$id = Session::get('next_crawl_sub_id', $id);
+        $this->_crawlYoutubeSub($id);
+		$next = ListeningDialog::where("id",">",$id)->where("status",1)->orderBy("id","ASC")->first();   
+		//Session::put('next_crawl_sub_id', $next->id);
+
+		echo "<br><a href='http://ocodereducation.com/apiv1/admin/listening/crawl-y-sub?id=$next->id'>next $next->id</a>";
+		/*
+		<html>
+				 <head>
+		  <meta http-equiv="refresh" content="8">
+		</head> 
+		<body>
+		*/
+    }
+	
+	 public function _crawlYoutubeSub($id){
+         
+        echo $id."<br>";
         $video = ListeningDialog::find($id);
         if(!$video || !$video->video_id){
             echo "no file";
@@ -479,7 +376,6 @@ class ListeningController extends Controller {
         $ysub_link = "http://video.google.com/timedtext?type=track&v=".$yid."&id=0&lang=".$lang;
         $subs = [];
         $list_xml = simplexml_load_file($ysub_link);
-        
         if($list_xml){
             foreach ($list_xml as $text){
                 //var_dump($text);
@@ -493,7 +389,6 @@ class ListeningController extends Controller {
                 
             }
         }
-        dd($subs);
         $sub_json = new \stdClass();
         $sub_json->subs = $subs;
        
@@ -516,82 +411,7 @@ class ListeningController extends Controller {
         echo "<a href='".url("/ysubs/".$fileName)."' target='_blank'>Link Sub</a>";
 
     }
-    
-    
-    public function jpg2Png(){
-          $dir = "images/videojpg/";
-         $files = scandir($dir);
-        echo sizeof($files)."<br>";
-         foreach($files as $file){
-            if(strlen($file) > 2){           
-                imagepng(imagecreatefromstring(file_get_contents($dir.$file)), "images/video/".$file.".png");
-
-//                $name = $dir.rand(sizeof($files), 5*sizeof($files)).".png";
-//                while(file_exists($name)){
-//                    $name = $dir.rand(sizeof($files), 5*sizeof($files)).".png";
-//                }
-//                rename($dir.$file, $name);
-             }
-          
-        }
-        
-    }
-    
-    
-     public function _crawlYoutubeSub($id){
-         
-        echo $id;
-        $video = ListeningDialog::find($id);
-        if(!$video || !$video->video_id){
-            echo "no file";
-            return;
-        } 
- 
-        $yid = $video->video_id;
-        $fileName = $yid.".txt";
-        $lang = Input::get("lang","en");
-        $ysub_link = "http://video.google.com/timedtext?type=track&v=".$yid."&id=0&lang=".$lang;
-        $subs = [];
-        $list_xml = simplexml_load_file($ysub_link);
-        dd($list_xml);
-        if($list_xml){
-            foreach ($list_xml as $text){
-                //var_dump($text);
-              $att = $text->attributes();
-               
-                $sub = new \stdClass();
-                $sub->from = $att['start'] * 1000;
-                $sub->to = $sub->from + ($att['dur'] * 1000);
-                $sub->text = html_entity_decode($text);
-                $subs[] = $sub;
-                
-            }
-        }
-        dd($subs);
-        $sub_json = new \stdClass();
-        $sub_json->subs = $subs;
-       
-       
-        $status = false;
-        if (true || !Storage::disk('ysubs')->has($fileName)) {
-			echo "<b>sub:</b>".$fileName."<br>";;
-            $status  = Storage::disk('ysubs')->put($fileName, json_encode($sub_json));
-            if($status){
-                $video->has_sub = 1;
-                $video->save();
-            }
-        }else{
-            
-                $video->has_sub = 1;
-                $video->save();
-             
-        }
-        
-        echo "<a href='".url("/ysubs/".$fileName)."' target='_blank'>Link Sub</a>";
-
-    }
-	
-    public function crawlPlayList(){
+	public function crawlPlayList(){
         $play_id = Input::get("playlist");
         if(!$play_id){
             return view('admin/listening/playlist');
@@ -619,7 +439,9 @@ class ListeningController extends Controller {
                     $dialog->save();
                     $this->_crawlYoutubeSub($dlId);
                     echo " <br><a href='". \Illuminate\Support\Facades\URL::to('/')."/admin/listening/dialog/$dlId' target='_blank' >".$dialog->id." ".$dialog->title."</a><br>";
-					 
+					if($i++ == 5){
+						exit;
+					}
                 } else{
 					echo $dialog->title. " <a href='". \Illuminate\Support\Facades\URL::to('/')."/admin/listening/dialog/$dlId' target='_blank' >".$dialog->id." Link</a>"."<br>";
                 }

@@ -16,13 +16,15 @@ use Illuminate\Support\Facades\Session;
 use App\Models\CommonWord;
 use App\Models\Dictionary;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL; 
 
 class DictionaryController extends AdminBaseController {
 
     public function __construct() {
         $this->middleware('auth');
     }
-
+	
     public function index() {
         $langs = DB::table('common_word_mean')
                 ->select('lang', DB::raw('SUM(count) as total'))
@@ -39,8 +41,90 @@ class DictionaryController extends AdminBaseController {
         dd($update);
 
     }
+ public function backup(){
+         $reset =Input::get('reset','0');
+         
+        $date = date("Y.m.d");
+        $bkfile = "common_word_mean_$date.sql";
+        $table_name = 'common_word_mean';
+        $per_insert = 100;
+        if(Storage::disk('backup')->exists('count.txt')){
+            $count =  Storage::disk('backup')->get('count.txt');
+        }else{
+            $count = 0;
+        }
+        if($reset){
+            $count = 0;
+        }
+//        $count = 0;
+        
+ 
+//        $count = 0;
+        if($count == 0){
+            Storage::disk('backup')->put($bkfile, '');
+        }
+        $words = Dictionary::orderBy("id", "ASC")->skip($count)->take($per_insert)->get();
+        $count_word = $words->count();
+        if($words->count() == 0){
+            echo "ok<br>";
 
-    public function crawl(){
+            echo "dbLink: <a href='".asset('storage/backup/'.$bkfile)."' >". asset('storage/backup/'.$bkfile) . "</a><br>";
+                        echo "<a href='".URL::current()."?reset=1'>Reset</a><br>" ;
+
+            exit;
+        }else if(!$reset){
+            echo '<html>
+                <head>
+                    <title>Crawl Mean 15s</title>
+                    <meta http-equiv="refresh" content="55" />
+                </head>
+                <body>';
+        }else{
+            echo "<a href='".URL::current()."'>Continue</a>" ;   
+        }
+        echo $count."...<br>";
+//         $contents = Storage::disk('backup')->get('file.txt');
+        
+//         dd($words);
+        echo asset('storage/backup/'.$bkfile)."<br>";
+        $counter = 1;
+        $content = "\nINSERT INTO ".$table_name." VALUES";
+        foreach($words as $data){
+  
+                    $total = count($data['attributes']);
+                    $content .= "\n(";
+                    $j = 1;
+                    foreach ($data['attributes'] as $row) 
+                    {    
+                        $row = str_replace("\n","\\n", addslashes($row) ); 
+                        if (isset($row))
+                        {
+                            $content .= '"'.$row.'"' ; 
+                        }
+                        else 
+                        {   
+                            $content .= '""';
+                        }     
+                         if($j < $total){
+                             $content .= ',';
+                         }
+                         $j++;
+                    }
+                    if($count_word == $counter){
+                        $content.= ");\n";
+                    } else{
+                        $content.= "),\n";
+                    }
+                    ++$counter;
+                   
+                }
+//               echo $counter;exit;
+                Storage::disk('backup')->put('count.txt', $count + $count_word);
+                Storage::disk('backup')->append($bkfile, $content);
+                $contents = Storage::disk('backup')->get($bkfile);
+//        dd($contents);
+    }
+	public function crawl(){
             $json_text = file_get_contents("http://api.dogiadungchinhhang.com/api/dic/crawl-mean");
             $means = json_decode($json_text);
              echo '<html>
@@ -354,5 +438,28 @@ class DictionaryController extends AdminBaseController {
         }
         $word->delete();
         echo "Word: <b>".$word->word."</b><br>Deleted completely";
+    }
+	
+	public function word($id = 1) {
+        if(!$id){
+            echo "Id fail";
+        }
+        $word = CommonWord::find($id);
+        echo "<pre>";
+        var_dump($word);
+//       dd($word);
+    }
+	
+	  public function wordReset($id = 1) {
+        if(!$id){
+            echo "Id fail";
+        }
+        $word = CommonWord::find($id);
+        $word->en_us_audio = "";
+        $word->en_uk_audio = "";
+        $word->save();
+        echo "<pre>";
+        var_dump($word);
+//       dd($word);
     }
 }

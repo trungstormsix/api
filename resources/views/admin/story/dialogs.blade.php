@@ -3,7 +3,7 @@
 @section('content')
 <!-- header -->
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
+    <div class="col-lg-5">
         <h2>{{empty($title) ?  'oCoder' : $title}}</h2>
         <ol class="breadcrumb">
             <li>
@@ -17,10 +17,16 @@
             </li>
         </ol>
     </div>
-    <div class="col-lg-2">
+    <div class="col-lg-7">
         <br>
-        <br>
-         
+        <div class="pull-right tooltip-demo">
+            <a href="http://ocodereducation.com/admin/stories/create" target="blank" class="btn btn-primary btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Create Story"><i class="fa fa-plus-square"></i> Create</a>
+
+        <a href="{{url('http://localhost/laravel/api/admin/story/en/cat/'.$cat->id)}}" class="btn btn-info btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download all audios of the cat to localhost to create videos"><i class="fa fa-download"></i> Download Audios</a>
+        <a href="{{url('http://localhost/laravel/api/admin/story/video?cat_id='.$cat->id)}}" class="btn btn-success btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Create all videos to upload to youtube"><i class="fa fa-create"></i> Create Videos</a>
+
+        <a href="{{url('admin/story/update-story-orders?cat_id='.$cat->id)}}" class="btn btn-danger btn-sm dim" data-toggle="tooltip" data-placement="top" title="" data-original-title="Refesh Story ordering"><i class="fa fa-refresh"></i> Refresh order</a>
+        </div>
     </div>
 </div>
 
@@ -28,13 +34,15 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel-body">
+                    Refresh: <input class="js-switch" id="refresh_update_order" style="display: none;" data-switchery="true" type="checkbox"  />
 
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>N.o</th>                                
-                                <th>Id</th>                                
+                                <th>Id</th>  
+                                <th data-sort="ordering" class="sort">Order<span class="ordering fa fa-sort"></span></th>      
                                 <th data-sort="title" class="sort">
                                     Title
                                     <span class="title fa fa-sort"></span>
@@ -66,13 +74,24 @@
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>{{$dialog->id}}</td>
+                                <td> <input name="ordering_{{$dialog->id}}_{{rand(1,10)}}" ca class="ordering form-control" value="{{$dialog->ordering}}" data-id="{{$dialog->id}}"/></td>
+
                                 <td>
                                     <a href="{{url('admin/story/story/'.$dialog->id)}}" target="_blank">
                                         <b>{{$dialog->title}}</b>
                                     </a>
                                 </td>                                
                                 <td>
-                                    {!!$dialog->audio!!}
+                                    {!!$dialog->audio!!}<br>
+                                    @if($dialog->duration) <a href="{{url('admin/story/duration/'.$dialog->id)}}" target="_blank">
+                                        <b>Get Duration</b>
+                                    </a>
+                                    {!! floor($dialog->duration/60). ":" .  (($dialog->duration) % 60) !!}
+                                    @else
+                                    <a href="{{url('admin/story/duration/'.$dialog->id)}}" target="_blank">
+                                        <b>Get Duration</b>
+                                    </a>
+                                    @endif
                                 </td>
                                 <td>
                                     {{$dialog->liked}}
@@ -119,22 +138,54 @@
 
 @section('content_js')
 <script>
-    jQuery(".ordering").change(function () {
+    
+     var elem = jQuery('.js-switch').each(function (index) {
+        new Switchery(this, {color: '#1AB394'});
+
+    });
+    
+    jQuery('.js-switch').change(function () {
+        var voc_id = jQuery(this).data('id');
+          var status = jQuery(this).is(':checked');
+        if(!voc_id){
+            
+            if(jQuery(this).prop('id') == 'refresh_update_order'){
+//                alert(jQuery(this).prop('id'));
+                isRefresh = status;
+            }
+            return;
+        }
+    });
+    
+ $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': "{!!csrf_token()!!}"
+        }
+    });
+  var isRefresh = false;  
+ jQuery(".ordering").change(function () {
         $this = jQuery(this);
-        cat_id = $this.data("cat_id");
-        dl_id = $this.data("dialog_id");
-        jQuery.ajax({
-            url: '{{url("admin/listening/ajax-ordering")}}',
-            type: "GET",
+         jQuery.ajax({
+            url: '{{url("admin/story/update-story-order")}}',
+            type: "POST",
             dataType: 'json',
-            data: {cat_id: cat_id, dialog_id: dl_id, ordering: $this.val()}
+            data: {  ordering: $this.val(), id: $this.data("id")}
         }).done(function (data) {
 //            jQuery(that).parent().remove();
             $this.css({"color": "green", "border": "green"})
+            if(isRefresh)
+            location.reload(true);
         })
                 .fail(function () {
                     alert("error");
                 });
-    })
+    });
 </script>
+<style>
+    .ordering {
+        max-width: 70px;
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
 @endsection

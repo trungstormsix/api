@@ -10,7 +10,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'
             ?>
             <Table>
                 <id><?php echo $question->id; ?></id>
-                <question><?php echo $question->question; ?></question>
+                <question><?php echo htmlentities($question->question); ?></question>
                 <answers>
                     <?php
                     $answers = json_decode($question->answers);
@@ -28,7 +28,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'
                     $articles = $question->article;
                     foreach ($articles as $article) {
                         ?>
-                    <article id="<?php echo $article->id ?>"><?php echo $article->title ?></article>
+                    <article id="<?php echo $article->id ?>"><?php echo htmlentities($article->title) ?></article>
         <?php } ?>
 
                 </articles>

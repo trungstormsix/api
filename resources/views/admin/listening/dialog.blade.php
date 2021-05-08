@@ -48,6 +48,7 @@
 								@endif
 
                                 <a class="btn btn-sm btn-primary crawl-y-sub" href="http://localhost/laravel/api/admin/listening/video/{{$dialog->id}}" target="_blank" ><i class="fa fa-video-camera"></i> Create Video</a>
+                                <span class="btn btn-sm btn-primary crawl-y-sub"  ><i class="fa fa-thumbs-up"></i> {{$dialog->liked }}</span>
 
                             </div>
                         </div>

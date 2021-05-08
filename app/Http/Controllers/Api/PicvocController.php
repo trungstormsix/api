@@ -13,11 +13,11 @@ use App\library\DomParser;
 use App\Models\Picvoc\Voc;
 use App\Models\Picvoc\PicvocCat;
 use App\Models\Picvoc\PicvocMean;
+
 use File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Input;
-
+ 
 class PicvocController extends Controller {
 
   
@@ -46,7 +46,7 @@ class PicvocController extends Controller {
         $vocs = $cat->vocs()->where('updated','>', "2015-01-01 00:00:01")->take(80)->orderBy("updated", 'desc')->get();
 		foreach($vocs as &$voc){
 			$cats = $voc->cats;
-			$cat_ids = [];
+			$cat_ids = [$cat_id];
 			foreach($cats as $cat){
 				if($cat->id != $cat_id){
 					$cat_ids[] = $cat->id;
@@ -68,21 +68,25 @@ class PicvocController extends Controller {
         }
        return Voc::find($id)->liked;
     }
-    
-    public function saveWordMean(){
+	
+	public function saveWordMean(){
         $id = trim(Input::get('id'));
         $lang = trim(Input::get('lang'));
         $mean = trim(Input::get('mean'));
         if(!$id || !$lang || !$mean){
             return;
         }
-        $wordMean = PicvocMean::where("id",$id)->where("lang",$lang)->where('mean',$mean)->first();
+        $wordMean = PicvocMean::where("voc_id",$id)->where("lang",$lang)->where('mean',$mean)->first();
         if(!$wordMean){
             $wordMean = new PicvocMean();
             $wordMean->voc_id = $id;
             $wordMean->lang = $lang;
             $wordMean->mean = $mean;
             $wordMean->save();
+        }else{
+            $wordMean->rate = $wordMean->rate + 1;
+            $wordMean->save();
+
         }
 
     }

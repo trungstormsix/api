@@ -4,7 +4,7 @@
  <form class="form-horizontal" role="form" method="POST" action="{!! URL::route('grammar.save_lesson')!!}">
  <input  type="hidden" name='id' value="{{ $lesson ? $lesson->id : '' }}">
  <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-10">
+        <div class="col-lg-8">
             <h2>{{ $lesson ? "Edit" : 'Create' }} Grammar Lesson</h2>
 
 
@@ -15,8 +15,7 @@
                 <li>
                     <a href="{{url('/admin/grammar')}}">Grammar</a>
                 </li>
-                 @if($cat)
-    
+				 @if(@$cat)
                  <li>
                     <a href="{!! URL::route('grammar.lessons', $cat->id)!!}">{{$cat->title}}</a>
                 </li>
@@ -26,11 +25,16 @@
                 </li>
             </ol>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-4">
             <br>
             <br>
             <div class="pull-right tooltip-demo">
-                @if( @$lesson)
+			@if( $lesson)
+				<a href="{{URL::route('grammar.list_lesson_question', $lesson->id) }}" class="btn btn-warning  btn-sm dim" target="_blank"><i class="fa fa-list"></i>  Questions <i>({!!$lesson->questions->count()!!})</i></a>
+
+			   <a href="{{URL::route('grammar.create_question') }}" type="button" class="btn btn-success btn-sm dim"  target="_blank"><i class="fa fa-question-circle"></i> Add new Question</a>
+
+                
                         <a href="{!! URL::route('grammar.create_lesson')!!}" type="button" class="btn btn-sm btn-info  dim"><i class="fa fa-plus"></i> New</a>
                 @endif       
                 <button  class="btn btn-sm btn-primary dim" data-toggle="tooltip" data-placement="top" title="Add new Articles"><i class="fa fa-check"></i> Save</button>

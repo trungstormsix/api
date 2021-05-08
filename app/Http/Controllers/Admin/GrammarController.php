@@ -20,6 +20,7 @@ use App\Models\IdiomExample;
 use File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+
 class GrammarController extends AdminBaseController {
 
     /**
@@ -42,7 +43,8 @@ class GrammarController extends AdminBaseController {
         \Session::set('grm_cat_id', $cat_id);
 
         $cat = GrammarCat::find($cat_id);
-        return view('admin/grammar/lessons', ['cat' => $cat, 'lessons' => $cat->lessons]);
+		
+        return view('admin/grammar/lessons', ['cat' => $cat, 'lessons' => $cat->lessons, "title" => $cat->title . " -  Lessons"]);
     }
     public function createLesson() {
         return $this->getLesson(0);
@@ -51,21 +53,54 @@ class GrammarController extends AdminBaseController {
     public function getLesson($id = 0) {
         $lesson = null;
         $cat_ids = [];
-        $cat = null;
+		$title = "";
         if ($id) {
             $lesson = GrammarLesson::find($id);
             if ($lesson->cat) {
                 foreach ($lesson->cat as $cat) {
-                  
                     $cat_ids[] = $cat->id;
                 }
             }
+			$title =  $lesson->title . " -  Edit Lesson";
         } else {
             $cat_ids[] = \Session::get('grm_cat_id');
         }
         $categories = GrammarCat::all();
         
-        return view('admin/grammar/edit_lesson', compact('lesson',"categories", "cat_ids","cat"));
+        return view('admin/grammar/edit_lesson', compact('lesson',"categories", "cat_ids","cat", "title"));
+    }
+    
+    public function postLesson(Request $req) {
+        $this->validate($req, [
+            'title' => 'required|max:255'
+             
+        ]);
+        $req->published = $req->published ? 1 : 0;
+        if ($req->id) {
+            $lesson = GrammarLesson::find($req->id);
+        } else {
+            $lesson = GrammarLesson::where('title', $req->title)->first();
+            if (!$lesson) {
+                $lesson = new GrammarLesson();
+                $lesson->title = $req->title;
+                $lesson->save();
+            }
+        }
+        $lesson->update($req->all());
+		$cat_ids = $req->cat_ids;
+//         dd($req->cat_ids);
+        if($cat_ids){
+            $lesson->cat()->sync($cat_ids);
+        }else{
+            $lesson->cat()->sync([]);
+        }
+//        $lesson->save();
+        if ($lesson->id)
+            return redirect()->route('grammar.edit_lesson', ['lesson_id' => $lesson->id]);
+
+
+        Input::flash();
+        return redirect()->route('grammar.create_lesson');
     }
     public function searchLessons() {
         $search = \Illuminate\Support\Facades\Input::get('search');
@@ -87,42 +122,9 @@ class GrammarController extends AdminBaseController {
                 ->paginate(30);
         $lessons->appends(['search' => $search]);
 //        return view('admin/grammar/listQuestions', compact("questions","search"));
-        return view('admin/grammar/lessons', ['cat' => null, 'lessons' => $lessons, 'search' => $search]);
+        return view('admin/grammar/lessons', ['cat' => null, 'lessons' => $lessons, 'search' => $search, "title" => "Search Lesson"]);
 
     }
-    public function postLesson(Request $req) {
-        $this->validate($req, [
-            'title' => 'required|max:255'
-             
-        ]);
-        $req->published = $req->published ? 1 : 0;
-        if ($req->id) {
-            $lesson = GrammarLesson::find($req->id);
-        } else {
-            $lesson = GrammarLesson::where('title', $req->title)->first();
-            if (!$lesson) {
-                $lesson = new GrammarLesson();
-                $lesson->title = $req->title;
-                $lesson->save();
-            }
-        }
-        $lesson->update($req->all());
-        $cat_ids = $req->cat_ids;
-//         dd($req->cat_ids);
-        if($cat_ids){
-            $lesson->cat()->sync($cat_ids);
-        }else{
-            $lesson->cat()->sync([]);
-        }
-//        $lesson->save();
-        if ($lesson->id)
-            return redirect()->route('grammar.edit_lesson', ['lesson_id' => $lesson->id]);
-
-
-        Input::flash();
-        return redirect()->route('grammar.create_lesson');
-    }
-    
     /**
      * search idioms
      * @return type
@@ -146,7 +148,7 @@ class GrammarController extends AdminBaseController {
         } else {
             
         }
-        return view('admin/grammar/edit_cat', ['cat' => $cat]);
+        return view('admin/grammar/edit_cat', ['cat' => $cat , "title" => $cat->title . " -  Edit Cat"]);
     }
 
     public function deleteCat($id = 0) {
@@ -188,24 +190,47 @@ class GrammarController extends AdminBaseController {
         return redirect()->route('grammar.create_cat');
     }
 
+    
     public function listCatQuestions($cat_id) {
+		$order = Input::get('grmq_sort_by', 'question');
+		$dimen = Input::get('grmq_sort_dimen', 'asc');
+		if (@$order) {
+            Session::put('grmq_sort_by', $order);
+            Session::put('grmq_sort_dimen', $dimen);
+        }
+        $sort_by = Session::get('grmq_sort_by', 'liked');
+        $dimen = Session::get('grmq_sort_dimen', 'desc');
+		
         $cat = GrammarCat::find($cat_id);
         if (!$cat) {
             return back()->with("error", "Category does not exist!");
         }
-        $questions = $cat->questions()->paginate(30);
-        $title = $cat->title . " - Questions";
-        return view('admin/grammar/listQuestions', compact("questions","title"));
+        $questions = $cat->questions()->orderBy($sort_by,$dimen)->paginate(30);
+		$questions->appends(['grmq_sort_by' => $sort_by, "grmq_sort_dimen" => $dimen]);
+
+        $title = $cat->title . " -  Questions";
+        return view('admin/grammar/listQuestions', compact("questions", "title","sort_by", "dimen"));
     }
     
     public function listLessonQuestions($lesson_id) {
+		$order = Input::get('grmq_sort_by', 'question');
+		$dimen = Input::get('grmq_sort_dimen', 'asc');
+		if (@$order) {
+            Session::put('grmq_sort_by', $order);
+            Session::put('grmq_sort_dimen', $dimen);
+        }
+        $sort_by = Session::get('grmq_sort_by', 'liked');
+        $dimen = Session::get('grmq_sort_dimen', 'desc');
+		
         $lesson = GrammarLesson::find($lesson_id);
         if (!$lesson) {
             return back()->with("error", "Lesson does not exist!");
         }
-        $questions = $lesson->questions()->paginate(30);
+        $questions = $lesson->questions()->orderBy($sort_by,$dimen)->paginate(30);
+		$questions->appends(['grmq_sort_by' => $sort_by, "grmq_sort_dimen" => $dimen]);
 
-        return view('admin/grammar/listQuestions', compact("questions", "lesson_id"));
+		$title = $lesson->title . " -  Questions";
+        return view('admin/grammar/listQuestions', compact("questions", "lesson_id", "title","sort_by", "dimen"));
     }
     /**
      * search idioms
@@ -215,13 +240,16 @@ class GrammarController extends AdminBaseController {
         $search = \Illuminate\Support\Facades\Input::get('search');
         $plural = Str::plural($search,2);
         $singular = Str::plural($search,1);
-     
-        $orderByClause  = "CASE WHEN correct LIKE '".$singular."%' THEN 0 ELSE 1 END,";
+         
+         $orderByClause  = "CASE WHEN correct LIKE '".$singular."%' THEN 0 ELSE 1 END,";
         $orderByClause  .= "CASE WHEN correct LIKE '".$plural."%' THEN 0 ELSE 1 END,";
+        $orderByClause .= "CASE WHEN answers LIKE '%\"".$singular."\"%' THEN 0 ELSE 1 END,";
+        $orderByClause .= "CASE WHEN answers LIKE '%\"".$plural."\"%' THEN 0 ELSE 1 END,";
         $orderByClause .= "CASE WHEN answers LIKE '%".$singular."%' THEN 0 ELSE 1 END,";
         $orderByClause  .= "CASE WHEN answers LIKE '%".$plural."%' THEN 0 ELSE 1 END,";
         $orderByClause .= "CASE WHEN question LIKE '%".$singular."%' THEN 0 ELSE 1 END,";
         $orderByClause .= "CASE WHEN question LIKE '%".$plural."%' THEN 0 ELSE 1 END";
+        
         
         $questions = GrammarQuestion::where('question', 'like', '%' . $singular . '%')
                 ->orWhere('question', 'like', '%' . $plural . '%')
@@ -230,10 +258,12 @@ class GrammarController extends AdminBaseController {
                 ->orderByRaw($orderByClause)
                 ->paginate(30);
         $questions->appends(['search' => $search]);
-        return view('admin/grammar/listQuestions', compact("questions","search"));
+		
+		$title = "Search Question";
+        return view('admin/grammar/listQuestions', compact("questions","search","title"));
     }
 
-    
+
     public function deleteLessonQuestion(){
         $lesson_id = Input::get('lesson_id', '0');
         $question_id = Input::get('question_id', '0');
@@ -247,7 +277,7 @@ class GrammarController extends AdminBaseController {
         $cat_id = Input::get('cat_id', '0');
         $question_id = Input::get('question_id', '0');
         $cat = GrammarCat::find($cat_id);
-        $lessons = $cat->lessons;
+		$lessons = $cat->lessons;
         foreach ($lessons as $lesson){
             $changed = $lesson->questions()->detach([$question_id]);  
         }
@@ -356,7 +386,8 @@ class GrammarController extends AdminBaseController {
         return redirect()->route('grammar.edit_question', ['question_id' => $question->id]);
 
     }
-    
+	
+	
     public function crawlQuize(){
         $quizId = Input::get('quiz_id', '0');
         $lessonId = Input::get('lesson_id', '206');
@@ -392,7 +423,7 @@ class GrammarController extends AdminBaseController {
                 }
                 $ans = array_unique($ans);
                 $question->answers = json_encode($ans);
-                if(is_array( $data_question->structure->answer)){
+				if(is_array( $data_question->structure->answer)){
                     continue;
                 }
                 echo $data_question->structure->answer;
@@ -419,6 +450,7 @@ class GrammarController extends AdminBaseController {
         dd($data);
         echo $file;exit;
     }
+    
     
     public function deleteQuestion($question_id){
         $question = GrammarQuestion::find($question_id);

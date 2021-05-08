@@ -418,7 +418,24 @@ class AudioBookController extends Controller {
         }
         $story->save();
     }
+    function is_404($url) {
+        $handle = curl_init($url);
+        curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
 
+        /* Get the HTML or whatever is linked in $url. */
+        $response = curl_exec($handle);
+
+        /* Check for 404 (file not found). */
+        $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+        curl_close($handle);
+
+        /* If the document has loaded successfully without any redirection or error */
+        if ($httpCode >= 200 && $httpCode < 300) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     public function crawlDataFromOCoderEducation($cat_id){
         if(!$cat_id){
             return;
@@ -428,18 +445,46 @@ class AudioBookController extends Controller {
         $status = 1;
         foreach ($json as $story){
             $audio = $story->audio;
-           if(!$audio){
+			 if(!$audio){
                 echo "no Audio found for <a href='http://ocodereducation.com/admin/stories/update/".$story->id."' target='_blank'>".$story->title."</a><br>";
                 echo "<a href='http://ocodereducation.com/apiv1/admin/story/story/".$story->id."' target='_blank' > Apiv1".$story->title."</a><br>";
         
                 exit;
             }
+			$dbStory = Story::find($story->id);
+            if(!$dbStory){
+               $dbStory = new Story();
+             $dbStory->id = $story->id;
+
+            }
+            $dbStory->title = $story->title;
+            $dbStory->audio = $story->audio;
+            $dbStory->dialog = $story->dialog;
+            $dbStory->status = $story->status;
+            $dbStory->link = $story->link;
+             $dbStory->duration = $story->duration;
+            $dbStory->size = $story->size;
+            $dbStory->save();
+//            dd($story->pivot->cat_id);
+            $changed = $dbStory->types()->syncWithoutDetaching([$story->pivot->cat_id]);
+			
+			
             $audio_link =   "http://ocodereducation.com/apiv1/audios/estory/".$story->audio;
+			
+//            dd($is404);
+           
             $status = 1;
             if (!Storage::disk('enstory_audios')->has($audio)) {
-                $status &= Storage::disk('enstory_audios')->put($audio, file_get_contents($audio_link));
+                $is404 = false;//$this->is_404($audio_link);
+                if(!$is404){
+                        $status &= Storage::disk('enstory_audios')->put($audio, file_get_contents($audio_link));
+                }else{
+                        echo "404 <a href='http://ocodereducation.com/apiv1/audios/estory/".$story->audio."' target='_blank'>Audio Not found for $story->title</a>";
+
+                }
             }
             echo $status." http://ocodereducation.com/apiv1/audios/estory/".$story->audio;
+			
             echo "<br>";
         }
     }

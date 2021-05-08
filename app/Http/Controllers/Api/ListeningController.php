@@ -193,10 +193,10 @@ class ListeningController extends Controller {
 		clearstatcache();
 
     }
-    public function report(){
-        $api_token = Input::get("api_token","no_token");      
-        $message = Input::get("message","");
-        $dl_id = Input::get("id","");
+	 public function report(){
+         $api_token = Input::get("api_token","no_token");      
+         $message = Input::get("message","");
+         $dl_id = Input::get("id","");
         $user = User::where("api_token", $api_token)->first();
          if(!$user){
             return response("please login!",403);
@@ -211,8 +211,8 @@ class ListeningController extends Controller {
         }
         
     }
-    
-    
+	
+	
     public function getSub(){
         $id = Input::get("id");
         
